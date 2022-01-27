@@ -42,8 +42,8 @@ class AddonsMetaData
 		};
 		class Item1
 		{
-			className="A3_Characters_F";
-			name="Arma 3 Alpha - Characters and Clothing";
+			className="A3_Data_F_Curator";
+			name="Arma 3 Zeus Update - Main Configuration";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -138,7 +138,7 @@ class Mission
 			id=10;
 			type="Land_Shoot_House_Tunnel_Prone_F";
 		};
-		class Item2
+		class Item12
 		{
 			dataType="Object";
 			class PositionInfo
@@ -155,7 +155,7 @@ class Mission
 			type="Land_Shoot_House_Wall_Stand_F";
 			atlOffset=0.0015258789;
 		};
-		class Item3
+		class Item13
 		{
 			dataType="Object";
 			class PositionInfo
