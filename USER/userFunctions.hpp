@@ -4,5 +4,10 @@
 */
 
 class GRAD_USER {
+    class redLightGreenLight {
+        file = USER\functions\redLightGreenLight;
 
+        class burstFire {};
+        class rotateTurret {};
+    };
 };
