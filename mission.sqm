@@ -5,25 +5,30 @@ class EditorData
 	angleGridStep=1.5707964;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=9;
+	toggles=2;
 	class ItemIDProvider
 	{
-		nextID=27;
+		nextID=45;
 	};
 	class Camera
 	{
-		pos[]={1620.7684,63.194851,6413.5029};
-		dir[]={-0.69630075,-0.52356261,-0.49097386};
-		up[]={-0.42792681,0.85195929,-0.30173871};
-		aside[]={-0.57626879,-5.3318217e-008,0.81726682};
+		pos[]={1506.5651,61.478771,6289.9702};
+		dir[]={-0.73765236,-0.37634352,-0.56056625};
+		up[]={-0.29964018,0.92648023,-0.2277064};
+		aside[]={-0.60504937,0,0.796188};
 	};
 };
 binarizationWanted=0;
-sourceName="GRAND_PRIX_5_OneShotWonder";
+sourceName="GrandPrix5";
 addons[]=
 {
 	"A3_Structures_F_Training",
 	"A3_Characters_F",
+	"A3_Weapons_F_Pistols_Pistol_Heavy_02",
+	"ace_overheating",
+	"ace_realisticnames",
+	"ace_ballistics",
+	"A3_Weapons_F",
 	"A3_Modules_F_Curator_Curator",
 	"A3_Misc_F_Helpers",
 	"A3_Structures_F_Heli_VR_Helpers"
@@ -32,7 +37,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=5;
+		items=8;
 		class Item0
 		{
 			className="A3_Structures_F";
@@ -42,26 +47,47 @@ class AddonsMetaData
 		};
 		class Item1
 		{
-			className="A3_Data_F_Curator";
-			name="Arma 3 Zeus Update - Main Configuration";
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
 		class Item2
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item3
+		{
+			className="ace_overheating";
+			name="ACE3 - Overheating";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item4
+		{
+			className="ace_ballistics";
+			name="ACE3 - Ballistics";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item5
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item3
+		class Item6
 		{
 			className="A3_Misc_F";
 			name="Arma 3 - 3D Aids and Helpers";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item4
+		class Item7
 		{
 			className="A3_Structures_F_Heli";
 			name="Arma 3 Helicopters - Buildings and Structures";
@@ -105,7 +131,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=13;
+		items=31;
 		class Item0
 		{
 			dataType="Object";
@@ -138,7 +164,7 @@ class Mission
 			id=10;
 			type="Land_Shoot_House_Tunnel_Prone_F";
 		};
-		class Item12
+		class Item2
 		{
 			dataType="Object";
 			class PositionInfo
@@ -155,7 +181,7 @@ class Mission
 			type="Land_Shoot_House_Wall_Stand_F";
 			atlOffset=0.0015258789;
 		};
-		class Item13
+		class Item3
 		{
 			dataType="Object";
 			class PositionInfo
@@ -206,6 +232,18 @@ class Mission
 					class Attributes
 					{
 						isPlayer=1;
+						class Inventory
+						{
+							class handgun
+							{
+								name="hgun_Pistol_heavy_02_F";
+								class primaryMuzzleMag
+								{
+									name="6Rnd_45ACP_Cylinder";
+									ammoLeft=6;
+								};
+							};
+						};
 					};
 					id=17;
 					type="B_Soldier_F";
@@ -347,7 +385,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1615.8459,58.68362,6396.6782};
+				position[]={1615.8459,58.643368,6396.3018};
 			};
 			side="Empty";
 			class Attributes
@@ -357,7 +395,7 @@ class Mission
 			};
 			id=21;
 			type="Sign_Arrow_Blue_F";
-			atlOffset=0.74700165;
+			atlOffset=0.70750427;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -430,6 +468,349 @@ class Mission
 			};
 			id=26;
 			type="Sign_Sphere100cm_F";
+		};
+		class Item13
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1514.4043,62.43103,6455.4707};
+				angles[]={1.5707965,1.5707964,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=27;
+			type="Land_Shoot_House_Wall_Stand_F";
+			atlOffset=0.27553177;
+		};
+		class Item14
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1515.1661,62.343994,6454.7031};
+				angles[]={6.2812018,0,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=28;
+			type="Land_Shoot_House_Tunnel_Prone_F";
+			atlOffset=0.27399445;
+		};
+		class Item15
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1515.9132,62.429543,6453.9648};
+				angles[]={4.7143726,4.712389,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=29;
+			type="Land_Shoot_House_Wall_Stand_F";
+			atlOffset=0.27404404;
+		};
+		class Item16
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1515.1616,63.109573,6453.8174};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=30;
+			type="Land_Shoot_House_Wall_Stand_F";
+			atlOffset=0.95407486;
+		};
+		class Item17
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1515.1593,63.378475,6455.4126};
+				angles[]={1.5707965,0,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=31;
+			type="Land_Shoot_House_Wall_Stand_F";
+			atlOffset=1.2229767;
+		};
+		class Item18
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1515.1605,62.1735,6455.7061};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=32;
+			type="Land_Shoot_House_Wall_Stand_F";
+			atlOffset=0.018001556;
+		};
+		class Item19
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1515.161,62.155499,6455.7061};
+				angles[]={3.1415927,3.1415927,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="GRAD_grandPrix_OSW_position_2_door";
+			};
+			id=33;
+			type="Land_Shoot_House_Wall_Crouch_F";
+		};
+		class Item20
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1515.13,61.835316,6454.2021};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_2_door, GRAD_grandPrix_OSW_position_2_target], true];" \n "};";
+				name="GRAD_grandPrix_OSW_position_2";
+			};
+			id=34;
+			type="Sign_Arrow_Blue_F";
+			atlOffset=0.98205566;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item21
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1514.673,61.14629,6464.6519};
+				angles[]={0,6.104743,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this addEventHandler [""Hit"", { " \n " params [""_unit"", ""_source"", ""_damage"", ""_instigator""];" \n "systemChat ""test""; " \n "}]";
+				name="GRAD_grandPrix_OSW_position_2_target";
+			};
+			id=35;
+			type="Land_Target_Oval_F";
+		};
+		class Item22
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1499.995,56.721249,6279.7095};
+				angles[]={4.712389,4.7123895,5.2570577};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=36;
+			type="Land_Shoot_House_Wall_Stand_F";
+			atlOffset=0.27553177;
+		};
+		class Item23
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1498.9437,56.634212,6279.4556};
+				angles[]={0.0010277043,2.1154659,0.0016964577};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=37;
+			type="Land_Shoot_House_Tunnel_Prone_F";
+			atlOffset=0.27399445;
+		};
+		class Item24
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1497.9252,56.719761,6279.1992};
+				angles[]={1.5669678,1.5675219,1.0261245};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=38;
+			type="Land_Shoot_House_Wall_Stand_F";
+			atlOffset=0.27404404;
+		};
+		class Item25
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1498.1885,57.399792,6279.9185};
+				angles[]={0,2.1154649,-0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=39;
+			type="Land_Shoot_House_Wall_Stand_F";
+			atlOffset=0.95407486;
+		};
+		class Item26
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1499.5541,57.668694,6279.0938};
+				angles[]={4.712389,3.141593,5.2570577};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=40;
+			type="Land_Shoot_House_Wall_Stand_F";
+			atlOffset=1.2229767;
+		};
+		class Item27
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1499.8044,56.463718,6278.9409};
+				angles[]={0,2.1154649,-0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=41;
+			type="Land_Shoot_House_Wall_Stand_F";
+			atlOffset=0.018001556;
+		};
+		class Item28
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1499.804,56.445717,6278.9399};
+				angles[]={3.1415927,1.0261314,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="GRAD_grandPrix_OSW_position_3_door";
+			};
+			id=42;
+			type="Land_Shoot_House_Wall_Crouch_F";
+		};
+		class Item29
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1498.594,56.125751,6279.71};
+				angles[]={0,2.1154611,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_3_door, GRAD_grandPrix_OSW_position_3_target], true];" \n "};";
+				name="GRAD_grandPrix_OSW_position_3";
+			};
+			id=43;
+			type="Sign_Arrow_Blue_F";
+			atlOffset=0.9822731;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item30
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1507.708,55.433887,6274.7231};
+				angles[]={0,1.9370188,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this addEventHandler [""Hit"", { " \n " params [""_unit"", ""_source"", ""_damage"", ""_instigator""];" \n "systemChat ""test""; " \n "}]";
+				name="GRAD_grandPrix_OSW_position_3_target";
+			};
+			id=44;
+			type="Land_Target_Oval_F";
 		};
 	};
 };

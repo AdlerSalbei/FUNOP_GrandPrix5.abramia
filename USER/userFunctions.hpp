@@ -3,9 +3,7 @@
 *   Ist in CfgFunctions included.
 */
 
-class GRAD_USER {
-	class grad_grandPrix {
+class grad_grandPrix {
 		tag = "grad_grandPrix";
 		#include "functions\OneShotWonder\CfgFunctions.hpp"
-	};
 };
