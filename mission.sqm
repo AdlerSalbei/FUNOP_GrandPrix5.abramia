@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1496;
+		nextID=1507;
 	};
 	class MarkerIDProvider
 	{
@@ -20,27 +20,41 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7594.5801,132.19186,5675.6387};
-		dir[]={-0.72307527,-0.51136172,-0.46449339};
-		up[]={-0.43025285,0.85934776,-0.27638805};
-		aside[]={-0.54049581,-4.763715e-007,0.84138834};
+		pos[]={4689.1963,549.12592,4173.4907};
+		dir[]={-0.71824855,-0.39595979,-0.57218361};
+		up[]={-0.30971321,0.91826254,-0.24672963};
+		aside[]={-0.6231097,1.7601997e-007,0.78216922};
 	};
 };
 binarizationWanted=0;
-sourceName="FUNOP_GrandPrix5";
+sourceName="GrandPrix5";
 addons[]=
 {
 	"A3_Data_F_Exp_A_Virtual",
 	"A3_Data_F_Curator_Virtual",
 	"A3_Modules_F_Curator_Curator",
 	"A3_Characters_F",
-	"A3_Modules_F_Heli_Misc"
+	"A3_Modules_F_Heli_Misc",
+	"gm_characters_ge_characters",
+	"grad_grandprix5_functions",
+	"A3_Weapons_F_Acc",
+	"ace_realisticnames",
+	"ace_scopes",
+	"ace_vector",
+	"A3_Weapons_F",
+	"gm_weapons_items_ge_items",
+	"gm_weapons_items",
+	"ace_atragmx",
+	"ace_rangecard",
+	"ace_kestrel4500",
+	"A3_Misc_F_Helpers",
+	"A3_Structures_F_Bootcamp_VR_Helpers"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=5;
+		items=17;
 		class Item0
 		{
 			className="A3_Data_F_Exp_A";
@@ -76,7 +90,93 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item5
+		{
+			className="gm_characters_ge_characters";
+			name="gm_characters_ge_characters";
+			author="Global Mobilization";
+			url="global-mobilization.com";
+		};
+		class Item6
+		{
+			className="grad_grandprix5_functions";
+			name="grad_grandprix5_functions";
+		};
+		class Item7
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item8
+		{
+			className="ace_scopes";
+			name="ACE3 - Scopes";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item9
+		{
+			className="ace_vector";
+			name="ACE3 - Vector";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item10
+		{
+			className="gm_weapons_items_ge_items";
+			name="gm_weapons_items_ge_items";
+			author="Global Mobilization";
+			url="global-mobilization.com";
+		};
+		class Item11
+		{
+			className="gm_weapons_items";
+			name="gm_weapons_items";
+			author="Global Mobilization";
+			url="global-mobilization.com";
+		};
+		class Item12
+		{
+			className="ace_atragmx";
+			name="ACE3 - ATragMX";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item13
+		{
+			className="ace_rangecard";
+			name="ACE3 - Range Card";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item14
+		{
+			className="ace_kestrel4500";
+			name="ACE3 - Kestrel 4500";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item15
+		{
+			className="A3_Misc_F";
+			name="Arma 3 - 3D Aids and Helpers";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item16
+		{
+			className="A3_Structures_F_Bootcamp";
+			name="Arma 3 Bootcamp Update - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
+};
+dlcs[]=
+{
+	"gm"
 };
 randomSeed=938738;
 class ScenarioData
@@ -6534,19 +6634,18 @@ class Mission
 	};
 	class Entities
 	{
-		items=16;
+		items=21;
 		class Item0
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={-612.93506,31.157597,2755.1812};
+				position[]={-791.83899,31.254238,2515.6609};
 			};
-			isPlayer=1;
 			isPlayable=1;
 			id=44;
 			type="VirtualSpectator_F";
-			atlOffset=88.517593;
+			atlOffset=88.614243;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6651,12 +6750,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={-612.93506,26.749187,2655.5352};
+				position[]={-791.83899,26.845837,2416.0149};
 			};
 			isPlayable=1;
 			id=45;
 			type="VirtualSpectator_F";
-			atlOffset=84.109192;
+			atlOffset=84.205841;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6761,12 +6860,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={-612.38135,21.93943,2554.228};
+				position[]={-791.28528,22.036076,2314.7078};
 			};
 			isPlayable=1;
 			id=46;
 			type="VirtualSpectator_F";
-			atlOffset=79.299431;
+			atlOffset=79.396072;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6871,13 +6970,13 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={-512.84131,37.990807,2755.6929};
+				position[]={-691.74524,38.087452,2516.1726};
 			};
 			name="virtualZeus1";
 			isPlayable=1;
 			id=29;
 			type="VirtualCurator_F";
-			atlOffset=95.350807;
+			atlOffset=95.447449;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6924,13 +7023,13 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={-513.10645,33.657482,2655.0938};
+				position[]={-692.01038,33.754131,2415.5735};
 			};
 			name="virtualZeus2";
 			isPlayable=1;
 			id=30;
 			type="VirtualCurator_F";
-			atlOffset=91.017487;
+			atlOffset=91.114136;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6977,13 +7076,13 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={-512.57715,28.03125,2555.2891};
+				position[]={-691.48108,28.127895,2315.7688};
 			};
 			name="virtualZeus3";
 			isPlayable=1;
 			id=31;
 			type="VirtualCurator_F";
-			atlOffset=85.391251;
+			atlOffset=85.4879;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7030,11 +7129,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={-309.96204,4.9711933,3756.2939};
+				position[]={-488.86597,5.0678368,3516.7737};
 			};
 			id=178;
 			type="ModuleCuratorAddEditableObjects";
-			atlOffset=62.331192;
+			atlOffset=62.427837;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7102,12 +7201,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={-413.03662,45.817909,2755.4297};
+				position[]={-591.94055,45.914555,2515.9094};
 			};
 			name="zeusModule_1";
 			id=34;
 			type="ModuleCurator_F";
-			atlOffset=103.17791;
+			atlOffset=103.27455;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7213,12 +7312,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={-412.77148,50.656719,2655.6235};
+				position[]={-591.67542,50.753368,2416.1033};
 			};
 			name="zeusModule_2";
 			id=32;
 			type="ModuleCurator_F";
-			atlOffset=108.01672;
+			atlOffset=108.11337;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7324,12 +7423,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={-413.03662,49.699657,2555.2886};
+				position[]={-591.94055,49.796307,2315.7683};
 			};
 			name="zeusModule_3";
 			id=33;
 			type="ModuleCurator_F";
-			atlOffset=107.05966;
+			atlOffset=107.15631;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7435,12 +7534,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={-311.21912,37.754711,2756.6401};
+				position[]={-490.12305,37.85136,2517.1199};
 			};
 			name="zeusModule_adminLogged";
 			id=20;
 			type="ModuleCurator_F";
-			atlOffset=95.114716;
+			atlOffset=95.211365;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7546,12 +7645,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={-310.73511,46.035892,2655.3411};
+				position[]={-489.63904,46.132534,2415.8208};
 			};
 			name="zeusModule_adminVoted";
 			id=21;
 			type="ModuleCurator_F";
-			atlOffset=103.39589;
+			atlOffset=103.49254;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7657,50 +7756,380 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={-713.34564,32.833172,2757.0693};
+				position[]={-892.24957,32.929821,2517.5491};
 			};
 			name="HC";
 			isPlayable=1;
 			id=26;
 			type="HeadlessClient_F";
-			atlOffset=90.193176;
+			atlOffset=90.289825;
 		};
 		class Item13
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={-713.60992,26.845699,2656.7344};
+				position[]={-892.51385,26.942348,2417.2141};
 			};
 			name="HC2";
 			isPlayable=1;
 			id=27;
 			type="HeadlessClient_F";
-			atlOffset=84.205704;
+			atlOffset=84.302353;
 		};
 		class Item14
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={-713.3454,35.059551,2556.3989};
+				position[]={-892.24933,35.1562,2316.8787};
 			};
 			name="HC3";
 			isPlayable=1;
 			id=28;
 			type="HeadlessClient_F";
-			atlOffset=92.419556;
+			atlOffset=92.516205;
 		};
 		class Item15
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={-310.32416,-12.591557,1756.8735};
+				position[]={-1579.2848,-12.40126,1512.4048};
 			};
 			id=19;
 			type="ModuleSlingload_F";
-			atlOffset=44.768444;
+			atlOffset=44.95874;
+		};
+		class Item16
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4687.3789,546.37915,4171.7637};
+						angles[]={0,3.6597285,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						rank="CORPORAL";
+						isPlayer=1;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="GrandPrix_srifle_LRR_F";
+								optics="optic_lrps";
+								class primaryMuzzleMag
+								{
+									name="1000Rnd_408_Mag";
+									ammoLeft=1000;
+								};
+							};
+							class binocular
+							{
+								name="ACE_Vector";
+							};
+							class uniform
+							{
+								typeName="gm_ge_army_uniform_soldier_80_ols";
+								isBackpack=0;
+								class ItemCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="ACE_ATragMX";
+										count=1;
+									};
+									class Item1
+									{
+										name="ACE_RangeCard";
+										count=1;
+									};
+									class Item2
+									{
+										name="ACE_Kestrel4500";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="gm_ge_army_vest_80_rifleman";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="gm_ge_army_conat2";
+							watch="gm_watch_kosei_80";
+							radio="ItemRadio";
+							headgear="gm_ge_headgear_m62_net";
+						};
+					};
+					id=1497;
+					type="gm_ge_army_rifleman_g3a3_80_ols";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="gm_rankinsignia";
+							expression="[_this, [1,_value]] call gm_core_characters_fnc_setUnitAttribute;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="gm_insigniacolor";
+							expression="[_this, [2,_value]] call gm_core_characters_fnc_setUnitAttribute;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="army_wht";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="gm_leftarmband";
+							expression="[_this, [3,_value]] call gm_core_characters_fnc_setUnitAttribute;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="gm_ge_armband_none";
+								};
+							};
+						};
+						class Attribute5
+						{
+							property="gm_rightarmband";
+							expression="[_this, [4,_value]] call gm_core_characters_fnc_setUnitAttribute;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="gm_ge_armband_none";
+								};
+							};
+						};
+						class Attribute6
+						{
+							property="gm_servicebranch";
+							expression="[_this, [0,_value]] call gm_core_characters_fnc_setUnitAttribute;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="";
+								};
+							};
+						};
+						nAttributes=7;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1496;
+		};
+		class Item17
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4693.9844,550.32733,4178.1157};
+				angles[]={0,0.45928037,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="test";
+			};
+			id=1500;
+			type="Sign_Arrow_Direction_Blue_F";
+			atlOffset=3.8359985;
+		};
+		class Item18
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3575.665,31.379,3177.2881};
+				angles[]={0,3.1067386,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				name="GRAD_grandPrix_PUPS_target_1";
+			};
+			id=1502;
+			type="VR_3DSelector_01_complete_F";
+			atlOffset=0.00021934509;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item19
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3658.6479,22.835999,2798.5239};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				name="GRAD_grandPrix_PUPS_target_2";
+			};
+			id=1505;
+			type="VR_3DSelector_01_complete_F";
+			atlOffset=5.7220459e-006;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item20
+		{
+			dataType="Trigger";
+			position[]={4687.3491,546.39044,4171.7422};
+			class Attributes
+			{
+				sizeA=1;
+				sizeB=1;
+				sizeC=1.8;
+			};
+			id=1506;
+			type="EmptyDetectorArea10x10";
 		};
 	};
 	class Connections
