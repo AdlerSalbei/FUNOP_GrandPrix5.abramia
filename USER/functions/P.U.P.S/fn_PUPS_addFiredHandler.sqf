@@ -2,6 +2,7 @@
 // this addWeapon "GrandPrix_srifle_LRR_F";
 // this addWeaponItem ["GrandPrix_srifle_LRR_F", "1000Rnd_408_Mag"];
 
+private _handle =
 player addEventHandler ["Fired", { 
 	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 
@@ -10,7 +11,7 @@ player addEventHandler ["Fired", {
 	player setVariable ["GRAD_grandPrix_PUPS_shotsFired", _shotsFired];
 
 	private _vel = velocity player;
-	if ((abs (_vel#0) > 0.1) || (abs (_vel#1) > 0.1) || (abs (_vel#2) > 0.1)) exitWith {};
+	if ((abs (_vel#0) > 0.01) || (abs (_vel#1) > 0.01) || (abs (_vel#2) > 0.01)) exitWith {};
 	
 	player setVariable ["GRAD_grandPrix_PUPS_isFlying", true];
 
@@ -33,6 +34,7 @@ player addEventHandler ["Fired", {
 							player setVariable ["GRAD_grandPrix_PUPS_movementCenter", getPosASL player];
 						};
 						player setVariable ["GRAD_grandPrix_PUPS_isFlying", false];
+						[player getVariable ["GRAD_grandPrix_PUPS_currentTarget", objNull], 30] call grad_grandPrix_fnc_PUPS_handleIndicator;
 					},
 					[_initPos],
 					0.5
@@ -45,9 +47,12 @@ player addEventHandler ["Fired", {
 				player setPosAsl _initPos;
 				[_handle] call CBA_fnc_removePerFrameHandler;
 				player setVariable ["GRAD_grandPrix_PUPS_isFlying", false];
+				[player getVariable ["GRAD_grandPrix_PUPS_currentTarget", objNull], 30] call grad_grandPrix_fnc_PUPS_handleIndicator;
 			};
 		}, 
 		0, 
 		[_projectile, _initPos] 
 	] call CBA_fnc_addPerFrameHandler;
 }];
+
+_handle

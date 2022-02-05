@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4689.1963,549.12592,4173.4907};
-		dir[]={-0.71824855,-0.39595979,-0.57218361};
-		up[]={-0.30971321,0.91826254,-0.24672963};
-		aside[]={-0.6231097,1.7601997e-007,0.78216922};
+		pos[]={4708.5923,571.71429,4214.3223};
+		dir[]={-0.50305957,-0.41942561,-0.75565416};
+		up[]={-0.23242834,0.90778965,-0.34913447};
+		aside[]={-0.83241093,0,0.55415869};
 	};
 };
 binarizationWanted=0;
@@ -47,14 +47,13 @@ addons[]=
 	"ace_atragmx",
 	"ace_rangecard",
 	"ace_kestrel4500",
-	"A3_Misc_F_Helpers",
 	"A3_Structures_F_Bootcamp_VR_Helpers"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=17;
+		items=16;
 		class Item0
 		{
 			className="A3_Data_F_Exp_A";
@@ -159,13 +158,6 @@ class AddonsMetaData
 			url="http://ace3mod.com/";
 		};
 		class Item15
-		{
-			className="A3_Misc_F";
-			name="Arma 3 - 3D Aids and Helpers";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item16
 		{
 			className="A3_Structures_F_Bootcamp";
 			name="Arma 3 Bootcamp Update - Buildings and Structures";
@@ -6634,7 +6626,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=21;
+		items=19;
 		class Item0
 		{
 			dataType="Logic";
@@ -8025,23 +8017,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4693.9844,550.32733,4178.1157};
-				angles[]={0,0.45928037,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				name="test";
-			};
-			id=1500;
-			type="Sign_Arrow_Direction_Blue_F";
-			atlOffset=3.8359985;
-		};
-		class Item18
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={3575.665,31.379,3177.2881};
 				angles[]={0,3.1067386,0};
 			};
@@ -8071,14 +8046,14 @@ class Mission
 									"BOOL"
 								};
 							};
-							value=1;
+							value=0;
 						};
 					};
 				};
 				nAttributes=1;
 			};
 		};
-		class Item19
+		class Item18
 		{
 			dataType="Object";
 			class PositionInfo
@@ -8111,25 +8086,12 @@ class Mission
 									"BOOL"
 								};
 							};
-							value=1;
+							value=0;
 						};
 					};
 				};
 				nAttributes=1;
 			};
-		};
-		class Item20
-		{
-			dataType="Trigger";
-			position[]={4687.3491,546.39044,4171.7422};
-			class Attributes
-			{
-				sizeA=1;
-				sizeB=1;
-				sizeC=1.8;
-			};
-			id=1506;
-			type="EmptyDetectorArea10x10";
 		};
 	};
 	class Connections
