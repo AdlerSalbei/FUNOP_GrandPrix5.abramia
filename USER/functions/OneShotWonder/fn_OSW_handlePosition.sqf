@@ -1,13 +1,19 @@
 params ["_position"];
 
-// set pre-positon requirements
-player setVariable ["GRAD_grandPrix_OSW_currentCompleted", false, true];
-_position setVariable ["GRAD_grandPrix_OSW_currentlyActive", true, true];
-
 private _positionInfo = _position getVariable ["GRAD_grandPrix_OSW_info", []];
 // _door -> piece of stand that opens
 // _target -> target the player has to shoot at
-_positionInfo params ["_door", "_target"];
+_positionInfo params ["_door", "_target", "_trigger"];
+
+// show position
+private _objects = (allMissionObjects "") select {_x inArea _trigger};
+{
+	[_x, false] remoteExecCall ["hideObjectGlobal", 2];
+} foreach (_objects + [_target]);
+
+// set pre-positon requirements
+player setVariable ["GRAD_grandPrix_OSW_currentCompleted", false, true];
+_position setVariable ["GRAD_grandPrix_OSW_currentlyActive", true, true];
 
 // create door locally for smoother movement
 private _localDoor = (typeOf _door) createVehicleLocal (getPos _door);
@@ -70,23 +76,28 @@ private _openHandler =
 	[_localDoor, [_initialDoorPos#0, _initialDoorPos#1, (_initialDoorPos#2) + 0.8]]
 ] call CBA_fnc_addPerFrameHandler;
 
-// time shit?
+// add Gun magazine
+player addMagazine "1Rnd_45ACP_Cylinder"; 
+player addWeapon "GrandPrix_hgun_Pistol_heavy_02_F";
 
+// time shit?
+private _start = time;
 
 // evaluate result
 waitUntil { (_target getVariable ["GRAD_grandPrix_OSW_hit", ""]) isNotEqualTo "" };
 
 private _hit = _target getVariable ["GRAD_grandPrix_OSW_hit", ""];
-private _timeTaken = time - (player getVariable ["GRAD_grandPrix_OSW_timeFired", time - 5]);
+private _timeTaken = time - _start;
 if (_hit) then {
 	hintSilent "Treffer!";
 } else {
 	hintSilent "Verfehlt!";
 	_timeTaken = _timeTaken + 20;
 };
-private _totalPlayerTime = player getVariable ["GRAD_grandPrix_OSW_totalTimte", 0];
+systemChat str _timeTaken;
+private _totalPlayerTime = player getVariable ["GRAD_grandPrix_OSW_totalTime", 0];
 _totalPlayerTime = _totalPlayerTime + _timeTaken;
-player setVariable ["GRAD_grandPrix_OSW_totalTimte", _totalPlayerTime, true];
+player setVariable ["GRAD_grandPrix_OSW_totalTime", _totalPlayerTime, true];
 
 // close shit
 sleep 0.5;
@@ -117,10 +128,16 @@ player setVariable ["GRAD_grandPrix_OSW_currentCompleted", true, true];
 // wait for player to be teleported away
 waitUntil { !(player inArea [_position, 1.5, 1.5, getDir _position, true, 2.5]) };
 deleteVehicle _localDoor;
-_position setVariable ["GRAD_grandPrix_OSW_currentlyActive", false, true];
 private _timesVisited = _position getVariable ["GRAD_grandPrix_timesVisited", 0];
 _timesVisited = _timesVisited + 1;
 _position setVariable ["GRAD_grandPrix_timesVisited", _timesVisited, true];
+
+// hide position
+{
+	[_x, true] remoteExecCall ["hideObjectGlobal", 2];
+} foreach _objects;
+
+_position setVariable ["GRAD_grandPrix_OSW_currentlyActive", false, true];
 
 
 
