@@ -34,7 +34,7 @@ player addEventHandler ["Fired", {
 							player setVariable ["GRAD_grandPrix_PUPS_movementCenter", getPosASL player];
 						};
 						player setVariable ["GRAD_grandPrix_PUPS_isFlying", false];
-						[player getVariable ["GRAD_grandPrix_PUPS_currentTarget", objNull], 30] call grad_grandPrix_fnc_PUPS_handleIndicator;
+						[player getVariable ["GRAD_grandPrix_PUPS_currentTarget", objNull], 10] call grad_grandPrix_fnc_PUPS_handleIndicator;
 					},
 					[_initPos],
 					0.5
@@ -47,7 +47,7 @@ player addEventHandler ["Fired", {
 				player setPosAsl _initPos;
 				[_handle] call CBA_fnc_removePerFrameHandler;
 				player setVariable ["GRAD_grandPrix_PUPS_isFlying", false];
-				[player getVariable ["GRAD_grandPrix_PUPS_currentTarget", objNull], 30] call grad_grandPrix_fnc_PUPS_handleIndicator;
+				[player getVariable ["GRAD_grandPrix_PUPS_currentTarget", objNull], 10] call grad_grandPrix_fnc_PUPS_handleIndicator;
 			};
 		}, 
 		0, 
