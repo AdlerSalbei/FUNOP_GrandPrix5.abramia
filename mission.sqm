@@ -8,7 +8,7 @@ class EditorData
 	toggles=10;
 	class ItemIDProvider
 	{
-		nextID=154;
+		nextID=166;
 	};
 	class MarkerIDProvider
 	{
@@ -16,22 +16,22 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1219.6859,76.034348,6645.0781};
-		dir[]={-0.89401168,-0.30653346,0.32677898};
-		up[]={-0.28790462,0.95185882,0.10523495};
-		aside[]={0.34330577,1.4551915e-008,0.93922502};
+		pos[]={1219.3445,60.515354,1776.0878};
+		dir[]={-0.33674639,-0.3101545,0.8890903};
+		up[]={-0.10986028,0.95068616,0.29005712};
+		aside[]={0.93520284,-3.4924597e-010,0.35420877};
 	};
 };
 binarizationWanted=0;
 sourceName="GrandPrix5";
 addons[]=
 {
-	"A3_Structures_F_Training",
 	"A3_Characters_F",
 	"A3_Characters_F_Orange",
 	"A3_Modules_F_Curator_Curator",
 	"A3_Misc_F_Helpers",
 	"A3_Structures_F_Heli_VR_Helpers",
+	"A3_Structures_F_Training",
 	"A3_Ui_F",
 	"CUP_CAMisc"
 };
@@ -42,43 +42,43 @@ class AddonsMetaData
 		items=8;
 		class Item0
 		{
-			className="A3_Structures_F";
-			name="Arma 3 - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item1
-		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item2
+		class Item1
 		{
 			className="A3_Characters_F_Orange";
 			name="Arma 3 Orange - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item3
+		class Item2
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item4
+		class Item3
 		{
 			className="A3_Misc_F";
 			name="Arma 3 - 3D Aids and Helpers";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item5
+		class Item4
 		{
 			className="A3_Structures_F_Heli";
 			name="Arma 3 Helicopters - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item5
+		{
+			className="A3_Structures_F";
+			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -132,180 +132,8 @@ class Mission
 	};
 	class Entities
 	{
-		items=115;
+		items=104;
 		class Item0
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1219.3358,57.565155,1781.3831};
-				angles[]={1.5707966,1.5707966,0.83313948};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				disableSimulation=1;
-			};
-			id=4;
-			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=-0.0014076233;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item1
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1220.416,57.478123,1781.431};
-				angles[]={6.2818589,5.4500527,6.2817187};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				disableSimulation=1;
-			};
-			id=10;
-			type="Land_Shoot_House_Tunnel_Prone_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item2
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1221.4651,57.56366,1781.4869};
-				angles[]={4.7153387,4.7102065,5.450048};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				disableSimulation=1;
-			};
-			id=13;
-			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=0.0079879761;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item3
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1221.0687,58.243698,1780.8317};
-				angles[]={0,5.4500461,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				disableSimulation=1;
-			};
-			id=14;
-			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=0.69009399;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item4
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1219.8866,58.512596,1781.9027};
-				angles[]={1.5707966,1.7926975e-007,0.83313948};
-			};
-			side="Empty";
-			class Attributes
-			{
-				disableSimulation=1;
-			};
-			id=15;
-			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=0.94187546;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item5
 		{
 			dataType="Group";
 			side="West";
@@ -345,77 +173,7 @@ class Mission
 			id=16;
 			atlOffset=-7.6293945e-006;
 		};
-		class Item6
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1219.6703,57.307617,1782.1011};
-				angles[]={0,5.4500461,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				disableSimulation=1;
-			};
-			id=18;
-			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=-0.2646904;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item7
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1219.6703,57.289619,1782.1011};
-				angles[]={3.141593,3.9747324,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="GRAD_grandPrix_OSW_position_1_door";
-			};
-			id=19;
-			type="Land_Shoot_House_Wall_Crouch_F";
-			atlOffset=-0.28268814;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item8
+		class Item1
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -482,43 +240,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item9
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1220.417,56.967979,1781.382};
-				angles[]={0,5.4500527,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_1_door, GRAD_grandPrix_OSW_position_1_target," \n "GRAD_grandPrix_OSW_position_1_trigger], true];" \n "};";
-				name="GRAD_grandPrix_OSW_position_1";
-				disableSimulation=1;
-			};
-			id=21;
-			type="Sign_Arrow_Blue_F";
-			atlOffset=0.70700073;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item10
+		class Item2
 		{
 			dataType="Object";
 			class PositionInfo
@@ -535,7 +257,7 @@ class Mission
 			id=26;
 			type="Sign_Sphere100cm_F";
 		};
-		class Item11
+		class Item3
 		{
 			dataType="Object";
 			class PositionInfo
@@ -570,18 +292,20 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item12
+		class Item4
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={4206.8569,278.02164,7498.4038};
-				angles[]={0.00057595863,4.4215999,6.2812829};
+				angles[]={0,4.4215999,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_2_door, GRAD_grandPrix_OSW_position_2_target," \n "GRAD_grandPrix_OSW_position_2_trigger], true];" \n "};";
+				name="GRAD_grandPrix_OSW_position_2";
 				disableSimulation=1;
 			};
 			id=28;
@@ -604,7 +328,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item13
+		class Item5
 		{
 			dataType="Object";
 			class PositionInfo
@@ -639,7 +363,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item14
+		class Item6
 		{
 			dataType="Object";
 			class PositionInfo
@@ -673,7 +397,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item15
+		class Item7
 		{
 			dataType="Object";
 			class PositionInfo
@@ -707,7 +431,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item16
+		class Item8
 		{
 			dataType="Object";
 			class PositionInfo
@@ -742,7 +466,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item17
+		class Item9
 		{
 			dataType="Object";
 			class PositionInfo
@@ -777,43 +501,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item18
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4207.0112,277.51245,7498.4121};
-				angles[]={0,4.421617,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_2_door, GRAD_grandPrix_OSW_position_2_target," \n "GRAD_grandPrix_OSW_position_2_trigger], true];" \n "};";
-				name="GRAD_grandPrix_OSW_position_2";
-				disableSimulation=1;
-			};
-			id=34;
-			type="Sign_Arrow_Blue_F";
-			atlOffset=0.6499939;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item19
+		class Item10
 		{
 			dataType="Object";
 			class PositionInfo
@@ -848,23 +536,25 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item20
+		class Item11
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={5998.5078,10.423141,5647.8379};
-				angles[]={6.2812481,0.19926424,0.00038397242};
+				angles[]={0,0.19926424,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_3_door, GRAD_grandPrix_OSW_position_3_target," \n "GRAD_grandPrix_OSW_position_3_trigger], true];" \n "};";
+				name="GRAD_grandPrix_OSW_position_3";
 				disableSimulation=1;
 			};
 			id=37;
 			type="Land_Shoot_House_Tunnel_Prone_F";
-			atlOffset=0.24354744;
+			atlOffset=0.24354839;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -883,7 +573,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item21
+		class Item12
 		{
 			dataType="Object";
 			class PositionInfo
@@ -918,7 +608,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item22
+		class Item13
 		{
 			dataType="Object";
 			class PositionInfo
@@ -952,7 +642,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item23
+		class Item14
 		{
 			dataType="Object";
 			class PositionInfo
@@ -986,7 +676,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item24
+		class Item15
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1020,7 +710,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item25
+		class Item16
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1054,43 +744,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item26
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5998.458,9.9149027,5647.772};
-				angles[]={0,0.19926424,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_3_door, GRAD_grandPrix_OSW_position_3_target," \n "GRAD_grandPrix_OSW_position_3_trigger], true];" \n "};";
-				name="GRAD_grandPrix_OSW_position_3";
-				disableSimulation=1;
-			};
-			id=43;
-			type="Sign_Arrow_Blue_F";
-			atlOffset=0.95204926;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item27
+		class Item17
 		{
 			dataType="Marker";
 			position[]={1215.592,73.411003,6643.4038};
@@ -1100,7 +754,7 @@ class Mission
 			id=45;
 			atlOffset=-0.0002746582;
 		};
-		class Item28
+		class Item18
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1135,18 +789,20 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item29
+		class Item19
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={6164.7441,9.1789999,3235.2461};
-				angles[]={6.2812481,0.20603612,0.00040142573};
+				angles[]={0,0.20603612,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_4_door, GRAD_grandPrix_OSW_position_4_target," \n "GRAD_grandPrix_OSW_position_4_trigger], true];" \n "};";
+				name="GRAD_grandPrix_OSW_position_4";
 				disableSimulation=1;
 			};
 			id=47;
@@ -1170,7 +826,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item30
+		class Item20
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1205,7 +861,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item31
+		class Item21
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1239,7 +895,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item32
+		class Item22
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1273,7 +929,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item33
+		class Item23
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1308,7 +964,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item34
+		class Item24
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1343,48 +999,12 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item35
+		class Item25
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6164.6929,8.6702604,3235.179};
-				angles[]={0,0.20603612,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_4_door, GRAD_grandPrix_OSW_position_4_target," \n "GRAD_grandPrix_OSW_position_4_trigger], true];" \n "};";
-				name="GRAD_grandPrix_OSW_position_4";
-				disableSimulation=1;
-			};
-			id=53;
-			type="Sign_Arrow_Blue_F";
-			atlOffset=0.33699989;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item36
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1202.71,58.125458,1806.0291};
+				position[]={1202.4164,58.125458,1806.4301};
 				angles[]={0,5.6511488,0};
 			};
 			side="Empty";
@@ -1395,6 +1015,7 @@ class Mission
 			};
 			id=57;
 			type="Land_Target_Oval_F";
+			atlOffset=-0.050498962;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1413,7 +1034,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item37
+		class Item26
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1447,7 +1068,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item38
+		class Item27
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1481,7 +1102,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item39
+		class Item28
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1516,7 +1137,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item40
+		class Item29
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1551,23 +1172,25 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item41
+		class Item30
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8225.0449,21.856426,3580.313};
-				angles[]={6.2816377,5.6083832,6.2819467};
+				position[]={8225.0449,21.856911,3580.313};
+				angles[]={0,5.6083889,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_5_door, GRAD_grandPrix_OSW_position_5_target, GRAD_grandPrix_OSW_position_5_trigger], true];" \n "};";
+				name="GRAD_grandPrix_OSW_position_5";
 				disableSimulation=1;
 			};
 			id=62;
 			type="Land_Shoot_House_Tunnel_Prone_F";
-			atlOffset=-0.003484726;
+			atlOffset=-0.0030002594;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1586,7 +1209,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item42
+		class Item31
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1621,7 +1244,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item43
+		class Item32
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1655,7 +1278,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item44
+		class Item33
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1689,7 +1312,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item45
+		class Item34
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1724,7 +1347,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item46
+		class Item35
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1759,43 +1382,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item47
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={8225.0664,21.348127,3580.228};
-				angles[]={0,5.6083713,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_5_door, GRAD_grandPrix_OSW_position_5_target, GRAD_grandPrix_OSW_position_5_trigger], true];" \n "};";
-				name="GRAD_grandPrix_OSW_position_5";
-				disableSimulation=1;
-			};
-			id=68;
-			type="Sign_Arrow_Blue_F";
-			atlOffset=0.70499992;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item48
+		class Item36
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1829,11 +1416,11 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item49
+		class Item37
 		{
 			dataType="Trigger";
 			position[]={8225.0146,20.269972,3580.2891};
-			angle=5.5954533;
+			angle=5.5954528;
 			class Attributes
 			{
 				name="GRAD_grandPrix_OSW_position_5_trigger";
@@ -1845,7 +1432,7 @@ class Mission
 			id=78;
 			type="EmptyDetectorArea10x10";
 		};
-		class Item50
+		class Item38
 		{
 			dataType="Trigger";
 			position[]={6164.7139,7.96,3235.262};
@@ -1861,7 +1448,7 @@ class Mission
 			id=79;
 			type="EmptyDetectorArea10x10";
 		};
-		class Item51
+		class Item39
 		{
 			dataType="Trigger";
 			position[]={5998.4658,10.480366,5647.8281};
@@ -1878,7 +1465,7 @@ class Mission
 			type="EmptyDetectorArea10x10";
 			atlOffset=1.8907728;
 		};
-		class Item52
+		class Item40
 		{
 			dataType="Trigger";
 			position[]={4206.917,276.45401,7498.4038};
@@ -1894,23 +1481,7 @@ class Mission
 			id=81;
 			type="EmptyDetectorArea10x10";
 		};
-		class Item53
-		{
-			dataType="Trigger";
-			position[]={1220.4653,55.887283,1781.3756};
-			angle=5.4500527;
-			class Attributes
-			{
-				name="GRAD_grandPrix_OSW_position_1_trigger";
-				sizeA=1.5;
-				sizeB=2;
-				sizeC=4;
-				isRectangle=1;
-			};
-			id=82;
-			type="EmptyDetectorArea10x10";
-		};
-		class Item54
+		class Item41
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1944,22 +1515,24 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item55
+		class Item42
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={9782.6494,28.797029,2156.6658};
-				angles[]={6.2824759,1.2047503,0.0018508311};
+				position[]={9782.6494,28.797001,2156.666};
+				angles[]={0,1.2047484,0};
 			};
 			side="Empty";
 			class Attributes
 			{
+				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_6_door, GRAD_grandPrix_OSW_position_6_target, GRAD_grandPrix_OSW_position_6_trigger], true];" \n "};";
+				name="GRAD_grandPrix_OSW_position_6";
 				disableSimulation=1;
 			};
 			id=84;
 			type="Land_Shoot_House_Tunnel_Prone_F";
-			atlOffset=2.5160751;
+			atlOffset=2.5160465;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1978,7 +1551,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item56
+		class Item43
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2012,13 +1585,13 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item57
+		class Item44
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={9781.8213,29.562611,2156.3518};
-				angles[]={0,1.2047501,-0};
+				angles[]={0,1.2047501,0};
 			};
 			side="Empty";
 			flags=4;
@@ -2047,7 +1620,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item58
+		class Item45
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2081,13 +1654,13 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item59
+		class Item46
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={9783.585,28.626068,2157.0305};
-				angles[]={0,1.2047586,-0};
+				angles[]={0,1.2047586,0};
 			};
 			side="Empty";
 			class Attributes
@@ -2115,7 +1688,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item60
+		class Item47
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2149,44 +1722,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item61
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={9782.5635,28.288261,2156.6709};
-				angles[]={0,1.2047484,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_6_door, GRAD_grandPrix_OSW_position_6_target, GRAD_grandPrix_OSW_position_6_trigger], true];" \n "};";
-				name="GRAD_grandPrix_OSW_position_6";
-				disableSimulation=1;
-			};
-			id=90;
-			type="Sign_Arrow_Blue_F";
-			atlOffset=0.13702393;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item62
+		class Item48
 		{
 			dataType="Trigger";
 			position[]={9782.6357,29.072838,2156.7019};
@@ -2203,7 +1739,7 @@ class Mission
 			type="EmptyDetectorArea10x10";
 			atlOffset=1.2948265;
 		};
-		class Item63
+		class Item49
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2238,7 +1774,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item64
+		class Item50
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2272,22 +1808,24 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item65
+		class Item51
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={9570.5908,2.0221415,2721.2239};
-				angles[]={6.2814546,5.7756248,6.2822223};
+				position[]={9570.5908,2.0223804,2721.2241};
+				angles[]={0,5.7756262,0};
 			};
 			side="Empty";
 			class Attributes
 			{
+				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_7_door, GRAD_grandPrix_OSW_position_7_target, GRAD_grandPrix_OSW_position_7_trigger], true];" \n "};";
+				name="GRAD_grandPrix_OSW_position_7";
 				disableSimulation=1;
 			};
 			id=104;
 			type="Land_Shoot_House_Tunnel_Prone_F";
-			atlOffset=0.76476109;
+			atlOffset=0.76499999;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -2306,7 +1844,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item66
+		class Item52
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2340,13 +1878,13 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item67
+		class Item53
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={9571.0195,2.7877228,2720.4482};
-				angles[]={0,5.7756228,-0};
+				angles[]={0,5.7756228,0};
 			};
 			side="Empty";
 			class Attributes
@@ -2374,7 +1912,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item68
+		class Item54
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2408,13 +1946,13 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item69
+		class Item55
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={9570.0977,1.8511803,2722.0989};
-				angles[]={0,5.7756314,-0};
+				angles[]={0,5.7756314,0};
 			};
 			side="Empty";
 			class Attributes
@@ -2442,7 +1980,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item70
+		class Item56
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2476,43 +2014,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item71
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={9570.5977,1.5135772,2721.136};
-				angles[]={0,5.7756085,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_7_door, GRAD_grandPrix_OSW_position_7_target, GRAD_grandPrix_OSW_position_7_trigger], true];" \n "};";
-				name="GRAD_grandPrix_OSW_position_7";
-				disableSimulation=1;
-			};
-			id=110;
-			type="Sign_Arrow_Blue_F";
-			atlOffset=1.462;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item72
+		class Item57
 		{
 			dataType="Trigger";
 			position[]={9570.5576,0.4356294,2721.2061};
@@ -2529,13 +2031,13 @@ class Mission
 			type="EmptyDetectorArea10x10";
 			atlOffset=0.76800001;
 		};
-		class Item73
+		class Item58
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={9549.5381,5.4961686,2762.0747};
-				angles[]={0,5.8113422,-0};
+				angles[]={0,5.8113422,0};
 			};
 			side="Empty";
 			flags=4;
@@ -2564,7 +2066,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item74
+		class Item59
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2599,23 +2101,25 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item75
+		class Item60
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8352.1445,17.810768,784.03754};
-				angles[]={1.8401304e-005,1.5802912,0.0019805485};
+				position[]={8352.1445,17.810789,784.03802};
+				angles[]={0,1.5802909,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_8_door, GRAD_grandPrix_OSW_position_8_target, GRAD_grandPrix_OSW_position_8_trigger], true];" \n "};";
+				name="GRAD_grandPrix_OSW_position_8";
 				disableSimulation=1;
 			};
 			id=114;
 			type="Land_Shoot_House_Tunnel_Prone_F";
-			atlOffset=-0.18202019;
+			atlOffset=-0.18199921;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -2634,7 +2138,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item76
+		class Item61
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2669,13 +2173,13 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item77
+		class Item62
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={8351.2588,18.576349,784.04816};
-				angles[]={0,1.5802902,-0};
+				angles[]={0,1.5802902,0};
 			};
 			side="Empty";
 			class Attributes
@@ -2703,7 +2207,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item78
+		class Item63
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2737,13 +2241,13 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item79
+		class Item64
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={8353.1494,17.639807,784.03375};
-				angles[]={0,1.5802988,-0};
+				angles[]={0,1.5802988,0};
 			};
 			side="Empty";
 			flags=4;
@@ -2772,7 +2276,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item80
+		class Item65
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2807,47 +2311,11 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item81
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={8352.0645,17.302927,784.07501};
-				angles[]={0,1.5802819,-0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_8_door, GRAD_grandPrix_OSW_position_8_target, GRAD_grandPrix_OSW_position_8_trigger], true];" \n "};";
-				name="GRAD_grandPrix_OSW_position_8";
-				disableSimulation=1;
-			};
-			id=120;
-			type="Sign_Arrow_Blue_F";
-			atlOffset=0.52400017;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item82
+		class Item66
 		{
 			dataType="Trigger";
 			position[]={8352.1465,16.223721,784.07544};
-			angle=1.567366;
+			angle=1.5673656;
 			class Attributes
 			{
 				name="GRAD_grandPrix_OSW_position_8_trigger";
@@ -2860,7 +2328,7 @@ class Mission
 			type="EmptyDetectorArea10x10";
 			atlOffset=-0.17900085;
 		};
-		class Item83
+		class Item67
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2894,7 +2362,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item84
+		class Item68
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2929,42 +2397,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item85
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={9999.75,4.2646852,8689.9307};
-				angles[]={0.0016855752,3.6938319,6.2821469};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				disableSimulation=1;
-			};
-			id=124;
-			type="Land_Shoot_House_Tunnel_Prone_F";
-			atlOffset=-0.53610849;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item86
+		class Item69
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2999,13 +2432,13 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item87
+		class Item70
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={10000.219,5.0302653,8690.6816};
-				angles[]={0,3.6938317,-0};
+				angles[]={0,3.6938317,0};
 			};
 			side="Empty";
 			flags=4;
@@ -3034,7 +2467,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item88
+		class Item71
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3068,13 +2501,13 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item89
+		class Item72
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={9999.2305,4.0937228,8689.0713};
-				angles[]={0,3.6938403,-0};
+				angles[]={0,3.6938403,0};
 			};
 			side="Empty";
 			flags=4;
@@ -3103,7 +2536,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item90
+		class Item73
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3138,48 +2571,11 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item91
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={9999.8271,3.7571378,8689.9785};
-				angles[]={0,3.6938314,-0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_9_door, GRAD_grandPrix_OSW_position_9_target, GRAD_grandPrix_OSW_position_9_trigger], true];" \n "};";
-				name="GRAD_grandPrix_OSW_position_9";
-				disableSimulation=1;
-			};
-			id=130;
-			type="Sign_Arrow_Blue_F";
-			atlOffset=0.16208291;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item92
+		class Item74
 		{
 			dataType="Trigger";
 			position[]={9999.7832,2.6772873,8689.9092};
-			angle=-2.6022687;
+			angle=-2.6022685;
 			class Attributes
 			{
 				name="GRAD_grandPrix_OSW_position_9_trigger";
@@ -3192,7 +2588,7 @@ class Mission
 			type="EmptyDetectorArea10x10";
 			atlOffset=-0.53500009;
 		};
-		class Item93
+		class Item75
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3226,7 +2622,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item94
+		class Item76
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3260,22 +2656,24 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item95
+		class Item77
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={682.73041,23.898729,9537.666};
-				angles[]={0.001912069,2.8794818,0.00051320624};
+				position[]={682.72998,23.898245,9537.666};
+				angles[]={0,2.8794789,0};
 			};
 			side="Empty";
 			class Attributes
 			{
+				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_10_door, GRAD_grandPrix_OSW_position_10_target, GRAD_grandPrix_OSW_position_10_trigger], true];" \n "};";
+				name="GRAD_grandPrix_OSW_position_10";
 				disableSimulation=1;
 			};
 			id=134;
 			type="Land_Shoot_House_Tunnel_Prone_F";
-			atlOffset=6.2574844;
+			atlOffset=6.2569981;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -3294,7 +2692,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item96
+		class Item78
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3328,13 +2726,13 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item97
+		class Item79
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={682.50592,24.66431,9538.5225};
-				angles[]={0,2.8794801,-0};
+				angles[]={0,2.8794801,0};
 			};
 			side="Empty";
 			class Attributes
@@ -3362,7 +2760,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item98
+		class Item80
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3396,13 +2794,13 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item99
+		class Item81
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={682.99884,23.727768,9536.6982};
-				angles[]={0,2.8794887,-0};
+				angles[]={0,2.8794887,0};
 			};
 			side="Empty";
 			class Attributes
@@ -3430,7 +2828,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item100
+		class Item82
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3464,43 +2862,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item101
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={682.74817,23.391119,9537.7549};
-				angles[]={0,2.8794789,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_10_door, GRAD_grandPrix_OSW_position_10_target, GRAD_grandPrix_OSW_position_10_trigger], true];" \n "};";
-				name="GRAD_grandPrix_OSW_position_10";
-				disableSimulation=1;
-			};
-			id=140;
-			type="Sign_Arrow_Blue_F";
-			atlOffset=0.41809464;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item102
+		class Item83
 		{
 			dataType="Trigger";
 			position[]={682.76917,22.311308,9537.6758};
@@ -3517,7 +2879,7 @@ class Mission
 			type="EmptyDetectorArea10x10";
 			atlOffset=6.2601776;
 		};
-		class Item103
+		class Item84
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3552,7 +2914,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item104
+		class Item85
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3587,23 +2949,25 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item105
+		class Item86
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5482.0669,219.05089,4082.8401};
-				angles[]={0.00012375817,4.649961,6.2812099};
+				position[]={5482.0669,219.05052,4082.8401};
+				angles[]={0,4.6499586,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_11_door, GRAD_grandPrix_OSW_position_11_target, GRAD_grandPrix_OSW_position_11_trigger], true];" \n "};";
+				name="GRAD_grandPrix_OSW_position_11";
 				disableSimulation=1;
 			};
 			id=144;
 			type="Land_Shoot_House_Tunnel_Prone_F";
-			atlOffset=-0.46763611;
+			atlOffset=-0.46800232;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -3622,7 +2986,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item106
+		class Item87
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3657,13 +3021,13 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item107
+		class Item88
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={5482.9507,219.81648,4082.8904};
-				angles[]={0,4.64996,-0};
+				angles[]={0,4.64996,0};
 			};
 			side="Empty";
 			flags=4;
@@ -3692,7 +3056,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item108
+		class Item89
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3726,13 +3090,13 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item109
+		class Item90
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={5481.0649,218.87994,4082.7688};
-				angles[]={0,4.6499691,-0};
+				angles[]={0,4.6499691,0};
 			};
 			side="Empty";
 			flags=4;
@@ -3761,7 +3125,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item110
+		class Item91
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3796,44 +3160,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item111
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5482.1499,218.54311,4082.8049};
-				angles[]={0,4.6499586,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_11_door, GRAD_grandPrix_OSW_position_11_target, GRAD_grandPrix_OSW_position_11_trigger], true];" \n "};";
-				name="GRAD_grandPrix_OSW_position_11";
-				disableSimulation=1;
-			};
-			id=150;
-			type="Sign_Arrow_Blue_F";
-			atlOffset=0.23283386;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item112
+		class Item92
 		{
 			dataType="Trigger";
 			position[]={5482.0688,217.46382,4082.8};
@@ -3850,7 +3177,7 @@ class Mission
 			type="EmptyDetectorArea10x10";
 			atlOffset=-0.46417236;
 		};
-		class Item113
+		class Item93
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3884,13 +3211,13 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item114
+		class Item94
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={5465.3271,213.83429,4076.2883};
-				angles[]={0,4.4062023,-0};
+				angles[]={0,4.4062023,0};
 			};
 			side="Empty";
 			class Attributes
@@ -3899,6 +3226,305 @@ class Mission
 			id=153;
 			type="snowman";
 			atlOffset=0.52406311;
+		};
+		class Item95
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9999.75,4.2647934,8689.9307};
+				angles[]={0,3.6938324,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_9_door, GRAD_grandPrix_OSW_position_9_target, GRAD_grandPrix_OSW_position_9_trigger], true];" \n "};";
+				name="GRAD_grandPrix_OSW_position_9";
+				disableSimulation=1;
+			};
+			id=124;
+			type="Land_Shoot_House_Tunnel_Prone_F";
+			atlOffset=-0.53600025;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item96
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1216.7015,57.264088,1783.1846};
+				angles[]={1.5707964,1.5707973,0.80124635};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=158;
+			type="Land_Shoot_House_Wall_Stand_F";
+			atlOffset=-0.31643295;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item97
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1217.781,57.17757,1783.196};
+				angles[]={0,5.4819398,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="if (isServer) then {" \n "   this setVariable [""GRAD_grandPrix_OSW_info"", [GRAD_grandPrix_OSW_position_1_door, GRAD_grandPrix_OSW_position_1_target, GRAD_grandPrix_OSW_position_1_trigger], true];" \n "};";
+				name="GRAD_grandPrix_OSW_position_1";
+				disableSimulation=1;
+			};
+			id=159;
+			type="Land_Shoot_House_Tunnel_Prone_F";
+			atlOffset=-0.31799698;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item98
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1218.8324,57.2626,1783.2197};
+				angles[]={4.7152424,4.7103424,5.4819417};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=160;
+			type="Land_Shoot_House_Wall_Stand_F";
+			atlOffset=-0.31865692;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item99
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1218.4156,57.942631,1782.5771};
+				angles[]={0,5.4819398,-0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=161;
+			type="Land_Shoot_House_Wall_Stand_F";
+			atlOffset=0.36651611;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item100
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1217.2676,58.211533,1783.6846};
+				angles[]={1.5707964,2.230581e-006,0.80124635};
+			};
+			side="Empty";
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=162;
+			type="Land_Shoot_House_Wall_Stand_F";
+			atlOffset=0.62656021;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item101
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1217.0553,57.006088,1783.8903};
+				angles[]={0,5.4819489,-0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=163;
+			type="Land_Shoot_House_Wall_Stand_F";
+			atlOffset=-0.58053207;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item102
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1217.057,56.988628,1783.891};
+				angles[]={3.1415927,3.9428558,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="GRAD_grandPrix_OSW_position_1_door";
+			};
+			id=164;
+			type="Land_Shoot_House_Wall_Crouch_F";
+			atlOffset=-0.59799576;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item103
+		{
+			dataType="Trigger";
+			position[]={1217.754,55.590355,1783.1689};
+			angle=5.469007;
+			class Attributes
+			{
+				name="GRAD_grandPrix_OSW_position_1_trigger";
+				sizeA=1.5;
+				sizeB=2;
+				sizeC=4;
+				isRectangle=1;
+			};
+			id=165;
+			type="EmptyDetectorArea10x10";
+			atlOffset=-0.31499481;
 		};
 	};
 };

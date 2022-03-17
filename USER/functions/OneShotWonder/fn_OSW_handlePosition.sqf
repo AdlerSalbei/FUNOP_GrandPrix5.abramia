@@ -55,8 +55,18 @@ private _firedHandler =
 ] call CBA_fnc_addBISEventHandler;
 
 // handle actual position
-player setPosASL (getPosASL _position);
-player setDir (getDir _position);
+private _posPos = getPosASL _position;
+_posPos set [2, (_posPos # 2) + 0.698];
+private _angleToDoor = _position getDir _door;
+private _previousAngleToDoor = player getVariable ["GRAD_grandPrix_OSW_anglePreviousPosition", _angleToDoor];
+private _offset = (((getDir player) - _previousAngleToDoor) + 180) mod 360 - 180;
+private _newAngle = _angleToDoor + _offset;
+private _visited = player getVariable ["GRAD_grandPrix_OSW_visited", []];
+if (_visited isEqualTo []) then {
+	_newAngle = _angleToDoor;
+};
+player setPosASL _posPos;
+player setDir _newAngle;
 hintSilent "";
 
 sleep 1;
@@ -120,7 +130,8 @@ sleep 0.5;
 // clean up
 _target removeAllEventHandlers "hit";
 player removeAllEventHandlers "fired";
-private _visited = player getVariable ["GRAD_grandPrix_OSW_visited", []];
+player setVariable ["GRAD_grandPrix_OSW_anglePreviousPosition", _angleToDoor];
+
 _visited pushBackUnique _position;
 player setVariable ["GRAD_grandPrix_OSW_visited", _visited, true];
 player setVariable ["GRAD_grandPrix_OSW_currentCompleted", true, true];
