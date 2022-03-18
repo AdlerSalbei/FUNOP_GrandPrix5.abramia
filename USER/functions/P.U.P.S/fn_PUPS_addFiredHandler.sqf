@@ -16,12 +16,14 @@ player addEventHandler ["Fired", {
 	player setVariable ["GRAD_grandPrix_PUPS_isFlying", true];
 
 	private _initPos = getPosASL player;
-	player attachTo [_projectile, [0,0,0]];
+	player attachTo [_projectile, [0,-0.3,0]];
+	private _initalVec = player weaponDirection (currentWeapon player);
+	private _initialAngle = [_initalVec, [_initalVec#0, _initalVec#1, 0]] call grad_grandPrix_fnc_PUPS_angleBetween3dVectors;
 
 	private _handle = 
 	[ 
 		{ 
-			_args params ["_projectile", "_initPos"];
+			_args params ["_projectile", "_initPos", "_initialAngle"];
 			
 			if (!(alive _projectile) || !(player in (attachedObjects _projectile))) exitWith {
 				[_handle] call CBA_fnc_removePerFrameHandler;
@@ -34,7 +36,7 @@ player addEventHandler ["Fired", {
 							player setVariable ["GRAD_grandPrix_PUPS_movementCenter", getPosASL player];
 						};
 						player setVariable ["GRAD_grandPrix_PUPS_isFlying", false];
-						[player getVariable ["GRAD_grandPrix_PUPS_currentTarget", objNull], 10] call grad_grandPrix_fnc_PUPS_handleIndicator;
+						[player getVariable ["GRAD_grandPrix_PUPS_currentTarget", objNull], 5] call grad_grandPrix_fnc_PUPS_handleIndicator;
 					},
 					[_initPos],
 					0.5
@@ -47,11 +49,18 @@ player addEventHandler ["Fired", {
 				player setPosAsl _initPos;
 				[_handle] call CBA_fnc_removePerFrameHandler;
 				player setVariable ["GRAD_grandPrix_PUPS_isFlying", false];
-				[player getVariable ["GRAD_grandPrix_PUPS_currentTarget", objNull], 10] call grad_grandPrix_fnc_PUPS_handleIndicator;
+				[player getVariable ["GRAD_grandPrix_PUPS_currentTarget", objNull], 5] call grad_grandPrix_fnc_PUPS_handleIndicator;
 			};
+
+			private _vel1 = velocity _projectile;
+			private _vel2 = [_vel1#0, _vel1#1, 0];
+			private _angle = [_vel1, _vel2] call grad_grandPrix_fnc_PUPS_angleBetween3dVectors;
+			_angle = _angle - _initialAngle;
+			systemChat format ["angle: %1° | _initialAngle: %2 | vel: %3", _angle, _initialAngle, _vel1];
+			[player, [_angle, 0, 0]] call grad_grandPrix_fnc_PUPS_setPitchBankYaw;
 		}, 
 		0, 
-		[_projectile, _initPos] 
+		[_projectile, _initPos, _initialAngle] 
 	] call CBA_fnc_addPerFrameHandler;
 }];
 

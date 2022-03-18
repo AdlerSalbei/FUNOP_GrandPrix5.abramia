@@ -1,6 +1,6 @@
 if !(canSuspend) exitWith { _this spawn GRAD_grandPrix_fnc_PUPS_handleStationLocal; };
 
-params [["_targets", [GRAD_grandPrix_PUPS_target_1, GRAD_grandPrix_PUPS_target_2, GRAD_grandPrix_PUPS_target_3, GRAD_grandPrix_PUPS_target_4]]];
+params [["_targets", [GRAD_grandPrix_PUPS_target_1, GRAD_grandPrix_PUPS_target_2, GRAD_grandPrix_PUPS_target_3, GRAD_grandPrix_PUPS_target_4, GRAD_grandPrix_PUPS_target_5, GRAD_grandPrix_PUPS_target_6]]];
 
 private _firedEH = [] call GRAD_grandPrix_fnc_PUPS_addFiredHandler;
 
@@ -21,7 +21,7 @@ player setVariable ["GRAD_grandPrix_PUPS_movementCenter", getPosASL player];
 				hint "you moved too far!";
 			};
 		}, 
-		0, 
+		0,
 		[] 
 	] call CBA_fnc_addPerFrameHandler;
 

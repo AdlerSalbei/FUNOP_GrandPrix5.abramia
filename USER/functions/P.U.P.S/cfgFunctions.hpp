@@ -4,4 +4,6 @@ class PUPS {
 	class PUPS_addFiredHandler {};
 	class PUPS_cutDecimals {};
 	class PUPS_handleIndicator {};
+	class PUPS_setPitchBankYaw {};
+	class PUPS_angleBetween3dVectors {};
 };

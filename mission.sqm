@@ -2,13 +2,13 @@ version=54;
 class EditorData
 {
 	moveGridStep=1;
-	angleGridStep=0.2617994;
+	angleGridStep=1.5707964;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=10;
+	toggles=2;
 	class ItemIDProvider
 	{
-		nextID=1522;
+		nextID=1538;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7459.3306,146.71471,9141.6289};
-		dir[]={-0.96604002,-0.092680648,-0.24124226};
-		up[]={-0.08992368,0.99569565,-0.022456232};
-		aside[]={-0.24228536,-2.7939677e-008,0.97021556};
+		pos[]={5854.3145,64.370575,1410.4849};
+		dir[]={0.91640991,-0.3635042,-0.16750395};
+		up[]={0.35758001,0.93159258,-0.065359466};
+		aside[]={-0.17980388,0,-0.98370248};
 	};
 };
 binarizationWanted=0;
@@ -50,13 +50,14 @@ addons[]=
 	"A3_Structures_F_Bootcamp_VR_Helpers",
 	"A3_Ui_F",
 	"A3_Rocks_F_Sharp",
+	"A3_Modules_F",
 	"A3_Structures_F_Training"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=19;
+		items=20;
 		class Item0
 		{
 			className="A3_Data_F_Exp_A";
@@ -182,6 +183,13 @@ class AddonsMetaData
 			url="https://www.arma3.com";
 		};
 		class Item18
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item19
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
@@ -4046,7 +4054,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=25;
+		items=33;
 		class Item0
 		{
 			dataType="Logic";
@@ -4931,11 +4939,11 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={9711.3896,44.899841,8951.0498};
-						angles[]={0,0.866723,-0};
+						position[]={5856.9814,61.925171,1410.0978};
+						angles[]={0,1.851773,0};
 					};
 					side="West";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 						rank="CORPORAL";
@@ -4994,7 +5002,7 @@ class Mission
 					};
 					id=1497;
 					type="gm_ge_army_rifleman_g3a3_80_ols";
-					atlOffset=0.26636887;
+					atlOffset=3.8146973e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5096,14 +5104,14 @@ class Mission
 			{
 			};
 			id=1496;
-			atlOffset=0.26636887;
+			atlOffset=3.8146973e-006;
 		};
 		class Item17
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={9854.335,35.10693,9291.7285};
+				position[]={6956.8926,34.64521,1144.3693};
 			};
 			side="Empty";
 			flags=1;
@@ -5113,7 +5121,7 @@ class Mission
 			};
 			id=1502;
 			type="VR_3DSelector_01_complete_F";
-			atlOffset=0.82564545;
+			atlOffset=0.92314529;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -5125,7 +5133,7 @@ class Mission
 						class data
 						{
 							singleType="BOOL";
-							value=0;
+							value=1;
 						};
 					};
 				};
@@ -5147,17 +5155,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={9274.8369,47.778389,9160.7705};
+				position[]={9135.0781,162.11923,1767.6429};
 			};
 			side="Empty";
-			flags=5;
+			flags=1;
 			class Attributes
 			{
 				name="GRAD_grandPrix_PUPS_target_2";
 			};
 			id=1508;
 			type="VR_3DSelector_01_complete_F";
-			atlOffset=-0.032299042;
+			atlOffset=8.2449646;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -5169,7 +5177,7 @@ class Mission
 						class data
 						{
 							singleType="BOOL";
-							value=0;
+							value=1;
 						};
 					};
 				};
@@ -5181,7 +5189,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6008.4658,166.46996,2582.1035};
+				position[]={6023.9165,166.21024,2566.0886};
 				angles[]={6.1874762,0,6.183517};
 			};
 			side="Empty";
@@ -5191,47 +5199,57 @@ class Mission
 			};
 			id=1514;
 			type="Land_SharpRock_apart";
-			atlOffset=0.85496521;
+			atlOffset=0.61291504;
 		};
 		class Item21
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5990.9355,171.07436,2565.8794};
+				position[]={6013.585,169.74391,2552.5789};
 				angles[]={6.1728058,0.61586165,0.0098316763};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				disableSimulation=1;
 			};
 			id=1513;
 			type="Land_SharpRock_spike";
-			atlOffset=0.68943787;
+			atlOffset=-1.2279968;
 		};
 		class Item22
 		{
-			dataType="Object";
+			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={9854.6738,34.178497,9293.9189};
-				angles[]={0,3.1864302,0};
+				position[]={5934.3799,41.588387,1386.1781};
 			};
-			side="Empty";
-			class Attributes
-			{
-				disableSimulation=1;
-			};
-			id=1517;
-			type="Land_Shoot_House_Panels_F";
-			atlOffset=2.7707119;
+			areaSize[]={5,-1,5};
+			flags=1;
+			id=1523;
+			type="ModuleHideTerrainObjects_F";
+			atlOffset=7.6293945e-006;
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
 					class Value
 					{
 						class data
@@ -5241,31 +5259,40 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				nAttributes=2;
 			};
 		};
 		class Item23
 		{
-			dataType="Object";
+			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={8584.7344,58.900921,9682.8271};
+				position[]={9109.165,149.27252,1760.4938};
 			};
-			side="Empty";
+			areaSize[]={5,-1,5};
 			flags=1;
-			class Attributes
-			{
-				name="GRAD_grandPrix_PUPS_target_3";
-			};
-			id=1519;
-			type="VR_3DSelector_01_complete_F";
-			atlOffset=0.71660614;
+			id=1525;
+			type="ModuleHideTerrainObjects_F";
+			atlOffset=3.3015137;
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
 					class Value
 					{
 						class data
@@ -5275,7 +5302,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				nAttributes=2;
 			};
 		};
 		class Item24
@@ -5283,17 +5310,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7440.2319,143.27809,9133.4961};
+				position[]={9134.5811,160.70001,1772.3474};
+				angles[]={1.5787899,0.00027925268,0.015603243};
 			};
 			side="Empty";
-			flags=5;
 			class Attributes
 			{
-				name="GRAD_grandPrix_PUPS_target_4";
+				disableSimulation=1;
 			};
-			id=1521;
-			type="VR_3DSelector_01_complete_F";
-			atlOffset=0.041213989;
+			id=1529;
+			type="Land_Shoot_House_Wall_Long_F";
+			atlOffset=12.465118;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -5306,6 +5333,293 @@ class Mission
 						{
 							singleType="BOOL";
 							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item25
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9134.6465,160.71561,1768.7152};
+				angles[]={1.5787899,0.00027925268,0.015603243};
+			};
+			side="Empty";
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=1530;
+			type="Land_Shoot_House_Wall_Long_F";
+			atlOffset=12.490097;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item26
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9134.707,160.74489,1765.0559};
+				angles[]={1.5787899,0.00027925268,0.015603243};
+			};
+			side="Empty";
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=1531;
+			type="Land_Shoot_House_Wall_Long_F";
+			atlOffset=6.2460327;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item27
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7898.0835,54.755657,1777.5529};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				name="GRAD_grandPrix_PUPS_target_3";
+			};
+			id=1532;
+			type="VR_3DSelector_01_complete_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item28
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6025.5996,165.81496,2554.1077};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+				name="GRAD_grandPrix_PUPS_target_4";
+			};
+			id=1533;
+			type="VR_3DSelector_01_complete_F";
+			atlOffset=0.99180603;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item29
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={6028.8662,163.55481,2556.1606};
+			};
+			areaSize[]={5,-1,5};
+			flags=1;
+			id=1534;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item30
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={6040.249,162.96584,2551.7751};
+			};
+			areaSize[]={5,-1,5};
+			flags=1;
+			id=1535;
+			type="ModuleHideTerrainObjects_F";
+			atlOffset=-1.5258789e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item31
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4373.9214,259.90173,1758.6206};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				name="GRAD_grandPrix_PUPS_target_5";
+			};
+			id=1536;
+			type="VR_3DSelector_01_complete_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item32
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5672.0464,66.852524,1463.235};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+				name="GRAD_grandPrix_PUPS_target_6";
+			};
+			id=1537;
+			type="VR_3DSelector_01_complete_F";
+			atlOffset=8.5235214;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
 						};
 					};
 				};
