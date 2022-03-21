@@ -3,6 +3,8 @@
 *   Ist in CfgFunctions included.
 */
 
-class GRAD_USER {
+class GRAD_grandPirx {
+	tag = "grad_grandPrix";
 
+	#include "functions\points\cfgFunctions.hpp"	
 };
