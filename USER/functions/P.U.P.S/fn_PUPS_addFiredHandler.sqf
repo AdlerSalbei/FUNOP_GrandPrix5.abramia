@@ -8,7 +8,7 @@ player addEventHandler ["Fired", {
 
 	private _shotsFired = player getVariable ["GRAD_grandPrix_PUPS_shotsFired", 0];
 	_shotsFired = _shotsFired + 1;
-	player setVariable ["GRAD_grandPrix_PUPS_shotsFired", _shotsFired];
+	player setVariable ["GRAD_grandPrix_PUPS_shotsFired", _shotsFired, true];
 
 	private _vel = velocity player;
 	if ((abs (_vel#0) > 0.01) || (abs (_vel#1) > 0.01) || (abs (_vel#2) > 0.01)) exitWith {};
@@ -23,7 +23,7 @@ player addEventHandler ["Fired", {
 	private _handle = 
 	[ 
 		{ 
-			_args params ["_projectile", "_initPos", "_initialAngle"];
+			_args params ["_projectile", "_initPos", "_initalVec", "_initialAngle"];
 			
 			if (!(alive _projectile) || !(player in (attachedObjects _projectile))) exitWith {
 				[_handle] call CBA_fnc_removePerFrameHandler;
@@ -54,13 +54,14 @@ player addEventHandler ["Fired", {
 
 			private _vel1 = velocity _projectile;
 			private _vel2 = [_vel1#0, _vel1#1, 0];
-			private _angle = [_vel1, _vel2] call grad_grandPrix_fnc_PUPS_angleBetween3dVectors;
-			_angle = _angle - _initialAngle;
-			systemChat format ["angle: %1° | _initialAngle: %2 | vel: %3", _angle, _initialAngle, _vel1];
-			[player, [_angle, 0, 0]] call grad_grandPrix_fnc_PUPS_setPitchBankYaw;
+			private _pitchAngle = [_vel1, _vel2] call grad_grandPrix_fnc_PUPS_angleBetween3dVectors;
+			_pitchAngle = _pitchAngle - _initialAngle;
+
+			// systemChat format ["angle: %1° | _initialAngle: %2 | vel: %3", _pitchAngle, _initialAngle, _vel1];
+			[player, [_pitchAngle, 0, 0]] call grad_grandPrix_fnc_PUPS_setPitchBankYaw;
 		}, 
 		0, 
-		[_projectile, _initPos, _initialAngle] 
+		[_projectile, _initPos, _initalVec, _initialAngle] 
 	] call CBA_fnc_addPerFrameHandler;
 }];
 

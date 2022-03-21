@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=1.5707964;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=2;
+	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1538;
+		nextID=1548;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5854.3145,64.370575,1410.4849};
-		dir[]={0.91640991,-0.3635042,-0.16750395};
-		up[]={0.35758001,0.93159258,-0.065359466};
-		aside[]={-0.17980388,0,-0.98370248};
+		pos[]={5847.1016,64.476761,1413.4288};
+		dir[]={0.91018838,-0.41126826,-0.049148712};
+		up[]={0.41067001,0.9115144,-0.022175523};
+		aside[]={-0.053919848,0,-0.99854535};
 	};
 };
 binarizationWanted=0;
@@ -36,28 +36,26 @@ addons[]=
 	"A3_Characters_F",
 	"A3_Modules_F_Heli_Misc",
 	"gm_characters_ge_characters",
-	"grad_grandprix5_functions",
-	"A3_Weapons_F_Acc",
-	"ace_realisticnames",
-	"ace_scopes",
-	"ace_vector",
 	"A3_Weapons_F",
 	"gm_weapons_items_ge_items",
 	"gm_weapons_items",
-	"ace_atragmx",
-	"ace_rangecard",
-	"ace_kestrel4500",
 	"A3_Structures_F_Bootcamp_VR_Helpers",
 	"A3_Ui_F",
 	"A3_Rocks_F_Sharp",
 	"A3_Modules_F",
-	"A3_Structures_F_Training"
+	"A3_Structures_F_Training",
+	"A3_Structures_F_Enoch_Military_Training",
+	"GRAD_flag",
+	"A3_Structures_F_Orange_Humanitarian_Flags",
+	"A3_Structures_F_Orange_Signs_Special",
+	"A3_Structures_F_Civ_InfoBoards",
+	"A3_Misc_F_Helpers"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=20;
+		items=18;
 		class Item0
 		{
 			className="A3_Data_F_Exp_A";
@@ -102,97 +100,85 @@ class AddonsMetaData
 		};
 		class Item6
 		{
-			className="grad_grandprix5_functions";
-			name="grad_grandprix5_functions";
-		};
-		class Item7
-		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item8
-		{
-			className="ace_scopes";
-			name="ACE3 - Scopes";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item9
-		{
-			className="ace_vector";
-			name="ACE3 - Vector";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item10
+		class Item7
 		{
 			className="gm_weapons_items_ge_items";
 			name="gm_weapons_items_ge_items";
 			author="Global Mobilization";
 			url="global-mobilization.com";
 		};
-		class Item11
+		class Item8
 		{
 			className="gm_weapons_items";
 			name="gm_weapons_items";
 			author="Global Mobilization";
 			url="global-mobilization.com";
 		};
-		class Item12
-		{
-			className="ace_atragmx";
-			name="ACE3 - ATragMX";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item13
-		{
-			className="ace_rangecard";
-			name="ACE3 - Range Card";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item14
-		{
-			className="ace_kestrel4500";
-			name="ACE3 - Kestrel 4500";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item15
+		class Item9
 		{
 			className="A3_Structures_F_Bootcamp";
 			name="Arma 3 Bootcamp Update - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item16
+		class Item10
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item17
+		class Item11
 		{
 			className="A3_Rocks_F";
 			name="Arma 3 - Rocks and Stones";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item18
+		class Item12
 		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item19
+		class Item13
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item14
+		{
+			className="A3_Structures_F_Enoch_Military";
+			name="Arma 3 Contact Platform - Military Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item15
+		{
+			className="GRAD_flag";
+			name="GRAD_flag";
+			author="Gruppe Adler";
+			url="https://www.gruppe-adler.de/international/";
+		};
+		class Item16
+		{
+			className="A3_Structures_F_Orange";
+			name="Arma 3 Orange - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item17
+		{
+			className="A3_Misc_F";
+			name="Arma 3 - 3D Aids and Helpers";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -200,7 +186,9 @@ class AddonsMetaData
 };
 dlcs[]=
 {
-	"gm"
+	"gm",
+	"Enoch",
+	"ORANGE"
 };
 randomSeed=938738;
 class ScenarioData
@@ -4054,7 +4042,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=33;
+		items=40;
 		class Item0
 		{
 			dataType="Logic";
@@ -4939,7 +4927,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5856.9814,61.925171,1410.0978};
+						position[]={5851.2114,62.021847,1412.8069};
 						angles[]={0,1.851773,0};
 					};
 					side="West";
@@ -4950,43 +4938,10 @@ class Mission
 						isPlayer=1;
 						class Inventory
 						{
-							class primaryWeapon
-							{
-								name="GrandPrix_srifle_LRR_F";
-								optics="optic_lrps";
-								class primaryMuzzleMag
-								{
-									name="1000Rnd_408_Mag";
-									ammoLeft=1000;
-								};
-							};
-							class binocular
-							{
-								name="ACE_Vector";
-							};
 							class uniform
 							{
 								typeName="gm_ge_army_uniform_soldier_80_ols";
 								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="ACE_ATragMX";
-										count=1;
-									};
-									class Item1
-									{
-										name="ACE_RangeCard";
-										count=1;
-									};
-									class Item2
-									{
-										name="ACE_Kestrel4500";
-										count=1;
-									};
-								};
 							};
 							class vest
 							{
@@ -5002,7 +4957,6 @@ class Mission
 					};
 					id=1497;
 					type="gm_ge_army_rifleman_g3a3_80_ols";
-					atlOffset=3.8146973e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5104,7 +5058,6 @@ class Mission
 			{
 			};
 			id=1496;
-			atlOffset=3.8146973e-006;
 		};
 		class Item17
 		{
@@ -5143,12 +5096,12 @@ class Mission
 		class Item18
 		{
 			dataType="Marker";
-			position[]={4995.9175,345.93066,4410.0425};
+			position[]={5835.6816,345.93066,1422.3167};
 			name="marker_7";
 			text="P.U.P.S";
 			type="mil_objective";
 			id=1507;
-			atlOffset=-42.929321;
+			atlOffset=285.33884;
 		};
 		class Item19
 		{
@@ -5624,6 +5577,260 @@ class Mission
 					};
 				};
 				nAttributes=1;
+			};
+		};
+		class Item33
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5856.9131,62.823795,1407.047};
+				angles[]={0,4.8964686,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=1541;
+			type="Land_ShootingPos_Roof_01_F";
+			atlOffset=0.029998779;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item34
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5858.1035,62.851818,1413.8636};
+				angles[]={0,4.8964686,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=1542;
+			type="Land_ShootingPos_Roof_01_F";
+			atlOffset=-0.027759552;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item35
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5857.4551,65.757622,1418.3669};
+				angles[]={0,3.095865,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=1543;
+			type="GRAD_flag_gruppeAdlerWhite";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item36
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5854.5288,65.672691,1403.135};
+				angles[]={0,0.34564501,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=1544;
+			type="Flag_IDAP_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item37
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5835.4092,61.624161,1424.375};
+				angles[]={0,1.5387172,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=1545;
+			type="SignAd_Sponsor_01_IDAP_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item38
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5849.5889,62.569618,1411.9827};
+				angles[]={6.2791882,4.8964686,0.033981562};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this] call grad_grandPrix_fnc_PUPS_initStation";
+			};
+			id=1546;
+			type="Land_InfoStand_V2_F";
+			atlOffset=-0.0029983521;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item39
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5852.729,62.461235,1411.329};
+				angles[]={6.2791882,4.8964686,0.033981562};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="grad_grandPrix_fnc_PUPS_returnPoint";
+				disableSimulation=1;
+			};
+			id=1547;
+			type="Sign_Arrow_Blue_F";
+			atlOffset=0.048999786;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 	};
