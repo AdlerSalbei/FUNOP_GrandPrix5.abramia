@@ -62,6 +62,7 @@ private _groupTime = 0;
 {
 	private _playerTime = _x getVariable ["GRAD_grandPrix_OSW_totalTime", 0];
 	_groupTime = _groupTime + _playerTime;
+	removeAllWeapons _x;
 } forEach _players;
 
 private _points = [_group, _groupTime, BEST_TIME * (count _players), 1000, "One Shot Wonder"] call grad_grandPrix_fnc_addTime;
