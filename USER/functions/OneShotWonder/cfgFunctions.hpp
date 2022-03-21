@@ -4,4 +4,5 @@ class oneShotWonder {
 	class OSW_isComplete {};
 	class OSW_endStationLocal {};
 	class OSW_handlePosition {};
+	class OSW_initStation {};
 };

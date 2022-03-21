@@ -102,7 +102,7 @@ if (_hit) then {
 	hintSilent "Treffer!";
 } else {
 	hintSilent "Verfehlt!";
-	_timeTaken = _timeTaken + 20;
+	_timeTaken = _timeTaken + 10;
 };
 systemChat str _timeTaken;
 private _totalPlayerTime = player getVariable ["GRAD_grandPrix_OSW_totalTime", 0];
