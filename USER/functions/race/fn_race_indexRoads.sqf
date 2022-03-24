@@ -1,3 +1,5 @@
+if !(isServer) exitWith {};
+
 private _polygon = [];
 private _polygonMarkerStart = 1; 
 private _polygonMarkerEnd = 217; 
