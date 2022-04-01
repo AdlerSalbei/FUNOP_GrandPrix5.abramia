@@ -1,5 +1,7 @@
 params ["_group"];
 
+player setVariable ["GRAD_grandPrix_race_startTime", [time, servertime] select isMultiplayer, true];
+
 private _handle = 
 [
 	{
@@ -10,7 +12,7 @@ private _handle =
 
 		[_group] spawn grad_grandPrix_fnc_race_resetOnRoad;
 	},
-	1,
+	5,
 	[_group]
 ] call CBA_fnc_addPerFrameHandler;
 

@@ -8,4 +8,8 @@ class race {
 	class race_resetOnRoad {};
 	class race_handleCarPartLocal {};
 	class race_handlePlanePartLocal {};
+	class race_handleJetskiPartLocal {};
+	class race_introCam {};
+	class race_initStation {};
+	class race_handleStation {};
 };

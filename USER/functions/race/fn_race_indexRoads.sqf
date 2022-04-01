@@ -48,3 +48,18 @@ while { _currentRoadPos inPolygon _polygon } do {
 };
 
 missionNamespace setVariable ["GRAD_grandPrix_race_roadMap", _roadMap, true];
+
+
+private _allSpheres = [];
+private _sphereMarkerStart = 3; 
+private _sphereMarkerEnd = 157;
+for "_i" from _sphereMarkerStart to _sphereMarkerEnd do
+{   
+	private _sphere = call(compile format ["GRAD_grandPrix_race_introCamPos_%1",_i]);
+	private _pos = getPosASL _sphere;
+	_pos set [2, 2];
+	_sphere setPosASL _pos;
+	_allSpheres pushBack _sphere;
+};
+
+missionNamespace setVariable ["GRAD_grandPrix_race_jetskiCamPos", _allSpheres, true];

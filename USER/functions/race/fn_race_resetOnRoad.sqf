@@ -33,7 +33,7 @@ private _dir = 0;
 
 _group deleteAt (_group find player);
 
-waitUntil { count (_group select { (_x distance2d _nearestRoad) < 30 }) isEqualTo 0 };
+waitUntil { count (_group select { (_x distance2d _nearestRoad) < 40 }) isEqualTo 0 };
 
 private _veh = vehicle player;
 _veh setVelocity [0,0,0];
