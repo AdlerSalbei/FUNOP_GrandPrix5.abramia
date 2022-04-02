@@ -1,4 +1,6 @@
 class water {
 	file = "USER\functions\water";
-	class addCollisionHandler {};
+	class water_addCollisionHandler {};
+	class water_setupVehicle {};
+	class water_leakageHandler {};
 };

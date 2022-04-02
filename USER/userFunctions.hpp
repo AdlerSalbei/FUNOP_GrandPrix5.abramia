@@ -6,5 +6,6 @@
 class GRAD_grandPirx {
 	tag = "grad_grandPrix";
 
-	#include "functions\points\cfgFunctions.hpp"	
+	#include "functions\points\cfgFunctions.hpp"
+	#include "functions\water\cfgFunctions.hpp"
 };
