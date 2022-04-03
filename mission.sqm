@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1501;
+		nextID=1504;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3075.9192,52.690483,3371.3442};
-		dir[]={0.53070074,-0.53839284,-0.65459138};
-		up[]={0.33906198,0.84269398,-0.41821507};
-		aside[]={-0.77678424,0,-0.62976688};
+		pos[]={3085.7419,42.732178,3357.2925};
+		dir[]={-0.34544045,-0.4366166,-0.83068454};
+		up[]={-0.16764902,0.89964771,-0.40314746};
+		aside[]={-0.92334431,-1.4901161e-008,0.38397306};
 	};
 };
 binarizationWanted=0;
@@ -4835,7 +4835,8 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="if (isServer) then {" \n "   [this] call grad_grandPrix_fnc_water_setupVehicle;" \n "};";
+				init="if (isServer) then {" \n "   [this, group player] call grad_grandPrix_fnc_water_setupVehicle;" \n "};";
+				name="test";
 				textures="Red";
 			};
 			id=1496;

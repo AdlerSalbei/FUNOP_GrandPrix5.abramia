@@ -13,7 +13,7 @@ _veh addEventHandler ["EpeContactStart", {
 	private _remainingWater = (_water - _waterLost) max 0;
 	_object1 setVariable ["GRAD_grandPrix_water_currentVolume", _remainingWater, true];
 
-	systemChat format ["lost: %1 | remaining: %2", _waterLost, _water - _waterLost];
+	// systemChat format ["lost: %1 | remaining: %2", _waterLost, _water - _waterLost];
 
 	[
 		{
