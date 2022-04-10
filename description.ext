@@ -136,3 +136,14 @@ class CfgGradCivs {
 class CfgGradFortifications {
     #include "USER\userFortifications.hpp"
 };
+
+
+class CfgLeaflets
+{
+	class West // Configuration for 1Rnd_Leaflets_West_F
+	{
+		text = ""; // Text shown when previewing the leaflet full-screen. Ideally should be localized, so even player who cannot read the image can get the information
+		texture = "\mdl\tex\9.paa"; // Leaflet texture shown when previewing the leaflet full-screen
+		model = "\mdl\obj\9.p3d"; // In-flight model. Optional; When undefined, generic white leaflet is used
+	}
+};

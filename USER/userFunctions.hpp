@@ -8,4 +8,5 @@ class GRAD_grandPirx {
 
 	#include "functions\points\cfgFunctions.hpp"
 	#include "functions\water\cfgFunctions.hpp"
+	#include "functions\ZiG\cfgFunctions.hpp"
 };
