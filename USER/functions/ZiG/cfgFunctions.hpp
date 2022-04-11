@@ -5,7 +5,7 @@ class ZiG {
 	class ZiG_handlePlaneCapture {};
 	class ZiG_handlePlanes {};
 	class ZiG_handleMoney {};
-	class ZiG_createHolders {
+	class ZiG_setupRequirements {
 		postInit = 1;
 	};
 };
