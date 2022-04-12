@@ -59,7 +59,7 @@
 						missionNamespace setVariable ["GRAD_grandPrix_ZiG_planesDone", true, true];
 					},
 					[],
-					8
+					9
 				] call CBA_fnc_waitAndExecute;
 			},
 			[_planes, _drones, _handle]

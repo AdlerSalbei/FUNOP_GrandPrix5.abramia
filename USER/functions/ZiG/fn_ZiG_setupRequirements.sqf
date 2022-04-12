@@ -28,7 +28,7 @@ for "_i" from _positionsMarkerStart to _positionsMarkerEnd do
 	_tree setDir (getDir _x) + selectRandom [-(random 5), random 5];
 } foreach _positions;
 
-// sleep 10;
+sleep 5;
 
 // setup weapon holders that will hold the money
 private _holders = [];

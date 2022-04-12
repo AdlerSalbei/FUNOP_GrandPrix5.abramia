@@ -8,4 +8,7 @@ class ZiG {
 	class ZiG_setupRequirements {
 		postInit = 1;
 	};
+	class ZiG_initStation {};
+	class ZiG_createMarkerLocal {};
+	class ZiG_handlePolice {};
 };
