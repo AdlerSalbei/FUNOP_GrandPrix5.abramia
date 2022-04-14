@@ -11,4 +11,6 @@ class ZiG {
 	class ZiG_initStation {};
 	class ZiG_createMarkerLocal {};
 	class ZiG_handlePolice {};
+	class ZiG_unconsciousHandlerLocal {};
+	class ZiG_initStationEnd {};
 };

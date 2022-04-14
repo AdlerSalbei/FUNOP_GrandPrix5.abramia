@@ -32,7 +32,7 @@ sleep 5;
 
 // setup weapon holders that will hold the money
 private _holders = [];
-for "_i" from 1 to 1337 do {
+for "_i" from 1 to 1000 do {
 	private _pos = GRAD_grandPrix_ZiG_moneyArea call BIS_fnc_randomPosTrigger;
 	_pos set [2, 0.002];
 	private _posASL = AGLToASL _pos;

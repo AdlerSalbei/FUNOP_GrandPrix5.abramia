@@ -5,25 +5,25 @@ class EditorData
 	angleGridStep=1.5707964;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=2;
+	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=6203;
+		nextID=6212;
 	};
 	class MarkerIDProvider
 	{
-		nextID=9;
+		nextID=10;
 	};
 	class LayerIndexProvider
 	{
-		nextID=418;
+		nextID=536;
 	};
 	class Camera
 	{
-		pos[]={869.51001,15.574413,7746.5239};
-		dir[]={0.19322947,-0.2435002,0.95045781};
-		up[]={0.048511576,0.96990085,0.23861891};
-		aside[]={0.97995359,0,-0.19922601};
+		pos[]={879.64972,87.966698,7817.4839};
+		dir[]={-0.25719297,-0.75553852,-0.60250604};
+		up[]={-0.29662329,0.6551041,-0.69487637};
+		aside[]={-0.91971004,-1.4901161e-008,0.39259851};
 	};
 };
 binarizationWanted=0;
@@ -212,13 +212,24 @@ addons[]=
 	"A3_Props_F_Tank_Military_TankAcc",
 	"A3_Ui_F",
 	"GRAD_flag",
-	"A3_Structures_F_Civ_InfoBoards"
+	"A3_Structures_F_Civ_InfoBoards",
+	"A3_Weapons_F_Mod_SMGs_SMG_03",
+	"FHQ_Accessories",
+	"ace_smallarms",
+	"ace_ballistics",
+	"tfar_handhelds",
+	"UK3CB_Factions_Facegear",
+	"A3_Characters_F_Orange_Headgear",
+	"UK3CB_Factions_CW_US_B_LATE",
+	"ace_medical_treatment",
+	"UK3CB_Factions_ADA_B",
+	"A3_Structures_F_Bootcamp_VR_Helpers"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=74;
+		items=83;
 		class Item0
 		{
 			className="A3_Modules_F_Curator";
@@ -715,6 +726,67 @@ class AddonsMetaData
 			author="Gruppe Adler";
 			url="https://www.gruppe-adler.de/international/";
 		};
+		class Item74
+		{
+			className="FHQ_Accessories";
+			name="FHQ_Accessories";
+			author="Alwarren";
+		};
+		class Item75
+		{
+			className="ace_smallarms";
+			name="ACE3 - Small Arms";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item76
+		{
+			className="ace_ballistics";
+			name="ACE3 - Ballistics";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item77
+		{
+			className="tfar_handhelds";
+			name="tfar_handhelds";
+			url="https://github.com/michail-nikolaev/task-force-arma-3-radio";
+		};
+		class Item78
+		{
+			className="UK3CB_Factions_Equipment";
+			name="3CB Factions - Equipment";
+			author="3 Commando Brigade";
+			url="www.3commandobrigade.com";
+		};
+		class Item79
+		{
+			className="A3_Characters_F_Orange";
+			name="Arma 3 Orange - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item80
+		{
+			className="UK3CB_Factions_CW_US";
+			name="3CB Factions - CW_US";
+			author="3 Commando Brigade";
+			url="www.3commandobrigade.com";
+		};
+		class Item81
+		{
+			className="ace_medical_treatment";
+			name="ACE3 - Medical Treatment";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item82
+		{
+			className="UK3CB_Factions_ADA";
+			name="3CB Factions - ADA";
+			author="3 Commando Brigade";
+			url="www.3commandobrigade.com";
+		};
 	};
 };
 dlcs[]=
@@ -729,7 +801,10 @@ dlcs[]=
 	"Orange",
 	"Curator",
 	"Kart",
-	"AoW"
+	"AoW",
+	"OfficialMod",
+	"FHQ_Accessories",
+	"UK3CB_Factions"
 };
 randomSeed=938738;
 class ScenarioData
@@ -4619,7 +4694,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=193;
+		items=198;
 		class Item0
 		{
 			dataType="Logic";
@@ -65962,6 +66037,7 @@ class Mission
 							};
 							id=5243;
 							type="Land_ConcreteWall_01_l_gate_F";
+							atlOffset=9.5367432e-007;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -66758,7 +66834,7 @@ class Mission
 							};
 							id=5269;
 							type="C_SUV_01_F";
-							atlOffset=0.095000267;
+							atlOffset=0.095001221;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -100388,7 +100464,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={873.75507,14.976805,7767.3545};
-				angles[]={0,3.7169464,-0};
+				angles[]={0,3.7169464,0};
 			};
 			side="Empty";
 			flags=5;
@@ -100421,7 +100497,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={867.24152,14.976805,7760.0981};
-				angles[]={0,0.7412796,-0};
+				angles[]={0,0.7412796,0};
 			};
 			side="Empty";
 			flags=5;
@@ -100454,7 +100530,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={869.83447,11.588325,7764.5981};
-				angles[]={0,5.5180664,-0};
+				angles[]={0,5.5180664,0};
 			};
 			side="Empty";
 			flags=4;
@@ -100634,6 +100710,112 @@ class Mission
 					class Attributes
 					{
 						isPlayer=1;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="SMG_03C_TR_black";
+								optics="FHQ_optic_AC11704";
+								firemode="SMG_03C_TR_black:Single";
+								class primaryMuzzleMag
+								{
+									name="50Rnd_570x28_SMG_03";
+									ammoLeft=50;
+								};
+							};
+							class handgun
+							{
+								name="hgun_P07_blk_F";
+								class primaryMuzzleMag
+								{
+									name="30Rnd_9x21_Mag";
+									ammoLeft=30;
+								};
+							};
+							class uniform
+							{
+								typeName="UK3CB_CW_US_B_LATE_U_SF_CombatUniform_02_BLK";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="SmokeShell";
+										count=2;
+										ammoLeft=1;
+									};
+								};
+								class ItemCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="ACE_fieldDressing";
+										count=18;
+									};
+									class Item1
+									{
+										name="ACE_tourniquet";
+										count=4;
+									};
+									class Item2
+									{
+										name="ACE_salineIV_500";
+										count=2;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="UK3CB_ADA_B_V_TacVest_BLK";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=2;
+									class Item0
+									{
+										name="50Rnd_570x28_SMG_03";
+										count=8;
+										ammoLeft=50;
+									};
+									class Item1
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+								};
+							};
+							class backpack
+							{
+								typeName="B_Messenger_Black_F";
+								isBackpack=1;
+								class MagazineCargo
+								{
+									items=2;
+									class Item0
+									{
+										name="30Rnd_9x21_Mag";
+										count=3;
+										ammoLeft=30;
+									};
+									class Item1
+									{
+										name="HandGrenade";
+										count=3;
+										ammoLeft=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="TFAR_anprc152";
+							gps="ItemGPS";
+							goggles="UK3CB_G_Balaclava2_BLK";
+							headgear="H_PASGT_basic_black_F";
+						};
 					};
 					id=6202;
 					type="I_G_Survivor_F";
@@ -100673,6 +100855,122 @@ class Mission
 			{
 			};
 			id=6201;
+		};
+		class Item193
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={224.78307,9.150074,8544.1826};
+				angles[]={0.04141666,0.27581438,0.0022863813};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this] call grad_grandPrix_fnc_ZiG_initStationEnd;";
+			};
+			id=6203;
+			type="Land_InfoStand_V2_F";
+			atlOffset=-9.5367432e-007;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item194
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={222.65683,11.534267,8535.8955};
+				angles[]={0,0.27581438,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=6204;
+			type="Land_EntranceGate_01_narrow_F";
+			atlOffset=-0.22181416;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item195
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={223.86433,8.724431,8540.8037};
+				angles[]={0.039289359,0.27566144,0.011167523};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=6206;
+			type="VR_Area_01_circle_4_grey_F";
+			atlOffset=0.042140961;
+		};
+		class Item196
+		{
+			dataType="Trigger";
+			position[]={223.864,9.1819334,8540.7998};
+			class Attributes
+			{
+				name="grad_grandPrix_fnc_ZiG_moneyCollection";
+				sizeA=4;
+				sizeB=4;
+				sizeC=5;
+			};
+			id=6208;
+			type="EmptyDetectorArea10x10";
+			atlOffset=0.5;
+		};
+		class Item197
+		{
+			dataType="Trigger";
+			position[]={873.06555,11,7761.3359};
+			class Attributes
+			{
+				name="grad_grandPrix_fnc_ZiG_teleport";
+				sizeA=4;
+				sizeB=4;
+				sizeC=5;
+			};
+			id=6210;
+			type="EmptyDetectorArea10x10";
 		};
 	};
 };

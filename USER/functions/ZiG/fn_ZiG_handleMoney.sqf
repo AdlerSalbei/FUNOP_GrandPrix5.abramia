@@ -4,3 +4,9 @@ private _holders = missionNamespace getVariable ["GRAD_grandPrix_ZiG_weaponHolde
 } forEach _holders;
 
 systemChat "money placed";
+
+waitUntil { !(missionNameSpace getVariable ["GRAD_grandPrix_ZiG_collectingActive", true]) };
+
+{
+	clearMagazineCargoGlobal _x;
+} forEach _holders;

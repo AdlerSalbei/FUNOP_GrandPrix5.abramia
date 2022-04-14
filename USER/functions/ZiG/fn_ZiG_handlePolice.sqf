@@ -1,5 +1,6 @@
 params ["_group"];
 
+missionNamespace setVariable ["GRAD_grandPrix_ZiG_aiSpawned", [], true];
 private _spawns = [];
 private _spawnMarkerStart = 1; 
 private _spawnMarkerEnd = 8; 
@@ -23,7 +24,21 @@ ZiG_fnc_canBeSeen = {
 private _aiSpawned = [];
 private _aiGoal = (count (units _group)) * 4;
 private _skill = 0.1;
-private _sleep = 480;
+private _sleep = 450;
+
+[
+	{
+		!(missionNameSpace getVariable ["GRAD_grandPrix_ZiG_collectingActive", true])
+	},
+	{
+		private _ai = missionNamespace getVariable ["GRAD_grandPrix_ZiG_aiSpawned", []];
+		{
+			deleteVehicle _x;			
+		} forEach _ai;
+	},
+	[]
+] call CBA_fnc_waitUntilAndExecute;
+
 while { missionNameSpace getVariable ["GRAD_grandPrix_ZiG_collectingActive", true] } do {
 	private _aiActive = count (_aiSpawned select { alive _x });
 	for [{_i = _aiActive}, {_i < _aiGoal}, {_i = _i + 1}] do {
@@ -41,10 +56,15 @@ while { missionNameSpace getVariable ["GRAD_grandPrix_ZiG_collectingActive", tru
 		_aiSpawned pushBack _unit;
 		[_unit, 800] spawn lambs_wp_fnc_taskRush;
 	};
+	missionNamespace setVariable ["GRAD_grandPrix_ZiG_aiSpawned", _aiSpawned, true];
 	if !(missionNameSpace getVariable ["GRAD_grandPrix_ZiG_collectingActive", true]) exitWith {};
 
-	_aiGoal = _aiGoal + 2;
+	_aiGoal = _aiGoal + (count (units _group));
 	_skill = (_skill + 0.05) min 1;
 	_sleep = (_sleep - 60) max 15;
 	sleep _sleep;
 };
+
+{
+	deleteVehicle _x;	
+} forEach _aiSpawned;
