@@ -4,3 +4,23 @@ if (didJIP) then {
 
 ["InitializePlayer", [player,true]] call BIS_fnc_dynamicGroups;
 grad_template_ratingEH = player addEventHandler ["HandleRating",{0}];
+
+
+["grad_grandPrix_race_triggerCountdown", {
+    playSound "raceCountdown";
+    ["<img size= '6' style='vertical-align:middle' shadow='false' image='data\3.paa'/>",0,0,1,0] spawn BIS_fnc_dynamicText;
+
+    [{
+
+        ["<img size= '6' style='vertical-align:middle' shadow='false' image='data\2.paa'/>",0,0,1,0] spawn BIS_fnc_dynamicText;
+
+        [{
+
+            ["<img size= '6' style='vertical-align:middle' shadow='false' image='data\1.paa'/>",0,0,1,0] spawn BIS_fnc_dynamicText;
+
+            [{
+                ["<img size= '6' style='vertical-align:middle' shadow='false' image='data\go.paa'/>",0,0,1,0] spawn BIS_fnc_dynamicText;
+            }, [], 1] call CBA_fnc_waitAndExecute;
+        }, [], 1] call CBA_fnc_waitAndExecute;
+    }, [], 1] call CBA_fnc_waitAndExecute;
+}] call CBA_fnc_addEventHandler;
