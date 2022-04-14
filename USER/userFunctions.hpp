@@ -3,7 +3,11 @@
 *   Ist in CfgFunctions included.
 */
 
-class grad_grandPrix {
+class GRAD_grandPrix {
 	tag = "grad_grandPrix";
-	#include "functions\P.U.P.S\CfgFunctions.hpp"
+
+	#include "functions\points\cfgFunctions.hpp"
+	#include "functions\water\cfgFunctions.hpp"
+  #include "functions\OneShotWonder\CfgFunctions.hpp"
+  #include "functions\P.U.P.S\CfgFunctions.hpp"
 };
