@@ -18,6 +18,7 @@ private _cars = [];
 	_carPositions deleteAt 0;
 
 	_x moveInDriver _car;
+	[_x, false] remoteExec ["allowDamage", _x];
 } forEach (units _group);
 
 sleep 2;

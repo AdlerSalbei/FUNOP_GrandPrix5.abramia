@@ -34,6 +34,7 @@ for "_i" from _housesMarkerStart to _housesMarkerEnd do
 {
 	_x setVariable ["GRAD_grandPrix_ZiG_savedLoadout", getUnitLoadout _x, true];
 	_x setUnitLoadout [["SMG_03C_TR_black","","","FHQ_optic_AC11704",["50Rnd_570x28_SMG_03",50],[],""],[],["hgun_P07_blk_F","","","",["30Rnd_9x21_Mag",30],[],""],["UK3CB_CW_US_B_LATE_U_SF_CombatUniform_02_BLK",[["ACE_fieldDressing",18],["ACE_tourniquet",4],["ACE_salineIV_500",2],["SmokeShell",2,1]]],["UK3CB_ADA_B_V_TacVest_BLK",[["50Rnd_570x28_SMG_03",8,50],["SmokeShell",1,1]]],["B_Messenger_Black_F",[["30Rnd_9x21_Mag",3,30]]],"H_PASGT_basic_black_F","UK3CB_G_Balaclava2_BLK",[],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch",""]];
+	[_x, true] remoteExec ["allowDamage", _x];
 } forEach (units _group);
 
 [] call grad_grandPrix_fnc_ZiG_handlePlanes;
@@ -42,7 +43,9 @@ waitUntil { missionNamespace getVariable ["GRAD_grandPrix_ZiG_planesDone", false
 
 [] spawn grad_grandPrix_fnc_ZiG_handleMoney;
 
-//To-do: handle Stage-Start
+sleep 3;
+["grad_grandPrix_race_triggerCountdown", [], units _group] call CBA_fnc_targetEvent;
+sleep 3;
 
 missionNameSpace setVariable ["GRAD_grandPrix_ZiG_collectingActive", true, true];
 private _policeHandle = [_group] spawn grad_grandPrix_fnc_ZiG_handlePolice;
@@ -96,6 +99,7 @@ if (missionNamespace getVariable ["GRAD_grandPrix_ZiG_endPressed", false]) then 
 	{
 		[_x] remoteExec ["deleteMarker", _unit];
 	} forEach _markers;
+	[_x, false] remoteExec ["allowDamage", _x];
 } forEach (units _group);
 
 [_group, _money, "Zeit ist Geld"] call grad_grandPrix_fnc_addPoints;

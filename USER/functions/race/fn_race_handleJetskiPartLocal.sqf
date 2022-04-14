@@ -13,7 +13,7 @@ _jetSki setDir 236.028;
 
 _jetSki setPos _playerPos;
 player moveInDriver _jetSki;
-_jetSki setVelocityModelSpace [0, _velY min 90, 10];
+_jetSki setVelocityModelSpace [0, _velY min 50, 10];
 
 _jetSki allowDamage false;
 
