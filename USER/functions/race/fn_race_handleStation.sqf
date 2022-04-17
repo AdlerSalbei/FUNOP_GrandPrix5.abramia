@@ -46,7 +46,6 @@ private _totalTime = 0;
 } forEach (units _group);
 
 private _averageTime = _totalTime / (count (units _group));
-params ["_group", "_time", "_bestTime", "_maxPoints", "_stage", ["_worstTime", -1]];
 private _points = [_group, _averageTime, 470, 1000, "Race"] call GRAD_grandPrix_fnc_addTime;
 
 private _allInstructors = [];
