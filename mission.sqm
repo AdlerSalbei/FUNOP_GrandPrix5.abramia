@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=5355;
+		nextID=5375;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=558;
+		nextID=618;
 	};
 	class Camera
 	{
-		pos[]={8952.8057,83.698227,6393.0439};
-		dir[]={0.65891093,-0.74708319,-0.088600114};
-		up[]={0.74053222,0.6646055,-0.099577546};
-		aside[]={-0.13327932,-5.6148565e-007,-0.99115944};
+		pos[]={9123.623,160.23843,6393.77};
+		dir[]={0.33963063,-0.46561602,0.81723964};
+		up[]={0.17869548,0.88497019,0.42998719};
+		aside[]={0.92344111,-2.9109651e-007,-0.3837671};
 	};
 };
 binarizationWanted=0;
@@ -85,8 +85,9 @@ addons[]=
 	"A3_Structures_F_Dominants_Lighthouse",
 	"A3_Boat_F_Gamma_Boat_Civil_04",
 	"A3_Structures_F_Ind_Shed",
-	"A3_Structures_F_Training",
-	"A3_Structures_F_Exp_Commercial_Shop_Town_05"
+	"A3_Structures_F_Exp_Commercial_Shop_Town_05",
+	"A3_Structures_F_Civ_Constructions",
+	"A3_Structures_F_Ind_Crane"
 };
 class AddonsMetaData
 {
@@ -4202,7 +4203,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=146;
+		items=151;
 		class Item0
 		{
 			dataType="Layer";
@@ -8703,7 +8704,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={9264.5664,57.218666,6378.7344};
+				position[]={9190.291,57.233604,6406.6396};
 				angles[]={0,1.5404688,0};
 			};
 			side="Empty";
@@ -8785,39 +8786,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={9193.165,55.65831,6372.8755};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				disableSimulation=1;
-			};
-			id=5327;
-			type="Land_Cargo40_IDAP_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item137
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={9169.7012,65.847038,6379.8809};
 			};
 			side="Empty";
@@ -8846,7 +8814,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item138
+		class Item137
 		{
 			dataType="Object";
 			class PositionInfo
@@ -8880,7 +8848,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item139
+		class Item138
 		{
 			dataType="Object";
 			class PositionInfo
@@ -8913,7 +8881,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item140
+		class Item139
 		{
 			dataType="Object";
 			class PositionInfo
@@ -8947,113 +8915,12 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item141
+		class Item140
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={9169.7773,55.081341,6391.3931};
-				angles[]={0,1.5707964,0};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-				disableSimulation=1;
-			};
-			id=5345;
-			type="BlockConcrete_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item142
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={9169.709,55.081341,6400.3906};
-				angles[]={0,1.5707964,0};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-				disableSimulation=1;
-			};
-			id=5347;
-			type="BlockConcrete_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item143
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={9164.2559,55.081341,6403.5503};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-				disableSimulation=1;
-			};
-			id=5348;
-			type="BlockConcrete_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item144
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={9185.8936,55.376797,6378.3867};
+				position[]={9187.7109,55.376797,6378.3823};
 				angles[]={0,1.5707964,0};
 			};
 			side="Empty";
@@ -9064,14 +8931,14 @@ class Mission
 			id=5353;
 			type="Land_Shop_Town_05_addon_F";
 		};
-		class Item145
+		class Item141
 		{
 			dataType="Trigger";
 			position[]={8973.0859,54.330002,6392.0098};
 			class Attributes
 			{
 				condition="this && (vehicle player) in thisList";
-				onActivation="if (local _x) then {" \n "_x allowDamage false;" \n "_driver getVariable [""GRANDPRIX_DD_startTime"", -1]; " \n " " \n "if (_driver isNotEqualTo -1) exitWith {}; " \n " " \n "_driver setVariable [""GRANDPRIX_DD_startTime"", serverTime, false];};" \n "";
+				onActivation="{" \n "if (local _x) then {" \n "private _driver = driver _x;" \n "" \n "systemchat format ["" %1, %2"", _x, _driver];" \n "" \n "" \n "_x allowDamage false;" \n "_driver allowDamage false;" \n "" \n "" \n "private _startTime = _driver getVariable [""GRANDPRIX_DD_startTime"", -1]; " \n "" \n "if (_startTime isNotEqualTo -1) exitWith {}; " \n " " \n "_driver setVariable [""GRANDPRIX_DD_startTime"", serverTime, false];" \n "};" \n "}forEach thisList;";
 				sizeA=4;
 				sizeB=5;
 				sizeC=4;
@@ -9080,6 +8947,151 @@ class Mission
 				isRectangle=1;
 			};
 			id=5354;
+			type="EmptyDetector";
+		};
+		class Item142
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9188.3936,54.330002,6384.9941};
+				angles[]={-0,4.657289,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=5358;
+			type="Land_Pipes_large_F";
+		};
+		class Item143
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9187.5303,54.330002,6384.9668};
+				angles[]={-0,4.657289,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=5359;
+			type="Land_Pipes_large_F";
+		};
+		class Item144
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9187.9707,55.05085,6384.9434};
+				angles[]={0,4.657289,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=5360;
+			type="Land_Pipes_large_F";
+			atlOffset=0.45179367;
+		};
+		class Item145
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9196.667,72.616653,6390.4575};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=5362;
+			type="Land_Crane_F";
+		};
+		class Item146
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9187.8955,55.540001,6397.8306};
+				angles[]={-0,4.6944447,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=5369;
+			type="Land_HBarrier_01_big_4_green_F";
+		};
+		class Item147
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9169.9277,55.09341,6391.5107};
+				angles[]={-0,4.7280517,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=5371;
+			type="Land_HBarrier_01_wall_6_green_F";
+		};
+		class Item148
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9169.7764,55.09341,6399.7949};
+				angles[]={-0,4.7280517,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=5372;
+			type="Land_HBarrier_01_wall_6_green_F";
+		};
+		class Item149
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9163.457,55.09341,6403.7134};
+				angles[]={-0,3.2317433,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=5373;
+			type="Land_HBarrier_01_wall_6_green_F";
+		};
+		class Item150
+		{
+			dataType="Trigger";
+			position[]={9194.3047,54.323811,6406.4692};
+			class Attributes
+			{
+				condition="this && (vehicle player) in thisList";
+				onActivation="{" \n "if (local _x) then {" \n "private _driver = driver _x;" \n "" \n "private _startTime = _driver getVariable [""GRANDPRIX_DD_startTime"", -1]; " \n "" \n "if (_startTime isEqualTo -1) exitWith {};" \n " " \n "private _endTime = serverTime; " \n " " \n "systemChat format [""Start: %1, End: %2, Result: %3"", _startTime, _endTime, _endTime - _startTime];" \n "};" \n "}forEach thisList;";
+				sizeA=4;
+				sizeB=5;
+				sizeC=4;
+				repeatable=1;
+				activationBy="WEST";
+				isRectangle=1;
+			};
+			id=5374;
 			type="EmptyDetector";
 		};
 	};
