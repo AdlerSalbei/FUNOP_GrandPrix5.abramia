@@ -8,7 +8,6 @@ class GRAD_grandPrix {
 /*
 	#include "functions\points\cfgFunctions.hpp"
 	#include "functions\race\cfgFunctions.hpp"
-
 	#include "functions\water\cfgFunctions.hpp"
 	#include "functions\ZiG\cfgFunctions.hpp"
   	#include "functions\OneShotWonder\CfgFunctions.hpp"
