@@ -3,11 +3,8 @@
 *   Ist in CfgFunctions included.
 */
 
-class GRAD_USER {
-    class redLightGreenLight {
-        file = USER\functions\redLightGreenLight;
+class GRAD_grandPrix {
+    tag = "GRAD_grandPrix";
 
-        class burstFire {};
-        class rotateTurret {};
-    };
+    #include "functions\redLightGreenLight\CfgFunctions.hpp"
 };
