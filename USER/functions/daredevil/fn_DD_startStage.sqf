@@ -13,4 +13,4 @@ private _group = group _player;
 	params ["_target", "_group"];
 
 	[_target, _group] call grad_grandPrix_fnc_DD_handleStage;
-}, [_target, _group], 1] call CBA_fnc_waitAndExecute;
+}, [_target, _group], 3] call CBA_fnc_waitAndExecute;

@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=5515;
+		nextID=5516;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={9044.877,77.582024,6367.0938};
-		dir[]={0.42268735,-0.79095083,0.44258583};
-		up[]={0.54632699,0.61177838,0.57204807};
-		aside[]={0.72322601,-5.2619725e-008,-0.69071186};
+		pos[]={6131.0293,31.436741,5704.8267};
+		dir[]={-0.050964244,-0.53936434,0.84053242};
+		up[]={-0.032643829,0.84206831,0.53837872};
+		aside[]={0.99816895,-8.4223757e-009,0.060522556};
 	};
 };
 binarizationWanted=0;
@@ -4232,8 +4232,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6131.2578,6.4492202,5730.0962};
-						angles[]={6.2213264,1.6558901,0.020159321};
+						position[]={6130.8989,6.4515114,5730.25};
+						angles[]={6.2213264,1.6822524,0.020159321};
 					};
 					side="West";
 					flags=6;
@@ -4243,14 +4243,14 @@ class Mission
 					};
 					id=5145;
 					type="B_crew_F";
-					atlOffset=-9.5367432e-007;
+					atlOffset=-4.7683716e-007;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=5141;
-			atlOffset=-9.5367432e-007;
+			atlOffset=-4.7683716e-007;
 		};
 		class Item1
 		{
@@ -8464,7 +8464,7 @@ class Mission
 			class Attributes
 			{
 				condition="this && (vehicle player) in thisList";
-				onActivation="{" \n "if (local _x) then {" \n "private _driver = driver _x;" \n "" \n "_x allowDamage false;" \n "_driver allowDamage false;" \n "" \n "private _startTime = _driver getVariable [""GRAD_grandPrix_DD_startTime"", -1]; " \n "" \n "if (_startTime isNotEqualTo -1) exitWith {}; " \n " " \n "_driver setVariable [""GRANDPRIX_DD_startTime"", [time, servertime] select isMultiplayer, false];" \n "};" \n "}forEach thisList;";
+				onActivation="{" \n "if (local _x) then {" \n "private _driver = driver _x;" \n "" \n "_x allowDamage false;" \n "_driver allowDamage false;" \n "" \n "private _startTime = _driver getVariable [""GRAD_grandPrix_DD_startTime"", -1]; " \n "" \n "if (_startTime isNotEqualTo -1) exitWith {}; " \n " " \n "_driver setVariable [""GRAD_grandPrix_DD_startTime"", [time, servertime] select isMultiplayer, false];" \n "};" \n "}forEach thisList;";
 				sizeA=4;
 				sizeB=5;
 				sizeC=4;
@@ -8753,7 +8753,7 @@ class Mission
 			class Attributes
 			{
 				condition="this && (vehicle player) in thisList";
-				onActivation="{" \n "if (local _x) then {" \n "private _driver = driver _x;" \n "" \n "private _startTime = _driver getVariable [""GRAD_grandPrix_DD_startTime"", -1]; " \n "" \n "if (_startTime isEqualTo -1) exitWith {};" \n " " \n "private _endTime = [time, servertime] select isMultiplayer; " \n " " \n "_driver setVariable [""GRAD_grandPrix_DD_endTime"", _endTime];" \n "" \n "{" \n "_x setVariable [""GRAD_grandPrix_DD_complete"", true];" \n "}forEach crew _x;" \n "" \n "};" \n "}forEach thisList;";
+				onActivation="{ " \n " if (local _x) then {  " \n "  private _vehicle = _x; " \n "  private _driver = driver _x; " \n " " \n "  private _startTime = _driver getVariable [""GRAD_grandPrix_DD_startTime"", -1];  " \n " " \n "  if (_startTime isEqualTo -1) exitWith {}; " \n "    " \n "  private _endTime = [time, servertime] select isMultiplayer;  " \n "    " \n "  _driver setVariable [""GRAD_grandPrix_DD_endTime"", _endTime]; " \n " " \n "  {  " \n "   _x setVariable [""GRAD_grandPrix_DD_complete"", true, true]; " \n "  }forEach crew _vehicle; " \n " }; " \n "}forEach thisList;";
 				sizeA=4;
 				sizeB=5;
 				sizeC=4;
@@ -9691,7 +9691,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={9010.8652,56.525955,6318.2568};
+				position[]={9010.8652,57.408627,6318.2568};
 			};
 			side="Empty";
 			flags=5;
@@ -9701,7 +9701,6 @@ class Mission
 			};
 			id=5404;
 			type="Land_Grave_obelisk_F";
-			atlOffset=-0.88267136;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -10293,8 +10292,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8963.082,56.080051,6299.8872};
-				angles[]={0,1.5707964,0};
+				position[]={8963.082,56.962723,6299.8872};
+				angles[]={-0,1.5707964,0};
 			};
 			side="Empty";
 			flags=4;
@@ -10304,7 +10303,6 @@ class Mission
 			};
 			id=5422;
 			type="B_APC_Tracked_01_rcws_F";
-			atlOffset=-0.88267136;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -10510,7 +10508,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={9035.5264,55.427254,6298.2432};
-				angles[]={-0,4.7818546,0};
+				angles[]={0,4.7818546,0};
 			};
 			side="Empty";
 			flags=4;
@@ -11282,8 +11280,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={9050.2979,54.349812,6282.6953};
-				angles[]={0,3.2102864,0};
+				position[]={9050.2979,55.232483,6282.6953};
+				angles[]={-0,3.2102864,0};
 			};
 			side="Empty";
 			flags=4;
@@ -11293,7 +11291,6 @@ class Mission
 			};
 			id=5451;
 			type="MemorialWreath_01_US_Standing_F";
-			atlOffset=-0.88267136;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -12102,6 +12099,7 @@ class Mission
 			};
 			id=5475;
 			type="Land_Church_04_small_lightblue_damaged_F";
+			atlOffset=-3.8146973e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -13002,11 +13000,11 @@ class Mission
 		class Item261
 		{
 			dataType="Trigger";
-			position[]={8973.7148,53.44733,6300.0215};
+			position[]={8973.7148,53.447002,6300.021};
 			class Attributes
 			{
 				condition="this && (vehicle player) in thisList";
-				onActivation="{" \n "if (local _x) then {" \n "private _driver = driver _x;" \n "" \n "_x allowDamage false;" \n "_driver allowDamage false;" \n "" \n "private _startTime = _driver getVariable [""GRAD_grandPrix_DD_startTime"", -1]; " \n "" \n "if (_startTime isNotEqualTo -1) exitWith {}; " \n " " \n "_driver setVariable [""GRANDPRIX_DD_startTime"", [time, servertime] select isMultiplayer, false];" \n "};" \n "}forEach thisList;";
+				onActivation="{" \n "if (local _x) then {" \n "private _driver = driver _x;" \n "" \n "_x allowDamage false;" \n "_driver allowDamage false;" \n "" \n "private _startTime = _driver getVariable [""GRAD_grandPrix_DD_startTime"", -1]; " \n "" \n "if (_startTime isNotEqualTo -1) exitWith {}; " \n " " \n "_driver setVariable [""GRAD_grandPrix_DD_startTime"", [time, servertime] select isMultiplayer, false];" \n "};" \n "}forEach thisList;";
 				sizeA=4;
 				sizeB=5;
 				sizeC=4;
@@ -13016,7 +13014,7 @@ class Mission
 			};
 			id=5502;
 			type="EmptyDetector";
-			atlOffset=-0.88267136;
+			atlOffset=-0.88299942;
 		};
 		class Item262
 		{
