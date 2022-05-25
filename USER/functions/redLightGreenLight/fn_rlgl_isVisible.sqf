@@ -13,7 +13,7 @@ private _intersects = nil;
 	private _pos = _x;
 	// _intersects = lineIntersects [_aaPos, _pos, _aa, _unit];
 	_intersects = [_aa, "VIEW", _unit] checkVisibility [_aaPos, _pos];
-	systemChat str _intersects;	
+	// systemChat str _intersects;	
 	if (_intersects > 0) exitWith {};
 } forEach [_unitFeet, _unitTorso, _unitEyes];
 
