@@ -1,8 +1,8 @@
 params ["_station", "_group"];
 
-if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; };
-
-_station setVariable ["DD_stationIsRunning", true, true];
+if (!isServer) exitWith {
+	_this remoteExec [_fnc_scriptName, 2]; 
+};
 
 ["grad_grandPrix_race_triggerCountdown", [], units _group] call CBA_fnc_targetEvent;
 
@@ -28,8 +28,8 @@ _station setVariable ["DD_stationIsRunning", true, true];
 		private _averageTime = _totalTime / (count _units);
 		private _points = [_group, _averageTime, 470, 1000, "Daredevil"] call GRAD_grandPrix_fnc_addTime;
 
-		[ format ["Ihr hab durchschnittlich %1 gebraucht. Damit habt ihr euch %2 Punkte erspielt!", [_averageTime, "MM:SS.MS"] call BIS_fnc_secondsToString, _points]] remoteExec ["hint", _group];
+		[format ["Ihr hab durchschnittlich %1 gebraucht. Damit habt ihr euch %2 Punkte erspielt!", [_averageTime, "MM:SS.MS"] call BIS_fnc_secondsToString, _points]] remoteExec ["hint", _group];
 
 		_station setVariable ["DD_stationIsRunning", false, true];
-	},7,[_station, _group]] call CBA_fnc_waitAndExecute;
-},[_station, _group]] call CBA_fnc_waitUntilAndExecute;
+	}, _this, 7] call CBA_fnc_waitAndExecute;
+}, [_station, _group]] call CBA_fnc_waitUntilAndExecute;

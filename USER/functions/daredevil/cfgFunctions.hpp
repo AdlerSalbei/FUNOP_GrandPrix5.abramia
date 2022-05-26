@@ -1,5 +1,6 @@
 class daredevil {
 	file = "USER\functions\daredevil";
+	class DD_cameraShot {};
 	class DD_startStage {};
 	class DD_handleInventory {};
 	class DD_handleStage {};

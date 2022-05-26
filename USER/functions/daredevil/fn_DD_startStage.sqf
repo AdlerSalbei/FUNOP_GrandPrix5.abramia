@@ -1,4 +1,8 @@
-params ["_player"];
+params ["_player", "_station"];
+
+if !(_station getVariable ["DD_stationIsRunning", false]) exitWith {};
+
+_station setVariable ["DD_stationIsRunning", true, true];
 
 private _teams = [1,1,2,2] call BIS_fnc_arrayShuffle;
 private _group = group _player;
@@ -10,7 +14,7 @@ private _group = group _player;
 }forEach units _group;
 
 [{
-	params ["_target", "_group"];
+	params ["_station", "_group"];
 
-	[_target, _group] call grad_grandPrix_fnc_DD_handleStage;
-}, [_target, _group], 3] call CBA_fnc_waitAndExecute;
+	[_station, _group] call grad_grandPrix_fnc_DD_handleStage;
+}, [_station, _group], 82] call CBA_fnc_waitAndExecute;
