@@ -1,3 +1,5 @@
+if !(hasInterface) exitWith {};
+
 [] spawn {
 	
 ["Default", 0, false] call BIS_fnc_setPPeffectTemplate;
@@ -20,7 +22,7 @@ showCinemaBorder true;
 
 sleep 1;
 
-cutText ["", "BLACK IN", 2];
+cutText ["", "BLACK IN", 3];
 
 sleep 1;
 

@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=5558;
+		nextID=5562;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6141.6821,18.895206,5729.1079};
-		dir[]={-0.11003797,-0.70846593,-0.69720787};
-		up[]={-0.11045155,0.70571154,-0.69983238};
-		aside[]={-0.98783761,-9.1138645e-008,0.15590732};
+		pos[]={6122.7656,31.309944,5726.7827};
+		dir[]={0.63361651,-0.76498449,-0.11550108};
+		up[]={0.75258756,0.64404625,-0.13718794};
+		aside[]={-0.17933428,1.037879e-007,-0.98379534};
 	};
 };
 binarizationWanted=0;
@@ -88,13 +88,14 @@ addons[]=
 	"A3_Structures_F_Ind_Crane",
 	"GRAD_flag",
 	"A3_Ui_F",
-	"A3_Structures_F_Mil_Helipads"
+	"A3_Structures_F_Mil_Helipads",
+	"gm_characters_ge_characters"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=33;
+		items=34;
 		class Item0
 		{
 			className="Jbad_afghan_houses_c";
@@ -320,6 +321,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item33
+		{
+			className="gm_characters_ge_characters";
+			name="gm_characters_ge_characters";
+			author="Global Mobilization";
+			url="global-mobilization.com";
+		};
 	};
 };
 dlcs[]=
@@ -329,7 +337,8 @@ dlcs[]=
 	"Expansion",
 	"AoW",
 	"Enoch",
-	"Kart"
+	"Kart",
+	"gm"
 };
 randomSeed=938738;
 class ScenarioData
@@ -4218,7 +4227,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=309;
+		items=310;
 		class Item0
 		{
 			dataType="Object";
@@ -8429,7 +8438,7 @@ class Mission
 			class Attributes
 			{
 				condition="this && (vehicle player) in thisList";
-				onActivation="{" \n "if (local _x) then {" \n "private _driver = driver _x;" \n "" \n "_x allowDamage false;" \n "_driver allowDamage false;" \n "" \n "private _startTime = _driver getVariable [""GRAD_grandPrix_DD_startTime"", -1]; " \n "" \n "if (_startTime isNotEqualTo -1) exitWith {}; " \n " " \n "_driver setVariable [""GRAD_grandPrix_DD_startTime"", [time, servertime] select isMultiplayer, false];" \n "};" \n "}forEach thisList;";
+				onActivation="{" \n "if (local _x) then {" \n "[_x] call grad_grandPrix_fnc_DD_startTrigger;" \n "};" \n "}forEach thisList;";
 				sizeA=4;
 				sizeB=5;
 				sizeC=4;
@@ -8718,7 +8727,7 @@ class Mission
 			class Attributes
 			{
 				condition="this && (vehicle player) in thisList";
-				onActivation="{ " \n " if (local _x) then {  " \n "  private _vehicle = _x; " \n "  private _driver = driver _x; " \n " " \n "  private _startTime = _driver getVariable [""GRAD_grandPrix_DD_startTime"", -1];  " \n " " \n "  if (_startTime isEqualTo -1) exitWith {}; " \n "    " \n "  private _endTime = [time, servertime] select isMultiplayer;  " \n "    " \n "  _driver setVariable [""GRAD_grandPrix_DD_endTime"", _endTime]; " \n " " \n "  {  " \n "   _x setVariable [""GRAD_grandPrix_DD_complete"", true, true];" \n "   [_x] remoteExecCall [""grad_grandPrix_fnc_DD_removeInventoryHandler"", _x];" \n "  }forEach crew _vehicle; " \n " }; " \n "}forEach thisList;";
+				onActivation="{ " \n " if (local _x) then { " \n "    [_x] call grad_grandPrix_fnc_DD_finishTrigger;" \n " }; " \n "}forEach thisList;";
 				sizeA=4;
 				sizeB=5;
 				sizeC=4;
@@ -12969,7 +12978,7 @@ class Mission
 			class Attributes
 			{
 				condition="this && (vehicle player) in thisList";
-				onActivation="{" \n "if (local _x) then {" \n "private _driver = driver _x;" \n "" \n "_x allowDamage false;" \n "_driver allowDamage false;" \n "" \n "private _startTime = _driver getVariable [""GRAD_grandPrix_DD_startTime"", -1]; " \n "" \n "if (_startTime isNotEqualTo -1) exitWith {}; " \n " " \n "_driver setVariable [""GRAD_grandPrix_DD_startTime"", [time, servertime] select isMultiplayer, false];" \n "};" \n "}forEach thisList;";
+				onActivation="{" \n "if (local _x) then {" \n "[_x] call grad_grandPrix_fnc_DD_startTrigger;" \n "};" \n "}forEach thisList;";
 				sizeA=4;
 				sizeB=5;
 				sizeC=4;
@@ -13259,7 +13268,7 @@ class Mission
 			class Attributes
 			{
 				condition="this && (vehicle player) in thisList";
-				onActivation="{ " \n " if (local _x) then {  " \n "  private _vehicle = _x; " \n "  private _driver = driver _x; " \n " " \n "  private _startTime = _driver getVariable [""GRAD_grandPrix_DD_startTime"", -1];  " \n " " \n "  if (_startTime isEqualTo -1) exitWith {}; " \n "    " \n "  private _endTime = [time, servertime] select isMultiplayer;  " \n "    " \n "  _driver setVariable [""GRAD_grandPrix_DD_endTime"", _endTime]; " \n " " \n "  {  " \n "   _x setVariable [""GRAD_grandPrix_DD_complete"", true, true];" \n "   [_x] remoteExecCall [""grad_grandPrix_fnc_DD_removeInventoryHandler"", _x];" \n "  }forEach crew _vehicle; " \n " }; " \n "}forEach thisList;";
+				onActivation="{ " \n " if (local _x) then { " \n "    [_x] call grad_grandPrix_fnc_DD_finishTrigger;" \n " }; " \n "}forEach thisList;";
 				sizeA=4;
 				sizeB=5;
 				sizeC=4;
@@ -13285,6 +13294,7 @@ class Mission
 			};
 			id=5512;
 			type="GRAD_flag_gruppeAdlerWhite";
+			atlOffset=-4.7683716e-007;
 		};
 		class Item271
 		{
@@ -13294,6 +13304,7 @@ class Mission
 			text="Daredevil";
 			type="mil_objective";
 			id=5514;
+			atlOffset=0.089183331;
 		};
 		class Item272
 		{
@@ -13876,17 +13887,49 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6139.7949,6.455328,5719.4067};
-				angles[]={0,2.0256424,-0};
+				position[]={6139.7949,6.4553313,5719.4072};
+				angles[]={0,2.0256464,0};
 			};
 			side="Empty";
 			flags=5;
 			class Attributes
 			{
-				init="private _action = [   " \n "    ""teleport_daredevil"",   " \n "    ""Daredevil Stage"",   " \n "    """",   " \n "    {   " \n "  [_player, _target] remoteExecCall [""grad_grandprix_fnc_DD_startStage"", 2, false];   " \n " },   " \n "    {!(_target getVariable [""DD_stationIsRunning"", false])}, " \n " nil, " \n " nil, " \n " [-0.07,0.39,1.47]," \n " 1 " \n "] call ace_interact_menu_fnc_createAction;   " \n "   " \n "[this, 0, [], _action] call ace_interact_menu_fnc_addActionToObject;";
+				init="[this] call grad_grandPrix_fnc_DD_aceAction;";
+				name="DD_phoneBooth";
 			};
 			id=5556;
 			type="land_gm_euro_misc_telh_78_w";
+			atlOffset=4.7683716e-007;
+		};
+		class Item309
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6136.8291,6.4204273,5720.916};
+						angles[]={0,1.9634582,-0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayer=1;
+					};
+					id=5561;
+					type="gm_ge_army_rifleman_g3a3_80_ols";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=5560;
 		};
 	};
 };

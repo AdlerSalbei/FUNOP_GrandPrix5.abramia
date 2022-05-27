@@ -30,6 +30,12 @@ if (!isServer) exitWith {
 
 		[format ["Ihr hab durchschnittlich %1 gebraucht. Damit habt ihr euch %2 Punkte erspielt!", [_averageTime, "MM:SS.MS"] call BIS_fnc_secondsToString, _points]] remoteExec ["hint", _group];
 
-		_station setVariable ["DD_stationIsRunning", false, true];
+		[{
+			params ["_station", "_group"];
+
+			[] remoteExecCall ["grad_grandPrix_fnc_DD_backPort", _group];
+
+			_station setVariable ["DD_stationIsRunning", false, true];
+		}, _this, 5] call CBA_fnc_waitAndExecute;
 	}, _this, 7] call CBA_fnc_waitAndExecute;
 }, [_station, _group]] call CBA_fnc_waitUntilAndExecute;

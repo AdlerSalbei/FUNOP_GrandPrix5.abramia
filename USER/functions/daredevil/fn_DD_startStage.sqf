@@ -1,6 +1,6 @@
 params ["_player", "_station"];
 
-if !(_station getVariable ["DD_stationIsRunning", false]) exitWith {};
+if (_station getVariable ["DD_stationIsRunning", false]) exitWith {};
 
 _station setVariable ["DD_stationIsRunning", true, true];
 
