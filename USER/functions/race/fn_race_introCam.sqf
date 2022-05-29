@@ -55,7 +55,6 @@ private _keyCount = count _sortedKeys;
 	// _cam camCommit (_sleepTime / 2);
 	_cam camSetPos _pos;
 	_cam camCommit _sleepTime;
-	systemChat format ["dist: %1 | time: %2", _dist, _sleepTime];
 	sleep _sleepTime;	
 } forEach _sortedKeys;
 
@@ -73,7 +72,6 @@ _gateCount = count _allGates;
 	_cam camCommit (_sleepTime * 3);
 	_cam camSetPos _pos;
 	_cam camCommit _sleepTime;
-	systemChat format ["dist: %1 | time: %2", _dist, _sleepTime];
 	sleep _sleepTime;		
 } forEach _allGates;
 
@@ -93,7 +91,6 @@ _sphereCount = count _spheres;
 	// _cam camCommit (_sleepTime * 3);
 	_cam camSetPos _pos;
 	_cam camCommit _sleepTime;
-	systemChat format ["dist: %1 | time: %2", _dist, _sleepTime];
 	sleep _sleepTime;		
 } forEach _spheres;
 
