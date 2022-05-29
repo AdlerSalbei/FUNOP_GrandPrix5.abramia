@@ -57,7 +57,6 @@ player addEventHandler ["Fired", {
 			private _pitchAngle = [_vel1, _vel2] call grad_grandPrix_fnc_PUPS_angleBetween3dVectors;
 			_pitchAngle = _pitchAngle - _initialAngle;
 
-			// systemChat format ["angle: %1° | _initialAngle: %2 | vel: %3", _pitchAngle, _initialAngle, _vel1];
 			[player, [_pitchAngle, 0, 0]] call grad_grandPrix_fnc_PUPS_setPitchBankYaw;
 		}, 
 		0, 

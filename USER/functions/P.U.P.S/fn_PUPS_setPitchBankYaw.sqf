@@ -34,4 +34,3 @@ _inital params ["_vecDir", "_vecUp"];
 _dir = [_dirX - _vecDir#0, _dirY - _vecDir#1, _dirZ - _vecDir#2];
 _up = [_upX - _vecUp#0, _upY - _vecUp#1, _upZ - _vecUp#2];
 _object setVectorDirAndUp [_dir,_up];
-// systemChat format ["set to %1°", _aroundX];

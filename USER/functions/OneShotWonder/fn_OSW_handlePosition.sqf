@@ -1,3 +1,5 @@
+if !(hasInterface) exitWith {};
+
 params ["_position"];
 
 private _positionInfo = _position getVariable ["GRAD_grandPrix_OSW_info", []];
@@ -19,13 +21,13 @@ _position setVariable ["GRAD_grandPrix_OSW_currentlyActive", true, true];
 private _localDoor = (typeOf _door) createVehicleLocal (getPos _door);
 _localDoor setVectorDirAndUp [vectorDir _door, vectorUp _door];
 _localDoor setPosASL (getPosASL _door);
-hideObject _door;
+_door hideObject true;
 _door enableSimulation false;
 
 // add target Hit-EH
-_target setVariable ["GRAD_grandPrix_OSW_hit", ""];
 private _hitHandler = _target addEventHandler ["hit", { 
 	params ["_unit", "_source", "_damage", "_instigator"];
+
 	if (_instigator isNotEqualTo player) exitWith {};
 	_unit setVariable ["GRAD_grandPrix_OSW_hit", true];
 }];
@@ -87,17 +89,20 @@ private _openHandler =
 ] call CBA_fnc_addPerFrameHandler;
 
 // add Gun magazine
-player addMagazine "1Rnd_45ACP_Cylinder"; 
-player addWeapon "GrandPrix_hgun_Pistol_heavy_02_F";
+private _loadout = getUnitLoadout player;
+_loadout set [0,[]];
+_loadout set [1,[]];
+_loadout set [2,["GrandPrix_hgun_Pistol_heavy_02_F","","","",["1Rnd_45ACP_Cylinder",1],[],""]];
+player setUnitLoadout _loadout;
 
 // time shit?
-private _start = time;
+private _start = [time, servertime] select isMultiplayer;;
 
 // evaluate result
 waitUntil { (_target getVariable ["GRAD_grandPrix_OSW_hit", ""]) isNotEqualTo "" };
 
 private _hit = _target getVariable ["GRAD_grandPrix_OSW_hit", ""];
-private _timeTaken = time - _start;
+private _timeTaken = ([time, servertime] select isMultiplayer) - _start;
 if (_hit) then {
 	hintSilent "Treffer!";
 } else {
@@ -149,39 +154,3 @@ _position setVariable ["GRAD_grandPrix_timesVisited", _timesVisited, true];
 } foreach _objects;
 
 _position setVariable ["GRAD_grandPrix_OSW_currentlyActive", false, true];
-
-
-
-
-// [
-// 	{
-// 		params ["_target", "_localDoor", "_initialDoorPos"];
-// 		(_target getVariable ["GRAD_grandPrix_OSW_hit", ""]) isNotEqualTo ""
-// 	},
-// 	{
-// 		params ["_target", "_localDoor", "_initialDoorPos"];
-// 		private _hit = _target getVariable ["GRAD_grandPrix_OSW_hit", ""];
-// 		private _timeTaken = time - (player getVariable ["GRAD_grandPrix_OSW_timeFired", time - 5]);
-// 		if (_hit) then {
-// 			hintSilent "Treffer!";
-// 		} else {
-// 			hintSilent "Verfehlt!";
-// 			_timeTaken = _timeTaken + 20;
-// 		};
-
-// 		// close shit
-// 		private _openHandler = 
-// 		[
-// 			{
-// 				_args params ["_localDoor", "_targetPos"];
-				
-// 				_pos = getPosASL _localDoor;
-// 				if (_pos#2 <= _targetPos#2) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
-// 				_localDoor setPosASL [_targetPos#0, _targetPos#1, (_pos#2) - 0.05];
-// 			},
-// 			0,
-// 			[_localDoor, [_initialDoorPos#0, _initialDoorPos#1, _initialDoorPos#2]]
-// 		] call CBA_fnc_addPerFrameHandler;		
-// 	},
-// 	[_target, _localDoor, _initialDoorPos]
-// ] call CBA_fnc_waitUntilAndExecute;

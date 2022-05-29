@@ -13,7 +13,6 @@ private _targetPos = getPosASL _target;
 
 		_targetDir = _targetDir apply { [_x, 2] call grad_grandPrix_fnc_PUPS_cutDecimals };
 		_weaponDir = _weaponDir apply { [_x, 2] call grad_grandPrix_fnc_PUPS_cutDecimals };
-		// systemChat format ["target: %1 | weapon: %2", _targetDir, _weaponDir];
 
 		(_targetDir isEqualTo _weaponDir) || ((player distance2D _targetPos) < 20) || (player getVariable ["GRAD_grandPrix_PUPS_stationFinished", false])
 	},
