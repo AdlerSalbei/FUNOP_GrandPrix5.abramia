@@ -61,6 +61,6 @@ private _distance = _station distance (_allInstructors#0);
 	}	
 } forEach _allInstructors;
 
-[format["Ihr hab durchschnittlich %1 gebraucht. Damit habt ihr euch %2 Punkte erspielt!", [_averageTime, "MM:SS.MS"] call BIS_fnc_secondsToString], _points] remoteExec ["hint", _group + [_nearestInstructor]];
+[format["Ihr hab durchschnittlich %1 gebraucht. Damit habt ihr euch %2 Punkte erspielt!", [_averageTime, "MM:SS.MS"] call BIS_fnc_secondsToString], _points] remoteExec ["hint", (units _group) + [_nearestInstructor]];
 
 _station setVariable ["stationIsRunning", false, true];
