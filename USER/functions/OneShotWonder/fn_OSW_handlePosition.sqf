@@ -8,6 +8,7 @@ private _positionInfo = _position getVariable ["GRAD_grandPrix_OSW_info", []];
 _positionInfo params ["_door", "_target", "_trigger"];
 
 // show position
+diag_log format ["[fn_OSW_handlePosition]: revealing position %1", vehicleVarName _position];
 private _objects = (allMissionObjects "") select {_x inArea _trigger};
 {
 	[_x, false] remoteExecCall ["hideObjectGlobal", 2];
@@ -18,10 +19,13 @@ player setVariable ["GRAD_grandPrix_OSW_currentCompleted", false, true];
 _position setVariable ["GRAD_grandPrix_OSW_currentlyActive", true, true];
 
 // create door locally for smoother movement
+diag_log "[fn_OSW_handlePosition]: creating local door";
 private _localDoor = (typeOf _door) createVehicleLocal (getPos _door);
 _localDoor setVectorDirAndUp [vectorDir _door, vectorUp _door];
 _localDoor setPosASL (getPosASL _door);
+diag_log "[fn_OSW_handlePosition]: hiding global door, in local scope";
 _door hideObject true;
+diag_log "[fn_OSW_handlePosition]: disabling simulation of global door, in local scope";
 _door enableSimulation false;
 
 // add target Hit-EH
@@ -75,6 +79,7 @@ sleep 1;
 
 // open shit
 private _initialDoorPos = getPosASL _localDoor;
+diag_log "[fn_OSW_handlePosition]: opening local door...";
 private _openHandler = 
 [
 	{
@@ -109,13 +114,14 @@ if (_hit) then {
 	hintSilent "Verfehlt!";
 	_timeTaken = _timeTaken + 10;
 };
-systemChat str _timeTaken;
+// systemChat str _timeTaken;
 private _totalPlayerTime = player getVariable ["GRAD_grandPrix_OSW_totalTime", 0];
 _totalPlayerTime = _totalPlayerTime + _timeTaken;
 player setVariable ["GRAD_grandPrix_OSW_totalTime", _totalPlayerTime, true];
 
 // close shit
 sleep 0.5;
+diag_log "[fn_OSW_handlePosition]: closing local door...";
 private _closeHandler = 
 [
 	{

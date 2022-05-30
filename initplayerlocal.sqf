@@ -24,3 +24,13 @@ grad_template_ratingEH = player addEventHandler ["HandleRating",{0}];
         }, [], 1] call CBA_fnc_waitAndExecute;
     }, [], 1] call CBA_fnc_waitAndExecute;
 }] call CBA_fnc_addEventHandler;
+
+
+// handler to remove dropped leaflets
+private _handler = ["Leaflet_05_F", "init",
+	{
+		params ["_leaflet"];
+		deleteVehicle _leaflet;
+	}
+] call CBA_fnc_addClassEventHandler;
+player setVariable ["GRAD_grandPrix_ZiG_leafletHandler", _handler, true];

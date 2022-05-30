@@ -56,7 +56,7 @@ private _policeHandle = [_group] spawn grad_grandPrix_fnc_ZiG_handlePolice;
 	[] remoteExecCall ["grad_grandPrix_fnc_ZiG_unconsciousHandlerLocal", _x];
 } forEach (units _group);
 
-ZiG_fnc_allPlayersUnconscious = {
+_ZiG_fnc_allPlayersUnconscious = {
 	params ["_group"];
 
 	private _times = [];
@@ -74,7 +74,7 @@ ZiG_fnc_allPlayersUnconscious = {
 
 
 // wait until button press or tpk
-waitUntil { (missionNamespace getVariable ["GRAD_grandPrix_ZiG_endPressed", false]) || ([_group] call ZiG_fnc_allPlayersUnconscious) };
+waitUntil { (missionNamespace getVariable ["GRAD_grandPrix_ZiG_endPressed", false]) || ([_group] call _ZiG_fnc_allPlayersUnconscious) };
 
 missionNamespace setVariable ["GRAD_grandPrix_ZiG_collectingActive", false, true];
 
