@@ -14,7 +14,7 @@ _plane setDir (_playerPos getDir (getPos GRAD_grandPrix_race_planeTarget_1));
 
 _plane setPos _playerPos;
 player moveInDriver _plane;
-_plane setVelocityModelSpace [0, _velY max 75, 5];
+_plane setVelocityModelSpace [0, _velY max 75, 0];
 _plane allowDamage false;
 
 private _allGates = [];

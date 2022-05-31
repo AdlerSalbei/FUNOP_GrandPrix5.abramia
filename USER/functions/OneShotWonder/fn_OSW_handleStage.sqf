@@ -17,8 +17,10 @@ private _playerCount = count _activePlayers;
 {
 	_x setVariable ["GRAD_grandPrix_OSW_totalTime", 0, true];
 	// add Gun magazine
-	_x addMagazine "1Rnd_45ACP_Cylinder"; 
-	_x addWeapon "GrandPrix_hgun_Pistol_heavy_02_F";
+	[{
+		player addMagazine "1Rnd_45ACP_Cylinder"; 
+		player addWeapon "GrandPrix_hgun_Pistol_heavy_02_F";
+	}] remoteExecCall ["call", _x];
 } forEach _activePlayers;
 
 sleep 2;
