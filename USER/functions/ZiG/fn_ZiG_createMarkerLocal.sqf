@@ -13,4 +13,4 @@ _markerObjective setMarkerColorLocal "ColorGreen";
 _markerObjective setMarkerAlphaLocal 1;
 _markerObjective setMarkerTextLocal "Abgabe";
 
-player setVariable ["GRAD_grandPrix_ZiG_moneyMarkers", [_markerArea, _markerObjective], true];
+player setVariable ["GRAD_grandPrix_ZiG_moneyMarkers", [_markerArea, _markerObjective], false];

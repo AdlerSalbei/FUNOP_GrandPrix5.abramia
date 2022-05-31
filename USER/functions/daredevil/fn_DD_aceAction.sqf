@@ -45,7 +45,7 @@ private _action2 = [
     "Frage an den Zeus!",   
     "",   
     {   
-  		[_player, "Daredevil"] call grad_grandprix_fnc_water_askZeus;
+  		[_player, "Daredevil"] call grad_grandprix_fnc_common_askZeus;
  	},   
     {true}
 ] call ace_interact_menu_fnc_createAction;   

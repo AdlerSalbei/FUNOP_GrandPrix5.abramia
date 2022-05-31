@@ -44,18 +44,7 @@ while {!([_allPositions, _playerCount] call GRAD_grandPrix_fnc_OSW_isComplete)} 
 
 sleep 7;
 
-private _allInstructors = [];
-{
-	_allInstructors pushBackUnique (getAssignedCuratorUnit _x);
-} forEach allCurators;
-private _nearestInstructor = objNull;
-private _distance = _station distance (_allInstructors#0);
-{
-	if ((_station distance _x) < _distance) then {
-		_distance = _station distance _x;
-		_nearestInstructor = _x;
-	}	
-} forEach _allInstructors;
+private _nearestInstructor = [_station] call grad_grandprix_fnc_common_getNearestZeus;
 
 private _players = units _group;
 private _groupTime = 0;

@@ -52,7 +52,7 @@ for "_i" from 1 to 1000 do {
 
 	_holders pushBack _holder;
 
-	sleep 0.01;
+	sleep 0.02;
 };
 
 missionNamespace setVariable ["GRAD_grandPrix_ZiG_weaponHolders", _holders, true];

@@ -48,18 +48,7 @@ private _totalTime = 0;
 private _averageTime = _totalTime / (count (units _group));
 private _points = [_group, _averageTime, 470, 1000, "Race"] call GRAD_grandPrix_fnc_addTime;
 
-private _allInstructors = [];
-{
-	_allInstructors pushBackUnique (getAssignedCuratorUnit _x);
-} forEach allCurators;
-private _nearestInstructor = objNull;
-private _distance = _station distance (_allInstructors#0);
-{
-	if ((_station distance _x) < _distance) then {
-		_distance = _station distance _x;
-		_nearestInstructor = _x;
-	}	
-} forEach _allInstructors;
+private _nearestInstructor = [_station] call grad_grandprix_fnc_common_getNearestZeus;
 
 [format["Ihr hab durchschnittlich %1 gebraucht. Damit habt ihr euch %2 Punkte erspielt!", [_averageTime, "MM:SS.MS"] call BIS_fnc_secondsToString], _points] remoteExec ["hint", (units _group) + [_nearestInstructor]];
 

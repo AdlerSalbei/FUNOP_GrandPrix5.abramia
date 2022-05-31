@@ -1,5 +1,6 @@
 class ZiG {
 	file = "USER\functions\ZiG";
+	class ZiG_allPlayersUnconscious {};
 	class ZiG_createPlanes {};
 	class ZiG_handleStage {};
 	class ZiG_handlePlaneCapture {};
