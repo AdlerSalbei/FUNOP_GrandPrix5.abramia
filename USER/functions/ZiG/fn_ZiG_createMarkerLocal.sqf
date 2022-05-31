@@ -1,3 +1,5 @@
+if !(hasInterface) exitWith {};
+
 private _markerArea = createMarkerLocal ["GRAD_grandPrix_ZiG_moneyMarker", GRAD_grandPrix_ZiG_moneyArea];
 private _triggerArea = triggerArea GRAD_grandPrix_ZiG_moneyArea;
 _markerArea setMarkerSizeLocal [_triggerArea # 0, _triggerArea # 1];

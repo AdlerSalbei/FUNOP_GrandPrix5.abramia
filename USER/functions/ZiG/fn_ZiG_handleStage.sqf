@@ -20,9 +20,9 @@ for "_i" from _housesMarkerStart to _housesMarkerEnd do
 [] remoteExecCall ["grad_grandPrix_fnc_ZiG_startStageClient", _group, false];
 
 //Show planes
-[] call grad_grandPrix_fnc_ZiG_handlePlanes;
+//[] call grad_grandPrix_fnc_ZiG_handlePlanes;
 
-waitUntil { missionNamespace getVariable ["GRAD_grandPrix_ZiG_planesDone", false]; };
+//waitUntil { missionNamespace getVariable ["GRAD_grandPrix_ZiG_planesDone", false]; };
 
 sleep 3;
 
@@ -43,7 +43,7 @@ private _playerMoney = [];
 if (missionNamespace getVariable ["GRAD_grandPrix_ZiG_endPressed", false]) then {
 	{
 		private _items = itemsWithMagazines _x;
-		private _xMoney = ({ _x isEqualTo "photo9" } count _items);
+		private _xMoney = ({ _x isEqualTo "photo9" } count _items) max 0;
 
 		_money = _money + _xMoney;
 		_playerMoney pushBackUnique [name _x, _xMoney];
@@ -52,13 +52,21 @@ if (missionNamespace getVariable ["GRAD_grandPrix_ZiG_endPressed", false]) then 
 
 [_group, _money, "Zeit ist Geld"] call grad_grandPrix_fnc_addPoints;
 
-private _msg = format ["Ihr habt %1€ erbeutet und euch damit %2 Punkte erspielt!", _money * 100, _money];
-_msg = _msg + "<br /> Spieler haben gesammelt:";
-{
-	_msg = _msg + format ["<br /> %1: %2€", _x select 0, (_x select 1) * 100];
-}forEach _playerMoney;
+//Nachricht an die Spieler
+private _msg = "<t align='left'>Ihr habt leider kein Geld gefunden :(</t>"; 
+if (_money > 0) then { 
+	_msg = format ["<t align='left'>Ihr habt %1€ erbeutet und euch damit %2 Punkte erspielt!</t>", _money * 100, _money]; 
+	_msg = _msg + "<br /> <br /><t align='left'>Spieler haben gesammelt:</t>"; 
 
-[_msg] remoteExec ["hint", (units _group) + [_nearestInstructor]];
+	{ 
+		_msg = _msg + format ["<br /> <t align='right'>%1: %2€</t>", _x select 0, (_x select 1) * 100]; 
+	}forEach _playerMoney; 
+}; 
+ 
+[parseText _msg] remoteExec ["hint", (units _group) + [_nearestInstructor]];
+
+//Player Healen, marker löschen & zuruek teleportieren
+[] remoteExecCall ["grad_grandPrix_fnc_ZiG_endStageClient", _group, false];
 
 {
 	private _handler = _x getVariable ["GRAD_grandPrix_ZiG_unconsciousHandler", -1];
