@@ -1,7 +1,5 @@
 if !(hasInterface) exitWith {};
 
-// params ["_unit"];
-
 [] call grad_grandPrix_fnc_ZiG_createMarkerLocal;
 
 player setVariable ["GRAD_grandPrix_ZiG_savedLoadout", getUnitLoadout player, false];

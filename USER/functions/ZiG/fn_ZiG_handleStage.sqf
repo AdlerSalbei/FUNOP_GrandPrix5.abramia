@@ -3,9 +3,6 @@ if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; 
 params ["_station", "_group"];
 
 _station setVariable ["stationIsRunning", true, true];
-// missionNamespace setVariable ["GRAD_grandPrix_ZiG_endPressed", false, true];
-// missionNamespace setVariable ["GRAD_grandPrix_ZiG_planesDone", false, true];
-// missionNameSpace setVariable ["GRAD_grandPrix_ZiG_collectingActive", false, true];
 
 private _nearestInstructor = [_station] call grad_grandprix_fnc_common_getNearestZeus;
 

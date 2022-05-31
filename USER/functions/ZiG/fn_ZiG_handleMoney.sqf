@@ -2,27 +2,17 @@ if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; 
 
 missionNamespace setVariable ["GRAD_grandPrix_ZiG_spawningMoney", true, true];
 
+
+private _timeModifier = 0.1;
 private _holders = missionNamespace getVariable ["GRAD_grandPrix_ZiG_weaponHolders", []];
 private _emptyHolders = _holders select { getMagazineCargo _x isEqualTo [] };
+
 {
-	_x addMagazineCargoGlobal  ["photo9", 1];
-	sleep 0.1;
+	[{
+		_this addMagazineCargoGlobal  ["photo9", 1];
+	}, _x, _timeModifier * (_forEachIndex + 1)] call CBA_fnc_waitAndExecute;
 } forEach _emptyHolders;
 
-missionNamespace setVariable ["GRAD_grandPrix_ZiG_spawningMoney", false, true];
-
-// [
-// 	{
-// 		params ["_args", "_handle"];
-// 		_args params ["_emptyHolders"];
-
-// 		if ((count _emptyHolders) <= 0) exitWith {
-// 			[_handle] call CBA_fnc_removePerFrameHandler;
-// 		};
-// 		(_emptyHolders#0) addMagazineCargoGlobal  ["photo9", 1];
-// 		_emptyHolders deleteAt 0;
-// 		systemChat str (count _emptyHolders);
-// 	},
-// 	0,
-// 	[]
-// ] call CBA_fnc_addPerFrameHandler;
+[{
+	missionNamespace setVariable ["GRAD_grandPrix_ZiG_spawningMoney", false, true];
+}, [], _timeModifier * (count _emptyHolders  + 1)] call CBA_fnc_waitAndExecute;
