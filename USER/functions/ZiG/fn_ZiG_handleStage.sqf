@@ -41,7 +41,8 @@ for "_i" from _housesMarkerStart to _housesMarkerEnd do
 
 waitUntil { missionNamespace getVariable ["GRAD_grandPrix_ZiG_planesDone", false]; };
 
-[] spawn grad_grandPrix_fnc_ZiG_handleMoney;
+[] call grad_grandPrix_fnc_ZiG_handleMoney;
+[] remoteExecCall ["grad_grandPrix_fnc_ZiG_showMoney", _group, false];
 
 sleep 3;
 ["grad_grandPrix_race_triggerCountdown", [], units _group] call CBA_fnc_targetEvent;
