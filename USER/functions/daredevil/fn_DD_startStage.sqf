@@ -17,4 +17,4 @@ private _group = group _player;
 	params ["_station", "_group"];
 
 	[_station, _group] call grad_grandPrix_fnc_DD_handleStage;
-}, [_station, _group], 82] call CBA_fnc_waitAndExecute;
+}, [_station, _group], 2] call CBA_fnc_waitAndExecute;

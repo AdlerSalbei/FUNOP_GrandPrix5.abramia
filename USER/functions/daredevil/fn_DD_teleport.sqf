@@ -8,9 +8,6 @@ private _vehicleName = missionnamespace getvariable [ format ["%1", "dd_tank_0" 
 
 cutText ["", "BLACK", 0.1];
 
-STHud_UIMode = 0;
-diwako_dui_main_toggled_off = true;
-
 [{
 	params ["_unit", "_vehicleName"];
 
@@ -19,12 +16,8 @@ diwako_dui_main_toggled_off = true;
 	_unit moveInAny _vehicleName;
 	
 	[{
-		[] call grad_grandprix_fnc_dd_cameraShot;
-
-		[{
-			if (driver vehicle player isEqualTo player) then {
-				cutText ["", "BLACK", 0.1];
-			};
-		}, [], 84] call CBA_fnc_waitAndExecute;
+		if !(driver vehicle player isEqualTo player) then {
+			cutText ["", "BLACK", 0.1];
+		};
 	}, [], 1.5] call CBA_fnc_waitAndExecute;
 }, [player, _vehicleName], 0.3] call CBA_fnc_waitAndExecute;

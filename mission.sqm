@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=5521;
+		nextID=5523;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=498;
+		nextID=558;
 	};
 	class Camera
 	{
-		pos[]={676.18341,28.538177,9531.4941};
-		dir[]={0.81384766,-0.46912724,0.34293091};
-		up[]={0.43233326,0.88311881,0.18217257};
-		aside[]={0.38831297,4.7241338e-007,-0.92154324};
+		pos[]={6122.5029,31.32251,5709.312};
+		dir[]={0.60326803,-0.72294676,0.33677766};
+		up[]={0.63124466,0.69090289,0.35239601};
+		aside[]={0.4874436,6.0768798e-008,-0.87315565};
 	};
 };
 binarizationWanted=0;
@@ -6573,7 +6573,7 @@ class Mission
 			};
 			id=1545;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=2.4725018;
+			atlOffset=6.2985668;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6609,7 +6609,7 @@ class Mission
 			};
 			id=1546;
 			type="Land_Shoot_House_Tunnel_Prone_F";
-			atlOffset=2.5160465;
+			atlOffset=6.2970009;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6643,7 +6643,7 @@ class Mission
 			};
 			id=1547;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=2.5885811;
+			atlOffset=6.2970791;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6671,14 +6671,13 @@ class Mission
 				angles[]={0,1.2047501,0};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 				dynamicSimulation=1;
 			};
 			id=1548;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=0.10949135;
+			atlOffset=6.9771099;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6712,7 +6711,7 @@ class Mission
 			};
 			id=1549;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=0.37783623;
+			atlOffset=7.2460117;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6746,7 +6745,7 @@ class Mission
 			};
 			id=1550;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=2.2600689;
+			atlOffset=6.0405674;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6780,7 +6779,7 @@ class Mission
 			};
 			id=1551;
 			type="Land_Shoot_House_Wall_Crouch_F";
-			atlOffset=2.2425003;
+			atlOffset=6.0229988;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6814,7 +6813,7 @@ class Mission
 			};
 			id=1552;
 			type="EmptyDetectorArea10x10";
-			atlOffset=1.2948265;
+			atlOffset=8.162838;
 		};
 		class Item49
 		{
@@ -145454,7 +145453,7 @@ class Mission
 			colorName="ColorEAST";
 			a=5;
 			b=50;
-			angle=41.92099;
+			angle=41.920979;
 			id=5482;
 			atlOffset=0.00035095215;
 		};
