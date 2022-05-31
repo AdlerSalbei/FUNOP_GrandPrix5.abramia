@@ -31,28 +31,66 @@ for "_i" from _positionsMarkerStart to _positionsMarkerEnd do
 sleep 5;
 
 // setup weapon holders that will hold the money
-private _holders = [];
-for "_i" from 1 to 1000 do {
-	private _pos = GRAD_grandPrix_ZiG_moneyArea call BIS_fnc_randomPosTrigger;
-	_pos set [2, 0.002];
+// private _holders = [];
+// for "_i" from 1 to 1000 do {
+// 	private _pos = GRAD_grandPrix_ZiG_moneyArea call BIS_fnc_randomPosTrigger;
+// 	_pos set [2, 0.002];
 
-	private _posASL = AGLToASL _pos;
-	private _intersects = lineIntersectsSurfaces [_posASL, _posASL vectorAdd [0, 0, 20], objNull, objNull, true, 1, "VIEW"];
-	if (_intersects isNotEqualTo []) then { 
-		_i = _i - 1;
-		continue
-	};
+// 	private _posASL = AGLToASL _pos;
+// 	private _intersects = lineIntersectsSurfaces [_posASL, _posASL vectorAdd [0, 0, 20], objNull, objNull, true, 1, "VIEW"];
+// 	if (_intersects isNotEqualTo []) then { 
+// 		_i = _i - 1;
+// 		continue
+// 	};
 
-	private _holder = "groundweaponHolder_scripted" createVehicle _pos;
-	_holder setPos _pos;
-	_holder setDir (random 360);
+// 	private _holder = "groundweaponHolder_scripted" createVehicle _pos;
+// 	_holder setPos _pos;
+// 	_holder setDir (random 360);
 
-	_holder addMagazineCargoGlobal  ["photo9", 1];
-	_holder hideObjectGlobal true;
+// 	_holder addMagazineCargoGlobal  ["photo9", 1];
+// 	_holder hideObjectGlobal true;
 
-	_holders pushBack _holder;
+// 	_holders pushBack _holder;
 
-	sleep 0.02;
-};
+// 	sleep 0.02;
+// };
 
-missionNamespace setVariable ["GRAD_grandPrix_ZiG_weaponHolders", _holders, true];
+// missionNamespace setVariable ["GRAD_grandPrix_ZiG_weaponHolders", _holders, true];
+
+
+
+private _moneyTargetAmount = 1000;
+missionNamespace setVariable ["GRAD_grandPrix_ZiG_weaponHolders", []];
+private _spawnHandle= 
+[
+	{
+		params ["_args", "_handle"];
+		_args params ["_targetAmount"];
+
+		private _holders = missionNamespace getVariable ["GRAD_grandPrix_ZiG_weaponHolders", []];
+		if ((count _holders) >= _targetAmount) exitWith {
+			[_handle] call CBA_fnc_removePerFrameHandler;
+			missionNamespace setVariable ["GRAD_grandPrix_ZiG_weaponHolders", _holders, true];
+		};
+
+		private _pos = GRAD_grandPrix_ZiG_moneyArea call BIS_fnc_randomPosTrigger;
+		_pos set [2, 0.002];
+
+		private _posASL = AGLToASL _pos;
+		private _intersects = lineIntersectsSurfaces [_posASL, _posASL vectorAdd [0, 0, 20], objNull, objNull, true, 1, "VIEW"];
+		if (_intersects isNotEqualTo []) exitWith {};
+
+		private _holder = "groundweaponHolder_scripted" createVehicle _pos;
+		_holder setPos _pos;
+		_holder setDir (random 360);
+
+		_holder addMagazineCargoGlobal  ["photo9", 1];
+		_holder hideObjectGlobal true;
+
+		_holders pushBack _holder;
+
+		missionNamespace setVariable ["GRAD_grandPrix_ZiG_weaponHolders", _holders];
+	},
+	30 / _moneyTargetAmount,
+	[_moneyTargetAmount]
+] call CBA_fnc_addPerFrameHandler;

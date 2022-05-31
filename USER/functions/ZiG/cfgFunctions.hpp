@@ -4,6 +4,7 @@ class ZiG {
 	class ZiG_createPlanes {};
 	class ZiG_endStageClient {};
 	class ZiG_handleStage {};
+	class ZiG_handleMoney {};
 	class ZiG_handlePlaneCapture {};
 	class ZiG_handlePlanes {};
 	class ZiG_setupRequirements {

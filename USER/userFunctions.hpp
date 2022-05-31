@@ -13,4 +13,5 @@ class GRAD_grandPrix {
   	#include "functions\OneShotWonder\CfgFunctions.hpp"
   	#include "functions\P.U.P.S\CfgFunctions.hpp"
 	#include "functions\daredevil\CfgFunctions.hpp"
+	#include "functions\common\CfgFunctions.hpp"
 };

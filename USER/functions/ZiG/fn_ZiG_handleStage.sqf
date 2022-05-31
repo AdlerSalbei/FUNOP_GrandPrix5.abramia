@@ -58,13 +58,13 @@ if (missionNamespace getVariable ["GRAD_grandPrix_ZiG_endPressed", false]) then 
 private _msg = format ["Ihr habt %1€ erbeutet und euch damit %2 Punkte erspielt!", _money * 100, _money];
 _msg = _msg + "<br /> Spieler haben gesammelt:";
 {
-	_msg = _msg + format ["<br /> %1: %2$", _x select 0, _x select 1];
+	_msg = _msg + format ["<br /> %1: %2€", _x select 0, (_x select 1) * 100];
 }forEach _playerMoney;
 
 [_msg] remoteExec ["hint", (units _group) + [_nearestInstructor]];
 
 {
-	private _handler = _unit getVariable ["GRAD_grandPrix_ZiG_unconsciousHandler", -1];
+	private _handler = _x getVariable ["GRAD_grandPrix_ZiG_unconsciousHandler", -1];
 	["ace_unconscious", _handler] call CBA_fnc_removeEventHandler;
 } forEach (units _group);
 
