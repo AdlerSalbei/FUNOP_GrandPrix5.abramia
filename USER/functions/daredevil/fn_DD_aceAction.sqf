@@ -42,7 +42,7 @@ private _action1 = [
 
 private _action2 = [   
     "dd_ask_questions",   
-    "Frage an den Zeus!",   
+    "Frage die IDAP!",   
     "",   
     {   
   		[_player, "Daredevil"] call grad_grandprix_fnc_common_askZeus;

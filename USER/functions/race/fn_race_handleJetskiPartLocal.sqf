@@ -21,13 +21,12 @@ waitUntil { player inArea [[3184.99,2947.89,1.77915], 6.1, 5, 344.764, true, 5] 
 
 private _end = [time, servertime] select isMultiplayer;
 private _start = player getVariable ["GRAD_grandPrix_race_startTime", 0];
-player setVariable ["GRAD_grandPrix_race_endTime", _end, true];
+private _timeTaken = _end - _start;
+
+player setVariable ["GRAD_grandPrix_race_timeTaken", _timeTaken, true];
 player setVariable ["GRAD_grandPrix_race_complete", true, true];
 
-private _timeTaken = _end - _start;
-private _time= [_timeTaken, "MM:SS.MS"] call BIS_fnc_secondsToString;
-
-hint format ["Du hast %1 gebraucht!", _time];
+hint format ["Du hast %1 gebraucht!", [_timeTaken, "MM:SS.MS"] call BIS_fnc_secondsToString;
 
 waitUntil { (vehicle player) isNotEqualTo _jetski };
 deleteVehicle _jetSki;

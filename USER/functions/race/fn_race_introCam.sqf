@@ -1,5 +1,5 @@
 diwako_dui_main_toggled_off = true;
-cutText ["", "BLACK", 5];
+cutText ["", "BLACK", 2];
 5 fadeSound 0.2;
 sleep 5;
 

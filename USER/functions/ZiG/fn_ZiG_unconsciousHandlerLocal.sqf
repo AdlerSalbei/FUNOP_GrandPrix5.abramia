@@ -1,5 +1,4 @@
-private _handler = 
-[
+private _handler = [
 	"ace_unconscious",
 	{
 		params ["_unit", "_unconscious"];

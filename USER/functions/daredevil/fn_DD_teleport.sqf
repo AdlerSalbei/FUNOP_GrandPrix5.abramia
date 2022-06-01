@@ -17,7 +17,7 @@ cutText ["", "BLACK", 0.1];
 	
 	[{
 		if !(driver vehicle player isEqualTo player) then {
-			cutText ["", "BLACK", 0.1];
+			cutText ["", "BLACK IN", 0.1];
 		};
 	}, [], 1.5] call CBA_fnc_waitAndExecute;
 }, [player, _vehicleName], 0.3] call CBA_fnc_waitAndExecute;

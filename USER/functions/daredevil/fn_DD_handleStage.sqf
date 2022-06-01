@@ -33,6 +33,11 @@ if (!isServer) exitWith {
 
 			[] remoteExecCall ["grad_grandPrix_fnc_DD_backPort", _group];
 
+			{
+				_x setPos (_x getVariable "grad_grandprix_fnc_DD_vehPos");
+				_x setDir (_x getVariable "grad_grandprix_fnc_DD_vehDir");
+			}forEach [dd_tank_01, dd_tank_02];
+
 			_station setVariable ["DD_stationIsRunning", false, true];
 		}, _this, 5] call CBA_fnc_waitAndExecute;
 	}, _this, 7] call CBA_fnc_waitAndExecute;

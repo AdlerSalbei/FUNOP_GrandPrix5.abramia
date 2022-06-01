@@ -26,7 +26,7 @@ private _action1 = [
 
 private _action2 = [   
     "pups_ask_questions",   
-    "Frage an den Zeus!",   
+    "Frage die IDAP!",   
     "",   
     {   
   		[_player, "P.U.P.S"] call grad_grandprix_fnc_common_askZeus;

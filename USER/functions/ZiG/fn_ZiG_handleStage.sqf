@@ -77,9 +77,9 @@ missionNamespace setVariable ["GRAD_grandPrix_ZiG_endPressed", false, true];
 missionNamespace setVariable ["GRAD_grandPrix_ZiG_planesDone", false, true];
 missionNameSpace setVariable ["GRAD_grandPrix_ZiG_collectingActive", false, true];
 
+[] call grad_grandPrix_fnc_ZiG_handleMoney;
+
 sleep 2;
 terminate _policeHandle;
-
-[] call grad_grandPrix_fnc_ZiG_handleMoney;
 
 _station setVariable ["stationIsRunning", false, true];
