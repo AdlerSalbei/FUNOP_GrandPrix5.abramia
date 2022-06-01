@@ -23,3 +23,15 @@ private _action1 = [
 ] call ace_interact_menu_fnc_createAction;
 
 [_station, 0, ["osw_main _action"], _action1] call ace_interact_menu_fnc_addActionToObject;
+
+private _action2 = [   
+    "osw_ask_questions",   
+    "Frage an den Zeus!",   
+    "",   
+    {   
+  		[_player, "OneShotWonder"] call grad_grandprix_fnc_common_askZeus;
+ 	},   
+    {true}
+] call ace_interact_menu_fnc_createAction;   
+   
+[_station, 0, ["osw_main _action"], _action2] call ace_interact_menu_fnc_addActionToObject;

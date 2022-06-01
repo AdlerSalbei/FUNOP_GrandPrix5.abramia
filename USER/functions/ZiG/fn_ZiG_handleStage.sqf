@@ -59,7 +59,7 @@ if (_money > 0) then {
 	_msg = _msg + "<br /> <br /><t align='left'>Spieler haben gesammelt:</t>"; 
 
 	{ 
-		_msg = _msg + format ["<br /> <t align='right'>%1: %2€</t>", _x select 0, (_x select 1) * 100]; 
+		_msg = _msg + format ["<br /> <t align='center'>%1:</t> <t align='right'>%2€</t>", _x select 0, (_x select 1) * 100]; 
 	}forEach _playerMoney; 
 }; 
  

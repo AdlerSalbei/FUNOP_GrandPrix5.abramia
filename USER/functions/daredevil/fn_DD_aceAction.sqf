@@ -41,7 +41,7 @@ private _action1 = [
 [_station, 0, ["DD_main _action"], _action1] call ace_interact_menu_fnc_addActionToObject;
 
 private _action2 = [   
-    "ask_questions",   
+    "dd_ask_questions",   
     "Frage an den Zeus!",   
     "",   
     {   
