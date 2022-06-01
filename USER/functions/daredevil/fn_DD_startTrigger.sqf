@@ -11,5 +11,5 @@ player allowDamage false;
 
 if (_driver isEqualTo player) then {
 	_vehicle allowDamage false;
-	_driver setVariable ["GRAD_grandPrix_DD_startTime", [time, servertime] select isMultiplayer, true];
+	_driver setVariable ["GRAD_grandPrix_DD_startTime", diag_tickTime, false];
 };

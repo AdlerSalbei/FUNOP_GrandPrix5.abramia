@@ -20,9 +20,7 @@ if (!isServer) exitWith {
 
 		private _totalTime = 0;
 		{
-			private _start = _x getVariable ["GRAD_grandPrix_DD_startTime", 0];
-			private _end = _x getVariable ["GRAD_grandPrix_DD_endTime", 0];
-			_totalTime = _totalTime + (_end - _start);
+			_totalTime = _totalTime + (_x getVariable ["GRAD_grandPrix_DD_totalTime", 0]);
 		} forEach _units;
 
 		private _averageTime = _totalTime / (count _units);

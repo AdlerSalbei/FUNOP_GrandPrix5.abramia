@@ -1,7 +1,6 @@
-if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; };
+if (!isServer) exitWith { _this remoteExecCall [_fnc_scriptName, 2]; };
 
 missionNamespace setVariable ["GRAD_grandPrix_ZiG_spawningMoney", true, true];
-
 
 private _timeModifier = 0.1;
 private _holders = missionNamespace getVariable ["GRAD_grandPrix_ZiG_weaponHolders", []];
