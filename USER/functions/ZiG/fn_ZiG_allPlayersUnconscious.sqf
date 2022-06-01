@@ -1,13 +1,12 @@
 params ["_group"];
 
-private _times = [];
+private _return = true;
+
 {
-	private _time = _x getVariable ["GRAD_grandPrix_ZiG_unconsciousTime", 0];
-	if (_time == 0) then {
-		_times pushBack 0;
-	} else {
-		_times pushBack (([time, serverTime] select isDedicated) - _time);
+	private _unconsious = _x getVariable ["GRAD_grandPrix_ZiG_isUnconsious", false];
+	if !(_unconsious) exitWith {
+		_return = false;
 	};
 } forEach (units _group);
 
-(count _times) == (count (_times select { _x >= 30 }))
+_return

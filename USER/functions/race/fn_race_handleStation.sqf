@@ -42,7 +42,7 @@ sleep 7;
 private _totalTime = 0;
 {
 	_totalTime = _totalTime + (_x getVariable ["GRAD_grandPrix_race_timeTaken", 0]);
-} forEach ;
+} forEach _units;
 
 private _averageTime = _totalTime / (count _units);
 private _points = [_group, _averageTime, 470, 1000, "Race"] call GRAD_grandPrix_fnc_addTime;

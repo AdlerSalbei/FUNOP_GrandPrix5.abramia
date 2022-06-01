@@ -6,11 +6,17 @@ private _handler = [
 		if !(isPlayer _unit) exitWith {};
 		
 		if (_unconscious) then {
-			player setVariable ["GRAD_grandPrix_ZiG_unconsciousTime", [time, serverTime] select isDedicated, true];
-			systemChat "player went unconscious";
-		} else {
-			systemChat "player woke up";
-			player setVariable ["GRAD_grandPrix_ZiG_unconsciousTime", 0, true];
+			[
+				{!((_this select 0) getVariable ["ACE_isUnconscious", false])},
+				{},
+				[_unit],
+				15,
+				{
+					params ["_unit"];
+
+					_unit setVariable ["GRAD_grandPrix_ZiG_isUnconsious", true, true];
+				}
+			] call CBA_fnc_waitUntilAndExecute;
 		};
 	}
 ] call CBA_fnc_addEventHandler;

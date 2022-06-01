@@ -12,6 +12,10 @@ private _markers = player getVariable ["GRAD_grandPrix_ZiG_moneyMarkers", []];
 
 player allowDamage false;
 
+private _handler = player getVariable ["GRAD_grandPrix_ZiG_unconsciousHandler", -1];
+["ace_unconscious", _handler] call CBA_fnc_removeEventHandler;
+player setVariable ["GRAD_grandPrix_ZiG_isUnconsious", false, true]; 
+
 private _holders = missionNamespace getVariable ["GRAD_grandPrix_ZiG_weaponHolders", []];
 {
 	_x hideObject true;

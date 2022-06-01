@@ -24,7 +24,7 @@ _ZiG_fnc_canBeSeen = {
 private _aiSpawned = [];
 private _aiGoal = (count (units _group)) * 4;
 private _skill = 0.1;
-private _sleep = 450;
+private _sleep = 150;
 
 [
 	{
@@ -59,6 +59,7 @@ while { missionNameSpace getVariable ["GRAD_grandPrix_ZiG_collectingActive", tru
 		[_unit, 800] spawn lambs_wp_fnc_taskRush;
 		diag_log format ["[fn_ZiG_handlePolice]: Created unit %1 in group %2.", _unit, _group];
 	};
+	
 	missionNamespace setVariable ["GRAD_grandPrix_ZiG_aiSpawned", _aiSpawned, true];
 	if !(missionNameSpace getVariable ["GRAD_grandPrix_ZiG_collectingActive", true]) exitWith {
 		diag_log "[fn_ZiG_handlePolice]: exiting spawn loop: Collecting no longer active";
@@ -66,8 +67,10 @@ while { missionNameSpace getVariable ["GRAD_grandPrix_ZiG_collectingActive", tru
 
 	_aiGoal = _aiGoal + (count (units _group));
 	_skill = (_skill + 0.05) min 1;
-	_sleep = (_sleep - 60) max 15;
+	_sleep = (_sleep - (random 60)) max 15;
+
 	diag_log format ["[fn_ZiG_handlePolice]: creation iteration complete; Sleeping for %1 seconds...", _sleep];
+
 	sleep _sleep;
 };
 

@@ -68,11 +68,6 @@ if (_money > 0) then {
 //Player Healen, marker löschen & zuruek teleportieren
 [] remoteExecCall ["grad_grandPrix_fnc_ZiG_endStageClient", _group, false];
 
-{
-	private _handler = _x getVariable ["GRAD_grandPrix_ZiG_unconsciousHandler", -1];
-	["ace_unconscious", _handler] call CBA_fnc_removeEventHandler;
-} forEach (units _group);
-
 missionNamespace setVariable ["GRAD_grandPrix_ZiG_endPressed", false, true];
 missionNamespace setVariable ["GRAD_grandPrix_ZiG_planesDone", false, true];
 missionNameSpace setVariable ["GRAD_grandPrix_ZiG_collectingActive", false, true];
