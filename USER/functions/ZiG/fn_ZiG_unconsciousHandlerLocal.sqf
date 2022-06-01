@@ -17,6 +17,8 @@ private _handler = [
 					_unit setVariable ["GRAD_grandPrix_ZiG_isUnconsious", true, true];
 				}
 			] call CBA_fnc_waitUntilAndExecute;
+		} else {
+			_unit setVariable ["GRAD_grandPrix_ZiG_isUnconsious", false, true];
 		};
 	}
 ] call CBA_fnc_addEventHandler;
