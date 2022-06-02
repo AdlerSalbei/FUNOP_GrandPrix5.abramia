@@ -12,6 +12,10 @@ _station setVariable ["stationIsRunning", true, true];
 			player addMagazine "1000Rnd_408_Mag"; 
 			player addWeapon "GrandPrix_srifle_LRR_F";
 			player addPrimaryWeaponItem "optic_lrps";
+
+			player addMagazine "1000Rnd_9x21_Mag";
+			player addWeapon "GrandPrix_hgun_P07_F";
+
 			player addWeapon "ACE_Vector";
 			// _x addItem "ACE_ATragMX";
 			player addItem "ACE_RangeCard";			
