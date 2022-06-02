@@ -1,19 +1,21 @@
 params ["_group"];
 
-private _playerPos = getPos player;
-_playerPos = AGLToASL _playerPos;
+private _playerPos = getPosASL player;
+// _playerPos = AGLToASL _playerPos;
 _playerPos set [2, 0];
 private _velY = (velocityModelSpace player) # 1;
 deleteVehicle (vehicle player);
 
 private _spawnPos = [random 1000, random 1000, (random 1000) + 200];
-private _jetSki = "GRAD_TurboScooter" createVehicle _spawnPos;
+// private _jetSki = "GRAD_TurboScooter" createVehicle _spawnPos;
+private _jetSki = "C_Scooter_Transport_01_F" createVehicle _spawnPos;
 _jetSki engineOn true;
-_jetSki setDir 236.028;
+private _dir = (AGLToASL _playerPos) getDir[6278.59,3561.73,8.04452];
+_jetSki setDir _dir;
 
-_jetSki setPos _playerPos;
+_jetSki setPosASL _playerPos;
 player moveInDriver _jetSki;
-_jetSki setVelocityModelSpace [0, _velY min 50, 10];
+_jetSki setVelocityModelSpace [0, _velY min 50, -5];
 
 _jetSki allowDamage false;
 
