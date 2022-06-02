@@ -35,10 +35,15 @@ private _handle =
 	{
 		_args params ["_plane"];
 
-		private _pos = getPosASL _plane;
-		if ((_pos # 2) > 2) exitWith {};
-		private _vel = velocityModelSpace _plane;
-		_plane setVelocityModelSpace [_vel # 0, _vel # 2, 10];
+		private _posASL = getPosASL _plane;
+		private _posAGL = ASLToAGL _posASL;
+		if (((_posASL # 2) > 2.5) && ((_posAGL # 2) > 2.5) && !(isTouchingGround _plane)) exitWith {};
+		// private _vel = velocityModelSpace _plane;
+		// _plane setVelocityModelSpace [_vel # 0, _vel # 1, 10];
+		private _speed = (velocityModelSpace _plane) # 1;
+		_posASL set [2, (_posASL#2) + 100];
+		_plane setPosASL _posASL;
+		_plane setVelocityModelSpace [0, _speed, 0];
 	},
 	0,
 	[_plane]
