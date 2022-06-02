@@ -23,8 +23,8 @@ diag_log "[fn_OSW_handlePosition]: creating local door";
 private _localDoor = (typeOf _door) createVehicleLocal (getPos _door);
 _localDoor setVectorDirAndUp [vectorDir _door, vectorUp _door];
 _localDoor setPosASL (getPosASL _door);
-diag_log "[fn_OSW_handlePosition]: hiding global door, in local scope";
-_door hideObject true;
+diag_log "[fn_OSW_handlePosition]: hiding global door, in global scope";
+[_door, true] remoteExecCall ["hideObjectGlobal", _door];
 diag_log "[fn_OSW_handlePosition]: disabling simulation of global door, in local scope";
 _door enableSimulation false;
 
