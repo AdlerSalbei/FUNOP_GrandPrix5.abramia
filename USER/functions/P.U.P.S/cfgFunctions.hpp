@@ -8,4 +8,7 @@ class PUPS {
 	class PUPS_handleIndicator {};
 	class PUPS_setPitchBankYaw {};
 	class PUPS_angleBetween3dVectors {};
+	class PUPS_addZeusModules {
+		preInit = 1;
+	};
 };

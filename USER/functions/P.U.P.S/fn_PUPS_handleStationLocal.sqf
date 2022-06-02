@@ -23,8 +23,10 @@ player setVariable ["GRAD_grandPrix_PUPS_movementCenter", getPosASL player];
 		{ 
 			private _isFlying = player getVariable ["GRAD_grandPrix_PUPS_isFlying", false];
 			private _center = player getVariable ["GRAD_grandPrix_PUPS_movementCenter", getPosASL player];
-
-			if (!_isFlying && !(player inArea [_center, 15, 15, 0, false, -1])) then {
+			private _inArea = player inArea [_center, 15, 15, 0, false, -1];
+			private _teleported = player getVariable ["GRAD_grandPrix_PUPS_beingTeleported", false];
+			
+			if (!_isFlying && !_inArea && !_teleported) then {
 				player setPosASL _center;
 				hint "Du hast dich zu weit bewegt!";
 			};

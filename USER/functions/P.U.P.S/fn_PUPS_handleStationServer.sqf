@@ -5,6 +5,7 @@ if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; 
 params ["_station", "_group"];
 
 _station setVariable ["stationIsRunning", true, true];
+missionNamespace setVariable ["GRAD_grandPrix_PUPS_currentGroup", _group, true];
 
 {
 	[
@@ -54,3 +55,4 @@ private _result = format ["Ihr habt durchschnittlich %1 benötigt.\nDamit habt i
 [_result] remoteExec ["hint", (units _group) + [_nearestInstructor]];
 
 _station setVariable ["stationIsRunning", false, true];
+missionNamespace setVariable ["GRAD_grandPrix_PUPS_currentGroup", grpNull, true];
