@@ -5,6 +5,7 @@ if (didJIP) then {
 ["InitializePlayer", [player,true]] call BIS_fnc_dynamicGroups;
 grad_template_ratingEH = player addEventHandler ["HandleRating",{0}];
 
+[player] remoteExec ["grad_grandprix_fnc_points_registerGroups",2,false];
 
 ["grad_grandPrix_race_triggerCountdown", {
     playSound "raceCountdown";
