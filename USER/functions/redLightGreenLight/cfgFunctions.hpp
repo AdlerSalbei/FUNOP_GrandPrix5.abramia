@@ -9,4 +9,8 @@ class redLightGreenLight {
 	class rlgl_holdInPlace {};
 	class rlgl_handleGunDoor {};
 	class rlgl_handleFinishLocal {};
+	class rlgl_setupRequirements {
+		postInit = 1;
+	};
+	class rlgl_initStation {};
 };

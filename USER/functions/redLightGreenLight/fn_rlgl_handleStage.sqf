@@ -40,12 +40,16 @@ sleep 3;
 private _activePlayers = (units _group) select { !(_x inArea GRAD_grandPrix_rlgl_finish) };
 systemChat "go!";
 private _start =  [time, serverTime] select isMultiplayer;
+// use pre-determined sleep-times for fairness
+private _index = 0;
+private _sleepTimes = missionNamespace getVariable ["GRAD_grandPrix_rlgl_sleepTimes", []];
 while { (count _activePlayers) > 0 } do {	
 	systemChat "toggle green";
 	["GRAD_rlgl_toggleGreen", [], (units _group) + [_nearestInstructor]] call CBA_fnc_targetEvent;
 
 	// active for 5 to 15 seconds
-	sleep (5 + (random 10));
+	sleep (_sleepTimes # _index);
+	_index = _index + 1;
 
 	_activePlayers = (units _group) select { !(_x inArea GRAD_grandPrix_rlgl_finish) && !(_x getVariable ["GRAD_grandPrix_rlgl_reachedFinish", false]) };
 	if ((count _activePlayers) == 0) exitWith {};
@@ -102,7 +106,12 @@ private _timeTaken = _stop - _start;
 ["GRAD_rlgl_endDoor", [], (units _group) + [_nearestInstructor]] call CBA_fnc_targetEvent;
 
 
-// To-Do: teleport players back
+// teleport players back
+{
+	private _pos = GRAD_grandPrix_rlgl_backPort call BIS_fnc_randomPosTrigger;
+	_pos set [2,0];
+	_x setPos _pos;
+} forEach (units _group);
 
 
 [format["Ihr hab %1 gebraucht. Damit habt ihr euch %2 Punkte erspielt!", [_timeTaken, "MM:SS.MS"] call BIS_fnc_secondsToString], _points] remoteExec ["hint", (units _group) + [_nearestInstructor]];

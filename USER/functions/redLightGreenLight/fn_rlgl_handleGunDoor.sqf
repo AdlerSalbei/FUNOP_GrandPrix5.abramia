@@ -25,7 +25,7 @@ private _openID =
 				_door setPosWorld [_targetPos#0, _targetPos#1, (_pos#2) - 0.05];
 			},
 			0,
-			[_door, [_initialDoorPos#0, _initialDoorPos#1, (_initialDoorPos#2) - 3]]
+			[_door, [_initialDoorPos#0, _initialDoorPos#1, (_initialDoorPos#2) - 4]]
 		] call CBA_fnc_addPerFrameHandler;
     }
 ] call CBA_fnc_addEventHandler;

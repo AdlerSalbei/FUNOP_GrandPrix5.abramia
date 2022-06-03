@@ -1,6 +1,6 @@
-_pos = getPos player;
-_pos set [2, (_pos#2) + 0.1];
-player setPos _pos;
+_pos = getPosWorld player;
+_pos set [2, (_pos#2) + 0.05];
+player setPosWorld _pos;
 [ 
 	{ 
 		params ["_args", "_handle"];
