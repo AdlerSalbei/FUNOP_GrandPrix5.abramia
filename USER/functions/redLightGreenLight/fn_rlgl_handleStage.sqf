@@ -33,7 +33,8 @@ private _distance = _station distance (_allInstructors#0);
 } forEach (units _group);
 [] remoteExec ["GRAD_grandPrix_fnc_rlgl_handlePIP", _nearestInstructor];
 
-// To-Do: countdown
+// countdown
+["grad_grandPrix_race_triggerCountdown", [], units _group] call CBA_fnc_targetEvent;
 sleep 3;
 
 // stage-loop
@@ -71,7 +72,7 @@ while { (count _activePlayers) > 0 } do {
 
 		[_target, true] remoteExecCall ["allowDamage", _target];
 
-		[GRAD_grandPrix_rlgl_gun, _target] call GRAD_grandPrix_fnc_rlgl_fire;
+		[GRAD_grandPrix_rlgl_gun, _target, _nearestInstructor] call GRAD_grandPrix_fnc_rlgl_fire;
 		waitUntil { _target getVariable ["ACE_isUnconscious", false] };
 		
 		sleep 5;
@@ -98,7 +99,7 @@ while { (count _activePlayers) > 0 } do {
 
 private _stop =  [time, serverTime] select isMultiplayer;
 private _timeTaken = _stop - _start;
-// private _points = [_group, _timeTaken, 470, 1000, "Red Light - Green Light"] call GRAD_grandPrix_fnc_addTime;
+private _points = [_group, _timeTaken, 470, 1000, "Red Light - Green Light"] call GRAD_grandPrix_fnc_addTime;
 
 // close pip and color-bar
 ["GRAD_rlgl_endPIP", [], (units _group) + [_nearestInstructor]] call CBA_fnc_targetEvent;
@@ -111,9 +112,11 @@ private _timeTaken = _stop - _start;
 	private _pos = GRAD_grandPrix_rlgl_backPort call BIS_fnc_randomPosTrigger;
 	_pos set [2,0];
 	_x setPos _pos;
+	[_x, false] remoteExec ["setCaptive", _x];
+	[_x] remoteExecCall ["removeAllWeapons", _x];
 } forEach (units _group);
 
 
-[format["Ihr hab %1 gebraucht. Damit habt ihr euch %2 Punkte erspielt!", [_timeTaken, "MM:SS.MS"] call BIS_fnc_secondsToString], _points] remoteExec ["hint", (units _group) + [_nearestInstructor]];
+[format["Ihr habt %1 gebraucht. Damit habt ihr euch %2 Punkte erspielt!", [_timeTaken, "MM:SS.MS"] call BIS_fnc_secondsToString], _points] remoteExec ["hint", (units _group) + [_nearestInstructor]];
 
 _station setVariable ["stationIsRunning", false, true];

@@ -23,3 +23,15 @@ private _action1 = [
 ] call ace_interact_menu_fnc_createAction;
 
 [_station, 0, ["rlgl_main_action"], _action1] call ace_interact_menu_fnc_addActionToObject;
+
+private _action2 = [   
+    "race_ask_questions",   
+    "Frage die IDAP!",   
+    "",   
+    {   
+  		[_player, "rlgl"] call grad_grandprix_fnc_common_askZeus;
+ 	},   
+    {true}
+] call ace_interact_menu_fnc_createAction;   
+   
+[_station, 0, ["rlgl_ask_questions"], _action2] call ace_interact_menu_fnc_addActionToObject;

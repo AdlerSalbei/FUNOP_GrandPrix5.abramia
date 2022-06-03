@@ -7,11 +7,13 @@ _door setVectorDirAndUp _vectors;
 player setVariable ["GRAD_grandPrix_rlgl_door", _door];
 player setVariable ["GRAD_grandPrix_rlgl_doorPos", getPosWorld _door];
 
+player setCaptive true;
+
 private _openID = 
 [
     "GRAD_rlgl_openDoor",
     {
-		systemChat "opening door...";
+		// systemChat "opening door...";
         private _door = player getVariable ["GRAD_grandPrix_rlgl_door", objNull];
 
 		private _initialDoorPos = player getVariable ["GRAD_grandPrix_rlgl_doorPos", getPosWorld _door];
@@ -25,7 +27,7 @@ private _openID =
 				_door setPosWorld [_targetPos#0, _targetPos#1, (_pos#2) - 0.05];
 			},
 			0,
-			[_door, [_initialDoorPos#0, _initialDoorPos#1, (_initialDoorPos#2) - 4]]
+			[_door, [_initialDoorPos#0, _initialDoorPos#1, (_initialDoorPos#2) - 5]]
 		] call CBA_fnc_addPerFrameHandler;
     }
 ] call CBA_fnc_addEventHandler;
@@ -35,7 +37,7 @@ private _closeID =
 [
     "GRAD_rlgl_closeDoor",
     {
-        systemChat "closing door...";
+        // systemChat "closing door...";
 		private _door = player getVariable ["GRAD_grandPrix_rlgl_door", objNull];
 
 		private _initialDoorPos = player getVariable ["GRAD_grandPrix_rlgl_doorPos", getPosWorld _door];

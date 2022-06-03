@@ -1,3 +1,5 @@
+if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; };
+
 params ["_vehicle", "_group"];
 
 // attach the 2 water tanks
@@ -44,6 +46,9 @@ private _allInstructors = [];
 	_allInstructors pushBackUnique (getAssignedCuratorUnit _x);
 } forEach allCurators;
 // handle visual water leakage
+
+waitUntil { !(isNull _group) };
+
 [_vehicle] remoteExec ["grad_grandPrix_fnc_water_leakageHandler", (units _group) + _allInstructors];
 
 
