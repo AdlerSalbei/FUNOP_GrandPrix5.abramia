@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1023;
+		nextID=1437;
 	};
 	class Camera
 	{
-		pos[]={3104.3992,46.980671,3357.782};
-		dir[]={-0.86038709,-0.48829785,0.14595923};
-		up[]={-0.48141989,0.87267643,0.081669822};
-		aside[]={0.16725452,5.052425e-008,0.98591399};
+		pos[]={3097.271,46.980671,3353.6179};
+		dir[]={-0.87264907,-0.48829663,-0.0070702396};
+		up[]={-0.48828059,0.87267768,-0.0039560697};
+		aside[]={-0.0081017762,-2.3283064e-010,0.9999671};
 	};
 };
 binarizationWanted=0;
@@ -2299,14 +2299,14 @@ class CustomAttributes
 													class data
 													{
 														singleType="BOOL";
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
 												{
 													class data
 													{
-														singleType="BOOL";
+														singleType="SCALAR";
 														value=1;
 													};
 												};
@@ -5219,7 +5219,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="if (isServer) then { " \n "   [this, GRAD_grandPrix_team_Einstein] call grad_grandPrix_fnc_water_setupVehicle; " \n "};";
+				init="if (isServer) then { " \n "   [ " \n "    { " \n "     !(isNull GRAD_grandPrix_team_Einstein) " \n "    }, " \n "    { " \n "     params [""_vehicle""]; " \n "     [_vehicle, GRAD_grandPrix_team_Einstein] call grad_grandPrix_fnc_water_setupVehicle; " \n "    }, " \n "    [this] " \n "   ] call CBA_fnc_waitUntilAndExecute; " \n "};";
 				textures="Red";
 			};
 			id=1496;
@@ -6951,7 +6951,7 @@ class Mission
 			};
 			id=1545;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=2.4725018;
+			atlOffset=6.2985668;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6987,7 +6987,7 @@ class Mission
 			};
 			id=1546;
 			type="Land_Shoot_House_Tunnel_Prone_F";
-			atlOffset=2.5160465;
+			atlOffset=6.2970009;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7021,7 +7021,7 @@ class Mission
 			};
 			id=1547;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=2.5885811;
+			atlOffset=6.2970791;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7049,14 +7049,13 @@ class Mission
 				angles[]={0,1.2047501,0};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 				dynamicSimulation=1;
 			};
 			id=1548;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=0.10949135;
+			atlOffset=6.9771099;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7090,7 +7089,7 @@ class Mission
 			};
 			id=1549;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=0.37783623;
+			atlOffset=7.2460117;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7124,7 +7123,7 @@ class Mission
 			};
 			id=1550;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=2.2600689;
+			atlOffset=6.0405674;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7158,7 +7157,7 @@ class Mission
 			};
 			id=1551;
 			type="Land_Shoot_House_Wall_Crouch_F";
-			atlOffset=2.2425003;
+			atlOffset=6.0229988;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7192,7 +7191,7 @@ class Mission
 			};
 			id=1552;
 			type="EmptyDetectorArea10x10";
-			atlOffset=1.2948265;
+			atlOffset=8.162838;
 		};
 		class Item49
 		{
@@ -10952,6 +10951,7 @@ class Mission
 			};
 			id=1676;
 			type="Sign_Arrow_Large_Blue_F";
+			atlOffset=0.10955811;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -146417,8 +146417,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="if (isServer) then {" \n "   [this, GRAD_grandPrix_team_Hawking] call grad_grandPrix_fnc_water_setupVehicle;" \n "};";
-				name="test_1";
+				init="if (isServer) then { " \n "   [ " \n "    { " \n "     !(isNull GRAD_grandPrix_team_Hawking) " \n "    }, " \n "    { " \n "     params [""_vehicle""]; " \n "     [_vehicle, GRAD_grandPrix_team_Hawking] call grad_grandPrix_fnc_water_setupVehicle; " \n "    }, " \n "    [this] " \n "   ] call CBA_fnc_waitUntilAndExecute; " \n "};";
 				textures="Orange";
 			};
 			id=5497;
@@ -146856,8 +146855,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="if (isServer) then {" \n "   [this, GRAD_grandPrix_team_Newton] call grad_grandPrix_fnc_water_setupVehicle;" \n "};";
-				name="test_2";
+				init="if (isServer) then { " \n "   [ " \n "    { " \n "     !(isNull GRAD_grandPrix_team_Newton) " \n "    }, " \n "    { " \n "     params [""_vehicle""]; " \n "     [_vehicle, GRAD_grandPrix_team_Newton] call grad_grandPrix_fnc_water_setupVehicle; " \n "    }, " \n "    [this] " \n "   ] call CBA_fnc_waitUntilAndExecute; " \n "};";
 				textures="Green";
 			};
 			id=5498;
@@ -147295,8 +147293,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="if (isServer) then {" \n "   [this, GRAD_grandPrix_team_Curie] call grad_grandPrix_fnc_water_setupVehicle;" \n "};";
-				name="test_3";
+				init="if (isServer) then { " \n "   [ " \n "    { " \n "     !(isNull GRAD_grandPrix_team_Curie) " \n "    }, " \n "    { " \n "     params [""_vehicle""]; " \n "     [_vehicle, GRAD_grandPrix_team_Curie] call grad_grandPrix_fnc_water_setupVehicle; " \n "    }, " \n "    [this] " \n "   ] call CBA_fnc_waitUntilAndExecute; " \n "};";
 				textures="Syndikat";
 			};
 			id=5499;
@@ -147734,8 +147731,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="if (isServer) then {" \n "   [this, GRAD_grandPrix_team_Lovelace] call grad_grandPrix_fnc_water_setupVehicle;" \n "};";
-				name="test_4";
+				init="if (isServer) then { " \n "   [ " \n "    { " \n "     !(isNull GRAD_grandPrix_team_Lovelace) " \n "    }, " \n "    { " \n "     params [""_vehicle""]; " \n "     [_vehicle, GRAD_grandPrix_team_Lovelace] call grad_grandPrix_fnc_water_setupVehicle; " \n "    }, " \n "    [this] " \n "   ] call CBA_fnc_waitUntilAndExecute; " \n "};";
 				textures="Blue";
 			};
 			id=5500;

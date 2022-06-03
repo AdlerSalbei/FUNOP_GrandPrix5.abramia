@@ -29,11 +29,11 @@ diag_log "[fn_OSW_handlePosition]: disabling simulation of global door, in local
 _door enableSimulation false;
 
 // add target Hit-EH
-private _hitHandler = _target addEventHandler ["hit", { 
-	params ["_unit", "_source", "_damage", "_instigator"];
+private _hitHandler = _target addEventHandler ["HitPart", { 
+	(_this select 0) params ["_target", "_shooter", "_projectile", "_position", "_velocity", "_selection", "_ammo", "_vector", "_radius", "_surfaceType", "_isDirect"];
 
-	if (_instigator isNotEqualTo player) exitWith {};
-	_unit setVariable ["GRAD_grandPrix_OSW_hit", true];
+	if (_shooter isNotEqualTo player) exitWith {};
+	_target setVariable ["GRAD_grandPrix_OSW_hit", true, true];
 }];
 
 private _firedHandler = 

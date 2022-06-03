@@ -40,7 +40,8 @@ while {!([_allPositions, _playerCount] call GRAD_grandPrix_fnc_OSW_isComplete)} 
 		private _remaining = _allPositions select { !(_x in _visited) };
 		if (_remaining isEqualTo []) then {
 			diag_log format["ending station locally for %1", name _x];
-			[_x] call GRAD_grandPrix_fnc_OSW_endStationLocal;
+			// [_x] call GRAD_grandPrix_fnc_OSW_endStationLocal;
+			[] remoteExec ["GRAD_grandPrix_fnc_OSW_endStationLocal", _x];
 		} else {
 			private _available = _remaining select { !(_x getVariable ["GRAD_grandPrix_OSW_currentlyActive", false]) };;
 			if (_available isEqualTo []) then { continue };

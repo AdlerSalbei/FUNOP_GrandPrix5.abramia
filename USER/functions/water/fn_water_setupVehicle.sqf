@@ -47,8 +47,12 @@ private _allInstructors = [];
 } forEach allCurators;
 // handle visual water leakage
 
-waitUntil { !(isNull _group) && (count (units _group)) >= 2 };
+diag_log "waiting 30 seconds, before starting leakage handler";
 
+// wait a bit for group to fill
+sleep 30;
+
+diag_log "starting leakage handler";
 [_vehicle] remoteExec ["grad_grandPrix_fnc_water_leakageHandler", (units _group) + _allInstructors];
 
 
@@ -64,3 +68,16 @@ waitUntil { !(isNull _group) && (count (units _group)) >= 2 };
 	},
 	[_vehicle, _group]
 ] call CBA_fnc_waitUntilAndExecute;
+
+// if (isServer) then {
+//    [
+// 	   {
+// 		   !(isNull GRAD_grandPrix_team_Lovelace)
+// 	   },
+// 	   {
+// 		   params ["_vehicle"];
+// 		   [_vehicle, GRAD_grandPrix_team_Lovelace] call grad_grandPrix_fnc_water_setupVehicle;
+// 	   },
+// 	   [this]
+//    ] call CBA_fnc_waitUntilAndExecute;
+// };
