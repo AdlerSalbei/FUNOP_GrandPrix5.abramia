@@ -6,4 +6,4 @@ private _totals = 0;
 	_totals = _totals + _timesPlayed;
 } forEach _allPositions;
 
-(_totals == 0) || (_totals < ((count _allPositions) * _playerCount))
+_totals >= ((count _allPositions) * _playerCount)

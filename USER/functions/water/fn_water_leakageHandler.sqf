@@ -2,6 +2,8 @@ params ["_vehicle"];
 
 waitUntil { (_vehicle getVariable ["GRAD_grandPrix_water_currentVolume", 5500]) < 5250 };
 
+diag_log "starting leakage-handler";
+
 private _tanks = _vehicle getVariable ["GRAD_grandPrix_attachedWaterTanks", []];
 _tanks params ["_tankFront", "_tankBack"];
 

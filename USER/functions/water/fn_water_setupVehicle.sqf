@@ -47,7 +47,7 @@ private _allInstructors = [];
 } forEach allCurators;
 // handle visual water leakage
 
-waitUntil { !(isNull _group) };
+waitUntil { !(isNull _group) && (count (units _group)) >= 2 };
 
 [_vehicle] remoteExec ["grad_grandPrix_fnc_water_leakageHandler", (units _group) + _allInstructors];
 
