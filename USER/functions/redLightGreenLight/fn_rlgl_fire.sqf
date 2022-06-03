@@ -5,7 +5,7 @@ private _weapon = currentWeapon _aa;
 _aa lookAt (getPos _target);
 
 waitUntil { (_aa aimedAtTarget [_target, _weapon]) >= 0.1 };
-sleep 2;
+sleep 1;
 
 // systemChat str (_target getVariable ["ACE_isUnconscious", true]);
 // while { !(_target getVariable ["ACE_isUnconscious", false]) } do {

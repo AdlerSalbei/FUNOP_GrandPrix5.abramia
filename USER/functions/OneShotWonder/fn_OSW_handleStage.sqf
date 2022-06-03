@@ -12,6 +12,7 @@ private _allPositions = [GRAD_grandPrix_OSW_position_1, GRAD_grandPrix_OSW_posit
 } forEach _allPositions;
 
 missionNamespace setVariable ["GRAD_grandPrix_OSW_activePlayers", units _group, true];
+
 private _activePlayers = units _group;
 private _playerCount = count _activePlayers;
 {

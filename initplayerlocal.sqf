@@ -5,7 +5,7 @@ if (didJIP) then {
 ["InitializePlayer", [player,true]] call BIS_fnc_dynamicGroups;
 grad_template_ratingEH = player addEventHandler ["HandleRating",{0}];
 
-[player] remoteExec ["grad_grandprix_fnc_points_registerGroups",2,false];
+[player] remoteExecCall ["grad_grandprix_fnc_points_registerGroups",2,false];
 
 ["grad_grandPrix_race_triggerCountdown", {
     playSound "raceCountdown";
@@ -35,3 +35,7 @@ private _handler = ["Leaflet_05_F", "init",
 	}
 ] call CBA_fnc_addClassEventHandler;
 player setVariable ["GRAD_grandPrix_ZiG_leafletHandler", _handler, true];
+
+player allowDamage false;
+
+["TAG_refill_stam", -5] call ace_advanced_fatigue_fnc_addDutyFactor;

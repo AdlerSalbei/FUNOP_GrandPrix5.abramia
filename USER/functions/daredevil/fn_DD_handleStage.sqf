@@ -1,8 +1,6 @@
 params ["_station", "_group"];
 
-if (!isServer) exitWith {
-	_this remoteExec [_fnc_scriptName, 2]; 
-};
+if (!isServer) exitWith {_this remoteExec [_fnc_scriptName, 2];};
 
 ["grad_grandPrix_race_triggerCountdown", [], units _group] call CBA_fnc_targetEvent;
 

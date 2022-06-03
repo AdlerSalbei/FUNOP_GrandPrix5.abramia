@@ -1,6 +1,8 @@
-if !(isServer) exitWith {};
+if (!isServer) exitWith {_this remoteExec [_fnc_scriptName, 2];};
 
 params ["_unit"];
+
+systemChat "_unit";
 
 private _allGroups = missionNamespace getVariable ["GRAD_GrandPrix_allContestantGroups", []];
 private _group = group _unit;
@@ -12,7 +14,7 @@ private _allGroupNames = missionNamespace getVariable ["GRAD_GrandPrix_allContes
 if ((count _allGroups) isNotEqualTo (count _allGroupNames)) exitWith {diag_log format ["GRANDPRIX: Group & Groupname Array are of different size!!!"]};
 
 _allGroups pushBack _group;
-_allGroupNames pushBack (name _group);
+_allGroupNames pushBack _group;
 
 missionNamespace setVariable ["GRAD_GrandPrix_allContestantGroups", _allGroups, false];
 missionNamespace getVariable ["GRAD_GrandPrix_allContestantGroupNames", _allGroupNames, false];
