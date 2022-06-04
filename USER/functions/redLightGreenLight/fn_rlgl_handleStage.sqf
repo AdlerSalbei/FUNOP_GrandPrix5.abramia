@@ -48,7 +48,7 @@ while { (count _activePlayers) > 0 } do {
 	systemChat "toggle green";
 	["GRAD_rlgl_toggleGreen", [], (units _group) + [_nearestInstructor]] call CBA_fnc_targetEvent;
 
-	// active for 5 to 20 seconds
+	// active for 6 to 15 seconds
 	sleep (_sleepTimes # _index);
 	_index = _index + 1;
 

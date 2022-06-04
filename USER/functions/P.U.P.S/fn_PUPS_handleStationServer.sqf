@@ -47,11 +47,11 @@ private _totalTimeTaken = 0;
 	_x removeItem "ACE_RangeCard";
 } forEach (units _group);
 
-private _averageTimeTaken = [_totalTimeTaken / (count (units _group)), "MM:SS"] call BIS_fnc_secondsToString;
+private _averageTimeTaken = _totalTimeTaken / (count (units _group));
 
 private _nearestInstructor = [_station] call grad_grandprix_fnc_common_getNearestZeus;
 
-private _result = format ["Ihr habt durchschnittlich %1 benötigt.\nDamit habt ihr euch %2 Punkte erspielt!", _averageTimeTaken, [_group, _averageTimeTaken, BEST_TIME, 1000, "P.U.P.S"] call grad_grandPrix_fnc_addTime];
+private _result = format ["Ihr habt durchschnittlich %1 benötigt.\nDamit habt ihr euch %2 Punkte erspielt!", [_averageTimeTaken, "MM:SS"] call BIS_fnc_secondsToString, [_group, _averageTimeTaken, BEST_TIME, 1000, "P.U.P.S"] call grad_grandPrix_fnc_addTime];
 [_result] remoteExec ["hint", (units _group) + [_nearestInstructor]];
 
 _station setVariable ["stationIsRunning", false, true];
