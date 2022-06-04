@@ -107,7 +107,7 @@ private _start = [time, servertime] select isMultiplayer;;
 waitUntil { (_target getVariable ["GRAD_grandPrix_OSW_hit", ""]) isNotEqualTo "" };
 
 private _hit = _target getVariable ["GRAD_grandPrix_OSW_hit", ""];
-_target setVariable ["GRAD_grandPrix_OSW_hit", ""]
+_target setVariable ["GRAD_grandPrix_OSW_hit", ""];
 private _timeTaken = ([time, servertime] select isMultiplayer) - _start;
 if (_hit) then {
 	hintSilent "Treffer!";
