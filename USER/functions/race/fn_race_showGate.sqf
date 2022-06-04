@@ -1,5 +1,8 @@
 params ["_index", "_overwirte", "_string"];
 
+systemChat format ["Index: %1, overwirte: %2, string: %3, : %4", _index, _overwirte, _string];
+diag_log format ["Index: %1, overwirte: %2, string: %3, : %4", _index, _overwirte, _string];
+
 //Select next gate
 private _allGates = missionNamespace getVariable "GRAD_grandPrix_race_allGates";
 private _gate = _allGates select _index;
@@ -32,10 +35,3 @@ _gate setVariable ["grad_grandprix_race_triggerGate", _trigger];
 
 //Unhide gate
 _gate  hideObject false;
-
-
-
-
-
-
-

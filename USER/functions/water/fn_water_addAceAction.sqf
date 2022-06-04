@@ -1,4 +1,6 @@
-params ["_vehicle"];
+params ["_vehicle", "_group"];
+
+if (group player isNotEqualTo _group) exitWith {};
 
 // add self-interaction to read current water level
 private _action = [

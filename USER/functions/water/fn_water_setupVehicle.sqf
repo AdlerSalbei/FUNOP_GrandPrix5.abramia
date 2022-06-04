@@ -26,7 +26,7 @@ _vehicle addEventHandler ["GetIn", {
 	] call CBA_fnc_waitAndExecute;	
 }];
 
-[_vehicle] remoteExecCall ["GRAD_grandPrix_fnc_water_addAceAction", _group, _group];
+[_vehicle, _group] remoteExecCall ["GRAD_grandPrix_fnc_water_addAceAction", -2, true];
 
 // handle water loss
 [_vehicle] call GRAD_grandPrix_fnc_water_addCollisionHandler;

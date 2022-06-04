@@ -67,12 +67,13 @@ private _groupTime = 0;
 } forEach _players;
 
 private _points = [_group, _groupTime, BEST_TIME * (count _players), 1000, "One Shot Wonder"] call grad_grandPrix_fnc_addTime;
-private _result = format [
-	"Zusammen habt ihr %1 gebraucht.\nDamit habt ihr euch %2 Punkte erspielt!",
-	[_groupTime, "MM:SS.MS"] call BIS_fnc_secondsToString,
-	_points
-];
+private _msg = format ["<t align='left'>Zusammen habt ihr %1 gebraucht.Damit habt ihr euch %2 Punkte erspielt!</t>", [_groupTime, "MM:SS.MS"] call BIS_fnc_secondsToString, _points];
+_msg = _msg + "<br /> <br /><t align='left'>Spieler Zeit:</t>"; 
 
-[_result] remoteExec ["hint", _players + [_nearestInstructor]];
-// missionNamespace setVariable ["GRAD_grandPrix_OSW_activePlayers", [[player], []] select isMultiplayer]
+{ 
+	_msg = _msg + format ["<br /> <t align='center'>%1:</t> <t align='right'>%2</t>", _x select 0, (_x select 1) * 100]; 
+}forEach _playerTimes; 
+
+[parseText _msg] remoteExec ["hint", _players + [_nearestInstructor]];
+
 _station setVariable ["stationIsRunning", false, true];

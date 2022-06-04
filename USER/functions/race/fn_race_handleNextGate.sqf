@@ -5,6 +5,9 @@ private _playerIndex = player getVariable "GRAD_grandPrix_race_currentPlaneTarge
 private _allGates = missionNamespace getVariable "GRAD_grandPrix_race_allGates";
 private _index = _allGates find _gate;
 
+systemChat format ["Trigger: %1, Gate: %2, PlayerIndex: %3, Index: %4", _trigger, _gate, _playerIndex, _index];
+diag_log format ["Trigger: %1, Gate: %2, PlayerIndex: %3, Index: %4", _trigger, _gate, _playerIndex, _index];
+
 [_index + 1, true, "GRAD_GrandPrix_planeGate01"] call GRAD_grandPrix_fnc_race_showGate;
 [_index + 2, false, "GRAD_GrandPrix_planeGate02"] call GRAD_grandPrix_fnc_race_showGate;
 [_index + 3, false, "GRAD_GrandPrix_planeGate03"] call GRAD_grandPrix_fnc_race_showGate;
