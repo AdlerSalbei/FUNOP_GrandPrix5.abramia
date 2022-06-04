@@ -16,18 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1437;
+		nextID=1506;
 	};
 	class Camera
 	{
-		pos[]={3097.271,46.980671,3353.6179};
-		dir[]={-0.87264907,-0.48829663,-0.0070702396};
-		up[]={-0.48828059,0.87267768,-0.0039560697};
-		aside[]={-0.0081017762,-2.3283064e-010,0.9999671};
+		pos[]={3102.1829,46.980671,3347.4927};
+		dir[]={-0.87264913,-0.48829672,-0.0070702401};
+		up[]={-0.4882808,0.87267774,-0.0039560716};
+		aside[]={-0.0081017781,-2.3283064e-010,0.9999674};
 	};
 };
 binarizationWanted=0;
-sourceName="GrandPrix5";
+sourceName="FUNOP_GrandPrix5";
 addons[]=
 {
 	"A3_Modules_F_Curator_Curator",
@@ -10951,7 +10951,6 @@ class Mission
 			};
 			id=1676;
 			type="Sign_Arrow_Large_Blue_F";
-			atlOffset=0.10955811;
 			class CustomAttributes
 			{
 				class Attribute0

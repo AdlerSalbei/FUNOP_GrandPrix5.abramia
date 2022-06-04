@@ -12,4 +12,7 @@ class race {
 	class race_introCam {};
 	class race_initStation {};
 	class race_handleStation {};
+	class race_add3DMarker {};
+	class race_handleNextGate {};
+	class race_showGate {};
 };

@@ -26,6 +26,8 @@ for "_i" from _gateMarkerStart to _gateMarkerEnd do
 	_allGates pushBack _gate;
 };
 
+missionNamespace setVariable ["GRAD_grandPrix_race_allGates", _allGates];
+
 {
 	_x hideObject false;
 } forEach _allGates;
@@ -38,8 +40,6 @@ private _handle =
 		private _posASL = getPosASL _plane;
 		private _posAGL = ASLToAGL _posASL;
 		if (((_posASL # 2) > 2) && ((_posAGL # 2) > 3) && !(isTouchingGround _plane)) exitWith {};
-		// private _vel = velocityModelSpace _plane;
-		// _plane setVelocityModelSpace [_vel # 0, _vel # 1, 10];
 		private _speed = (velocityModelSpace _plane) # 1;
 		_posASL set [2, (_posASL#2) + 100];
 		_plane setPosASL _posASL;
@@ -50,35 +50,25 @@ private _handle =
 	[_plane]
 ] call CBA_fnc_addPerFrameHandler;
 
-{
+//Set up all 3 gates 
+[0, true, "GRAD_GrandPrix_planeGate01"] call GRAD_grandPrix_fnc_race_showGate;
+[1, false, "GRAD_GrandPrix_planeGate02"] call GRAD_grandPrix_fnc_race_showGate;
+[2, false, "GRAD_GrandPrix_planeGate03"] call GRAD_grandPrix_fnc_race_showGate;
 
-	player setVariable ["GRAD_grandPrix_race_currentPlaneTarget", _x];
-	private _trigger = createTrigger ["EmptyDetector", _x, false];
-	_trigger setTriggerArea [18, 20, getDir _x, true, 18];
-	_trigger setPosASL (getPosASL _x);
-	_trigger setTriggerActivation ["VEHICLE", "PRESENT", false];
-	_trigger triggerAttachVehicle [_plane];
-	_trigger setTriggerStatements ["this", "", ""];
-	_trigger setTriggerInterval 0;
-	_x hideObjectGlobal false;
-	private _id =
-	addMissionEventHandler ["Draw3D", {
-		drawIcon3D [
-			"\a3\ui_f\data\IGUI\Cfg\Radar\targeting_ca.paa",
-			[0.9,0.9,0,1],
-			getPos (player getVariable "GRAD_grandPrix_race_currentPlaneTarget"),
-			0.5,
-			0.5,
-			getDir (player getVariable "GRAD_grandPrix_race_currentPlaneTarget")
-		];
-	}];	
-	waitUntil { triggerActivated _trigger || !(alive _plane) };
-	removeMissionEventHandler ["Draw3D", _id];
-	if !(alive _plane) exitWith { deleteVehicle _trigger; };
-	hideObject _x;
-	
-} forEach _allGates;
+//Add 3D marker for Gates
+[] call GRAD_grandPrix_fnc_race_add3DMarker;
 
-[_handle] call CBA_fnc_removePerFrameHandler;
 
-[_group] call GRAD_grandPrix_fnc_race_handleJetskiPartLocal;
+[{
+	params ["_allGates"];
+
+	private _count = count _allGates;
+
+	(_count -2) <= (player getVariable "GRAD_grandPrix_race_currentPlaneTarget") &&
+	{isNull ((_allGates select (_count -1)) getVariable "grad_grandprix_race_triggerGate")}
+}, {
+	params ["", "_handle", "_group"];
+
+	[_handle] call CBA_fnc_removePerFrameHandler;
+	[_group] call GRAD_grandPrix_fnc_race_handleJetskiPartLocal;
+}, [_allGates, _handle, _group]] call CBA_fnc_waitUntilAndExecute;
