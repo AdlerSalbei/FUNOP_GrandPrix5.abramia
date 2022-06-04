@@ -26,17 +26,7 @@ _vehicle addEventHandler ["GetIn", {
 	] call CBA_fnc_waitAndExecute;	
 }];
 
-// add self-interaction to read current water level
-private _action = [
-    "readWaterLevel",
-    "Wasserstand ablesen",
-    "",
-    {
-		hint format["Es sind noch %1 Liter im Tank!", round (_target getVariable ["GRAD_grandPrix_water_currentVolume", 5500])];
-	},
-    { true }
-] call ace_interact_menu_fnc_createAction;
-[_vehicle, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+[_vehicle] remoteExecCall ["GRAD_grandPrix_fnc_water_addAceAction", _group, true];
 
 // handle water loss
 [_vehicle] call GRAD_grandPrix_fnc_water_addCollisionHandler;
