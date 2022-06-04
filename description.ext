@@ -148,3 +148,14 @@ class CfgLeaflets
 		model = "\mdl\obj\9.p3d"; // In-flight model. Optional; When undefined, generic white leaflet is used
 	}
 };
+
+import ctrlListNBox;
+class JulesListBox: ctrlListNBox {
+	font = "EtelkaMonospacePro";
+    // rows = 8;
+    rowHeight = 0.1;
+    sizeEx = pixelH * pixelGrid * 2.5;
+    colorSelectBackground2[] = {1,1,1,0};
+    colorSelectBackground[] = {1,1,1,0.2};
+    // style = 0x10 + 0x02;
+};

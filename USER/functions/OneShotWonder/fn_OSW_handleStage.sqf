@@ -43,7 +43,7 @@ while {!([_allPositions, _playerCount] call GRAD_grandPrix_fnc_OSW_isComplete)} 
 			// [_x] call GRAD_grandPrix_fnc_OSW_endStationLocal;
 			[] remoteExec ["GRAD_grandPrix_fnc_OSW_endStationLocal", _x];
 		} else {
-			private _available = _remaining select { !(_x getVariable ["GRAD_grandPrix_OSW_currentlyActive", false]) };;
+			private _available = _remaining select { !(_x getVariable ["GRAD_grandPrix_OSW_currentlyActive", false]) };
 			if (_available isEqualTo []) then { continue };
 			private _station = selectRandom _available;
 			diag_log format["Sending %1 to position %2", name _x, _station];
