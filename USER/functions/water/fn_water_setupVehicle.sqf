@@ -26,7 +26,7 @@ _vehicle addEventHandler ["GetIn", {
 	] call CBA_fnc_waitAndExecute;	
 }];
 
-[_vehicle] remoteExecCall ["GRAD_grandPrix_fnc_water_addAceAction", _group, true];
+[_vehicle] remoteExecCall ["GRAD_grandPrix_fnc_water_addAceAction", _group, _group];
 
 // handle water loss
 [_vehicle] call GRAD_grandPrix_fnc_water_addCollisionHandler;
@@ -43,7 +43,7 @@ diag_log "waiting 30 seconds, before starting leakage handler";
 sleep 30;
 
 diag_log "starting leakage handler";
-[_vehicle] remoteExec ["grad_grandPrix_fnc_water_leakageHandler", (units _group) + _allInstructors];
+[_vehicle] remoteExec ["grad_grandPrix_fnc_water_leakageHandler", (units _group) + _allInstructors, _group];
 
 
 [
