@@ -4,8 +4,9 @@ private _weapon = currentWeapon _aa;
 
 _aa lookAt (getPos _target);
 
+[format["Gun is targeting %1", name _target]] remoteExecCall ["hint", _zeus];
 private _time = time + 8;
-waitUntil { ((_aa aimedAtTarget [_target, _weapon]) >= 0.1) || (time > _time) };
+waitUntil { ((_aa aimedAtTarget [_target, _weapon]) >= 0.5) || (time > _time) };
 sleep 1;
 
 // systemChat str (_target getVariable ["ACE_isUnconscious", true]);
@@ -25,8 +26,6 @@ sleep 1;
 
 systemChat "aligned";
 
-[format["Gun is targeting %1", name _target]] remoteExecCall ["hint", _zeus];
-
 private _handler =
 [
 	{
@@ -41,7 +40,7 @@ private _handler =
 
 					_aa setVehicleAmmoDef 1;
 					private _pos = _aa getRelPos [100,0];
-					_pos set [2, ((getPos _aa) # 2) + 1];
+					_pos set [2, (_pos # 2) + 30];
 					_aa lookAt _pos;
 
 					systemChat "done";
