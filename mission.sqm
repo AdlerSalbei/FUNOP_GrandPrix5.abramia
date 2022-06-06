@@ -16,18 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1644;
+		nextID=1851;
 	};
 	class Camera
 	{
-		pos[]={7216.7563,47.446724,8544.9688};
-		dir[]={-0.15856656,-0.10337812,0.98196602};
-		up[]={-0.016482862,0.99463707,0.10207668};
-		aside[]={0.98724568,-2.6158523e-007,0.15941915};
+		pos[]={9392.5176,143.74852,9286.6377};
+		dir[]={-0.5513581,-0.80442041,0.22116704};
+		up[]={-0.7465952,0.59405887,0.29948264};
+		aside[]={0.37229609,-1.481385e-008,0.92811519};
 	};
 };
 binarizationWanted=0;
-sourceName="GrandPrix5";
+sourceName="FUNOP_GrandPrix5";
 addons[]=
 {
 	"A3_Modules_F_Curator_Curator",

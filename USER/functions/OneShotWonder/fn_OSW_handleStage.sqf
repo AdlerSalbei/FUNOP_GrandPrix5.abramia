@@ -67,7 +67,7 @@ private _groupTime = 0;
 } forEach _players;
 
 private _points = [_group, _groupTime, BEST_TIME * (count _players), 1000, "One Shot Wonder"] call grad_grandPrix_fnc_addTime;
-private _msg = format ["<t align='left'>Zusammen habt ihr %1 gebraucht.Damit habt ihr euch %2 Punkte erspielt!</t>", [_groupTime, "MM:SS.MS"] call BIS_fnc_secondsToString, _points];
+private _msg = format ["<t align='left'>Zusammen habt ihr %1 gebraucht.Damit habt ihr euch %2 Punkte erspielt!</t>", [_groupTime, "MM:SS"] call BIS_fnc_secondsToString, _points];
 _msg = _msg + "<br /> <br /><t align='left'>Spieler Zeit:</t>"; 
 
 { 

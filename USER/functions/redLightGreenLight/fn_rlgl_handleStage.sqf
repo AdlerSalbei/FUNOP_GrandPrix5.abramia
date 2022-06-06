@@ -116,6 +116,6 @@ private _points = [_group, _timeTaken, 470, 1000, "Red Light - Green Light"] cal
 	[_x] remoteExecCall ["removeAllWeapons", _x];
 } forEach (units _group);
 
-[format["Ihr habt %1 gebraucht. Damit habt ihr euch %2 Punkte erspielt!", [_timeTaken, "MM:SS.MS"] call BIS_fnc_secondsToString, _points]] remoteExec ["hint", (units _group) + [_nearestInstructor]];
+[format["Ihr habt %1 gebraucht. Damit habt ihr euch %2 Punkte erspielt!", [_timeTaken, "MM:SS"] call BIS_fnc_secondsToString, _points]] remoteExec ["hint", (units _group) + [_nearestInstructor]];
 
 _station setVariable ["stationIsRunning", false, true];

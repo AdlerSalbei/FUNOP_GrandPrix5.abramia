@@ -1,7 +1,7 @@
 diwako_dui_main_toggled_off = true;
-cutText ["", "BLACK", 2];
+cutText ["", "BLACK", 1];
 5 fadeSound 0.2;
-sleep 5;
+sleep 3;
 
 private _roadMap = missionNamespace getVariable ["GRAD_grandPrix_race_roadMap", createHashMap];
 toArray _roadMap params ["_keys", "_values"];
@@ -52,7 +52,6 @@ private _keyCount = count _sortedKeys;
 	private _sleepTime = _dist / 210;
 	
 	_cam camSetTarget _nextPos;
-	// _cam camCommit (_sleepTime / 2);
 	_cam camSetPos _pos;
 	_cam camCommit _sleepTime;
 	sleep _sleepTime;	
@@ -66,7 +65,6 @@ _gateCount = count _allGates;
 	private _nextPos = _allGates # (_foreachIndex + 1);
 	private _dist = _pos distance _nextPos;
 	private _sleepTime = _dist / 900;
-	// private _target = _pos vectorAdd ((_pos vectorFromTo (getPos _nextPos)) vectorMultiply (_dist / 2));
 	
 	_cam camSetTarget _nextPos;
 	_cam camCommit (_sleepTime * 3);
@@ -85,10 +83,8 @@ _sphereCount = count _spheres;
 	private _nextPos = _spheres # (_foreachIndex + 1);
 	private _dist = _pos distance _nextPos;
 	private _sleepTime = _dist / 250;
-	// private _target = _pos vectorAdd ((_pos vectorFromTo (getPos _nextPos)) vectorMultiply (_dist / 2));
 	
 	_cam camSetTarget _nextPos;
-	// _cam camCommit (_sleepTime * 3);
 	_cam camSetPos _pos;
 	_cam camCommit _sleepTime;
 	sleep _sleepTime;		

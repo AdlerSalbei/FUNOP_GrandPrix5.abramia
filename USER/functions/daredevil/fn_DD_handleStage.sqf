@@ -27,7 +27,7 @@ if (!isServer) exitWith {_this remoteExec [_fnc_scriptName, 2];};
 		private _averageTime = _totalTime / (count _units);
 		private _points = [_group, _averageTime, 470, 1000, "Daredevil"] call GRAD_grandPrix_fnc_addTime;
 
-		private _msg = format ["<t align='left'>Ihr hab durchschnittlich %1 gebraucht. Damit habt ihr euch %2 Punkte erspielt!</t>", [_averageTime, "MM:SS.MS"] call BIS_fnc_secondsToString, _points]; 
+		private _msg = format ["<t align='left'>Ihr hab durchschnittlich %1 gebraucht. Damit habt ihr euch %2 Punkte erspielt!</t>", [_averageTime, "MM:SS"] call BIS_fnc_secondsToString, _points]; 
 		_msg = _msg + "<br /> <br /><t align='left'>Spieler Zeit:</t>"; 
 
 		{ 

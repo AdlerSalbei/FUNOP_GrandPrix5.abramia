@@ -28,7 +28,7 @@ private _timeTaken = _end - _start;
 player setVariable ["GRAD_grandPrix_race_timeTaken", _timeTaken, true];
 player setVariable ["GRAD_grandPrix_race_complete", true, true];
 
-hint format ["Du hast %1 gebraucht!", [_timeTaken, "MM:SS.MS"] call BIS_fnc_secondsToString];
+hint format ["Du hast %1 gebraucht!", [_timeTaken, "MM:SS"] call BIS_fnc_secondsToString];
 
 waitUntil { (vehicle player) isNotEqualTo _jetski };
 deleteVehicle _jetSki;

@@ -17,6 +17,8 @@ player moveInDriver _plane;
 _plane setVelocityModelSpace [0, _velY max 75, 0];
 _plane allowDamage false;
 
+player setVariable ["GRAD_grandPrix_race_plane", _plane];
+
 private _allGates = [];
 private _gateMarkerStart = 1; 
 private _gateMarkerEnd = 19;
@@ -27,10 +29,6 @@ for "_i" from _gateMarkerStart to _gateMarkerEnd do
 };
 
 missionNamespace setVariable ["GRAD_grandPrix_race_allGates", _allGates];
-
-{
-	_x hideObject false;
-} forEach _allGates;
 
 private _handle = 
 [
@@ -69,6 +67,16 @@ private _handle =
 }, {
 	params ["", "_handle", "_group"];
 
+	private _IDs = missionNamespace getVariable "grad_grandPrix_planGate3DMarker_ID";
+	{
+		removeMissionEventHandler ["Draw3D", _x];
+	}forEach _IDs;
+
+	private _allGate = missionNamespace getVariable "GRAD_grandPrix_race_allGates";
+	{
+		_x hideObject true;
+	} forEach _allGates;
+
 	[_handle] call CBA_fnc_removePerFrameHandler;
-	[_group] call GRAD_grandPrix_fnc_race_handleJetskiPartLocal;
+	[_group] spawn GRAD_grandPrix_fnc_race_handleJetskiPartLocal;
 }, [_allGates, _handle, _group]] call CBA_fnc_waitUntilAndExecute;

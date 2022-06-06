@@ -1,10 +1,13 @@
 params ["_index", "_overwirte", "_string"];
 
-systemChat format ["Index: %1, overwirte: %2, string: %3, : %4", _index, _overwirte, _string];
-diag_log format ["Index: %1, overwirte: %2, string: %3, : %4", _index, _overwirte, _string];
-
 //Select next gate
+private _plane = player getVariable "GRAD_grandPrix_race_plane";
 private _allGates = missionNamespace getVariable "GRAD_grandPrix_race_allGates";
+
+private _countGates = count _allGates;
+systemChat format ["MaxGate: %1, Index: %2", _countGates, _index];
+
+if (_index >= _countGates) exitWith {};
 private _gate = _allGates select _index;
 player setVariable [_string, _gate];
 
@@ -12,9 +15,11 @@ if (_overwirte) then {
 	player setVariable ["GRAD_grandPrix_race_currentPlaneTarget", _index ];
 };
 
+if !(isNull (_gate getVariable ["grad_grandprix_race_triggerGate", objNull])) exitWith {};
+
 //Add trigger to gate
-private _trigger = createTrigger ["EmptyDetector", _gate , false];
-_trigger setTriggerArea [18, 20, getDir _gate , true, 18];
+private _trigger = createTrigger ["EmptyDetector", getPos _gate , false];
+_trigger setTriggerArea [18, 20, getPosASL _gate , true, 18];
 _trigger setPosASL (getPosASL _gate );
 _trigger setTriggerActivation ["VEHICLE", "PRESENT", false];
 _trigger triggerAttachVehicle [_plane];
@@ -31,7 +36,3 @@ _trigger setTriggerInterval 0;
 
 _trigger setVariable ["grad_grandprix_race_triggerGate", _gate];
 _gate setVariable ["grad_grandprix_race_triggerGate", _trigger];
-
-
-//Unhide gate
-_gate  hideObject false;
