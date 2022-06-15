@@ -58,16 +58,3 @@ diag_log "starting leakage handler";
 	},
 	[_vehicle, _group]
 ] call CBA_fnc_waitUntilAndExecute;
-
-// if (isServer) then {
-//    [
-// 	   {
-// 		   !(isNull GRAD_grandPrix_team_Lovelace)
-// 	   },
-// 	   {
-// 		   params ["_vehicle"];
-// 		   [_vehicle, GRAD_grandPrix_team_Lovelace] call grad_grandPrix_fnc_water_setupVehicle;
-// 	   },
-// 	   [this]
-//    ] call CBA_fnc_waitUntilAndExecute;
-// };

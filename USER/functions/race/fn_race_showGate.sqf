@@ -5,7 +5,6 @@ private _plane = player getVariable "GRAD_grandPrix_race_plane";
 private _allGates = missionNamespace getVariable "GRAD_grandPrix_race_allGates";
 
 private _countGates = count _allGates;
-systemChat format ["MaxGate: %1, Index: %2", _countGates, _index];
 
 if (_index >= _countGates) exitWith {};
 private _gate = _allGates select _index;
