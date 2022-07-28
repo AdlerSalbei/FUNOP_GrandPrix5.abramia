@@ -56,7 +56,6 @@ private _handle =
 //Add 3D marker for Gates
 [] call GRAD_grandPrix_fnc_race_add3DMarker;
 
-
 [{
 	params ["_allGates"];
 

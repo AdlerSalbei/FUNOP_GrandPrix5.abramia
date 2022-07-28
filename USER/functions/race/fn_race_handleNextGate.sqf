@@ -26,3 +26,5 @@ switch (_index - _playerIndex) do {
 deleteVehicle _trigger;
 deleteVehicle _trigger2;
 deleteVehicle _trigger3;
+
+_gate hideObject true;
