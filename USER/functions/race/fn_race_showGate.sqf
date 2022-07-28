@@ -3,10 +3,9 @@ params ["_index", "_overwirte", "_string"];
 //Select next gate
 private _plane = player getVariable "GRAD_grandPrix_race_plane";
 private _allGates = missionNamespace getVariable "GRAD_grandPrix_race_allGates";
-
 private _countGates = count _allGates;
 
-if (_index >= _countGates) exitWith {};
+if (_index > _countGates) exitWith {};
 private _gate = _allGates select _index;
 player setVariable [_string, _gate];
 
