@@ -58,14 +58,14 @@ _streamBack attachTo [_tankBack, [1.2,0,-0.56]];
 		if (_waterLevel < 4000) then {
 			
 			// private _backVelocity = [(_vel#0) * -1, (_vel#1) * -1, _vel#2];
-			private _dirBack = [(_dir#0) * -1, (_dir#1) * -1, _dir#2];
+			private _dirBack = [(_dir#0) * -1, (_dir#1) * -1, _dir#2 *-1];
 
 			_streamBack setParticleParams [
 			/*shapeName*/					["\a3\data_f\ParticleEffects\Universal\Universal.p3d",16,12,8],
 			/*animationName*/				"",
 			/*particleType*/				"BillBoard",
 			/*timerPeriod*/					1,
-			/*lifeTime*/					2.5,
+			/*lifeTime*/					3,
 			/*position*/					[0,0,0],
 			/*moveVelocity*/				_dirBack vectorMultiply _moveVelocityFactor,
 			/*rotationVelocity*/			0,
@@ -73,7 +73,7 @@ _streamBack attachTo [_tankBack, [1.2,0,-0.56]];
 			/*volume*/						1,
 			/*rubbing*/						0.1,
 			/*size*/						_size,
-			/*color*/						[[0.68,0.85,0.9,0.4]],
+			/*color*/						[[0.678,0.847,0.902,0.3], [0.678,0.847,0.902,0.7]],
 			/*animationSpeed*/				[1],
 			/*randomDirectionPeriod*/		1,
 			/*randomDirectionIntensity*/	0,
@@ -82,7 +82,7 @@ _streamBack attachTo [_tankBack, [1.2,0,-0.56]];
 			/*object*/						_streamBack,
 			/*angle*/						0,
 			/*onSurface*/					true,
-			/*bounceOnSurface*/				0.1
+			/*bounceOnSurface*/				0
 			];
 
 			if ((player distance _vehicle) >= 250) then {
@@ -96,7 +96,7 @@ _streamBack attachTo [_tankBack, [1.2,0,-0.56]];
 		/*animationName*/				"",
 		/*particleType*/				"BillBoard",
 		/*timerPeriod*/					1,
-		/*lifeTime*/					2.5,
+		/*lifeTime*/					3,
 		/*position*/					[0,0,0],
 		/*moveVelocity*/				_dir vectorMultiply _moveVelocityFactor,
 		/*rotationVelocity*/			0,
@@ -104,7 +104,7 @@ _streamBack attachTo [_tankBack, [1.2,0,-0.56]];
 		/*volume*/						1,
 		/*rubbing*/						0.1,
 		/*size*/						_size,
-		/*color*/						[[0.68,0.85,0.9,0.4]],
+		/*color*/						[[0.678,0.847,0.902,0.3], [0.678,0.847,0.902,0.7]],
 		/*animationSpeed*/				[1],
 		/*randomDirectionPeriod*/		1,
 		/*randomDirectionIntensity*/	0,
@@ -113,7 +113,7 @@ _streamBack attachTo [_tankBack, [1.2,0,-0.56]];
 		/*object*/						_streamFront,
 		/*angle*/						0,
 		/*onSurface*/					true,
-		/*bounceOnSurface*/				0.1
+		/*bounceOnSurface*/				0
 		];
 
 		if ((player distance _vehicle) >= 250) then {
