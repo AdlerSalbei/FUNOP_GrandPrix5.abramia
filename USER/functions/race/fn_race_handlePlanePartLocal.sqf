@@ -56,6 +56,13 @@ private _handle =
 //Add 3D marker for Gates
 [] call GRAD_grandPrix_fnc_race_add3DMarker;
 
+// adjust viewDistance
+private _previousViewDistance = ace_viewdistance_viewDistanceAirVehicle;
+if (_previousViewDistance < 3000) then {
+	ace_viewdistance_viewDistanceAirVehicle = 3000;
+	[false] call ace_viewdistance_fnc_adaptViewDistance;
+};
+
 [{
 	params ["_allGates"];
 
@@ -64,7 +71,7 @@ private _handle =
 	(_count -2) <= (player getVariable "GRAD_grandPrix_race_currentPlaneTarget") &&
 	{isNull ((_allGates select (_count -1)) getVariable "grad_grandprix_race_triggerGate")}
 }, {
-	params ["", "_handle", "_group"];
+	params ["", "_handle", "_group", "_previousViewDistance"];
 
 	private _IDs = missionNamespace getVariable "grad_grandPrix_planGate3DMarker_ID";
 	{
@@ -76,6 +83,9 @@ private _handle =
 		_x hideObject true;
 	} forEach _allGates;
 
+	ace_viewdistance_viewDistanceAirVehicle = _previousViewDistance;
+	[false] call ace_viewdistance_fnc_adaptViewDistance;
+
 	[_handle] call CBA_fnc_removePerFrameHandler;
 	[_group] spawn GRAD_grandPrix_fnc_race_handleJetskiPartLocal;
-}, [_allGates, _handle, _group]] call CBA_fnc_waitUntilAndExecute;
+}, [_allGates, _handle, _group, _previousViewDistance]] call CBA_fnc_waitUntilAndExecute;

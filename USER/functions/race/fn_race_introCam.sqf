@@ -3,6 +3,15 @@ cutText ["", "BLACK", 1];
 5 fadeSound 0.2;
 sleep 3;
 
+// adjust viewDistance
+private _previousLandVehicleViewDistance = ace_viewdistance_viewDistanceLandVehicle;
+private _previousOnFootViewDistance = ace_viewdistance_viewDistanceOnFoot;
+if (ace_viewdistance_viewDistanceLandVehicle < 3000) then {
+	ace_viewdistance_viewDistanceLandVehicle = 3000;
+	ace_viewdistance_viewDistanceOnFoot = 3000;
+	[false] call ace_viewdistance_fnc_adaptViewDistance;
+};
+
 private _roadMap = missionNamespace getVariable ["GRAD_grandPrix_race_roadMap", createHashMap];
 toArray _roadMap params ["_keys", "_values"];
 private _sortedValues = +_values;
@@ -96,3 +105,7 @@ diwako_dui_main_toggled_off = false;
 1 fadeSound 1;
 
 player setVariable ["GRAD_grandPrix_race_introDone", true, true];
+
+ace_viewdistance_viewDistanceLandVehicle = _previousLandVehicleViewDistance;
+ace_viewdistance_viewDistanceOnFoot = _previousOnFootViewDistance;
+[false] call ace_viewdistance_fnc_adaptViewDistance;

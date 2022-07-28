@@ -4,6 +4,13 @@ if !(canSuspend) exitWith { _this spawn GRAD_grandPrix_fnc_PUPS_handleStationLoc
 
 params [["_targets", [GRAD_grandPrix_PUPS_target_1, GRAD_grandPrix_PUPS_target_2, GRAD_grandPrix_PUPS_target_3, GRAD_grandPrix_PUPS_target_4, GRAD_grandPrix_PUPS_target_5, GRAD_grandPrix_PUPS_target_6]]];
 
+// adjust viewDistance
+private _previousViewDistance = ace_viewdistance_viewDistanceOnFoot;
+if (_previousViewDistance < 3000) then {
+	ace_viewdistance_viewDistanceOnFoot = 3000;
+	[false] call ace_viewdistance_fnc_adaptViewDistance;
+};
+
 player allowDamage false;
 
 private _start = time;
@@ -54,3 +61,6 @@ player setVariable ["GRASD_grandPrix_PUPS_timeTaken", _timeTaken, true];
 player setPosASL (getPosASL grad_grandPrix_fnc_PUPS_returnPoint);
 hint format ["Du hast %1 bei %2 Schuss gebraucht.", [_timeTaken, "MM:SS"] call BIS_fnc_secondsToString, _shotsFired];
 player setVariable ["GRAD_grandPrix_PUPS_stationFinished", true, true];
+
+ace_viewdistance_viewDistanceOnFoot = _previousViewDistance;
+[false] call ace_viewdistance_fnc_adaptViewDistance;

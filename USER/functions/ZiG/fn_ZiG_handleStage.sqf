@@ -53,7 +53,7 @@ if (missionNamespace getVariable ["GRAD_grandPrix_ZiG_endPressed", false]) then 
 [_group, _money, "Zeit ist Geld"] call grad_grandPrix_fnc_addPoints;
 
 //Nachricht an die Spieler
-private _msg = "<t align='left'>Ihr habt leider kein Geld gefunden :(</t>"; 
+private _msg = "<t align='left'>Ihr wart zu gierig und/oder zu inkompetent, um es mit ein paar Polizisten aufzunehmen. No money for you!</t>"; 
 if (_money > 0) then { 
 	_msg = format ["<t align='left'>Ihr habt %1€ erbeutet und euch damit %2 Punkte erspielt!</t>", _money * 100, _money]; 
 	_msg = _msg + "<br /> <br /><t align='left'>Spieler haben gesammelt:</t>"; 

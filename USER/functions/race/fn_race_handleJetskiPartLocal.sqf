@@ -15,7 +15,7 @@ _jetSki setDir _dir;
 
 _jetSki setPosASL _playerPos;
 player moveInDriver _jetSki;
-_jetSki setVelocityModelSpace [0, _velY min 50, -5];
+_jetSki setVelocityModelSpace [0, _velY min 35, -2];
 
 _jetSki allowDamage false;
 
