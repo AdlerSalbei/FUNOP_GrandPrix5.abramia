@@ -19,7 +19,8 @@ missionNamespace setVariable ["GRAD_grandPrix_PUPS_currentGroup", _group, true];
 
 			player addWeapon "ACE_Vector";
 			// _x addItem "ACE_ATragMX";
-			player addItem "ACE_RangeCard";			
+			player addItem "ACE_RangeCard";	
+			player addVest "V_RebreatherIA";		
 		}
 	] remoteExec ["call", _x];
 } forEach (units _group);
@@ -45,6 +46,7 @@ private _totalTimeTaken = 0;
 	_totalTimeTaken = _totalTimeTaken + (_x getVariable ["GRASD_grandPrix_PUPS_timeTaken", 0]);
 	[{ removeAllWeapons player; }] remoteExec ["call", _x];
 	_x removeItem "ACE_RangeCard";
+	removeVest _x;
 } forEach (units _group);
 
 private _averageTimeTaken = _totalTimeTaken / (count (units _group));
