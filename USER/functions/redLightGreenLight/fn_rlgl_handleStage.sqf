@@ -106,9 +106,14 @@ private _points = [_group, _timeTaken, 470, 1000, "Red Light - Green Light"] cal
 // delete door and corresponding handlers
 ["GRAD_rlgl_endDoor", [], (units _group) + [_nearestInstructor]] call CBA_fnc_targetEvent;
 
+private _playerTimes = [];
 
-// teleport players back
 {
+	// Handle time
+	private _playerTime = _x getVariable ["GRAD_grandPrix_rlgl_timeTaken", 0];
+	_playerTimes pushBack [name _x, _playerTime];
+
+	// teleport players back
 	private _pos = GRAD_grandPrix_rlgl_backPort call BIS_fnc_randomPosTrigger;
 	_pos set [2,0];
 	_x setPos _pos;
@@ -116,6 +121,16 @@ private _points = [_group, _timeTaken, 470, 1000, "Red Light - Green Light"] cal
 	[_x] remoteExecCall ["removeAllWeapons", _x];
 } forEach (units _group);
 
-[format["Ihr habt %1 gebraucht. Damit habt ihr euch %2 Punkte erspielt!", [_timeTaken, "MM:SS"] call BIS_fnc_secondsToString, _points]] remoteExec ["hint", (units _group) + [_nearestInstructor]];
+[] remoteExec ["hint", (units _group) + [_nearestInstructor]];
+
+private _msg = format ["Ihr habt %1 gebraucht. Damit habt ihr euch %2 Punkte erspielt!", [_timeTaken, "MM:SS"] call BIS_fnc_secondsToString, _points];
+_msg = _msg + "<br /> <br /><t align='left'>Spieler Zeit:</t>"; 
+
+{ 
+	_msg = _msg + format ["<br /> <t align='center'>%1:</t> <t align='right'>%2</t>", _x select 0, [_x select 1, "MM:SS"] call BIS_fnc_secondsToString]; 
+}forEach _playerTimes; 
+
+[parseText _msg] remoteExec ["hint", (units _group) + [_nearestInstructor]];
+
 
 _station setVariable ["stationIsRunning", false, true];

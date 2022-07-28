@@ -42,19 +42,32 @@ while {!_stageComplete} do {
 sleep 6;
 
 private _totalTimeTaken = 0;
+private _playerTimes = [];
 {
-	_totalTimeTaken = _totalTimeTaken + (_x getVariable ["GRASD_grandPrix_PUPS_timeTaken", 0]);
+	// Handle time
+	private _playerTime = _x getVariable ["GRAD_grandPrix_PUPS_timeTaken", 0];
+	_totalTimeTaken = _totalTimeTaken + _playerTime;
+	_playerTimes pushBack [name _x, _playerTime];
+
+	//Clear inventory
 	[{ removeAllWeapons player; }] remoteExec ["call", _x];
 	_x removeItem "ACE_RangeCard";
 	removeVest _x;
 } forEach (units _group);
 
 private _averageTimeTaken = _totalTimeTaken / (count (units _group));
+private _points = [_group, _averageTimeTaken, BEST_TIME, 1000, "P.U.P.S"] call grad_grandPrix_fnc_addTime;
 
 private _nearestInstructor = [_station] call grad_grandprix_fnc_common_getNearestZeus;
 
-private _result = format ["Ihr habt durchschnittlich %1 benötigt.\nDamit habt ihr euch %2 Punkte erspielt!", [_averageTimeTaken, "MM:SS"] call BIS_fnc_secondsToString, [_group, _averageTimeTaken, BEST_TIME, 1000, "P.U.P.S"] call grad_grandPrix_fnc_addTime];
-[_result] remoteExec ["hint", (units _group) + [_nearestInstructor]];
+private _msg = format ["Ihr habt durchschnittlich %1 benötigt.\nDamit habt ihr euch %2 Punkte erspielt!", [_averageTimeTaken, "MM:SS"] call BIS_fnc_secondsToString, _points];
+_msg = _msg + "<br /> <br /><t align='left'>Spieler Zeit:</t>"; 
+
+{ 
+	_msg = _msg + format ["<br /> <t align='center'>%1:</t> <t align='right'>%2</t>", _x select 0, [_x select 1, "MM:SS"] call BIS_fnc_secondsToString]; 
+}forEach _playerTimes; 
+
+[parseText _msg] remoteExec ["hint", (units _group) + [_nearestInstructor]];
 
 _station setVariable ["stationIsRunning", false, true];
 missionNamespace setVariable ["GRAD_grandPrix_PUPS_currentGroup", grpNull, true];

@@ -57,7 +57,7 @@ player removeEventHandler ["fired", _firedEH];
 private _shotsFired = player getVariable ["GRAD_grandPrix_PUPS_shotsFired", 0];
 private _timeTaken = _timeTaken + TIME_PER_SHOT * _shotsFired;
 
-player setVariable ["GRASD_grandPrix_PUPS_timeTaken", _timeTaken, true];
+player setVariable ["GRAD_grandPrix_PUPS_timeTaken", _timeTaken, true];
 player setPosASL (getPosASL grad_grandPrix_fnc_PUPS_returnPoint);
 hint format ["Du hast %1 bei %2 Schuss gebraucht.", [_timeTaken, "MM:SS"] call BIS_fnc_secondsToString, _shotsFired];
 player setVariable ["GRAD_grandPrix_PUPS_stationFinished", true, true];

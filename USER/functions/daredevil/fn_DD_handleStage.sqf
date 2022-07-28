@@ -19,9 +19,9 @@ if (!isServer) exitWith {_this remoteExec [_fnc_scriptName, 2];};
 		private _playerTimes = [];
 		private _totalTime = 0;
 		{
-			private _time = _x getVariable ["GRAD_grandPrix_DD_totalTime", 0];
-			_totalTime = _totalTime + _time;
-			_playerTimes pushBack [name _x, _time ];
+			private _playerTime = _x getVariable ["GRAD_grandPrix_DD_totalTime", 0];
+			_totalTime = _totalTime + _playerTime;
+			_playerTimes pushBack [name _x, _playerTime];
 		} forEach _units;
 
 		private _averageTime = _totalTime / (count _units);
@@ -31,7 +31,7 @@ if (!isServer) exitWith {_this remoteExec [_fnc_scriptName, 2];};
 		_msg = _msg + "<br /> <br /><t align='left'>Spieler Zeit:</t>"; 
 
 		{ 
-			_msg = _msg + format ["<br /> <t align='center'>%1:</t> <t align='right'>%2</t>", _x select 0, (_x select 1) * 100]; 
+			_msg = _msg + format ["<br /> <t align='center'>%1:</t> <t align='right'>%2</t>", _x select 0, [_x select 1, "MM:SS"] call BIS_fnc_secondsToString]; 
 		}forEach _playerTimes; 
 
 		[parseText _msg] remoteExec ["hint", _units + [_nearestInstructor]];

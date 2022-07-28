@@ -57,12 +57,13 @@ while {!([_allPositions, _playerCount] call GRAD_grandPrix_fnc_OSW_isComplete)} 
 sleep 7;
 
 private _nearestInstructor = [_station] call grad_grandprix_fnc_common_getNearestZeus;
-
+private _playerTimes = [];
 private _players = units _group;
 private _groupTime = 0;
 {
 	private _playerTime = _x getVariable ["GRAD_grandPrix_OSW_totalTime", 0];
 	_groupTime = _groupTime + _playerTime;
+	_playerTimes pushBack [name _x, _playerTime];
 	removeAllWeapons _x;
 } forEach _players;
 
@@ -71,7 +72,7 @@ private _msg = format ["<t align='left'>Zusammen habt ihr %1 gebraucht.Damit hab
 _msg = _msg + "<br /> <br /><t align='left'>Spieler Zeit:</t>"; 
 
 { 
-	_msg = _msg + format ["<br /> <t align='center'>%1:</t> <t align='right'>%2</t>", _x select 0, (_x select 1) * 100]; 
+	_msg = _msg + format ["<br /> <t align='center'>%1:</t> <t align='right'>%2</t>", _x select 0, [_x select 1, "MM:SS"] call BIS_fnc_secondsToString]; 
 }forEach _playerTimes; 
 
 [parseText _msg] remoteExec ["hint", _players + [_nearestInstructor]];
