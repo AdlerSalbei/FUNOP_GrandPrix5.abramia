@@ -1,5 +1,7 @@
 if (!isServer) exitWith { _this remoteExecCall [_fnc_scriptName, 2]; };
 
+diag_log "Spawning Money";
+
 missionNamespace setVariable ["GRAD_grandPrix_ZiG_spawningMoney", true, true];
 
 private _timeModifier = 0.1;

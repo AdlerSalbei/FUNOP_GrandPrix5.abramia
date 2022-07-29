@@ -20,8 +20,8 @@ private _action1 = [
     "",
     {[_target, (group _player)] spawn GRAD_grandPrix_fnc_ZiG_handleStage;},
     {
-        !(_target getVariable ["stationIsRunning", false]) &&
-        {missionNamespace getVariable ["GRAD_grandPrix_ZiG_spawningMoney", false]}
+        (!(_target getVariable ["stationIsRunning", false])) &&
+        {!(missionNamespace getVariable ["GRAD_grandPrix_ZiG_spawningMoney", false])}
     }
 ] call ace_interact_menu_fnc_createAction;
 
@@ -32,7 +32,7 @@ private _action3 = [
     "Stage reseting, please wait ...",
     "",
     {},
-    {!missionNamespace getVariable ["GRAD_grandPrix_ZiG_spawningMoney", false]}
+    {missionNamespace getVariable ["GRAD_grandPrix_ZiG_spawningMoney", false]}
 ] call ace_interact_menu_fnc_createAction;
 
 [_station, 0, ["zig_main _action"], _action3] call ace_interact_menu_fnc_addActionToObject;
