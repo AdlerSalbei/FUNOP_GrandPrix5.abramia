@@ -6,12 +6,12 @@ private _handle =
 player addEventHandler ["Fired", { 
 	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 
+	private _vel = velocity player;
+	if ((abs (_vel#0) > 0.01) || (abs (_vel#1) > 0.01) || (abs (_vel#2) > 0.01)) exitWith {};
+
 	private _shotsFired = player getVariable ["GRAD_grandPrix_PUPS_shotsFired", 0];
 	_shotsFired = _shotsFired + 1;
 	player setVariable ["GRAD_grandPrix_PUPS_shotsFired", _shotsFired, true];
-
-	private _vel = velocity player;
-	if ((abs (_vel#0) > 0.01) || (abs (_vel#1) > 0.01) || (abs (_vel#2) > 0.01)) exitWith {};
 	
 	player setVariable ["GRAD_grandPrix_PUPS_isFlying", true];
 
