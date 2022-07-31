@@ -11,16 +11,6 @@ for "_i" from _spawnMarkerStart to _spawnMarkerEnd do
 	_spawns pushBack _spawn;
 };
 
-_ZiG_fnc_canBeSeen = {
-	params ["_pos", "_group"];
-
-	_pos = AGLToASL _pos;
-	_pos set [2, (_pos#2) + 1.7];
-
-	private _canBeSeen = (units _group) findIf { !(lineIntersects [_pos, eyePos _x, _x]) } > -1;
-	_canBeSeen
-};
-
 private _aiSpawned = [];
 private _aiGoal = (count (units _group)) * 4;
 private _skill = 0.1;
@@ -46,7 +36,7 @@ while { missionNameSpace getVariable ["GRAD_grandPrix_ZiG_collectingActive", tru
 	for [{_i = _aiActive}, {_i < _aiGoal}, {_i = _i + 1}] do {
 		private _spawn = selectRandom _spawns;
 		private _pos = _spawn call BIS_fnc_randomPosTrigger;
-		if ([_pos, _group] call _ZiG_fnc_canBeSeen) then {
+		if ([_pos, units _group] call grad_grandprix_fnc_common_unitCanBeSeen) then {
 			_i = _i - 1;
 			continue
 		};

@@ -6,6 +6,7 @@ params ["_station", "_group"];
 
 _station setVariable ["stationIsRunning", true, true];
 missionNamespace setVariable ["GRAD_grandPrix_PUPS_currentGroup", _group, true];
+_group setVariable ["GRAD_GrandPrix_currentStage", "PUPS", true];
 
 {
 	[
@@ -69,5 +70,6 @@ _msg = _msg + "<br /> <br /><t align='left'>Spieler Zeit:</t>";
 
 [parseText _msg] remoteExec ["hint", (units _group) + [_nearestInstructor]];
 
+_group setVariable ["GRAD_GrandPrix_currentStage", "", true];
 _station setVariable ["stationIsRunning", false, true];
 missionNamespace setVariable ["GRAD_grandPrix_PUPS_currentGroup", grpNull, true];

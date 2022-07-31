@@ -3,6 +3,7 @@ if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; 
 params ["_station", "_group"];
 
 _station setVariable ["stationIsRunning", true, true];
+_group setVariable ["GRAD_GrandPrix_currentStage", "zig", true];
 
 private _nearestInstructor = [_station] call grad_grandprix_fnc_common_getNearestZeus;
 
@@ -50,6 +51,14 @@ if (missionNamespace getVariable ["GRAD_grandPrix_ZiG_endPressed", false]) then 
 	} forEach ((units _group) select { _x inArea grad_grandPrix_fnc_ZiG_moneyCollection });
 };
 
+private _disconnects = missionNamespace getVariable ["GRAD_grandPrix_ZIG_disconnects", []];
+{
+	_x params ["_name", "_xMoney"];
+
+	_money = _money + _xMoney;
+	_playerMoney pushBackUnique [_name, _xMoney];
+} forEach _disconnects;
+
 [_group, _money, "Zeit ist Geld"] call grad_grandPrix_fnc_addPoints;
 
 //Nachricht an die Spieler
@@ -71,10 +80,12 @@ if (_money > 0) then {
 missionNamespace setVariable ["GRAD_grandPrix_ZiG_endPressed", false, true];
 missionNamespace setVariable ["GRAD_grandPrix_ZiG_planesDone", false, true];
 missionNameSpace setVariable ["GRAD_grandPrix_ZiG_collectingActive", false, true];
+missionNamespace setVariable ["GRAD_grandPrix_ZIG_disconnects", [], true];
 
 [] call grad_grandPrix_fnc_ZiG_handleMoney;
 
 sleep 2;
 terminate _policeHandle;
 
+_group setVariable ["GRAD_GrandPrix_currentStage", "", true];
 _station setVariable ["stationIsRunning", false, true];

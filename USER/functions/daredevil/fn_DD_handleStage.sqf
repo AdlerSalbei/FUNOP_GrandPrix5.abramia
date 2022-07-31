@@ -46,6 +46,7 @@ if (!isServer) exitWith {_this remoteExec [_fnc_scriptName, 2];};
 				_x setDir (_x getVariable "grad_grandprix_fnc_DD_vehDir");
 			}forEach [dd_tank_01, dd_tank_02];
 
+			_group setVariable ["GRAD_GrandPrix_currentStage", "", true];
 			_station setVariable ["DD_stationIsRunning", false, true];
 		}, _this, 5] call CBA_fnc_waitAndExecute;
 	}, _this, 7] call CBA_fnc_waitAndExecute;

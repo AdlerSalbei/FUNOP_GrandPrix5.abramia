@@ -4,18 +4,10 @@ params ["_station", "_group"];
 
 
 _station setVariable ["stationIsRunning", true, true];
+_group setVariable ["GRAD_GrandPrix_currentStage", "rlgl", true];
 
 // find nearest instructor to notify them throughout the stage
-private _allInstructors = allCurators apply { getAssignedCuratorUnit _x };
-private _nearestInstructor = objNull;
-private _distance = _station distance (_allInstructors#0);
-{
-	if ((_station distance _x) < _distance) then {
-		_distance = _station distance _x;
-		_nearestInstructor = _x;
-	}	
-} forEach _allInstructors;
-
+private _nearestInstructor = [_station] call grad_grandprix_fnc_common_getNearestZeus;
 
 // setup local doors
 [] remoteExecCall ["GRAD_grandPrix_fnc_rlgl_handleGunDoor", (units _group) + [_nearestInstructor]];
@@ -132,5 +124,5 @@ _msg = _msg + "<br /> <br /><t align='left'>Spieler Zeit:</t>";
 
 [parseText _msg] remoteExec ["hint", (units _group) + [_nearestInstructor]];
 
-
+_group setVariable ["GRAD_GrandPrix_currentStage", "", true];
 _station setVariable ["stationIsRunning", false, true];

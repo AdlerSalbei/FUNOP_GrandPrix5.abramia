@@ -3,6 +3,7 @@ params ["_station", "_group"];
 if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; };
 
 _station setVariable ["stationIsRunning", true, true];
+_group setVariable ["GRAD_GrandPrix_currentStage", "race", true];
 
 [] remoteExec ["grad_grandPrix_fnc_race_introCam", _group];
 
@@ -63,4 +64,5 @@ _msg = _msg + "<br /> <br /><t align='left'>Spieler Zeit:</t>";
 
 [parseText _msg] remoteExec ["hint", _units + [_nearestInstructor]];
 
+_group setVariable ["GRAD_GrandPrix_currentStage", "", true];
 _station setVariable ["stationIsRunning", false, true];

@@ -6,6 +6,7 @@ _station setVariable ["DD_stationIsRunning", true, true];
 
 private _teams = [1,1,2,2] call BIS_fnc_arrayShuffle;
 private _group = group _player;
+_group setVariable ["GRAD_GrandPrix_currentStage", "DD", true];
 
 {
 	private _index = _teams select _forEachIndex;

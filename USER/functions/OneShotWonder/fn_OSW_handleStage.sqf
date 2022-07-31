@@ -5,6 +5,7 @@ if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; 
 params ["_station", "_group"];
 
 _station setVariable ["stationIsRunning", true, true];
+_group setVariable ["GRAD_GrandPrix_currentStage", "OSW", true];
 
 diag_log "setting up positions...";
 private _allPositions = [GRAD_grandPrix_OSW_position_1, GRAD_grandPrix_OSW_position_2, GRAD_grandPrix_OSW_position_3, GRAD_grandPrix_OSW_position_4, GRAD_grandPrix_OSW_position_5, GRAD_grandPrix_OSW_position_6, GRAD_grandPrix_OSW_position_7, GRAD_grandPrix_OSW_position_8, GRAD_grandPrix_OSW_position_9, GRAD_grandPrix_OSW_position_10, GRAD_grandPrix_OSW_position_11];
@@ -77,4 +78,5 @@ _msg = _msg + "<br /> <br /><t align='left'>Spieler Zeit:</t>";
 
 [parseText _msg] remoteExec ["hint", _players + [_nearestInstructor]];
 
+_group setVariable ["GRAD_GrandPrix_currentStage", "", true];
 _station setVariable ["stationIsRunning", false, true];
