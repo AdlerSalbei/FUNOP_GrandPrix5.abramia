@@ -20,12 +20,7 @@ for "_i" from _housesMarkerStart to _housesMarkerEnd do
 //add unconscious handler to players, show Markers, add Loadout & show money
 [] remoteExecCall ["grad_grandPrix_fnc_ZiG_startStageClient", _group, false];
 
-//Show planes
-//[] call grad_grandPrix_fnc_ZiG_handlePlanes;
-
-//waitUntil { missionNamespace getVariable ["GRAD_grandPrix_ZiG_planesDone", false]; };
-
-sleep 3;
+sleep 72;
 
 ["grad_grandPrix_race_triggerCountdown", [], units _group] call CBA_fnc_targetEvent;
 
