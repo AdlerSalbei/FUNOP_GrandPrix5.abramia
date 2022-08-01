@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1989;
+		nextID=2058;
 	};
 	class Camera
 	{
@@ -27,7 +27,7 @@ class EditorData
 	};
 };
 binarizationWanted=0;
-sourceName="FUNOP_GrandPrix5";
+sourceName="GrandPrix5";
 addons[]=
 {
 	"A3_Modules_F_Curator_Curator",
@@ -1063,7 +1063,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=115;
+									items=116;
 									class Item0
 									{
 										class data
@@ -1984,6 +1984,14 @@ class CustomAttributes
 											value="ace_advanced_fatigue_swayfactor";
 										};
 									};
+									class Item115
+									{
+										class data
+										{
+											singleType="STRING";
+											value="ace_medical_statemachine_cardiacarrestbleedoutenabled";
+										};
+									};
 								};
 							};
 						};
@@ -1994,7 +2002,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=115;
+									items=116;
 									class Item0
 									{
 										class data
@@ -4438,7 +4446,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.497159;
+														value=0;
 													};
 												};
 												class Item1
@@ -5086,6 +5094,33 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
+														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item115
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
 														value=0;
 													};
 												};
