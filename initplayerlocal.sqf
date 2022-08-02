@@ -4,7 +4,7 @@ if (didJIP) then {
     [player] remoteExec ["grad_common_fnc_addJipToZeus",2,false];
 };
 
-["InitializePlayer", [player,true]] call BIS_fnc_dynamicGroups;
+//["InitializePlayer", [player,true]] call BIS_fnc_dynamicGroups;
 grad_template_ratingEH = player addEventHandler ["HandleRating",{0}];
 
 [player] remoteExecCall ["grad_grandprix_fnc_points_registerGroups",2,false];
@@ -40,7 +40,7 @@ player setVariable ["GRAD_grandPrix_ZiG_leafletHandler", _handler, true];
 
 player allowDamage false;
 
-["TAG_refill_stam", -5] call ace_advanced_fatigue_fnc_addDutyFactor;
+["GRAD_grandprix_refill_stam", -5] call ace_advanced_fatigue_fnc_addDutyFactor;
 
 
 // waiting until player properly initialised
@@ -56,10 +56,13 @@ if (!didJIP || (_disconnectVar isEqualTo [])) exitWith {};
 
 // do not reinsert into the stage, if the group is already finished
 private _currentStage = toLower (_group getVariable ["GRAD_GrandPrix_currentStage", ""]);
-if (_currentStage isNotEqualTo (_disconnectVar select 0)) exitWith {};
+private _savedStage = toLower (_disconnectVar select 0);
+if (_currentStage isNotEqualTo _savedStage) then {
+    _savedStage = "";
+};
 
 // the zero index of _disconnectVar has to be the stage-string
-switch (toLower (_disconnectVar select 0)) do {
+switch (_savedStage) do {
     case "dd": { 
         _disconnectVar params ["_stage", "_veh", "_vehPos"];
 
@@ -125,10 +128,26 @@ switch (toLower (_disconnectVar select 0)) do {
 
         // handle teleport
         private _theChosenOne = selectRandom _teammates;
-        waitUntil { ([_theChosenOne] call grad_grandprix_fnc_common_safePosAvailable) # 0 };
-        private _pos = ([_theChosenOne] call grad_grandprix_fnc_common_safePosAvailable) # 1;
+        waitUntil { ([_theChosenOne] call grad_grandprix_fnc_common_safePosAvailable) select 0 };
+        private _pos = ([_theChosenOne] call grad_grandprix_fnc_common_safePosAvailable) select 1;
         player setPos _pos;
     };
-    default {  };
+    //Handle player between stages
+    default {
+        private _units = units group player;
+        private _unit = _units select 0;
+        if (unit isEqualTo player) then {
+            _unit = _units select 1;
+        };
+
+        private _vehicle = vehicle _unit;
+        if (_vehicle isEqualTo _unit) then {
+            _unit moveInCargo _vehicle;
+        } else {
+            private _pos = ([_unit] call grad_grandprix_fnc_common_safePosAvailable) select 1;
+        player setPos _pos;
+        };
+    };
 };
+
 missionNamespace setVariable [_varString, [], true];
