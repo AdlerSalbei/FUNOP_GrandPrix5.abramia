@@ -4,7 +4,7 @@ params ["_index"];
 
 private _vehicleName = missionnamespace getvariable [ format ["%1", "dd_tank_0" + str _index], objNull];
 
-[player] call grad_grandprix_fnc_dd_handleInventory;
+//[player] call grad_grandprix_fnc_dd_handleInventory;
 
 cutText ["", "BLACK", 0.1];
 

@@ -16,7 +16,18 @@ addMissionEventHandler ["HandleDisconnect", {
 	// if (_currentStage isEqualTo "") exitWith { false };
 
 	switch (toLower _currentStage) do {
-		case "dd": { };
+		case "dd": {
+			//Safe player position in vehicle
+			private _vehicle = vehicle _unit;
+			private _vehPos = (crew _vehicle) find _unit;
+
+			missionNamespace setVariable [_varString, ["dd", _vehicle, _vehPos], true];
+
+			//Start disconnect timer 
+			if (missionNamespace getVariable ["GRAD_grandPrix_DD_startTime", -1] isNotEqualTo -1) then {
+				missionNamespace setVariable ["Grad_grandprix_dd_disconnectTimer_" + _uid, diag_tickTime];
+			};
+		 };
 		case "osw": { };
 		case "pups": { };
 		case "race": { };

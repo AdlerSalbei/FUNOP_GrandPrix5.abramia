@@ -54,9 +54,60 @@ private _varString = "GRAD_GrandPrix_" + (getPlayerUID player);
 private _disconnectVar = missionNamespace getVariable [_varString, []];
 if (!didJIP || (_disconnectVar isEqualTo [])) exitWith {};
 
+// do not reinsert into the stage, if the group is already finished
+private _currentStage = toLower (_group getVariable ["GRAD_GrandPrix_currentStage", ""]);
+if (_currentStage isNotEqualTo (_disconnectVar select 0)) exitWith {};
+
 // the zero index of _disconnectVar has to be the stage-string
-switch (toLower (_disconnectVar # 0)) do {
-    case "dd": { };
+switch (toLower (_disconnectVar select 0)) do {
+    case "dd": { 
+        _disconnectVar params ["_stage", "_veh", "_vehPos"];
+
+        if (isNull _veh) exitWith {};
+
+        private _time = missionNamespace getVariable ["Grad_grandprix_dd_disconnectTimer_" + _uid, 0];
+        private _disconTime = missionNamespace getVariable ["Grad_grandprix_dd_disconnectTimer", 0];
+        missionNamespace setVariable ["Grad_grandprix_dd_disconnectTimer", 0 + (diag_tickTime - _time)];
+
+        switch (_vehPos) do {
+            case 0 : {
+                private _driver = driver _veh;
+
+                if (!isNil "_driver" && {!isNull _driver}) then {
+                    _driver assignAsGunner _veh;
+                    _driver moveInGunner _veh;
+                };
+
+                player assignAsDriver _veh 
+                player moveInDriver _veh
+            };
+            case 1 : {
+                private _driver = gunner _veh;
+
+                if (!isNil "_driver" && {!isNull _driver}) then {
+                    _driver assignAsDriver _veh;
+                    _driver moveInDriver _veh;
+                };
+
+                player assignAsGunner _veh 
+                player moveInGunner _veh
+            };
+            case 2 : {
+                private _driver = commander _veh;
+
+                if (!isNil "_driver" && {!isNull _driver}) then {
+                    _driver moveInCargo _veh;
+                };
+
+                player assignAsCommander _veh 
+                player moveInCommander _veh
+            };
+            default : {
+                player moveInCargo _veh
+            };
+        };
+
+    };
     case "osw": { };
     case "pups": { };
     case "race": { };
@@ -65,9 +116,6 @@ switch (toLower (_disconnectVar # 0)) do {
         _disconnectVar params ["_stage", "_loadout", "_group"];
 
         if (_group isNotEqualTo (group player)) exitWith {};
-        // do not reinsert into the stage, if the group is already finished
-        private _currentStage = toLower (_group getVariable ["GRAD_GrandPrix_currentStage", ""]);
-        if (_currentStage isNotEqualTo _stage) exitWith {};
 
         player setUnitLoadout _loadout;
         private _teammates = (units _group) select { _x isNotEqualTo player };

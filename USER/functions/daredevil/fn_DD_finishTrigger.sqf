@@ -6,11 +6,12 @@ cutText ["", "BLACK IN", 0.1];
 
 private _driver = driver _vehicle; 
 private _crew = crew _vehicle;
-private _startTime = _driver getVariable ["GRAD_grandPrix_DD_startTime", -1];  
+private _startTime = missionNamespace getVariable ["GRAD_grandPrix_DD_startTime", -1];  
 
 if (_startTime isEqualTo -1) exitWith {}; 
 
-private _totalTime = diag_tickTime - _startTime;  
+private _disconTime = missionNamespace getVariable ["Grad_grandprix_dd_disconnectTimer", 0];
+private _totalTime = diag_tickTime - _startTime - _disconTime;  
 
 _driver setVariable ["GRAD_grandPrix_DD_totalTime", _totalTime, true]; 
 
@@ -18,3 +19,5 @@ _driver setVariable ["GRAD_grandPrix_DD_totalTime", _totalTime, true];
 {
 	_x setVariable ["GRAD_grandPrix_DD_complete", true, true];
 }forEach _crew;
+
+missionNamespace setVariable ["GRAD_grandPrix_DD_startTime", -1];
