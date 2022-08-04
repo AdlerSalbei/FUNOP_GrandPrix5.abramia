@@ -144,7 +144,7 @@ switch (_savedStage) do {
 
         private _vehicle = vehicle _unit;
         if (_vehicle isEqualTo _unit) then {
-            _unit moveInCargo _vehicle;
+            _unit moveInAny _vehicle;
         } else {
             private _pos = ([_unit] call grad_grandprix_fnc_common_safePosAvailable) select 1;
         player setPos _pos;
