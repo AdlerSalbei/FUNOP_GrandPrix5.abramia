@@ -81,8 +81,8 @@ switch (_savedStage) do {
                     _driver moveInGunner _veh;
                 };
 
-                player assignAsDriver _veh 
-                player moveInDriver _veh
+                player assignAsDriver _veh; 
+                player moveInDriver _veh;
             };
             case 1 : {
                 private _driver = gunner _veh;
@@ -92,8 +92,8 @@ switch (_savedStage) do {
                     _driver moveInDriver _veh;
                 };
 
-                player assignAsGunner _veh 
-                player moveInGunner _veh
+                player assignAsGunner _veh;
+                player moveInGunner _veh;
             };
             case 2 : {
                 private _driver = commander _veh;
@@ -102,11 +102,11 @@ switch (_savedStage) do {
                     _driver moveInCargo _veh;
                 };
 
-                player assignAsCommander _veh 
-                player moveInCommander _veh
+                player assignAsCommander _veh; 
+                player moveInCommander _veh;
             };
             default : {
-                player moveInCargo _veh
+                player moveInCargo _veh;
             };
         };
 
