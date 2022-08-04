@@ -55,6 +55,7 @@ private _disconnectVar = missionNamespace getVariable [_varString, []];
 if (!didJIP || (_disconnectVar isEqualTo [])) exitWith {};
 
 private _group = group player;
+private _uid = getPlayerUID player;
 
 // do not reinsert into the stage, if the group is already finished
 private _currentStage = toLower (_group getVariable ["GRAD_GrandPrix_currentStage", ""]);
