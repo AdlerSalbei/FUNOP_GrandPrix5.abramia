@@ -3,7 +3,7 @@
 private _pos = [grad_grandPrix_fnc_ZiG_teleport] call BIS_fnc_randomPosTrigger;
 _pos set [2, 0];
 player setPos _pos;
-player setUnitLoadout (player getVariable ["GRAD_grandPrix_ZiG_savedLoadout", []]);
+player setUnitLoadout (missionNamespace getVariable ["GRAD_grandPrix_ZiG_savedLoadout_" + getPlayerUID player, []]);
 
 private _markers = player getVariable ["GRAD_grandPrix_ZiG_moneyMarkers", []];
 {

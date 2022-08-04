@@ -124,10 +124,13 @@ switch (_savedStage) do {
         if (_group isNotEqualTo (group player)) exitWith {};
 
         player setUnitLoadout _loadout;
+        [] call grad_grandPrix_fnc_ZiG_createMarkerLocal;
         private _teammates = (units _group) select { _x isNotEqualTo player };
         hint "Du wirst zurück zu deinem Team teleportiert; Rechne mit möglichem Feindkontakt!";
         [format["Achtung, %1 wird jetzt zu euch teleportiert!", name _player]] remoteExec ["hint", _teammates];
-        sleep 3;
+        sleep 4;
+
+        player allowDamage true;
 
         // handle teleport
         private _theChosenOne = selectRandom _teammates;
