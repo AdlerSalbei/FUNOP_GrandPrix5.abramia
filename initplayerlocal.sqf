@@ -86,6 +86,8 @@ switch (_savedStage) do {
 
                 player assignAsDriver _veh; 
                 player moveInDriver _veh;
+
+                cutText ["", "BLACK", 0.1];
             };
             case 1 : {
                 private _driver = gunner _veh;
