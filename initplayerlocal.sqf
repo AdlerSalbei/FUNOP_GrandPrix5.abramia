@@ -54,6 +54,8 @@ private _varString = "GRAD_GrandPrix_" + (getPlayerUID player);
 private _disconnectVar = missionNamespace getVariable [_varString, []];
 if (!didJIP || (_disconnectVar isEqualTo [])) exitWith {};
 
+private _group = group player;
+
 // do not reinsert into the stage, if the group is already finished
 private _currentStage = toLower (_group getVariable ["GRAD_GrandPrix_currentStage", ""]);
 private _savedStage = toLower (_disconnectVar select 0);
@@ -105,7 +107,7 @@ switch (_savedStage) do {
                 player assignAsCommander _veh; 
                 player moveInCommander _veh;
             };
-            default : {
+            default {
                 player moveInCargo _veh;
             };
         };
