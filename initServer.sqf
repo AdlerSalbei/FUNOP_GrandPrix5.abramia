@@ -31,7 +31,15 @@ addMissionEventHandler ["HandleDisconnect", {
 		case "osw": { };
 		case "pups": { };
 		case "race": { };
-		case "rlgl": { };
+		case "rlgl": { 
+			private _objects = nearestObjects [_unit, [], 50, true];
+			{
+				private _offset = _x getVariable ["grad_grandprix_rlgl_disconOffset", []];
+				if (_offset isNotEqualTo []) exitWith {
+					missionNamespace setVariable [_varString, ["rlgl", (getPosASL _x) vectorAdd _offset], true];
+				};
+			}forEach _objects;
+		};
 		case "zig": {
 			private _loadout = getUnitLoadout _unit;			
 			missionNamespace setVariable [_varString, ["zig", _loadout, _group], true];

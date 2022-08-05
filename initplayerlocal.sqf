@@ -1,11 +1,11 @@
 params ["_player", "_didJIP"];
 
 if (didJIP) then {
-    [player] remoteExec ["grad_common_fnc_addJipToZeus",2,false];
+    [_player] remoteExec ["grad_common_fnc_addJipToZeus",2,false];
 };
 
 //["InitializePlayer", [player,true]] call BIS_fnc_dynamicGroups;
-grad_template_ratingEH = player addEventHandler ["HandleRating",{0}];
+grad_template_ratingEH = _player addEventHandler ["HandleRating",{0}];
 
 [player] remoteExecCall ["grad_grandprix_fnc_points_registerGroups",2,false];
 
@@ -36,9 +36,9 @@ private _handler = ["Leaflet_05_F", "init",
 		deleteVehicle _leaflet;
 	}
 ] call CBA_fnc_addClassEventHandler;
-player setVariable ["GRAD_grandPrix_ZiG_leafletHandler", _handler, true];
+_player setVariable ["GRAD_grandPrix_ZiG_leafletHandler", _handler, true];
 
-player allowDamage false;
+_player allowDamage false;
 
 ["GRAD_grandprix_refill_stam", -5] call ace_advanced_fatigue_fnc_addDutyFactor;
 
@@ -50,12 +50,12 @@ waitUntil { getClientStateNumber >= 10 && count (missionnamespace getvariable ["
 sleep 2;
 
 // handles the reconnect, after disconnecting out of an active stage
-private _varString = "GRAD_GrandPrix_" + (getPlayerUID player);
+private _varString = "GRAD_GrandPrix_" + (getPlayerUID _player);
 private _disconnectVar = missionNamespace getVariable [_varString, []];
 if (!didJIP || (_disconnectVar isEqualTo [])) exitWith {};
 
-private _group = group player;
-private _uid = getPlayerUID player;
+private _group = group _player;
+private _uid = getPlayerUID _player;
 
 // do not reinsert into the stage, if the group is already finished
 private _currentStage = toLower (_group getVariable ["GRAD_GrandPrix_currentStage", ""]);
@@ -84,8 +84,8 @@ switch (_savedStage) do {
                     _driver moveInGunner _veh;
                 };
 
-                player assignAsDriver _veh; 
-                player moveInDriver _veh;
+                _player assignAsDriver _veh; 
+                _player moveInDriver _veh;
 
                 cutText ["", "BLACK", 0.1];
             };
@@ -97,8 +97,8 @@ switch (_savedStage) do {
                     _driver moveInDriver _veh;
                 };
 
-                player assignAsGunner _veh;
-                player moveInGunner _veh;
+                _player assignAsGunner _veh;
+                _player moveInGunner _veh;
             };
             case 2 : {
                 private _driver = commander _veh;
@@ -107,11 +107,11 @@ switch (_savedStage) do {
                     _driver moveInCargo _veh;
                 };
 
-                player assignAsCommander _veh; 
-                player moveInCommander _veh;
+                _player assignAsCommander _veh; 
+                _player moveInCommander _veh;
             };
             default {
-                player moveInCargo _veh;
+                _player moveInCargo _veh;
             };
         };
 
@@ -119,32 +119,41 @@ switch (_savedStage) do {
     case "osw": { };
     case "pups": { };
     case "race": { };
-    case "rlgl": { };
+    case "rlgl": { 
+        _disconnectVar params ["_stage", "_pos"];
+
+        _player setPosASL _pos;
+        _player setDir 0;
+
+        [] call GRAD_grandPrix_fnc_rlgl_handleGunDoor;
+        [] call GRAD_grandPrix_fnc_rlgl_handlePIP;
+	    [] call GRAD_grandPrix_fnc_rlgl_handleFinishLocal;
+    };
     case "zig": {
         _disconnectVar params ["_stage", "_loadout", "_group"];
 
-        if (_group isNotEqualTo (group player)) exitWith {};
+        if (_group isNotEqualTo (group _player)) exitWith {};
 
-        player setUnitLoadout _loadout;
+        _player setUnitLoadout _loadout;
         [] call grad_grandPrix_fnc_ZiG_createMarkerLocal;
-        private _teammates = (units _group) select { _x isNotEqualTo player };
+        private _teammates = (units _group) select { _x isNotEqualTo _player };
         hint "Du wirst zurück zu deinem Team teleportiert; Rechne mit möglichem Feindkontakt!";
         [format["Achtung, %1 wird jetzt zu euch teleportiert!", name _player]] remoteExec ["hint", _teammates];
         sleep 4;
 
-        player allowDamage true;
+        _player allowDamage true;
 
         // handle teleport
         private _theChosenOne = selectRandom _teammates;
         waitUntil { ([_theChosenOne] call grad_grandprix_fnc_common_safePosAvailable) select 0 };
         private _pos = ([_theChosenOne] call grad_grandprix_fnc_common_safePosAvailable) select 1;
-        player setPos _pos;
+        _player setPos _pos;
     };
-    //Handle player between stages
+    //Handle _player between stages
     default {
-        private _units = units group player;
+        private _units = units group _player;
         private _unit = _units select 0;
-        if (unit isEqualTo player) then {
+        if (unit isEqualTo _player) then {
             _unit = _units select 1;
         };
 
@@ -153,7 +162,7 @@ switch (_savedStage) do {
             _unit moveInAny _vehicle;
         } else {
             private _pos = ([_unit] call grad_grandprix_fnc_common_safePosAvailable) select 1;
-        player setPos _pos;
+        _player setPos _pos;
         };
     };
 };
