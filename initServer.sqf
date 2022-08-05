@@ -28,7 +28,9 @@ addMissionEventHandler ["HandleDisconnect", {
 				missionNamespace setVariable ["Grad_grandprix_dd_disconnectTimer_" + _uid, diag_tickTime];
 			};
 		 };
-		case "osw": { };
+		case "osw": {
+			missionNamespace setVariable [_varString, ["rlgl", _group], true];
+		};
 		case "pups": { };
 		case "race": { };
 		case "rlgl": { 

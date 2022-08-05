@@ -116,7 +116,17 @@ switch (_savedStage) do {
         };
 
     };
-    case "osw": { };
+    case "osw": {
+        _disconnectVar params ["_stage", "_group"];
+
+        if (_group isNotEqualTo (group _player)) exitWith {};
+
+        hint "Du wirst zurück in die Station 'OSW' teleportiert; Halte dich bereit!";
+        sleep 4;
+        private _activePlayers = missionNamespace getVariable ["GRAD_grandPrix_OSW_activePlayers", [[player], []] select isMultiplayer];
+        _activePlayers pushBackUnique player;
+        missionNamespace setVariable ["GRAD_grandPrix_OSW_activePlayers", _activePlayers, true];
+    };
     case "pups": { };
     case "race": { };
     case "rlgl": { 

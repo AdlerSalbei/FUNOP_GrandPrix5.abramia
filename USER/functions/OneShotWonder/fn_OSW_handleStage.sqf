@@ -1,4 +1,4 @@
-#define BEST_TIME 20
+#define BEST_TIME 30
 
 if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; };
 
@@ -8,7 +8,7 @@ _station setVariable ["stationIsRunning", true, true];
 _group setVariable ["GRAD_GrandPrix_currentStage", "OSW", true];
 
 diag_log "setting up positions...";
-private _allPositions = [GRAD_grandPrix_OSW_position_1, GRAD_grandPrix_OSW_position_2, GRAD_grandPrix_OSW_position_3, GRAD_grandPrix_OSW_position_4, GRAD_grandPrix_OSW_position_5, GRAD_grandPrix_OSW_position_6, GRAD_grandPrix_OSW_position_7, GRAD_grandPrix_OSW_position_8, GRAD_grandPrix_OSW_position_9, GRAD_grandPrix_OSW_position_10, GRAD_grandPrix_OSW_position_11];
+private _allPositions = [GRAD_grandPrix_OSW_position_1, GRAD_grandPrix_OSW_position_2, GRAD_grandPrix_OSW_position_3, GRAD_grandPrix_OSW_position_4, GRAD_grandPrix_OSW_position_5, GRAD_grandPrix_OSW_position_6, GRAD_grandPrix_OSW_position_7, GRAD_grandPrix_OSW_position_8, GRAD_grandPrix_OSW_position_9, GRAD_grandPrix_OSW_position_10, GRAD_grandPrix_OSW_position_11, GRAD_grandPrix_OSW_position_12, GRAD_grandPrix_OSW_position_13, GRAD_grandPrix_OSW_position_14];
 {
 	_x setVariable ["GRAD_grandPrix_timesVisited", 0, true];
 } forEach _allPositions;
@@ -21,7 +21,7 @@ private _playerCount = count _activePlayers;
 
 diag_log "assigning pistols...";
 {
-	_x setVariable ["GRAD_grandPrix_OSW_totalTime", 0, true];
+	missionNamespace setVariable ["GRAD_grandPrix_OSW_totalTime_" + getPlayerUID _x, 0, true];
 	// add Gun magazine
 	[{
 		player addMagazine "1Rnd_45ACP_Cylinder"; 
@@ -34,10 +34,10 @@ sleep 2;
 diag_log "starting position-loop...";
 while {!([_allPositions, _playerCount] call GRAD_grandPrix_fnc_OSW_isComplete)} do {
 	private _activePlayers = missionNamespace getVariable ["GRAD_grandPrix_OSW_activePlayers", [[player], []] select isMultiplayer];
-	private _activePlayersReady = _activePlayers select { _x getVariable ["GRAD_grandPrix_OSW_currentCompleted", true] };
+	private _activePlayersReady = _activePlayers select { (missionNamespace getVariable ["GRAD_grandPrix_OSW_currentCompleted_" + getPlayerUID _x, true]) && (alive _x) };
 
 	{
-		private _visited = _x getVariable ["GRAD_grandPrix_OSW_visited", []];
+		private _visited = missionNamespace getVariable ["GRAD_grandPrix_OSW_visited_" + getPlayerUID _x, []];
 		private _remaining = _allPositions select { !(_x in _visited) };
 		if (_remaining isEqualTo []) then {
 			diag_log format["ending station locally for %1", name _x];
@@ -62,7 +62,7 @@ private _playerTimes = [];
 private _players = units _group;
 private _groupTime = 0;
 {
-	private _playerTime = _x getVariable ["GRAD_grandPrix_OSW_totalTime", 0];
+	private _playerTime = missionNamespace getVariable ["GRAD_grandPrix_OSW_totalTime_" + getPlayerUID _x, 0];
 	_groupTime = _groupTime + _playerTime;
 	_playerTimes pushBack [name _x, _playerTime];
 	removeAllWeapons _x;

@@ -15,8 +15,9 @@ private _objects = (allMissionObjects "") select {_x inArea _trigger};
 } foreach (_objects + [_target]);
 
 // set pre-positon requirements
-player setVariable ["GRAD_grandPrix_OSW_currentCompleted", false, true];
+missionNamespace setVariable ["GRAD_grandPrix_OSW_currentCompleted_" + getPlayerUID player, false, true];
 _position setVariable ["GRAD_grandPrix_OSW_currentlyActive", true, true];
+missionNamespace setVariable ["GRAD_grandPrix_OSW_currentPos_" + getPlayerUID player, _position, true];
 
 // create door locally for smoother movement
 diag_log "[fn_OSW_handlePosition]: creating local door";
@@ -67,7 +68,7 @@ private _angleToDoor = _position getDir _door;
 private _previousAngleToDoor = player getVariable ["GRAD_grandPrix_OSW_anglePreviousPosition", _angleToDoor];
 private _offset = (((getDir player) - _previousAngleToDoor) + 180) mod 360 - 180;
 private _newAngle = _angleToDoor + _offset;
-private _visited = player getVariable ["GRAD_grandPrix_OSW_visited", []];
+private _visited = missionNamespace getVariable ["GRAD_grandPrix_OSW_visited_" + getPlayerUID player, []];
 if (_visited isEqualTo []) then {
 	_newAngle = _angleToDoor;
 };
@@ -116,10 +117,9 @@ if (_hit) then {
 	_timeTaken = _timeTaken + 10;
 };
 // systemChat str _timeTaken;
-private _totalPlayerTime = player getVariable ["GRAD_grandPrix_OSW_totalTime", 0];
+private _totalPlayerTime = missionNamespace getVariable ["GRAD_grandPrix_OSW_totalTime_" + getPlayerUID player, 0];
 _totalPlayerTime = _totalPlayerTime + _timeTaken;
-player setVariable ["GRAD_grandPrix_OSW_totalTime", _totalPlayerTime, true];
-
+missionNamespace setVariable ["GRAD_grandPrix_OSW_totalTime_" + getPlayerUID player, _totalPlayerTime, true];
 // close shit
 sleep 0.5;
 diag_log "[fn_OSW_handlePosition]: closing local door...";
@@ -145,8 +145,8 @@ player removeAllEventHandlers "fired";
 player setVariable ["GRAD_grandPrix_OSW_anglePreviousPosition", _angleToDoor];
 
 _visited pushBackUnique _position;
-player setVariable ["GRAD_grandPrix_OSW_visited", _visited, true];
-player setVariable ["GRAD_grandPrix_OSW_currentCompleted", true, true];
+missionNamespace setVariable ["GRAD_grandPrix_OSW_visited_" + getPlayerUID player, _visited, true];
+missionNamespace setVariable ["GRAD_grandPrix_OSW_currentCompleted_" + getPlayerUID player, true, true];
 
 // wait for player to be teleported away
 waitUntil { !(player inArea [_position, 1.5, 1.5, getDir _position, true, 2.5]) };
