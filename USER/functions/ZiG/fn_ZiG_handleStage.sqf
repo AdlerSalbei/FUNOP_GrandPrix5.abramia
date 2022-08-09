@@ -28,7 +28,7 @@ sleep 72;
 sleep 3;
 
 // cant use remote-Exec on function, because remoteExec doesnt produce a _thisScript handle
-{ [[["Time_Window", 155, 0], ["Razormind", 214, 59], ["Full_Force_Forward", 246, 0], ["Black_Yellow_Moebius", 188, 29], ["The_Mark", 348, 59], ["Fuse_Box", 205, 0]], "GRAD_grandPrix_ZiG_endPressed"] spawn grad_grandprix_fnc_common_runPlaylist; } remoteExecCall ["call", _group];
+{ [[["Time_Window", 155, 0], ["Razormind", 214, 59], ["Full_Force_Forward", 246, 0], ["Black_Yellow_Moebius", 188, 29], ["The_Mark", 348, 59], ["Fuse_Box", 205, 0], ["Tick_Tock", 146, 19], ["Wheres_the_Van", 162, 0], ["Calling_All_Units", 164, 18]], "GRAD_grandPrix_ZiG_endPressed"] spawn grad_grandprix_fnc_common_runPlaylist; } remoteExecCall ["call", _group];
 
 missionNameSpace setVariable ["GRAD_grandPrix_ZiG_collectingActive", true, true];
 private _policeHandle = [_group] spawn grad_grandPrix_fnc_ZiG_handlePolice;
