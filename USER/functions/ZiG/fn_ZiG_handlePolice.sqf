@@ -43,7 +43,7 @@ while { missionNameSpace getVariable ["GRAD_grandPrix_ZiG_collectingActive", tru
 
 		private _aiGroup = createGroup west;
 		private _unit = _aiGroup createUnit ["B_GEN_Soldier_F", _pos, [], 0, "NONE"];
-		systemChat "unit created!";
+		// systemChat "unit created!";
 		_unit setSkill _skill;
 		_aiSpawned pushBack _unit;
 		[_unit, 800] spawn lambs_wp_fnc_taskRush;

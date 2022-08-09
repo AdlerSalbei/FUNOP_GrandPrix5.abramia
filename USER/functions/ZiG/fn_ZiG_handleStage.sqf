@@ -3,6 +3,7 @@ if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; 
 params ["_station", "_group"];
 
 _station setVariable ["stationIsRunning", true, true];
+missionNamespace setVariable ["GRAD_grandPrix_ZiG_runComplete", false, true];
 _group setVariable ["GRAD_GrandPrix_currentStage", "zig", true];
 
 private _nearestInstructor = [_station] call grad_grandprix_fnc_common_getNearestZeus;
@@ -26,6 +27,9 @@ sleep 72;
 
 sleep 3;
 
+// cant use remote-Exec on function, because remoteExec doesnt produce a _thisScript handle
+{ [[["Time_Window", 155, 0], ["Razormind", 214, 59], ["Full_Force_Forward", 246, 0], ["Black_Yellow_Moebius", 188, 29], ["The_Mark", 348, 59], ["Fuse_Box", 205, 0]], "GRAD_grandPrix_ZiG_endPressed"] spawn grad_grandprix_fnc_common_runPlaylist; } remoteExecCall ["call", _group];
+
 missionNameSpace setVariable ["GRAD_grandPrix_ZiG_collectingActive", true, true];
 private _policeHandle = [_group] spawn grad_grandPrix_fnc_ZiG_handlePolice;
 
@@ -33,6 +37,7 @@ private _policeHandle = [_group] spawn grad_grandPrix_fnc_ZiG_handlePolice;
 waitUntil { (missionNamespace getVariable ["GRAD_grandPrix_ZiG_endPressed", false]) || ([_group] call grad_grandPrix_fnc_ZiG_allPlayersUnconscious) };
 
 missionNamespace setVariable ["GRAD_grandPrix_ZiG_collectingActive", false, true];
+missionNamespace setVariable ["GRAD_grandPrix_ZiG_runComplete", true, true];
 
 private _money = 0;
 private _playerMoney = [];

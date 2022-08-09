@@ -5,4 +5,5 @@ class common {
 	class common_closestEnemyDistance {};
 	class common_safePosAvailable {};
 	class common_unitCanBeSeen {};
+	class common_runPlaylist {};
 };
