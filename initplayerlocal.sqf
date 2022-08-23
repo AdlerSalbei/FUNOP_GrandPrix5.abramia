@@ -152,7 +152,7 @@ switch (_savedStage) do {
         sleep 4;
 
         _player allowDamage true;
-        [[["Time_Window", 155, 0], ["Razormind", 214, 59], ["Full_Force_Forward", 246, 0], ["Black_Yellow_Moebius", 188, 29], ["The_Mark", 348, 59], ["Fuse_Box", 205, 0], ["Tick_Tock", 146, 19], ["Wheres_the_Van", 162, 0], ["Calling_All_Units", 164, 18]], "GRAD_grandPrix_ZiG_endPressed"] spawn grad_grandprix_fnc_common_runPlaylist;
+        [[["Time_Window", 155, 0], ["Razormind", 214, 59], ["Full_Force_Forward", 246, 0], ["Black_Yellow_Moebius", 188, 29], ["The_Mark", 251, 156], ["Fuse_Box", 205, 0], ["Tick_Tock", 146, 19], ["Wheres_the_Van", 162, 0], ["Calling_All_Units", 164, 18]], "GRAD_grandPrix_ZiG_endPressed"] spawn grad_grandprix_fnc_common_runPlaylist;
 
         // handle teleport
         private _theChosenOne = selectRandom _teammates;
