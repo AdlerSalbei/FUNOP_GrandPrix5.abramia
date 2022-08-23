@@ -164,7 +164,7 @@ switch (_savedStage) do {
     default {
         private _units = units group _player;
         private _unit = _units select 0;
-        if (unit isEqualTo _player) then {
+        if (_unit isEqualTo _player) then {
             _unit = _units select 1;
         };
 
