@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2334;
+		nextID=2403;
 	};
 	class Camera
 	{
-		pos[]={9674.6045,62.303665,6103.3936};
-		dir[]={-0.050706152,-0.51950264,-0.85297459};
-		up[]={-0.030828116,0.85446543,-0.51858735};
-		aside[]={-0.9982425,-4.2113243e-008,0.059341487};
+		pos[]={3112.7305,59.00671,3355.4529};
+		dir[]={-0.87866592,-0.47224545,0.070242062};
+		up[]={-0.4707436,0.88146669,0.037631769};
+		aside[]={0.079686992,-4.7963113e-008,0.99682027};
 	};
 };
 binarizationWanted=0;
@@ -6927,7 +6927,7 @@ class Mission
 			};
 			id=1545;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=6.2985668;
+			atlOffset=2.4725018;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6963,7 +6963,7 @@ class Mission
 			};
 			id=1546;
 			type="Land_Shoot_House_Tunnel_Prone_F";
-			atlOffset=6.2970009;
+			atlOffset=2.5160465;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6997,7 +6997,7 @@ class Mission
 			};
 			id=1547;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=6.2970791;
+			atlOffset=2.5885811;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7025,13 +7025,14 @@ class Mission
 				angles[]={0,1.2047501,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				dynamicSimulation=1;
 			};
 			id=1548;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=6.9771099;
+			atlOffset=0.10949135;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7065,7 +7066,7 @@ class Mission
 			};
 			id=1549;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=7.2460117;
+			atlOffset=0.37783623;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7099,7 +7100,7 @@ class Mission
 			};
 			id=1550;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=6.0405674;
+			atlOffset=2.2600689;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7133,7 +7134,7 @@ class Mission
 			};
 			id=1551;
 			type="Land_Shoot_House_Wall_Crouch_F";
-			atlOffset=6.0229988;
+			atlOffset=2.2425003;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7167,7 +7168,7 @@ class Mission
 			};
 			id=1552;
 			type="EmptyDetectorArea10x10";
-			atlOffset=8.162838;
+			atlOffset=1.2948265;
 		};
 		class Item48
 		{
@@ -10928,7 +10929,6 @@ class Mission
 			};
 			id=1676;
 			type="Sign_Arrow_Large_Blue_F";
-			atlOffset=0.10955811;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -107142,7 +107142,7 @@ class Mission
 									};
 									id=4377;
 									type="Land_Pliers_F";
-									atlOffset=0.0011739731;
+									atlOffset=0.0014610291;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -146004,6 +146004,7 @@ class Mission
 			class Attributes
 			{
 				name="GRAD_grandPrix_team_Einstein";
+				init="this setVariable [""GRAD_grandPrix_groupFrequency"", ""69"", true];";
 			};
 			id=5484;
 			class CustomAttributes
@@ -146299,6 +146300,7 @@ class Mission
 			class Attributes
 			{
 				name="GRAD_grandPrix_team_Hawking";
+				init="this setVariable [""GRAD_grandPrix_groupFrequency"", ""420"", true];";
 			};
 			id=5492;
 			class CustomAttributes
@@ -148346,6 +148348,7 @@ class Mission
 			class Attributes
 			{
 				name="GRAD_grandPrix_team_Newton";
+				init="this setVariable [""GRAD_grandPrix_groupFrequency"", ""42"", true];";
 			};
 			id=5501;
 			class CustomAttributes
@@ -148641,6 +148644,7 @@ class Mission
 			class Attributes
 			{
 				name="GRAD_grandPrix_team_Curie";
+				init="this setVariable [""GRAD_grandPrix_groupFrequency"", ""133.7"", true];";
 			};
 			id=5506;
 			class CustomAttributes
@@ -148936,6 +148940,7 @@ class Mission
 			class Attributes
 			{
 				name="GRAD_grandPrix_team_Lovelace";
+				init="this setVariable [""GRAD_grandPrix_groupFrequency"", ""404"", true];";
 			};
 			id=5511;
 			class CustomAttributes
@@ -177646,7 +177651,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={9673.4561,49.045315,6089.2358};
-				angles[]={0,3.0558748,-0};
+				angles[]={0,3.0558748,0};
 			};
 			side="Empty";
 			flags=4;
@@ -177718,7 +177723,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={9673.3828,49.81028,6090.1196};
-				angles[]={0,3.0558805,-0};
+				angles[]={0,3.0558805,0};
 			};
 			side="Empty";
 			class Attributes
@@ -177786,7 +177791,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={9673.5479,48.873734,6088.2363};
-				angles[]={0,3.0558896,-0};
+				angles[]={0,3.0558896,0};
 			};
 			side="Empty";
 			flags=4;
@@ -177854,7 +177859,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={9673.4951,47.45813,6089.2393};
-			angle=3.0429413;
+			angle=3.0429411;
 			class Attributes
 			{
 				name="GRAD_grandPrix_OSW_position_12_trigger";
@@ -178015,7 +178020,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7341.0811,79.503242,9500.7275};
-				angles[]={0,2.0415115,-0};
+				angles[]={0,2.0415115,0};
 			};
 			side="Empty";
 			class Attributes
@@ -178083,7 +178088,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7342.7666,78.566696,9499.8721};
-				angles[]={0,2.0415206,-0};
+				angles[]={0,2.0415206,0};
 			};
 			side="Empty";
 			flags=4;
@@ -178308,7 +178313,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={8727.2686,15.273995,9833.2773};
-				angles[]={0,5.0123863,-0};
+				angles[]={0,5.0123863,0};
 			};
 			side="Empty";
 			class Attributes
@@ -178376,7 +178381,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={8725.4619,14.337449,9833.834};
-				angles[]={0,5.0123954,-0};
+				angles[]={0,5.0123954,0};
 			};
 			side="Empty";
 			class Attributes
@@ -178442,7 +178447,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={8726.4102,12.922295,9833.5049};
-			angle=4.9994426;
+			angle=4.9994421;
 			class Attributes
 			{
 				name="GRAD_grandPrix_OSW_position_14_trigger";
