@@ -28,4 +28,6 @@ private _handle = ["A3\Missions_F_EPA\video\A_in_intro.ogv"] spawn BIS_fnc_playV
 	}, []] call CBA_fnc_waitUntilAndExecute;
 
 	[] call grad_grandPrix_fnc_ZiG_unconsciousHandlerLocal;
+
+	[] call grad_grandPrix_fnc_common_setRadioFrequencies;
 }, [_handle]] call CBA_fnc_waitUntilAndExecute;

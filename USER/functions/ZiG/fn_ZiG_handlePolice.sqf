@@ -33,6 +33,7 @@ private _sleep = 150;
 diag_log "[fn_ZiG_handlePolice]: Starting police spawn loop";
 while { missionNameSpace getVariable ["GRAD_grandPrix_ZiG_collectingActive", true] } do {
 	private _aiActive = count (_aiSpawned select { alive _x });
+	private _aiGroup = createGroup west;
 	for [{_i = _aiActive}, {_i < _aiGoal}, {_i = _i + 1}] do {
 		private _spawn = selectRandom _spawns;
 		private _pos = _spawn call BIS_fnc_randomPosTrigger;
@@ -41,14 +42,14 @@ while { missionNameSpace getVariable ["GRAD_grandPrix_ZiG_collectingActive", tru
 			continue
 		};
 
-		private _aiGroup = createGroup west;
 		private _unit = _aiGroup createUnit ["B_GEN_Soldier_F", _pos, [], 0, "NONE"];
 		// systemChat "unit created!";
 		_unit setSkill _skill;
-		_aiSpawned pushBack _unit;
-		[_unit, 800] spawn lambs_wp_fnc_taskRush;
+		_aiSpawned pushBack _unit;		
 		diag_log format ["[fn_ZiG_handlePolice]: Created unit %1 in group %2.", _unit, _group];
 	};
+
+	[_aiGroup, 500, 10, [], [485.549, 8155.14, 0]] spawn lambs_wp_fnc_taskRush;
 	
 	missionNamespace setVariable ["GRAD_grandPrix_ZiG_aiSpawned", _aiSpawned, true];
 	if !(missionNameSpace getVariable ["GRAD_grandPrix_ZiG_collectingActive", true]) exitWith {
@@ -56,8 +57,8 @@ while { missionNameSpace getVariable ["GRAD_grandPrix_ZiG_collectingActive", tru
 	};
 
 	_aiGoal = _aiGoal + (count (units _group));
-	_skill = (_skill + 0.05) min 1;
-	_sleep = (_sleep - (random 60)) max 15;
+	_skill = (_skill + 0.1) min 1;
+	_sleep = (_sleep - 30) max 30;
 
 	diag_log format ["[fn_ZiG_handlePolice]: creation iteration complete; Sleeping for %1 seconds...", _sleep];
 

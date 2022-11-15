@@ -33,10 +33,14 @@ if (missionNamespace getVariable [_stopVariable, false]) exitWith {};
 	_x params ["_song", "_length", "_start"];
 
 	0 fadeMusic 0;
-	FADE_DELAY fadeMusic 1;
+	playMusic "";
+	sleep 0.1;
 
 	systemChat format["Now playing: '%1'", _song];
 	playMusic [_song, _start];
+
+	FADE_DELAY fadeMusic 1;
+
 	sleep _length;	
 
 } forEach _playlist;

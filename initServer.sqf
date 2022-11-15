@@ -29,7 +29,13 @@ addMissionEventHandler ["HandleDisconnect", {
 			};
 		 };
 		case "osw": {
-			missionNamespace setVariable [_varString, ["rlgl", _group], true];
+			missionNamespace setVariable [_varString, ["osw", _group], true];
+
+			private _activePlayers = missionNamespace getVariable ["GRAD_grandPrix_OSW_activePlayers", [[player], []] select isMultiplayer];
+			_activePlayers = _activePlayers select { _x isNotEqualTo _unit };
+			missionNamespace setVariable ["GRAD_grandPrix_OSW_activePlayers", _activePlayers, true];
+			private _pos = missionNamespace getVariable ["GRAD_grandPrix_OSW_currentPos_" + getPlayerUID player, objNull];
+			_pos setVariable ["GRAD_grandPrix_OSW_currentlyActive", false, true];
 		};
 		case "pups": { };
 		case "race": { };
@@ -40,7 +46,7 @@ addMissionEventHandler ["HandleDisconnect", {
 				if (_offset isNotEqualTo []) exitWith {
 					missionNamespace setVariable [_varString, ["rlgl", (getPosASL _x) vectorAdd _offset], true];
 				};
-			}forEach _objects;
+			} forEach _objects;
 		};
 		case "zig": {
 			private _loadout = getUnitLoadout _unit;			

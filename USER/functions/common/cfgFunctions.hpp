@@ -6,4 +6,5 @@ class common {
 	class common_safePosAvailable {};
 	class common_unitCanBeSeen {};
 	class common_runPlaylist {};
+	class common_setRadioFrequencies {};
 };

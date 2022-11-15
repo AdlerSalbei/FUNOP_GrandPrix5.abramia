@@ -179,3 +179,5 @@ switch (_savedStage) do {
 };
 
 missionNamespace setVariable [_varString, [], true];
+
+[] call grad_grandPrix_fnc_common_setRadioFrequencies;

@@ -11,3 +11,5 @@ private _timeTaken = missionNamespace getVariable ["GRAD_grandPrix_OSW_totalTime
 hint format["Station beendet!\nDeine Zeit: %1", [_timeTaken, "MM:SS"] call BIS_fnc_secondsToString];
 
 player removeWeapon "GrandPrix_hgun_Pistol_heavy_02_F";
+
+[] call grad_grandPrix_fnc_common_setRadioFrequencies;

@@ -20,3 +20,5 @@ private _holders = missionNamespace getVariable ["GRAD_grandPrix_ZiG_weaponHolde
 {
 	_x hideObject true;
 } forEach _holders;
+
+[] call grad_grandPrix_fnc_common_setRadioFrequencies;
