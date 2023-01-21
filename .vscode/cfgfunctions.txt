@@ -1,0 +1,399 @@
+
+class GRAD_common {
+    class common {
+        class addJipToZeus {};
+        class restrictedArsenal {};
+    };
+};
+
+class GRAD_diagnostics {
+    class diagnostics {
+        class serverLog {};
+    };
+};
+
+class GRAD_events {
+    class events {
+        class addBleedoutPFH {};
+        class addCuratorEHs {};
+        class onCuratorObjectPlaced {};
+        class onUnitLocalityChanged {};
+    };
+};
+
+class KK {
+    class external {
+        class fileExists {
+            description = "Checks if a file exists.";
+        };
+    };
+};
+
+class GRAD_groupsettings {
+    class groupsettings {
+        class findChannelFrequency {};
+        class findPlayableGroups {};
+        class getCallsign {};
+        class getGroupConfig {};
+        class setDynamicGroupNames {};
+        class setGroupChannels {};
+        class setGroupSettings {};
+    };
+};
+
+class GRAD_missionSetup {
+    class missionSetup {
+        class createDiaryRecords {};
+        class initCivsEquip {postInit = 1;};
+        class initMission {postInit = 1;};
+        class initPlayableAI {};
+        class intro {};
+        class loadouts {};
+        class setMissionSettings {};
+        class waitForRadioInit {};
+    };
+};
+
+class GRAD_radiosettings {
+    class radiosettings {
+        class activateSettings {};
+        class createChannelMarkers {};
+        class extractChannelNames {};
+        class extractFrequencies {};
+        class getLoadoutRadios {};
+        class setDefaultRadios {};
+        class setRadioSettings {};
+        class setTFARSettings {postInit = 1;};
+    };
+};
+
+class GRAD_waverespawn {
+    class waverespawn {
+        class addToWave {};
+        class canRespawn {};
+        class getStatus {};
+        class init {postInit = 1;};
+        class onPlayerKilled {};
+        class onPlayerRespawn {};
+        class playerCountdown {};
+        class prepareRespawn {};
+        class pubVars {preInit = 1;};
+        class removeFromWave {};
+        class resetPlayerVars {};
+        class respawnHint {};
+        class startWaveLoops {};
+        class waveCountdown {};
+    };
+};
+
+
+#ifndef MODULES_DIRECTORY
+    #define MODULES_DIRECTORY modules
+#endif
+
+class GRAD_Loadout {
+    class Api {
+        file = MODULES_DIRECTORY\grad-loadout\functions\api;
+        class doLoadoutForUnit {};
+        class loadoutViewer {};
+        class setAllowedCategories {};
+        class setRandomizationMode {};
+        class verifyLoadouts {};
+    };
+    class customgear {
+        file = MODULES_DIRECTORY\grad-loadout\functions\customgear;
+        class addCustomGearInteraction {};
+        class createCustomGearDialog {};
+        class getCurrentItem {};
+        class getCustomGearOptions {};
+        class initCustomGear {preInit = 1;};
+        class onCustomGearListSelection {};
+        class onCustomGearTabButton {};
+        class onCustomGearUnload {};
+        class openCustomGearDialog {};
+        class updateCamera {};
+    };
+    class Defactionizers {
+        file = MODULES_DIRECTORY\grad-loadout\functions\defactionizers;
+        class vanillaCivDefactionizer {};
+        class vanillaMilitaryDefactionizer {};
+    };
+    class Extract {
+        file = MODULES_DIRECTORY\grad-loadout\functions\extract;
+        class getPathExtractor {};
+        class extractLoadoutFromConfig {};
+    };
+    class General {
+        file = MODULES_DIRECTORY\grad-loadout\functions\general;
+        class addChatCommands {postInit = 1;};
+        class applyLoadout {};
+        class assignRespawn {postInit = 1;};
+        class defactionizeType {};
+        class doLoadout {};
+        class factionGetLoadout {};
+        class factionSetLoadout {};
+        class getApplicableUnits {};
+        class getLoadoutConfigPath {};
+        class getUnusedConfigs {};
+        class getUnitLoadoutFromConfig {};
+        class hashToUnitLoadout {};
+        class initGlobals {preinit = 1;};
+        class mergeLoadoutHierarchy {};
+        class normalizeContent {};
+        class randomizeLoadout {};
+        class removeRadios {preinit = 1;};
+        class scheduleLoadout {postInit = 1;};
+        class weaponIsCompatibleMagazine {};
+    };
+    class Revivers {
+        file = MODULES_DIRECTORY\grad-loadout\functions\revivers;
+        class getRevivers {};
+        class addReviver {};
+        class applyRevivers {};
+    };
+};
+
+#ifndef MODULES_DIRECTORY
+    #define MODULES_DIRECTORY modules
+#endif
+
+class GRAD_fortifications {
+    class collision {
+        file = MODULES_DIRECTORY\grad-fortifications\functions\collision;
+
+        class checkCollisionPFH {};
+        class getBoundingLines {};
+        class getGroundLines {};
+        class getVisualLines {};
+        class isColliding {};
+        class isOnGround {};
+        class linesToWorld {};
+        class shrinkLines {};
+    };
+
+    class common {
+        file = MODULES_DIRECTORY\grad-fortifications\functions\common;
+
+        class addFort {};
+        class addVehicleInteractions {};
+        class allowDemolition {};
+        class allowPackUp {};
+        class canTake {};
+        class doAnimation {};
+        class getDisplayName {};
+        class getModuleRoot {};
+        class getObjectSize {};
+        class getVehicleInventorySize {};
+        class initModule {postInit = 1;};
+        class initSettings {preInit = 1;};
+        class isOwner {};
+        class isVehicle {};
+        class removeFort {};
+        class setBuildTimeFactor {};
+        class setCollisionDebugMode {};
+        class setDemolishTimeFactor {};
+        class setPackUpTimeFactor {};
+        class stopAnimation {};
+        class storageAction {};
+    };
+
+    class drop {
+        file = MODULES_DIRECTORY\grad-fortifications\functions\drop;
+
+        class dropFort {};
+        class initDropCrate {};
+        class requestInteractionServer {};
+        class respondInteractionClient {};
+    };
+
+
+    class place {
+        file = MODULES_DIRECTORY\grad-fortifications\functions\place;
+
+        class addKeyEHs {};
+        class addMouseEHs {};
+        class addUpdatePFH {};
+        class cancelPlacement {};
+        class demolish {};
+        class initFort {};
+        class packUp {};
+        class placeFortification {};
+        class removeAllEHs {};
+        class setDirection {};
+        class setPosition {};
+        class setUp {};
+        class spawnFortification {};
+        class startPlacement {};
+    };
+
+    class ui {
+        file = MODULES_DIRECTORY\grad-fortifications\functions\ui;
+
+        class doBuild {};
+        class doDrop {};
+        class doTake {};
+        class loadFortDialog {};
+        class loadVehicleDialog {};
+        class onSelChanged {};
+        class openHint {};
+        class rotateModel {};
+        class updateButtons {};
+        class updateHint {};
+        class updateItemList {};
+        class updateListTitles {};
+        class updateModel {};
+    };
+
+    class vehicle {
+        file = MODULES_DIRECTORY\grad-fortifications\functions\vehicle;
+
+        class requestStoreTake {};
+        class respondStoreTake {};
+    };
+};
+
+#ifndef MODULES_DIRECTORY
+    #define MODULES_DIRECTORY modules
+#endif
+
+class GRAD_introCam {
+    class client {
+        file = MODULES_DIRECTORY\grad-introCam\functions\client;
+        class blackOnLoad { postInit = 1; };
+        class blend;
+        class camAttached;
+        class camMove;
+        class camRotate;
+        class createCam;
+        class handleNextShot;
+        class play;
+    };
+
+    class server {
+        file = MODULES_DIRECTORY\grad-introCam\functions\server;
+        class init { postInit = 1; };
+    };
+};
+
+
+/*
+*   Hier können eigene Funktionen eingebunden werden.
+*   Ist in CfgFunctions included.
+*/
+
+class GRAD_grandPrix {
+	tag = "grad_grandPrix";
+
+class points {
+	file = "USER\functions\points";
+	class addPoints {};
+	class addTime {};
+	class registerGroups {};
+	class showResult {};
+};
+class race {
+	file = "USER\functions\race";
+	
+	class race_indexRoads {
+		postInit = 1;
+	};
+	class race_resetRequired {};
+	class race_resetOnRoad {};
+	class race_handleCarPartLocal {};
+	class race_handlePlanePartLocal {};
+	class race_handleJetskiPartLocal {};
+	class race_introCam {};
+	class race_initStation {};
+	class race_handleStation {};
+	class race_add3DMarker {};
+	class race_handleNextGate {};
+	class race_showGate {};
+};
+class water {
+	file = "USER\functions\water";
+	class water_addAceAction {};
+	class water_addCollisionHandler {};
+	class water_setupVehicle {};
+	class water_leakageHandler {};
+};
+class ZiG {
+	file = "USER\functions\ZiG";
+	class ZiG_allPlayersUnconscious {};
+	class ZiG_createPlanes {};
+	class ZiG_endStageClient {};
+	class ZiG_handleStage {};
+	class ZiG_handleMoney {};
+	class ZiG_handlePlaneCapture {};
+	class ZiG_handlePlanes {};
+	class ZiG_setupRequirements {
+		postInit = 1;
+	};
+	class ZiG_initStation {};
+	class ZiG_createMarkerLocal {};
+	class ZiG_handlePolice {};
+	class ZiG_unconsciousHandlerLocal {};
+	class ZiG_initStationEnd {};
+	class ZiG_startStageClient {};
+};
+class oneShotWonder {
+	file = "USER\functions\OneShotWonder";
+	class OSW_handleStage {};
+	class OSW_isComplete {};
+	class OSW_endStationLocal {};
+	class OSW_handlePosition {};
+	class OSW_initStation {};
+};
+class PUPS {
+	file = "USER\functions\P.U.P.S";
+	class PUPS_handleStationServer {};
+	class PUPS_handleStationLocal {};
+	class PUPS_initStation {};
+	class PUPS_addFiredHandler {};
+	class PUPS_cutDecimals {};
+	class PUPS_handleIndicator {};
+	class PUPS_setPitchBankYaw {};
+	class PUPS_angleBetween3dVectors {};
+	class PUPS_addZeusModules {
+		preInit = 1;
+	};
+};
+class daredevil {
+	file = "USER\functions\daredevil";
+	class DD_aceAction {};
+	class DD_backPort {};
+	class DD_cameraShot {};
+	class DD_finishTrigger {};
+	class DD_handleInventory {};
+	class DD_handleStage {};
+	class DD_removeInventoryHandler {};
+	class DD_startStage {};
+	class DD_startTrigger {};
+	class DD_teleport {};
+};
+class common {
+	file = "USER\functions\common";
+    class common_askZeus {};
+	class common_getNearestZeus {};
+	class common_closestEnemyDistance {};
+	class common_safePosAvailable {};
+	class common_unitCanBeSeen {};
+	class common_runPlaylist {};
+	class common_setRadioFrequencies {};
+};
+class redLightGreenLight {
+	file = "USER\functions\redLightGreenLight";
+
+	class rlgl_alignAA {};
+	class rlgl_fire {};
+	class rlgl_isVisible {};
+	class rlgl_handlePIP {};
+	class rlgl_handleStage {};
+	class rlgl_holdInPlace {};
+	class rlgl_handleGunDoor {};
+	class rlgl_handleFinishLocal {};
+	class rlgl_setupRequirements {
+		postInit = 1;
+	};
+	class rlgl_initStation {};
+};
+};

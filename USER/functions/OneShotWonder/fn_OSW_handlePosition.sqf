@@ -155,6 +155,12 @@ private _timesVisited = _position getVariable ["GRAD_grandPrix_timesVisited", 0]
 _timesVisited = _timesVisited + 1;
 _position setVariable ["GRAD_grandPrix_timesVisited", _timesVisited, true];
 
+switch (vehicleVarName _position) do {
+	case "GRAD_grandPrix_OSW_position_17": {
+		GRAD_grandPrix_OSW_position_17_school setDamage 0;
+	};
+};
+
 // hide position
 {
 	[_x, true] remoteExecCall ["hideObjectGlobal", 2];

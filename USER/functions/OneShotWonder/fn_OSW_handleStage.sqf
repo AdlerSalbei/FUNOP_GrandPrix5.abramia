@@ -1,4 +1,5 @@
-#define BEST_TIME 30
+// the best possible time per player
+#define BEST_TIME 32
 
 if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; };
 
@@ -8,7 +9,15 @@ _station setVariable ["stationIsRunning", true, true];
 _group setVariable ["GRAD_GrandPrix_currentStage", "OSW", true];
 
 diag_log "setting up positions...";
-private _allPositions = [GRAD_grandPrix_OSW_position_1, GRAD_grandPrix_OSW_position_2, GRAD_grandPrix_OSW_position_3, GRAD_grandPrix_OSW_position_4, GRAD_grandPrix_OSW_position_5, GRAD_grandPrix_OSW_position_6, GRAD_grandPrix_OSW_position_7, GRAD_grandPrix_OSW_position_8, GRAD_grandPrix_OSW_position_9, GRAD_grandPrix_OSW_position_10, GRAD_grandPrix_OSW_position_11, GRAD_grandPrix_OSW_position_12, GRAD_grandPrix_OSW_position_13, GRAD_grandPrix_OSW_position_14];
+// private _allPositions = [GRAD_grandPrix_OSW_position_1, GRAD_grandPrix_OSW_position_2, GRAD_grandPrix_OSW_position_3, GRAD_grandPrix_OSW_position_4, GRAD_grandPrix_OSW_position_5, GRAD_grandPrix_OSW_position_6, GRAD_grandPrix_OSW_position_7, GRAD_grandPrix_OSW_position_8, GRAD_grandPrix_OSW_position_9, GRAD_grandPrix_OSW_position_10, GRAD_grandPrix_OSW_position_11, GRAD_grandPrix_OSW_position_12, GRAD_grandPrix_OSW_position_13, GRAD_grandPrix_OSW_position_14, GRAD_grandPrix_OSW_position_15];
+private _allPositions = [];
+private _first = 1;
+private _last = 18;
+for "_i" from _first to _last do
+{  
+	_allPositions pushBack (call(compile format ["GRAD_grandPrix_OSW_position_%1",_i]));
+};
+
 {
 	_x setVariable ["GRAD_grandPrix_timesVisited", 0, true];
 } forEach _allPositions;
@@ -70,11 +79,11 @@ private _groupTime = 0;
 
 private _points = [_group, _groupTime, BEST_TIME * (count _players), 1000, "One Shot Wonder"] call grad_grandPrix_fnc_addTime;
 private _msg = format ["<t align='left'>Zusammen habt ihr %1 gebraucht.Damit habt ihr euch %2 Punkte erspielt!</t>", [_groupTime, "MM:SS"] call BIS_fnc_secondsToString, _points];
-_msg = _msg + "<br /> <br /><t align='left'>Spieler Zeit:</t>"; 
+_msg = _msg + "<br /> <br /><t align='left'>Spieler Zeit:</t>";
 
-{ 
-	_msg = _msg + format ["<br /> <t align='center'>%1:</t> <t align='right'>%2</t>", _x select 0, [_x select 1, "MM:SS"] call BIS_fnc_secondsToString]; 
-}forEach _playerTimes; 
+{
+	_msg = _msg + format ["<br /> <t align='center'>%1:</t> <t align='right'>%2</t>", _x select 0, [_x select 1, "MM:SS"] call BIS_fnc_secondsToString];
+}forEach _playerTimes;
 
 [parseText _msg] remoteExec ["hint", _players + [_nearestInstructor]];
 
