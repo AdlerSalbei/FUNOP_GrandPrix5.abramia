@@ -62,7 +62,7 @@ private _points = [_group, _averageTimeTaken, BEST_TIME, 1000, "P.U.P.S"] call g
 private _nearestInstructor = [_station] call grad_grandprix_fnc_common_getNearestZeus;
 
 private _msg = format ["Ihr habt durchschnittlich %1 benötigt.\nDamit habt ihr euch %2 Punkte erspielt!", [_averageTimeTaken, "MM:SS"] call BIS_fnc_secondsToString, _points];
-_msg = _msg + "<br /> <br /><t align='left'>Spieler Zeit:</t>"; 
+_msg = _msg + "<br /> <br /><t align='left'>Spieler:</t><t align='right'>Zeit:</t>"; 
 
 { 
 	_msg = _msg + format ["<br /> <t align='center'>%1:</t> <t align='right'>%2</t>", _x select 0, [_x select 1, "MM:SS"] call BIS_fnc_secondsToString]; 

@@ -51,6 +51,9 @@ _cam camSetTarget _nextPos;
 _cam camCommit 0;
 sleep 1;
 
+// Play the track introduction
+playSound "Race_Description";
+
 private _keyCount = count _sortedKeys;
 {
 	_pos = _x;
