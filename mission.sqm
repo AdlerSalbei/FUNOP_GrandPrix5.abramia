@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2610;
+		nextID=2817;
 	};
 	class Camera
 	{
-		pos[]={9230.3584,265.86166,9113.3828};
-		dir[]={0.67035377,-0.62324148,0.40286064};
-		up[]={0.53422999,0.78199881,0.32105625};
-		aside[]={0.51513427,5.559923e-007,-0.85717368};
+		pos[]={1841.1348,212.74594,1344.5408};
+		dir[]={-0.15541984,-0.63462442,0.75703138};
+		up[]={-0.12762757,0.77282065,0.62165856};
+		aside[]={0.9795692,-7.4505806e-009,0.20110723};
 	};
 };
 binarizationWanted=0;
@@ -6935,7 +6935,7 @@ class Mission
 			};
 			id=1545;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=2.4725018;
+			atlOffset=6.2985668;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6971,7 +6971,7 @@ class Mission
 			};
 			id=1546;
 			type="Land_Shoot_House_Tunnel_Prone_F";
-			atlOffset=2.5160465;
+			atlOffset=6.2970009;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7005,7 +7005,7 @@ class Mission
 			};
 			id=1547;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=2.5885811;
+			atlOffset=6.2970791;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7033,14 +7033,13 @@ class Mission
 				angles[]={0,1.2047501,0};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 				dynamicSimulation=1;
 			};
 			id=1548;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=0.10949135;
+			atlOffset=6.9771099;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7074,7 +7073,7 @@ class Mission
 			};
 			id=1549;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=0.37783623;
+			atlOffset=7.2460117;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7108,7 +7107,7 @@ class Mission
 			};
 			id=1550;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=2.2600689;
+			atlOffset=6.0405674;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7142,7 +7141,7 @@ class Mission
 			};
 			id=1551;
 			type="Land_Shoot_House_Wall_Crouch_F";
-			atlOffset=2.2425003;
+			atlOffset=6.0229988;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7176,7 +7175,7 @@ class Mission
 			};
 			id=1552;
 			type="EmptyDetectorArea10x10";
-			atlOffset=1.2948265;
+			atlOffset=8.162838;
 		};
 		class Item48
 		{
@@ -10937,6 +10936,7 @@ class Mission
 			};
 			id=1676;
 			type="Sign_Arrow_Large_Blue_F";
+			atlOffset=0.10955811;
 			class CustomAttributes
 			{
 				class Attribute0

@@ -64,6 +64,7 @@ class CfgFunctions
 	#include "node_modules\grad-introcam\cfgFunctions.hpp"
 
 	#include "USER\userFunctions.hpp"
+	#include "USER\GoG\cfgFunctions.hpp"
 };
 
 
