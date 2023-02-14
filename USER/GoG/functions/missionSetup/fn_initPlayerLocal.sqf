@@ -1,23 +1,28 @@
 #include "component.hpp"
 
-//Save Loadout & Pos
-ace_player setVariable ["grad_grandprix_gog_oldLoadout", getUnitLoadout ace_player];
-ace_player setVariable ["grad_grandprix_gog_oldPos", getPos ace_player];
+params ["_unit"];
 
+systemChat "Init Player";
+
+[_unit] remoteExecCall ["grad_grandprix_gog_fnc_initPlayerServer", 2, false];
+
+//Save Loadout & Pos
+_unit setVariable ["grad_grandprix_gog_oldLoadout", getUnitLoadout _unit];
+_unit setVariable ["grad_grandprix_gog_oldPos", getPos _unit];
 
 //Setup Player
 [] call grad_grandprix_gog_fnc_applyUniform;
 
 ["ace_unconscious", grad_grandprix_gog_fnc_onUnconscious] call CBA_fnc_addEventHandler;
 
-ace_player setVariable [QGVAR(isSpectator),true,true];
-ace_player setDamage 1;
+_unit setVariable [QGVAR(isSpectator),true,true];
+_unit setDamage 1;
 ["Terminate"] call BIS_fnc_EGSpectator;
-["Initialize", [ace_player, [WEST,EAST,INDEPENDENT], true]] call BIS_fnc_EGSpectator;
+["Initialize", [_unit, [WEST,EAST,INDEPENDENT], true]] call BIS_fnc_EGSpectator;
 
-[] call FUNC(moveToMapStartPos);
+[] call grad_grandprix_gog_fnc_moveToMapStartPos;
 
-ace_player addEventHandler ["Killed", EFUNC(events,onPlayerKilled)];
-ace_player addEventHandler ["Respawn", EFUNC(events,onPlayerRespawn)];
+_unit addEventHandler ["Killed", EFUNC(events,onPlayerKilled)];
+_unit addEventHandler ["Respawn", EFUNC(events,onPlayerRespawn)];
 
 
