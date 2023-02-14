@@ -1,7 +1,5 @@
 #include "component.hpp"
 
-diag_log "GOG InitServer";
-
 //Init Game of Guns 
 grad_grandprix_gog_playAreaSize = 100;
 

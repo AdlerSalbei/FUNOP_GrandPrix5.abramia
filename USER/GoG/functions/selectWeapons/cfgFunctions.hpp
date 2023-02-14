@@ -1,5 +1,4 @@
 class grad_grandprix_gog_selectWeapons {
-    tag = "grad_grandprix_gog_selectWeapons";
     file = "USER\GoG\functions\selectWeapons";
 
     class blacklistUtility {};

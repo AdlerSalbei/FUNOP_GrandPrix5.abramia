@@ -1,5 +1,4 @@
 class grad_grandprix_gog_missionSetup {
-    tag = "grad_grandprix_gog_missionSetup";
     file = "USER\GoG\functions\missionSetup";
 
     class applyUniform {};

@@ -4,6 +4,7 @@ class grad_grandprix_gog_common {
     class findMax {};
     class findStringInArray {};
     class getPicturePath {};
+    class hasUniformDLC {};
     class randomizeArrays {};
     class randomPos {};
     class showCamper {};

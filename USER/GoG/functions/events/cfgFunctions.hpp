@@ -1,5 +1,4 @@
 class grad_grandprix_gog_events {
-    tag = "grad_grandprix_gog_events";
     file = "USER\GoG\functions\events";
 
     class endMissionServer {};
