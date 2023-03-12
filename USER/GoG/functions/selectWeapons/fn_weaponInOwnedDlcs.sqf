@@ -11,7 +11,7 @@ if (count _dlcs == 0) exitWith {true};
 private _appID = [configfile >> "cfgMods" >> (_dlcs param [0,""]),"appId",-1] call BIS_fnc_returnConfigEntry;
 if (_appID < 0) exitWith {true};
 
-private _allPlayerOwnedDlcs = missionNamespace getVariable [QGVAR(allPlayerOwnedDlcsIntersect),[]];
+private _allPlayerOwnedDlcs = missionNamespace getVariable ["grad_grandprix_gog_(allPlayerOwnedDlcsIntersect",[]];
 if (count _allPlayerOwnedDlcs == 0) exitWith {true};
 
 _appID in _allPlayerOwnedDlcs

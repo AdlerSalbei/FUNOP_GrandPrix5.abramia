@@ -14,7 +14,7 @@ private _startPositions = [];
 		//find position that is not over water
 		_isWater = true;
 		for [{_i=0}, {_i<100}, {_i = _i + 1}] do {
-			_startPos = [grad_grandprix_gog_playAreaCenter,[0,grad_grandprix_gog_playAreaSize - 25],[0,360]] call EFUNC(common,randomPos);
+			_startPos = [grad_grandprix_gog_playAreaCenter,[0,grad_grandprix_gog_playAreaSize - 25],[0,360]] call grad_grandprix_gog_fnc_randomPos;
 			_isWater = surfaceIsWater _startPos;
             if (!_isWater) exitWith {};
 		};
@@ -36,6 +36,6 @@ private _startPositions = [];
 	};
 
     _startPositions pushBack _startPos;
-    [_x,_startPos] remoteExec [QEFUNC(common,teleport),_x,false];
+    [_x,_startPos] remoteExec ["grad_grandprix_gog_teleport",_x,false];
 
-} forEach (allPlayers select {_x getVariable [QGVAR(isPlaying),false]});
+} forEach (allPlayers select {_x getVariable ["grad_grandprix_gog_(isPlaying",false]});

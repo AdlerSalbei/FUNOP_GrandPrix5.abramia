@@ -47,7 +47,7 @@ _ctrlButtonExport ctrlCommit 0;
     _ctrlListbox lbSetData [_id,_x];
 
     _ctrlListbox lbSetPictureColor [_id,[1,1,1,1]];
-    _ctrlListbox lbSetPicture [_id,[_x] call EFUNC(common,getPicturePath)];
+    _ctrlListbox lbSetPicture [_id,[_x] call grad_grandprix_gog_fnc_getPicturePath];
 
     _ctrlListbox lbSetPictureRightColor [_id,[1,1,1,1]];
     _ctrlListbox lbSetPictureRight [_id,_checkboxTextures select (_x in _weaponBlacklist)];

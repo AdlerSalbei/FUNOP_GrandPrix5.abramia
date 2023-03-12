@@ -5,4 +5,4 @@ private _mapStartPos = [missionConfigFile >> "cfgGradIslands" >> worldName,"spaw
 private _pos = _mapStartPos findEmptyPosition [0,30,"B_Soldier_F"];
 if (_pos isEqualTo []) then {_pos = _mapStartPos};
 
-[player,_pos] call EFUNC(common,teleport);
+[player,_pos] call grad_grandprix_gog_fnc_teleport;

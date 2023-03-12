@@ -12,11 +12,11 @@ _this spawn {
 
     sleep 1;
 
-    _centerPos = ([EGVAR(missionSetup,playAreaCenter),[0,50]] call EFUNC(common,randomPos)) findEmptyPosition [0,30,"B_Soldier_F"];
-    if ((count _centerPos) == 0) then {_centerPos = EGVAR(missionSetup,playAreaCenter)};
+    _centerPos = ([grad_grandprix_gog_playAreaCenter,[0,50]] call grad_grandprix_gog_fnc_randomPos) findEmptyPosition [0,30,"B_Soldier_F"];
+    if ((count _centerPos) == 0) then {_centerPos = grad_grandprix_gog_playAreaCenter};
 
     {_x setDamage 0} forEach allPlayers;
-    [nil,_centerPos] remoteExec [QEFUNC(common,teleport),0,false];
+    [nil,_centerPos] remoteExec ["grad_grandprix_gog_teleport",0,false];
     [_centerPos] remoteExec [QFUNC(respawnPlayer),0,false];
 
     [[],{

@@ -5,11 +5,11 @@ params [["_respawnPos",[0,0,0]]];
 if (!hasInterface) exitWith {};
 if (alive player) exitWith {};
 
-player setVariable [QGVAR(respawnPos),_respawnPos];
+player setVariable ["grad_grandprix_gog_(respawnPos",_respawnPos];
 setPlayerRespawnTime 1;
 forceRespawn player;
 
-(player getVariable [QGVAR(killCam),[]]) params [["_camera",objNull],["_filmgrain",-1]];
+(player getVariable ["grad_grandprix_gog_(killCam",[]]) params [["_camera",objNull],["_filmgrain",-1]];
 
 _filmgrain ppEffectEnable false;
 ppEffectDestroy _filmgrain;

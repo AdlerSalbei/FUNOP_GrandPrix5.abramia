@@ -2,7 +2,7 @@
 
 params ["_unit"];
 
-systemChat "Init Player";
+systemChat "Init Local Player";
 
 [_unit] remoteExecCall ["grad_grandprix_gog_fnc_initPlayerServer", 2, false];
 
@@ -15,14 +15,14 @@ _unit setVariable ["grad_grandprix_gog_oldPos", getPos _unit];
 
 ["ace_unconscious", grad_grandprix_gog_fnc_onUnconscious] call CBA_fnc_addEventHandler;
 
-_unit setVariable [QGVAR(isSpectator),true,true];
+_unit setVariable ["grad_grandprix_gog_(isSpectator",true,true];
 _unit setDamage 1;
 ["Terminate"] call BIS_fnc_EGSpectator;
 ["Initialize", [_unit, [WEST,EAST,INDEPENDENT], true]] call BIS_fnc_EGSpectator;
 
 [] call grad_grandprix_gog_fnc_moveToMapStartPos;
 
-_unit addEventHandler ["Killed", EFUNC(events,onPlayerKilled)];
-_unit addEventHandler ["Respawn", EFUNC(events,onPlayerRespawn)];
+_unit addEventHandler ["Killed", {_this call grad_grandprix_gog_fnc_fnc_onPlayerKilled}];
+_unit addEventHandler ["Respawn", {_this call grad_grandprix_gog_fnc_fnc_onPlayerRespawn}];
 
 

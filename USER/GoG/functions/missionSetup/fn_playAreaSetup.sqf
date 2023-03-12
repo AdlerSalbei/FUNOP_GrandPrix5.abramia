@@ -6,7 +6,7 @@ if (count EGVAR(votePlayzone,areaMarkers) == 0) then {
 
     _isWater = true;
     while {_isWater} do {
-        grad_grandprix_gog_playAreaCenter = [[worldSize/2, worldSize/2, 0], [0, 1000], [0,360]] call EFUNC(common,randomPos);
+        grad_grandprix_gog_playAreaCenter = [[worldSize/2, worldSize/2, 0], [0, 1000], [0,360]] call grad_grandprix_gog_fnc_randomPos;
         _isWater = surfaceIsWater grad_grandprix_gog_playAreaCenter;
     };
 
@@ -17,7 +17,7 @@ if (count EGVAR(votePlayzone,areaMarkers) == 0) then {
 // select most upvoted =========================================================
 } else {
 
-    _mostUpvotedID = [EGVAR(votePlayzone,markerVotes)] call EFUNC(common,findMax);
+    _mostUpvotedID = [EGVAR(votePlayzone,markerVotes)] call grad_grandprix_gog_fnc_findMax;
 
     //no single most upvoted
     if (_mostUpvotedID == -1) then {
@@ -81,7 +81,7 @@ publicVariable "grad_grandprix_gog_playAreaSize";
 
 
 //CREATE PLAY AREA MARKERS =====================================================
-_marker = createMarker [QGVAR(playAreaMarker), grad_grandprix_gog_playAreaCenter];
+_marker = createMarker ["grad_grandprix_gog_(playAreaMarker", grad_grandprix_gog_playAreaCenter];
 _marker setMarkerColor "COLORWEST";
 _marker setMarkerShape "ELLIPSE";
 _marker setMarkerBrush "Border";

@@ -9,7 +9,7 @@ private _fnc_selectWeapons = {
     GVAR(chosenWeapons) = [];
     GVAR(muzzleItems) = [];
     GVAR(scopes) = [];
-    private _weaponsNeeded = EGVAR(missionSetup,killsForWin);
+    private _weaponsNeeded = grad_grandprix_gog_killsForWin;
 
     ([] call FUNC(getAllAvailableWeapons)) params ["_availableRifles","_availablePistols"];
 
@@ -103,9 +103,9 @@ private _fnc_selectWeapons = {
     };
 
     //BROADCAST ================================================================
-    publicVariable QGVAR(chosenWeapons);
-    publicVariable QGVAR(muzzleItems);
-    publicVariable QGVAR(scopes);
+    publicVariable "grad_grandprix_gog_(chosenWeapons";
+    publicVariable "grad_grandprix_gog_(muzzleItems";
+    publicVariable "grad_grandprix_gog_(scopes";
 
     //LOG ======================================================================
     INFO("Weapons selected:");
@@ -116,7 +116,7 @@ private _fnc_selectWeapons = {
     } forEach GVAR(chosenWeapons);
 
     // COMPLETE ================================================================
-    missionNamespace setVariable [QGVAR(selectWeaponsComplete),true,true];
+    missionNamespace setVariable ["grad_grandprix_gog_(selectWeaponsComplete",true,true];
 };
 
 [{

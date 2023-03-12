@@ -2,14 +2,14 @@
 #include "..\..\dialog\scoreboard\defines.hpp"
 
 if (!hasInterface) exitWith {};
-if !(missionNamespace getVariable [QGVAR(gameStarted),false]) exitWith {};
+if !(missionNamespace getVariable ["grad_grandprix_gog_(gameStarted",false]) exitWith {};
 
 private ["_display", "_teamScore", "_teamName"];
 if (!alive player) exitWith {};
 disableSerialization;
 
-private _allPlayingPlayers = allPlayers select {_x getVariable [QGVAR(isPlaying),false]};
-private _allPlayingPlayersScores = _allPlayingPlayers apply {[_x getVariable [QGVAR(currentScore),0],_x]};
+private _allPlayingPlayers = allPlayers select {_x getVariable ["grad_grandprix_gog_(isPlaying",false]};
+private _allPlayingPlayersScores = _allPlayingPlayers apply {[_x getVariable ["grad_grandprix_gog_(currentScore",0],_x]};
 _allPlayingPlayersScores sort false;
 
 private _display = uiNamespace getVariable "ScoreBoard_Display";
@@ -32,7 +32,7 @@ private _fnc_hideRow = {
     _scoreBoardScore ctrlSetText "";
 };
 
-private _playerRank = _allPlayingPlayersScores find [player getVariable [QGVAR(currentScore),0],player];
+private _playerRank = _allPlayingPlayersScores find [player getVariable ["grad_grandprix_gog_(currentScore",0],player];
 private _maxID = count _allPlayingPlayers;
 for [{_i=0}, {_i < 5}, {_i=_i+1}] do {
     _scoreBoardItem = _display displayCtrl SCOREBOARD_ITEM1 + _i;
@@ -50,7 +50,7 @@ for [{_i=0}, {_i < 5}, {_i=_i+1}] do {
         } else {
             // display player in fifth row even if rank is lower
             if (_i == 4 && _playerRank > 4) then {
-                _score = player getVariable [QGVAR(currentScore),0];
+                _score = player getVariable ["grad_grandprix_gog_(currentScore",0];
                 _unit = player;
                 call _fnc_addUnitScore;
             } else _fnc_addUnitScore;

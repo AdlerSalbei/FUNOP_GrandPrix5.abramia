@@ -68,7 +68,7 @@ grad_grandprix_gog_missionSetup_campingProtectionHandle = [{
             if (_iteration > 15 && {!(player getVariable ["grad_grandprix_gog_missionSetup_isCamping",false])}) then {
                 player setVariable ["grad_grandprix_gog_missionSetup_isCamping",true,true];
                 ["gungame_notification1",["GUNGAME","Other players know where you are, camper!"]] spawn bis_fnc_showNotification;
-                [player,profileName] remoteExec [QEFUNC(common,showCamper),0,false];
+                [player,profileName] remoteExec ["grad_grandprix_gog_showCamper",0,false];
             };
 
             _args set [0,_iteration + 1];

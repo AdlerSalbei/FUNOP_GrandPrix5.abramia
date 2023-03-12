@@ -1,9 +1,9 @@
 #include "component.hpp"
 
-private _stats = EGVAR(missionSetup,statsArray);
-private _allPlayerUIDs = EGVAR(missionSetup,allPlayerUIDs);
-private _allPlayingPlayers = allPlayers select {_x getVariable [QEGVAR(missionSetup,isPlaying),false]};
-private _allPlayingPlayersScores = _allPlayingPlayers apply {[_x getVariable [QEGVAR(missionSetup,currentScore),0],_x]};
+private _stats = grad_grandprix_gog_statsArray;
+private _allPlayerUIDs = grad_grandprix_gog_allPlayerUIDs;
+private _allPlayingPlayers = allPlayers select {_x getVariable ["grad_grandprix_gog_isPlaying",false]};
+private _allPlayingPlayersScores = _allPlayingPlayers apply {[_x getVariable ["grad_grandprix_gog_currentScore",0],_x]};
 _allPlayingPlayersScores sort false;
 
 //UPDATE STATS =================================================================
@@ -27,12 +27,12 @@ _allPlayingPlayersScores sort false;
 
         //kills
         _oldKills = _playerStats select 0;
-        _playerStats set [0, _oldKills + (_playerUnit getVariable [QEGVAR(missionSetup,kills),0])];
+        _playerStats set [0, _oldKills + (_playerUnit getVariable ["grad_grandprix_gog_kills",0])];
         diag_log format ["updateLeaderboard.sqf - Player %1 scored %2 kills this game.", name _playerUnit, _playerUnit getVariable ["kills",0]];
 
         //deaths
         _oldDeaths = _playerStats select 1;
-        _playerStats set [1, _oldDeaths + (_playerUnit getVariable [QEGVAR(missionSetup,deaths), 0])];
+        _playerStats set [1, _oldDeaths + (_playerUnit getVariable ["grad_grandprix_gog_deaths", 0])];
         diag_log format ["updateLeaderboard.sqf - Player %1 died %2 times this game.", name _playerUnit, _playerUnit getVariable ["deaths", 0]];
 
         //games

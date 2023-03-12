@@ -14,7 +14,7 @@ if (player isEqualTo _camper) exitWith {};
     params ["_args","_handle"];
     _args params ["_camper","_camperName"];
 
-    if (!(alive _camper) || !(_camper getVariable [QEGVAR(missionSetup,isCamping),false])) exitWith {
+    if (!(alive _camper) || !(_camper getVariable ["grad_grandprix_gog_isCamping",false])) exitWith {
         [_handle] call CBA_fnc_removePerFrameHandler;
     };
 

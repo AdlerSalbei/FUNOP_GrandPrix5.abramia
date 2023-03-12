@@ -3,12 +3,12 @@
 params [["_unit",objNull],"_score"];
 
 if (isNil "_score") then {
-    _score = _unit getVariable [QGVAR(currentScore),0];
+    _score = _unit getVariable ["grad_grandprix_gog_(currentScore",0];
 };
 
-private _weapon = EGVAR(selectWeapons,chosenWeapons) param [_score,""];
-private _muzzleItem = EGVAR(selectWeapons,muzzleItems) param [_score,""];
-private _scope = EGVAR(selectWeapons,scopes) param [_score,""];
+private _weapon = grad_grandprix_gog_chosenWeapons param [_score,""];
+private _muzzleItem = grad_grandprix_gog_muzzleItems param [_score,""];
+private _scope = grad_grandprix_gog_scopes param [_score,""];
 
 //get magazine
 private _magazines = getArray (configFile / "CfgWeapons" / _weapon / "magazines");
