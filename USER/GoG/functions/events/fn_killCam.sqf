@@ -24,7 +24,7 @@ _filmgrain ppEffectEnable true;
 _filmgrain ppEffectAdjust [0.3,0.3,0.12,0.12,0.12,true];
 _filmgrain ppEffectCommit 0;
 
-_killedUnit setVariable ["grad_grandprix_gog_(killCam", [_camera,_filmgrain]];
+_killedUnit setVariable ["grad_grandprix_gog_killCam", [_camera,_filmgrain]];
 
 _camera camSetTarget _killedUnit;
 _camera camSetFov 0.4;

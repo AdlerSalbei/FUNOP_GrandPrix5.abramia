@@ -3,7 +3,7 @@
 params [["_unit",objNull],"_score"];
 
 if (isNil "_score") then {
-    _score = _unit getVariable ["grad_grandprix_gog_(currentScore",0];
+    _score = _unit getVariable ["grad_grandprix_gog_currentScore",0];
 };
 
 private _weapon = grad_grandprix_gog_chosenWeapons param [_score,""];

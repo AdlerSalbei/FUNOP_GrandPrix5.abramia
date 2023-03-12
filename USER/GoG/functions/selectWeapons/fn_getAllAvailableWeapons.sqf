@@ -2,7 +2,7 @@
 
 params [["_useBlacklist",true]];
 
-private _allPlayerOwnedDlcs = missionNamespace getVariable ["grad_grandprix_gog_(allPlayerOwnedDlcsIntersect",[]];
+private _allPlayerOwnedDlcs = missionNamespace getVariable ["grad_grandprix_gog_allPlayerOwnedDlcsIntersect",[]];
 
 private _allCfgWeapons = "(getNumber (_x >> 'scope')) == 2" configClasses (configFile >> "cfgWeapons");
 

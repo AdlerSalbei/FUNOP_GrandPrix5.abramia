@@ -17,7 +17,7 @@ private _shooter = player getVariable ["ACE_medical_lastDamageSource",player];
 
 //create kill cam
 private _killCamHandle = [grad_grandprix_gog_respawnTime min 10,player,_shooter] spawn FUNC(killCam);
-player setVariable ["grad_grandprix_gog_(killCamHandle",_killCamHandle];
+player setVariable ["grad_grandprix_gog_killCamHandle",_killCamHandle];
 
 //keep player from respawning
 setPlayerRespawnTime 9999;

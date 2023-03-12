@@ -81,7 +81,7 @@ publicVariable "grad_grandprix_gog_playAreaSize";
 
 
 //CREATE PLAY AREA MARKERS =====================================================
-_marker = createMarker ["grad_grandprix_gog_(playAreaMarker", grad_grandprix_gog_playAreaCenter];
+_marker = createMarker ["grad_grandprix_gog_playAreaMarker", grad_grandprix_gog_playAreaCenter];
 _marker setMarkerColor "COLORWEST";
 _marker setMarkerShape "ELLIPSE";
 _marker setMarkerBrush "Border";

@@ -103,9 +103,9 @@ private _fnc_selectWeapons = {
     };
 
     //BROADCAST ================================================================
-    publicVariable "grad_grandprix_gog_(chosenWeapons";
-    publicVariable "grad_grandprix_gog_(muzzleItems";
-    publicVariable "grad_grandprix_gog_(scopes";
+    publicVariable "grad_grandprix_gog_chosenWeapons";
+    publicVariable "grad_grandprix_gog_muzzleItems";
+    publicVariable "grad_grandprix_gog_scopes";
 
     //LOG ======================================================================
     INFO("Weapons selected:");
@@ -116,7 +116,7 @@ private _fnc_selectWeapons = {
     } forEach GVAR(chosenWeapons);
 
     // COMPLETE ================================================================
-    missionNamespace setVariable ["grad_grandprix_gog_(selectWeaponsComplete",true,true];
+    missionNamespace setVariable ["grad_grandprix_gog_selectWeaponsComplete",true,true];
 };
 
 [{

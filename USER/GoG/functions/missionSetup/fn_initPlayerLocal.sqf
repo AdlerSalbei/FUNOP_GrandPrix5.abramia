@@ -15,7 +15,7 @@ _unit setVariable ["grad_grandprix_gog_oldPos", getPos _unit];
 
 ["ace_unconscious", grad_grandprix_gog_fnc_onUnconscious] call CBA_fnc_addEventHandler;
 
-_unit setVariable ["grad_grandprix_gog_(isSpectator",true,true];
+_unit setVariable ["grad_grandprix_gog_isSpectator",true,true];
 _unit setDamage 1;
 ["Terminate"] call BIS_fnc_EGSpectator;
 ["Initialize", [_unit, [WEST,EAST,INDEPENDENT], true]] call BIS_fnc_EGSpectator;

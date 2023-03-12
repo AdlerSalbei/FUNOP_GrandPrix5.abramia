@@ -2,10 +2,10 @@
 
 params [["_ownedDlcs",[]]];
 
-if (isNil "grad_grandprix_gog_(allPlayerOwnedDlcsIntersect") then {
+if (isNil "grad_grandprix_gog_allPlayerOwnedDlcsIntersect") then {
     GVAR(allPlayerOwnedDlcsIntersect) = _ownedDlcs;
 } else {
     GVAR(allPlayerOwnedDlcsIntersect) = GVAR(allPlayerOwnedDlcsIntersect) arrayIntersect _ownedDlcs;
 };
 
-GVAR(receivedDlcsCount) = (missionNamespace getVariable ["grad_grandprix_gog_(receivedDlcsCount",0]) + 1;
+GVAR(receivedDlcsCount) = (missionNamespace getVariable ["grad_grandprix_gog_receivedDlcsCount",0]) + 1;

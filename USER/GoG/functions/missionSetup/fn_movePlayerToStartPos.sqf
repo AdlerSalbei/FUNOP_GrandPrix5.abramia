@@ -38,4 +38,4 @@ private _startPositions = [];
     _startPositions pushBack _startPos;
     [_x,_startPos] remoteExec ["grad_grandprix_gog_teleport",_x,false];
 
-} forEach (allPlayers select {_x getVariable ["grad_grandprix_gog_(isPlaying",false]});
+} forEach (allPlayers select {_x getVariable ["grad_grandprix_gog_isPlaying",false]});
