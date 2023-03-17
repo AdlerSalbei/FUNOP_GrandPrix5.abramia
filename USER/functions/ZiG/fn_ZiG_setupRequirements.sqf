@@ -1,4 +1,4 @@
-if (!isServer) exitWith { _this remoteExecCall [_fnc_scriptName, 2]; };
+if (!isServer) exitWith {};
 
 // handler to remove dropped leaflets
 private _handler = ["Leaflet_05_F", "init",
@@ -59,7 +59,7 @@ for "_i" from _positionsMarkerStart to _positionsMarkerEnd do
 
 			missionNamespace setVariable ["GRAD_grandPrix_ZiG_weaponHolders", _holders];
 		},
-		30 / _moneyTargetAmount,
+		300 / _moneyTargetAmount,
 		_moneyTargetAmount
 	] call CBA_fnc_addPerFrameHandler;
 }, [], 5] call CBA_fnc_waitAndExecute;

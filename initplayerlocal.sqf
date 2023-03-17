@@ -42,6 +42,12 @@ _player allowDamage false;
 
 ["GRAD_grandprix_refill_stam", -5] call ace_advanced_fatigue_fnc_addDutyFactor;
 
+// Seat players
+sleep 1;
+if ((side player) isEqualTo resistance) then {    
+	private _chair = nearestObject [player, "Land_CampingChair_V2_F"];
+	[_chair, player] call ace_sitting_fnc_sit;
+};
 
 // waiting until player properly initialised
 // ripped this from the bi-forum
