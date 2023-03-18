@@ -30,7 +30,7 @@ _unit setVariable ["grad_grandprix_gog_playerUniform", ( selectRandom _allAvaila
 
 //save UID of everyone who is playing
 _playerUID = getPlayerUID _unit;
-GVAR(allPlayerUIDs) pushBack _playerUID;
+grad_grandprix_gog_allPlayerUIDs pushBack _playerUID;
 
 [] call grad_grandprix_gog_fnc_removeInitialWeapon;
 

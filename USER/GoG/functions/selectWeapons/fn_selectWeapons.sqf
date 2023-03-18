@@ -6,19 +6,19 @@
 if (!isServer) exitWith {};
 
 private _fnc_selectWeapons = {
-    GVAR(chosenWeapons) = [];
-    GVAR(muzzleItems) = [];
-    GVAR(scopes) = [];
+    grad_grandprix_gog_receivedDlcsCount = [];
+    grad_grandprix_gog_muzzleItems = [];
+    grad_grandprix_gog_scopes = [];
     private _weaponsNeeded = grad_grandprix_gog_killsForWin;
 
     ([] call FUNC(getAllAvailableWeapons)) params ["_availableRifles","_availablePistols"];
 
     private _numberOfPistols = (round (_weaponsNeeded / 5)) min 6;
     for "_i" from 1 to (_weaponsNeeded - _numberOfPistols) do {
-        GVAR(chosenWeapons) pushBack selectRandom _availableRifles;
+        grad_grandprix_gog_receivedDlcsCount pushBack selectRandom _availableRifles;
     };
     for "_j" from 1 to _numberOfPistols do {
-        GVAR(chosenWeapons) pushBack selectRandom _availablePistols;
+        grad_grandprix_gog_receivedDlcsCount pushBack selectRandom _availablePistols;
     };
 
     // CHOOSE MUZZLE ATTACHMENTS ===================================================
@@ -43,18 +43,18 @@ private _fnc_selectWeapons = {
             };
 
             if (count _allMuzzleItems == 0) then {
-                GVAR(muzzleItems) pushBack "EMPTY";
+                grad_grandprix_gog_muzzleItems pushBack "EMPTY";
             } else {
                 _muzzleItem = selectRandom _allMuzzleItems;
-                GVAR(muzzleItems) pushBack _muzzleItem;
+                grad_grandprix_gog_muzzleItems pushBack _muzzleItem;
             };
 
         } else {
-            GVAR(muzzleItems) pushBack "EMPTY";
+            grad_grandprix_gog_muzzleItems pushBack "EMPTY";
         };
-    } forEach GVAR(chosenWeapons);
+    } forEach grad_grandprix_gog_receivedDlcsCount;
 
-    // CHOOSE GVAR(scopes) ===============================================================
+    // CHOOSE grad_grandprix_gog_scopes ===============================================================
     private _scopesProb = [missionConfigFile >> "cfgMission","scopesProbability",60] call BIS_fnc_returnConfigEntry;
     {
         private _weapon = _x;
@@ -79,26 +79,26 @@ private _fnc_selectWeapons = {
             _compatibleScopes = [_compatibleScopes] call FUNC(filterNvScopes);
 
             if (count _compatibleScopes > 0) then {
-                GVAR(scopes) pushBack selectRandom _compatibleScopes;
+                grad_grandprix_gog_scopes pushBack selectRandom _compatibleScopes;
             } else {
-                GVAR(scopes) pushBack "EMPTY";
+                grad_grandprix_gog_scopes pushBack "EMPTY";
             };
 
         } else {
-            GVAR(scopes) pushBack "EMPTY";
+            grad_grandprix_gog_scopes pushBack "EMPTY";
         };
-    } forEach GVAR(chosenWeapons);
+    } forEach grad_grandprix_gog_receivedDlcsCount;
 
     //GAME MODE ====================================================================
     switch ("GameMode" call BIS_fnc_getParamValue) do {
         case 0: {};
         case 1: {
-            reverse GVAR(chosenWeapons);
-            reverse GVAR(muzzleItems);
-            reverse GVAR(scopes);
+            reverse grad_grandprix_gog_receivedDlcsCount;
+            reverse grad_grandprix_gog_muzzleItems;
+            reverse grad_grandprix_gog_scopes;
         };
         case 2: {
-            [GVAR(chosenWeapons), GVAR(muzzleItems), GVAR(scopes)] call mcd_fnc_randomizeArrays;
+            [grad_grandprix_gog_receivedDlcsCount, grad_grandprix_gog_muzzleItems, grad_grandprix_gog_scopes] call mcd_fnc_randomizeArrays;
         };
     };
 
@@ -110,15 +110,15 @@ private _fnc_selectWeapons = {
     //LOG ======================================================================
     INFO("Weapons selected:");
     {
-        _muzzle = GVAR(muzzleItems) param [_forEachIndex,""];
-        _scope = GVAR(scopes) param [_forEachIndex,""];
+        _muzzle = grad_grandprix_gog_muzzleItems param [_forEachIndex,""];
+        _scope = grad_grandprix_gog_scopes param [_forEachIndex,""];
         INFO_3("%1, %2, %3",_x,_muzzle,_scope);
-    } forEach GVAR(chosenWeapons);
+    } forEach grad_grandprix_gog_receivedDlcsCount;
 
     // COMPLETE ================================================================
     missionNamespace setVariable ["grad_grandprix_gog_selectWeaponsComplete",true,true];
 };
 
 [{
-    [{count allPlayers >= GVAR(receivedDlcsCount)},_this,[],WAITTIMEOUT,_this] call CBA_fnc_waitUntilAndExecute;
+    [{count allPlayers >= grad_grandprix_gog_receivedDlcsCount},_this,[],WAITTIMEOUT,_this] call CBA_fnc_waitUntilAndExecute;
 },_fnc_selectWeapons,INITIALWAITTIME] call CBA_fnc_waitAndExecute;
