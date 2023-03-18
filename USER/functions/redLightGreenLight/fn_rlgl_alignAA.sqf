@@ -15,5 +15,3 @@ private _pitch = ((_op atan2 _ad) * -1);
 private _posG = _aa vectorModelToWorld (_aa selectionPosition ((selectionNames _aa) # 4));
 private _vecW = _aa weaponDirection (currentWeapon _aa);
 _vecA = _posG vectorFromTo (getPosWorld _unit);
-
-systemChat format ["weapon: %1 | should: %2", _vecW, _vecA];

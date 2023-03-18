@@ -3,6 +3,9 @@ cutText ["", "BLACK", 1];
 5 fadeSound 0.2;
 sleep 3;
 
+// Play the track introduction
+playSound "Race_Description";
+
 // adjust viewDistance
 private _previousLandVehicleViewDistance = ace_viewdistance_viewDistanceLandVehicle;
 private _previousOnFootViewDistance = ace_viewdistance_viewDistanceOnFoot;
@@ -51,9 +54,6 @@ _cam camSetTarget _nextPos;
 _cam camCommit 0;
 sleep 1;
 
-// Play the track introduction
-playSound "Race_Description";
-
 private _keyCount = count _sortedKeys;
 {
 	_pos = _x;
@@ -61,7 +61,7 @@ private _keyCount = count _sortedKeys;
 	
 	private _nextPos = _sortedKeys # (_foreachIndex + 1);
 	private _dist = _pos distance _nextPos;
-	private _sleepTime = _dist / 210;
+	private _sleepTime = _dist / 130;
 	
 	_cam camSetTarget _nextPos;
 	_cam camSetPos _pos;
@@ -76,7 +76,7 @@ _gateCount = count _allGates;
 	
 	private _nextPos = _allGates # (_foreachIndex + 1);
 	private _dist = _pos distance _nextPos;
-	private _sleepTime = _dist / 900;
+	private _sleepTime = _dist / 470;
 	
 	_cam camSetTarget _nextPos;
 	_cam camCommit (_sleepTime * 3);
@@ -94,7 +94,7 @@ _sphereCount = count _spheres;
 	
 	private _nextPos = _spheres # (_foreachIndex + 1);
 	private _dist = _pos distance _nextPos;
-	private _sleepTime = _dist / 250;
+	private _sleepTime = _dist / 173;
 	
 	_cam camSetTarget _nextPos;
 	_cam camSetPos _pos;

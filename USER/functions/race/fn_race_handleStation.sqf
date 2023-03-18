@@ -5,10 +5,6 @@ if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; 
 _station setVariable ["stationIsRunning", true, true];
 _group setVariable ["GRAD_GrandPrix_currentStage", "race", true];
 
-[] remoteExec ["grad_grandPrix_fnc_race_introCam", _group];
-
-sleep 7;
-
 private _units = units _group;
 private _carPositions = [grad_grandPrix_fnc_race_car_1, grad_grandPrix_fnc_race_car_2, grad_grandPrix_fnc_race_car_3, grad_grandPrix_fnc_race_car_4, grad_grandPrix_fnc_race_car_5];
 private _cars = [];

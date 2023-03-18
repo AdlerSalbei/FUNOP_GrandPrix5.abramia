@@ -9,23 +9,6 @@ private _time = time + 8;
 waitUntil { ((_aa aimedAtTarget [_target, _weapon]) >= 0.5) || (time > _time) };
 sleep 1;
 
-// systemChat str (_target getVariable ["ACE_isUnconscious", true]);
-// while { !(_target getVariable ["ACE_isUnconscious", false]) } do {
-// 	systemChat "firing";
-// 	[_aa, _weapon] call BIS_fnc_fire;
-// 	sleep 0.1;
-// };
-// sleep 1;
-
-// _aa setVehicleAmmoDef 1;
-// private _pos = _aa getRelPos [100,0];
-// _pos set [2, ((getPos _aa) # 2) + 1];
-// _aa lookAt _pos;
-
-// systemChat "done";
-
-systemChat "aligned";
-
 private _handler =
 [
 	{

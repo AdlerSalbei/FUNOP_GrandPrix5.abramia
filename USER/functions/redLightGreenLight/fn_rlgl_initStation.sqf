@@ -14,17 +14,50 @@ private _action = [
 
 [_station, 0, [], _action] call ace_interact_menu_fnc_addActionToObject;
 
-private _action1 = [
+private _action1 = [   
+    "einleitung_rlgl",   
+    "Einleitung",   
+    "",   
+    {   
+  		[] remoteExec ["grad_grandPrix_fnc_rlgl_introCam", group _player, false];
+ 	},   
+    {
+		!(_target getVariable ["stationIsRunning", false]) &&
+		{
+			private _return = true;
+			{
+				_return  = _x getVariable ["GRAD_grandPrix_rlgl_introDone", false];
+			} forEach units group _player;
+
+			!_return
+		}
+	}
+] call ace_interact_menu_fnc_createAction;   
+
+[_station, 0, ["rlgl_main_action"], _action1] call ace_interact_menu_fnc_addActionToObject;
+
+
+private _action2 = [
     "Start_rlgl",
     "Start!",
     "",
     {[_target, (group _player)] spawn GRAD_grandPrix_fnc_rlgl_handleStage;},
-    {!(_target getVariable ["stationIsRunning", false])}
+    {
+		!(_target getVariable ["stationIsRunning", false]) &&
+		{
+			private _return = true;
+			{
+				_return  = _x getVariable ["GRAD_grandPrix_rlgl_introDone", false];
+			} forEach units group _player;
+
+			_return
+		}
+	}
 ] call ace_interact_menu_fnc_createAction;
 
-[_station, 0, ["rlgl_main_action"], _action1] call ace_interact_menu_fnc_addActionToObject;
+[_station, 0, ["rlgl_main_action"], _action2] call ace_interact_menu_fnc_addActionToObject;
 
-private _action2 = [   
+private _action3 = [   
     "rlgl_ask_questions",   
     "Frage die IDAP!",   
     "",   
@@ -34,4 +67,4 @@ private _action2 = [
     {true}
 ] call ace_interact_menu_fnc_createAction;   
    
-[_station, 0, ["rlgl_ask_questions"], _action2] call ace_interact_menu_fnc_addActionToObject;
+[_station, 0, ["rlgl_ask_questions"], _action3] call ace_interact_menu_fnc_addActionToObject;

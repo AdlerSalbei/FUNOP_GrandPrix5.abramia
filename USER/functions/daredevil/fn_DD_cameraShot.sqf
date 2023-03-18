@@ -30,6 +30,8 @@ if !(hasInterface) exitWith {};
 
 	cutText ["", "BLACK IN", 3];
 
+	playSound "PUPS_Description";
+
 	sleep 1;
 
 	[ 

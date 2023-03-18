@@ -21,9 +21,7 @@ private _action1 = [
     "Einleitung",   
     "",   
     {   
-  		{
-			  [] remoteExecCall ["grad_grandprix_fnc_dd_cameraShot", _x, false];
-		}forEach (units group _player);
+		[] remoteExecCall ["grad_grandprix_fnc_dd_cameraShot", group _player, false];
  	},   
     {
 		!(_target getVariable ["DD_stationIsRunning", false]) &&

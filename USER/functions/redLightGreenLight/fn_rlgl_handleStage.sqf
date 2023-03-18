@@ -31,13 +31,11 @@ sleep 3;
 
 // stage-loop
 private _activePlayers = (units _group) select { !(_x inArea GRAD_grandPrix_rlgl_finish) };
-systemChat "go!";
 private _start =  [time, serverTime] select isMultiplayer;
 // use pre-determined sleep-times for fairness
 private _index = 0;
 private _sleepTimes = missionNamespace getVariable ["GRAD_grandPrix_rlgl_sleepTimes", []];
 while { (count _activePlayers) > 0 } do {	
-	systemChat "toggle green";
 	["GRAD_rlgl_toggleGreen", [], (units _group) + [_nearestInstructor]] call CBA_fnc_targetEvent;
 
 	// active for 6 to 15 seconds
@@ -47,7 +45,6 @@ while { (count _activePlayers) > 0 } do {
 	_activePlayers = (units _group) select { !(_x inArea GRAD_grandPrix_rlgl_finish) && !(_x getVariable ["GRAD_grandPrix_rlgl_reachedFinish", false]) };
 	if ((count _activePlayers) == 0) exitWith {};
 
-	systemChat "toggle red";
 	["GRAD_rlgl_toggleRed", [], (units _group) + [_nearestInstructor]] call CBA_fnc_targetEvent;
 
 	sleep 0.5;
