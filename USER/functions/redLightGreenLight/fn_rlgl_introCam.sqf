@@ -1,6 +1,10 @@
+params ["_target", "_player"];
+
 // Play the track introduction
-playSound "RLGL_Description";
+playSound3D ["x\grad_grandprix5\addons\sounds\data\RLGL_Description.ogg", _target, false, (getPosASL _target vectorAdd [0,0,1.6]), 1, 1, 0];
 
 [{
-	player setVariable ["GRAD_grandPrix_rlgl_introDone", true, true];
-}, [], 111]call CBA_fnc_waitAndExecute;
+	{
+		_x setVariable ["GRAD_grandPrix_rlgl_introDone", true, true];
+	}forEach units group _player;
+}, [], 121]call CBA_fnc_waitAndExecute;

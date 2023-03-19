@@ -19,9 +19,7 @@ private _action1 = [
     "Einleitung",   
     "",   
     {   
-  		{
-			  [] remoteExecCall ["grad_grandprix_fnc_ZiG_cameraShot", _x, false];
-		}forEach (units group _player);
+  		[_target, _player] call grad_grandPrix_fnc_ZiG_introCam;
  	},   
     {
 		!(_target getVariable ["ZiG_stationIsRunning", false]) &&
