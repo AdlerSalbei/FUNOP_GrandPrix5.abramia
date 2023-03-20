@@ -123,3 +123,5 @@ _msg = _msg + "<br /> <br /><t align='left'>Spieler Zeit:</t>";
 
 _group setVariable ["GRAD_GrandPrix_currentStage", "", true];
 _station setVariable ["stationIsRunning", false, true];
+
+[] remoteExec ["grad_grandPrix_fnc_common_setRadioFrequencies", _group];

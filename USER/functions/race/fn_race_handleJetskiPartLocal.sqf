@@ -32,3 +32,5 @@ hint format ["Du hast %1 gebraucht!", [_timeTaken, "MM:SS"] call BIS_fnc_seconds
 
 waitUntil { (vehicle player) isNotEqualTo _jetski };
 deleteVehicle _jetSki;
+
+[] call grad_grandPrix_fnc_common_setRadioFrequencies;

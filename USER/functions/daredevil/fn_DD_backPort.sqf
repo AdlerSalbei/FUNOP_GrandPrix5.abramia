@@ -13,3 +13,5 @@ cutText ["", "BLACK", 0.1];
 
 	cutText ["", "BLACK IN", 3];
 }, [player, _vehicleName], 0.3] call CBA_fnc_waitAndExecute;
+
+[] call grad_grandPrix_fnc_common_setRadioFrequencies;
