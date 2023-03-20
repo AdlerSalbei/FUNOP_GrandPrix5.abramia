@@ -39,6 +39,10 @@ for "_i" from _positionsMarkerStart to _positionsMarkerEnd do
 			if ((count _holders) >= _targetAmount) exitWith {
 				[_handle] call CBA_fnc_removePerFrameHandler;
 				missionNamespace setVariable ["GRAD_grandPrix_ZiG_weaponHolders", _holders, true];
+
+				// Notify Zeuses
+				private _zeuses = allPlayers select { !isNull (getAssignedCuratorLogic _x) };
+				[format["All %1 weapon-Holders have been spawned; ZiG is ready to be played.", _targetAmount]] remoteExec ["systemChat", _zeuses];
 			};
 
 			private _pos = GRAD_grandPrix_ZiG_moneyArea call BIS_fnc_randomPosTrigger;
