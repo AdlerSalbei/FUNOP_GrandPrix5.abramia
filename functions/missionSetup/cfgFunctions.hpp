@@ -1,8 +1,8 @@
 class GRAD_missionSetup {
     class missionSetup {
         class createDiaryRecords {};
-        class initCivsEquip {postInit = 1;};
-        class initMission {postInit = 1;};
+        class initCivsEquip {};
+        class initMission {};
         class initPlayableAI {};
         class intro {};
         class loadouts {};
