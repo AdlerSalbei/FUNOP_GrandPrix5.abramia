@@ -25,8 +25,6 @@ sleep 2;
 	[_x, false] remoteExec ["allowDamage", _x];
 } forEach _cars;
 
-waitUntil { count (_units select { _x getVariable ["GRAD_grandPrix_race_introDone", false] }) isEqualTo (count _units) };
-
 sleep 1;
 
 ["grad_grandPrix_race_triggerCountdown", [], units _group] call CBA_fnc_targetEvent;

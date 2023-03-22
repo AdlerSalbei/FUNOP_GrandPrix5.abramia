@@ -7,4 +7,5 @@ class common {
 	class common_unitCanBeSeen {};
 	class common_runPlaylist {};
 	class common_setRadioFrequencies {};
+	class common_registerPlaylist { postInit = 1; }
 };

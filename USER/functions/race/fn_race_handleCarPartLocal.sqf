@@ -33,4 +33,4 @@ private _handle =
 ] call CBA_fnc_waitUntilAndExecute;
 
 missionNamespace setVariable ["GRAD_grandPrix_race_localCarPartDone", false];
-[[["NFS_soundtrack_3", 0, 1109]], "GRAD_grandPrix_race_localCarPartDone"] spawn grad_grandprix_fnc_common_runPlaylist;
+["Race_Car_playlist", "GRAD_grandPrix_race_localCarPartDone"] spawn grad_grandprix_fnc_common_runPlaylist;

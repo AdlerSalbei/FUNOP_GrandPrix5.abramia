@@ -93,4 +93,4 @@ if (_previousViewDistance < 3000) then {
 
 // Play plane music
 missionNamespace setVariable ["GRAD_grandPrix_race_localPlanePartDone", false];
-[[["NFS_soundtrack_3", 0, 1109]], "GRAD_grandPrix_race_localPlanePartDone"] spawn grad_grandprix_fnc_common_runPlaylist;
+["Race_Plane_playlist", "GRAD_grandPrix_race_localPlanePartDone"] spawn grad_grandprix_fnc_common_runPlaylist;

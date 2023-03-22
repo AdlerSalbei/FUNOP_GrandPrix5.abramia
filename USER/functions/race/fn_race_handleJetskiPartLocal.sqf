@@ -19,7 +19,12 @@ _jetSki setVelocityModelSpace [0, _velY min 35, -2];
 
 _jetSki allowDamage false;
 
+missionNamespace setVariable ["GRAD_grandPrix_race_localBootPartDone", false];
+["Race_Boot_playlist", "GRAD_grandPrix_race_localBootPartDone"] spawn grad_grandprix_fnc_common_runPlaylist;
+
 waitUntil { player inArea [[3184.99,2947.89,1.77915], 6.1, 5, 344.764, true, 5] };
+
+missionNamespace setVariable ["GRAD_grandPrix_race_localBootPartDone", true, false];
 
 private _end = [time, servertime] select isMultiplayer;
 private _start = player getVariable ["GRAD_grandPrix_race_startTime", 0];

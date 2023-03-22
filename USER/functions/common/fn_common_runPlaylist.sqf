@@ -1,8 +1,10 @@
 #define FADE_DELAY 1
 
-params ["_playlist", "_stopVariable"];
+params ["_playlistVarName", "_stopVariable"];
 
 if (missionNamespace getVariable [_stopVariable, false]) exitWith {};
+
+private _playlist = missionNamespace getVariable [_playlistVarName, []];
 
 [
 	{
@@ -34,13 +36,13 @@ if (missionNamespace getVariable [_stopVariable, false]) exitWith {};
 
 	0 fadeMusic 0;
 	playMusic "";
-	sleep 0.1;
+	sleep 5;
 
 	systemChat format["Now playing: '%1'", _song];
 	playMusic [_song, _start];
 
 	FADE_DELAY fadeMusic 1;
 
-	sleep _length;	
+	sleep (_length + 5);	
 
 } forEach _playlist;
