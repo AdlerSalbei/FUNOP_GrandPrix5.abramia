@@ -87,5 +87,10 @@ if (_previousViewDistance < 3000) then {
 	[false] call ace_viewdistance_fnc_adaptViewDistance;
 
 	[_handle] call CBA_fnc_removePerFrameHandler;
+	missionNamespace setVariable ["GRAD_grandPrix_race_localPlanePartDone", true];
 	[_group] spawn GRAD_grandPrix_fnc_race_handleJetskiPartLocal;
 }, [_allGates, _handle, _group, _previousViewDistance]] call CBA_fnc_waitUntilAndExecute;
+
+// Play plane music
+missionNamespace setVariable ["GRAD_grandPrix_race_localPlanePartDone", false];
+[[["NFS_soundtrack_3", 0, 1109]], "GRAD_grandPrix_race_localPlanePartDone"] spawn grad_grandprix_fnc_common_runPlaylist;

@@ -26,7 +26,11 @@ private _handle =
 		[_handle] call CBA_fnc_removePerFrameHandler;
 		(vehicle player)  setVelocityModelSpace [0, 100, 0];
 
+		missionNamespace setVariable ["GRAD_grandPrix_race_localCarPartDone", true];
 		[_group] spawn grad_grandPrix_fnc_race_handlePlanePartLocal;
 	},
 	[_handle, _group]
 ] call CBA_fnc_waitUntilAndExecute;
+
+missionNamespace setVariable ["GRAD_grandPrix_race_localCarPartDone", false];
+[[["NFS_soundtrack_3", 0, 1109]], "GRAD_grandPrix_race_localCarPartDone"] spawn grad_grandprix_fnc_common_runPlaylist;
