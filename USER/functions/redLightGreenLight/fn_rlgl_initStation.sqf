@@ -67,4 +67,4 @@ private _action3 = [
     {true}
 ] call ace_interact_menu_fnc_createAction;   
    
-[_station, 0, ["rlgl_ask_questions"], _action3] call ace_interact_menu_fnc_addActionToObject;
+[_station, 0, ["rlgl_main_action"], _action3] call ace_interact_menu_fnc_addActionToObject;

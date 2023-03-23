@@ -6,5 +6,5 @@ playSound3D ["x\grad_grandprix5\addons\sounds\data\PUPS_Description.ogg", _targe
 [{
 	{
 		_x setVariable ["GRAD_grandPrix_osw_introDone", true, true];
-	}forEach units group _player;
-}, [], 121]call CBA_fnc_waitAndExecute;
+	}forEach units group _this;
+}, _player, 121]call CBA_fnc_waitAndExecute;
