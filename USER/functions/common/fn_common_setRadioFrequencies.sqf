@@ -1,5 +1,7 @@
 // has to be executed locally!
 
+if (!isMultiplayer) exitWith {};
+
 private _groupFreq = (group player) getVariable ["GRAD_grandPrix_groupFrequency", 30];
 private _activeSR = [] call TFAR_fnc_activeSwRadio;
 

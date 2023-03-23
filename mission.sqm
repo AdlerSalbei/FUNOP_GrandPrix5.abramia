@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2817;
+		nextID=2955;
 	};
 	class Camera
 	{
-		pos[]={3003.9333,91.715652,3397.8628};
-		dir[]={0.78826278,-0.43198204,-0.43821615};
-		up[]={0.37756079,0.90188217,-0.20989603};
-		aside[]={-0.48589063,1.4901161e-008,-0.87401962};
+		pos[]={921.8006,27.684401,7740.1738};
+		dir[]={-0.71039289,-0.24827348,0.65856069};
+		up[]={-0.1820724,0.96868998,0.16878791};
+		aside[]={0.6798467,-7.4505806e-009,0.73335421};
 	};
 };
 binarizationWanted=0;
@@ -6934,7 +6934,7 @@ class Mission
 			};
 			id=1545;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=2.4725018;
+			atlOffset=6.2985668;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6970,7 +6970,7 @@ class Mission
 			};
 			id=1546;
 			type="Land_Shoot_House_Tunnel_Prone_F";
-			atlOffset=2.5160465;
+			atlOffset=6.2970009;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7004,7 +7004,7 @@ class Mission
 			};
 			id=1547;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=2.5885811;
+			atlOffset=6.2970791;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7032,14 +7032,13 @@ class Mission
 				angles[]={0,1.2047501,0};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 				dynamicSimulation=1;
 			};
 			id=1548;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=0.10949135;
+			atlOffset=6.9771099;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7073,7 +7072,7 @@ class Mission
 			};
 			id=1549;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=0.37783623;
+			atlOffset=7.2460117;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7107,7 +7106,7 @@ class Mission
 			};
 			id=1550;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=2.2600689;
+			atlOffset=6.0405674;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7141,7 +7140,7 @@ class Mission
 			};
 			id=1551;
 			type="Land_Shoot_House_Wall_Crouch_F";
-			atlOffset=2.2425003;
+			atlOffset=6.0229988;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7175,7 +7174,7 @@ class Mission
 			};
 			id=1552;
 			type="EmptyDetectorArea10x10";
-			atlOffset=1.2948265;
+			atlOffset=8.162838;
 		};
 		class Item48
 		{
@@ -10936,6 +10935,7 @@ class Mission
 			};
 			id=1676;
 			type="Sign_Arrow_Large_Blue_F";
+			atlOffset=0.10955811;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -38989,7 +38989,7 @@ class Mission
 		class Item556
 		{
 			dataType="Trigger";
-			position[]={795.8562,11.003098,7834.1426};
+			position[]={773.1485,11,7861.8032};
 			angle=2.3335228;
 			class Attributes
 			{
@@ -39001,13 +39001,12 @@ class Mission
 			};
 			id=2344;
 			type="EmptyDetectorAreaR50";
-			atlOffset=0.0030975342;
 		};
 		class Item557
 		{
 			dataType="Trigger";
-			position[]={297.08517,11,8303.6689};
-			angle=2.5199752;
+			position[]={397.86557,11,8219.2881};
+			angle=2.4197173;
 			class Attributes
 			{
 				name="GRAD_grandPrix_ZiG_stopDrop";
@@ -148218,7 +148217,7 @@ class Mission
 			alpha=0.29743403;
 			a=10;
 			b=50;
-			angle=41.920998;
+			angle=41.920979;
 			id=5482;
 		};
 		class Item1092
@@ -180699,7 +180698,7 @@ class Mission
 		class Item1997
 		{
 			dataType="Trigger";
-			position[]={839.98297,11,7809.9419};
+			position[]={841.11383,11,7808.5869};
 			angle=0.78539819;
 			class Attributes
 			{

@@ -4,6 +4,7 @@ class ZiG {
 	class ZiG_createMarkerLocal {};
 	class ZiG_createPlanes {};
 	class ZiG_endStageClient {};
+	class ZiG_handleLocalMoneyParticles {};
 	class ZiG_handleMoney {};
 	class ZiG_handlePlaneCapture {};
 	class ZiG_handlePlanes {};
@@ -16,5 +17,5 @@ class ZiG {
 		postInit = 1;
 	};
 	class ZiG_startStageClient {};
-	class ZiG_unconsciousHandlerLocal {};
+	class ZiG_unconsciousHandlerLocal {};	
 };

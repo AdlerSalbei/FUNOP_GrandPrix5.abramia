@@ -44,8 +44,8 @@ class GRAD_groupsettings {
 class GRAD_missionSetup {
     class missionSetup {
         class createDiaryRecords {};
-        class initCivsEquip {postInit = 1;};
-        class initMission {postInit = 1;};
+        class initCivsEquip {};
+        class initMission {};
         class initPlayableAI {};
         class intro {};
         class loadouts {};
@@ -319,43 +319,47 @@ class water {
 class ZiG {
 	file = "USER\functions\ZiG";
 	class ZiG_allPlayersUnconscious {};
+	class ZiG_createMarkerLocal {};
 	class ZiG_createPlanes {};
 	class ZiG_endStageClient {};
-	class ZiG_handleStage {};
+	class ZiG_handleLocalMoneyParticles {};
 	class ZiG_handleMoney {};
 	class ZiG_handlePlaneCapture {};
 	class ZiG_handlePlanes {};
+	class ZiG_handlePolice {};
+	class ZiG_handleStage {};
+	class ZiG_initStation {};
+	class ZiG_initStationEnd {};
+	class ZiG_introCam {};
 	class ZiG_setupRequirements {
 		postInit = 1;
 	};
-	class ZiG_initStation {};
-	class ZiG_createMarkerLocal {};
-	class ZiG_handlePolice {};
-	class ZiG_unconsciousHandlerLocal {};
-	class ZiG_initStationEnd {};
 	class ZiG_startStageClient {};
+	class ZiG_unconsciousHandlerLocal {};	
 };
 class oneShotWonder {
 	file = "USER\functions\OneShotWonder";
-	class OSW_handleStage {};
-	class OSW_isComplete {};
 	class OSW_endStationLocal {};
 	class OSW_handlePosition {};
+	class OSW_handleStage {};
 	class OSW_initStation {};
+	class OSW_introCam {};
+	class OSW_isComplete {};
 };
 class PUPS {
 	file = "USER\functions\P.U.P.S";
-	class PUPS_handleStationServer {};
-	class PUPS_handleStationLocal {};
-	class PUPS_initStation {};
 	class PUPS_addFiredHandler {};
-	class PUPS_cutDecimals {};
-	class PUPS_handleIndicator {};
-	class PUPS_setPitchBankYaw {};
-	class PUPS_angleBetween3dVectors {};
 	class PUPS_addZeusModules {
 		preInit = 1;
 	};
+	class PUPS_angleBetween3dVectors {};
+	class PUPS_cutDecimals {};
+	class PUPS_handleIndicator {};
+	class PUPS_handleStationLocal {};
+	class PUPS_handleStationServer {};
+	class PUPS_initStation {};
+	class PUPS_introCam {};
+	class PUPS_setPitchBankYaw {};
 };
 class daredevil {
 	file = "USER\functions\daredevil";
@@ -379,21 +383,24 @@ class common {
 	class common_unitCanBeSeen {};
 	class common_runPlaylist {};
 	class common_setRadioFrequencies {};
+	class common_registerPlaylist { postInit = 1; }
 };
 class redLightGreenLight {
 	file = "USER\functions\redLightGreenLight";
 
 	class rlgl_alignAA {};
 	class rlgl_fire {};
-	class rlgl_isVisible {};
+	class rlgl_handleFinishLocal {};
+	class rlgl_handleGunDoor {};
 	class rlgl_handlePIP {};
 	class rlgl_handleStage {};
 	class rlgl_holdInPlace {};
-	class rlgl_handleGunDoor {};
-	class rlgl_handleFinishLocal {};
+	class rlgl_initStation {};
+	class rlgl_introCam{};
+	class rlgl_isVisible {};
 	class rlgl_setupRequirements {
 		postInit = 1;
 	};
-	class rlgl_initStation {};
+	
 };
 };

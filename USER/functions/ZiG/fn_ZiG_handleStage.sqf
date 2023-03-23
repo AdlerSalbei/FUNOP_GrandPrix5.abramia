@@ -18,17 +18,19 @@ for "_i" from _housesMarkerStart to _housesMarkerEnd do
 
 [] remoteExec ["grad_grandPrix_fnc_ZiG_createMarkerLocal", _nearestInstructor];
 
-//add unconscious handler to players, show Markers, add Loadout & show money
-[] remoteExecCall ["grad_grandPrix_fnc_ZiG_startStageClient", _group, false];
+[] spawn grad_grandPrix_fnc_ZiG_handlePlanes;
 
-sleep 72;
+//add unconscious handler to players, show Markers, add Loadout & show money
+[] remoteExec ["grad_grandPrix_fnc_ZiG_startStageClient", _group, false];
+
+sleep 96;
 
 ["grad_grandPrix_race_triggerCountdown", [], units _group] call CBA_fnc_targetEvent;
 
 sleep 3;
 
 // cant use remote-Exec on function, because remoteExec doesnt produce a _thisScript handle
-{ ["ZiG_playlist", "GRAD_grandPrix_ZiG_endPressed"] spawn grad_grandprix_fnc_common_runPlaylist; } remoteExecCall ["call", _group];
+{ ["ZiG_playlist", "GRAD_grandPrix_ZiG_runComplete"] spawn grad_grandprix_fnc_common_runPlaylist; } remoteExecCall ["call", _group];
 
 missionNameSpace setVariable ["GRAD_grandPrix_ZiG_collectingActive", true, true];
 private _policeHandle = [_group] spawn grad_grandPrix_fnc_ZiG_handlePolice;
@@ -81,6 +83,8 @@ missionNamespace setVariable ["GRAD_grandPrix_ZiG_endPressed", false, true];
 missionNamespace setVariable ["GRAD_grandPrix_ZiG_planesDone", false, true];
 missionNameSpace setVariable ["GRAD_grandPrix_ZiG_collectingActive", false, true];
 missionNamespace setVariable ["GRAD_grandPrix_ZIG_disconnects", [], true];
+missionNamespace setVariable ["Grad_grandPrix_ZiG_showMoneyLocal", false, true];
+missionNamespace setVariable ["GRAD_grandPrix_ZiG_moneyDropPlanes", [], true];
 
 [] call grad_grandPrix_fnc_ZiG_handleMoney;
 
@@ -88,4 +92,5 @@ sleep 2;
 terminate _policeHandle;
 
 _group setVariable ["GRAD_GrandPrix_currentStage", "", true];
+_station setVariable ["GRAD_grandPrix_ZiG_introDone", false, true];
 _station setVariable ["stationIsRunning", false, true];

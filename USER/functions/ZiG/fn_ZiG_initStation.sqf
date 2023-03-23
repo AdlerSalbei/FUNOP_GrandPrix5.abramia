@@ -23,14 +23,8 @@ private _action1 = [
  	},   
     {
 		!(_target getVariable ["ZiG_stationIsRunning", false]) &&
-		{
-			private _return = true;
-			{
-				_return  = _x getVariable ["GRAD_grandPrix_ZiG_introFin", false];
-			} forEach units group _player;
-
-			!_return
-		}
+        !(_target getVariable ["GRAD_grandPrix_ZiG_introDone", false]) &&
+        !(_target getVariable ["GRAD_grandPrix_ZiG_introPlaying", false])
 	}
 ] call ace_interact_menu_fnc_createAction;
 
@@ -44,14 +38,7 @@ private _action2 = [
     {
         (!(_target getVariable ["stationIsRunning", false])) &&
         {!(missionNamespace getVariable ["GRAD_grandPrix_ZiG_spawningMoney", false])} &&
-		{
-			private _return = true;
-			{
-				_return  = _x getVariable ["GRAD_grandPrix_ZiG_introFin", false];
-			} forEach units group _player;
-
-			_return
-		}
+		(_target getVariable ["GRAD_grandPrix_ZiG_introDone", false])
     }
 ] call ace_interact_menu_fnc_createAction;
 

@@ -1,5 +1,6 @@
 ([] call grad_grandPrix_fnc_ZiG_createPlanes) params ["_planes", "_drones"];
 
+missionNamespace setVariable ["GRAD_grandPrix_ZiG_moneyDropPlanes", [_planes, _drones], true];
 [_planes] call grad_grandPrix_fnc_ZiG_handlePlaneCapture;
 
 [
@@ -10,21 +11,21 @@
 	{
 		params ["_planes", "_drones"];
 
-		private _handle = 
-		[
-			{
-				_args params ["_planes", "_drones"];
+		// private _handle = 
+		// [
+		// 	{
+		// 		_args params ["_planes", "_drones"];
 
-				if (!alive (_planes # 0)) exitWith { [_handle] call CBA_fnc_removePerFramehandler };
+		// 		if (!alive (_planes # 0)) exitWith { [_handle] call CBA_fnc_removePerFramehandler };
 
-				{
-					_x setAmmo [currentWeapon _x, 1];
-					_x fire "Bomb_Leaflets";
-				} forEach _drones;
-			},
-			1,
-			[_planes, _drones]
-		] call CBA_fnc_addPerFrameHandler;
+		// 		{
+		// 			_x setAmmo [currentWeapon _x, 1];
+		// 			_x fire "Bomb_Leaflets";
+		// 		} forEach _drones;
+		// 	},
+		// 	1,
+		// 	[_planes, _drones]
+		// ] call CBA_fnc_addPerFrameHandler;
 
 		[
 			{
@@ -35,6 +36,7 @@
 				params ["_planes", "_drones", "_handle"];
 
 				[_handle] call CBA_fnc_removePerFrameHandler;
+				missionNamespace setVariable ["Grad_grandPrix_ZiG_showMoneyLocal", true, true];
 
 				[
 					{

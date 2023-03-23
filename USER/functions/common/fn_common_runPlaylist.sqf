@@ -34,15 +34,28 @@ private _playlist = missionNamespace getVariable [_playlistVarName, []];
 {
 	_x params ["_song", "_length", "_start"];
 
-	0 fadeMusic 0;
+	FADE_DELAY fadeMusic 0;
 	playMusic "";
-	sleep 5;
+	sleep FADE_DELAY + 1;
 
 	systemChat format["Now playing: '%1'", _song];
 	playMusic [_song, _start];
 
 	FADE_DELAY fadeMusic 1;
 
-	sleep (_length + 5);	
+	[
+		{
+			params ["_song", "_start"];
+			if (getMusicPlayedTime <= 0) then {
+				0 fadeMusic 0;
+				playMusic [_song, _start + FADE_DELAY];
+				FADE_DELAY fadeMusic 1;
+			};
+		},
+		[_song, _start],
+		FADE_DELAY
+	] call CBA_fnc_waitAndExecute;
+
+	sleep (_length + 1);	
 
 } forEach _playlist;
