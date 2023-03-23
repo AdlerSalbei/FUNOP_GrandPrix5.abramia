@@ -1,7 +1,7 @@
 params ["_target", "_player"];
 
 // Play the track introduction
-playSound3D ["x\grad_grandprix5\addons\sounds\data\PUPS_Description.ogg", _target, false, (getPosASL _target vectorAdd [0,0,1.6]), 1, 1, 0];
+playSound3D ["x\grad_grandprix5\addons\sounds\data\PUPS_Description.ogg", _target, false, (getPosASL _target vectorAdd [0,0,1.6]), 5, 1, 15];
 
 [{
 	{

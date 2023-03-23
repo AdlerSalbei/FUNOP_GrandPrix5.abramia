@@ -49,7 +49,7 @@ playMusic "Lets_Go_Shopping";
 		<t>Bitte haben Sie noch etwas Geduld.<br/>
 		Sobald ein Countdown heruntergezählt wurde, dürfen Sie die Station betreten.<br/>
 		Die Geldtransporter sind bereits im Anflug, benötigen allerdings noch ein paar Sekunden.<br/>
-		Um die Zeit zu überbrücken, hier ein paar Geld-Fun-Facts:<br/><br/>
+		Um die Zeit zu überbrücken, hier ein paar Fun-Facts:<br/><br/>
 		Fact 1:<br/>
 		Die älteste bekannte Währung der Welt sind chinesische Münzen, die vor mehr als 2500 Jahren geprägt wurden.<br/><br/>
 		Fact 2:<br/>
