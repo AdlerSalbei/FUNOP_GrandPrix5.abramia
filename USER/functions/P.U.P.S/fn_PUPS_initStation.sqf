@@ -42,7 +42,7 @@ private _action2 = [
     "",
     {[_target, (group _player)] spawn GRAD_grandPrix_fnc_PUPS_handleStationServer;},
     {
-        (_target getVariable ["stationIsRunning", false]) &&
+        !(_target getVariable ["stationIsRunning", false]) &&
         {
             private _return = true;
 			{
