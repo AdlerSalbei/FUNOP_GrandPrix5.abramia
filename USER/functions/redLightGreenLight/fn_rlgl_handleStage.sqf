@@ -88,7 +88,7 @@ while { (count _activePlayers) > 0 } do {
 
 private _stop =  [time, serverTime] select isMultiplayer;
 private _timeTaken = _stop - _start;
-private _points = [_group, _timeTaken, 470, 1000, "Red Light - Green Light"] call GRAD_grandPrix_fnc_addTime;
+private _points = [_group, _timeTaken, 500, 1000, "Red Light - Green Light"] call GRAD_grandPrix_fnc_addTime;
 
 // close pip and color-bar
 ["GRAD_rlgl_endPIP", [], (units _group) + [_nearestInstructor]] call CBA_fnc_targetEvent;

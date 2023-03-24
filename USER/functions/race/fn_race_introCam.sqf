@@ -1,6 +1,6 @@
 diwako_dui_main_toggled_off = true;
 cutText ["", "BLACK", 1];
-5 fadeSound 0.2;
+5 fadeSound 0.5;
 sleep 3;
 
 // Play the track introduction
@@ -105,7 +105,7 @@ _sphereCount = count _spheres;
 _cam cameraEffect ["terminate", "BACK"];
 camDestroy _cam;
 diwako_dui_main_toggled_off = false;
-1 fadeSound 1;
+5 fadeSound 1;
 
 player setVariable ["GRAD_grandPrix_race_introDone", true, true];
 

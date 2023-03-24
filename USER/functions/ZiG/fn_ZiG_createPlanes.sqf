@@ -1,8 +1,8 @@
-private _plane = createVehicle ["UK3CB_C_AC500", [random 1000, random 1000, 100 + (random 1000)], [], 0, "FLY"];
+private _plane = createVehicle ["gm_ge_airforce_do28d2", [random 1000, random 1000, 100 + (random 1000)], [], 0, "FLY"];
 private _crew = createVehicleCrew _plane;
-private _plane2 = createVehicle ["UK3CB_C_AC500", [random 1000, random 1000, 100 + (random 1000)], [], 0, "FLY"];
+private _plane2 = createVehicle ["gm_ge_airforce_do28d2", [random 1000, random 1000, 100 + (random 1000)], [], 0, "FLY"];
 private _crew2 = createVehicleCrew _plane2;
-private _plane3 = createVehicle ["UK3CB_C_AC500", [random 1000, random 1000, 100 + (random 1000)], [], 0, "FLY"];
+private _plane3 = createVehicle ["gm_ge_airforce_do28d2", [random 1000, random 1000, 100 + (random 1000)], [], 0, "FLY"];
 private _crew3 = createVehicleCrew _plane3;
 _plane action ["flapsDown", _plane];
 _plane2 action ["flapsDown", _plane2];

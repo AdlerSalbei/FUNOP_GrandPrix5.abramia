@@ -1,8 +1,6 @@
 ["GRAD Grand Prix", "PUPS teleport", {
 	params ["_position", "_object"];
 
-	systemChat "test2";
-
 	["Teleport a participant", [
 		[
 			"COMBO",

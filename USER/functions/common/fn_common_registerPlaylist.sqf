@@ -13,13 +13,13 @@ missionNamespace setVariable ["ZiG_playlist", [
 ], false ];
 
 missionNamespace setVariable ["Race_Car_playlist", [
-	["NFS_soundtrack_3", 0, 1109]
+	["NFS_soundTrack_3", 1109, 0]
 ], false ];
 
 missionNamespace setVariable ["Race_Plane_playlist", [
-	["NFS_soundtrack_3", 0, 1109]
+	["NFS_soundTrack_3", 1109, 0]
 ], false ];
 
 missionNamespace setVariable ["Race_Boot_playlist", [
-	["NFS_soundtrack_3", 0, 1109]
+	["SpeedRunners_Mashup", 348, 0]
 ], false ];

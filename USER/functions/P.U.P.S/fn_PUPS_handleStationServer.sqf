@@ -1,4 +1,4 @@
-#define BEST_TIME 350
+#define BEST_TIME 430
 
 if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; };
 

@@ -1,4 +1,4 @@
-timeMultiplier = 1;                                                             // Geschwindigkeitsfaktor für ingame Zeit - Wert von 1 bedeutet 1h im Spiel == 1h in echt
+timeMultiplier = 0.1;                                                             // Geschwindigkeitsfaktor für ingame Zeit - Wert von 1 bedeutet 1h im Spiel == 1h in echt
 
 ambientLife = 0;                                                                // zufällig generierte Hasen, Schlangen, Schmetterlinge, etc. (0/1) - aus Performancegründen standardmäßig aus
 ambientSound = 1;                                                               // zufällig generierte Umgebungsgeräusche (0/1)

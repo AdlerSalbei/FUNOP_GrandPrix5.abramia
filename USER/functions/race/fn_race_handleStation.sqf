@@ -19,13 +19,13 @@ private _cars = [];
 	[_x, false] remoteExec ["allowDamage", _x];
 } forEach _units;
 
-sleep 2;
+sleep 1;
 
 {
 	[_x, false] remoteExec ["allowDamage", _x];
 } forEach _cars;
 
-sleep 1;
+// sleep 1;
 
 ["grad_grandPrix_race_triggerCountdown", [], units _group] call CBA_fnc_targetEvent;
 sleep 3;
@@ -43,7 +43,7 @@ private _totalTime = 0;
 } forEach _units;
 
 private _averageTime = _totalTime / (count _units);
-private _points = [_group, _averageTime, 470, 1000, "Race"] call GRAD_grandPrix_fnc_addTime;
+private _points = [_group, _averageTime, 500, 1000, "Race"] call GRAD_grandPrix_fnc_addTime;
 
 //Get Nearest Zeus
 private _nearestInstructor = [_station] call grad_grandprix_fnc_common_getNearestZeus;

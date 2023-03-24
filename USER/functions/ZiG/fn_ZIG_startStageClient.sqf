@@ -15,7 +15,7 @@ player setPos _pos;
 player setDir 315;
 
 missionNamespace setVariable ["GRAD_grandPrix_ZiG_savedLoadout_" + getPlayerUID player, getUnitLoadout player, true];
-player setUnitLoadout [["SMG_03C_TR_black","","","FHQ_optic_AC11704",["50Rnd_570x28_SMG_03",50],[],""],[],["hgun_P07_blk_F","","","",["30Rnd_9x21_Mag",30],[],""],["UK3CB_CW_US_B_LATE_U_SF_CombatUniform_02_BLK",[["ACE_fieldDressing",18],["ACE_tourniquet",4],["ACE_salineIV_500",2],["SmokeShell",2,1]]],["UK3CB_ADA_B_V_TacVest_BLK",[["50Rnd_570x28_SMG_03",8,50],["SmokeShell",1,1]]],["B_Messenger_Black_F",[["30Rnd_9x21_Mag",3,30]]],"H_PASGT_basic_black_F","UK3CB_G_Balaclava2_BLK",[],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch",""]];
+player setUnitLoadout [["rhs_weap_ak74m_fullplum_npz","","","FHQ_optic_AC11704",["rhs_60Rnd_545X39_AK_Green",60],[],""],[],[],["rhs_uniform_g3_blk",[["ACE_packingBandage",21],["ACE_tourniquet",4],["ACE_salineIV_500",3]]],["V_PlateCarrier1_blk",[["SmokeShell",4,1],["rhs_60Rnd_545X39_AK_Green",5,60],["MiniGrenade",4,1]]],["B_Messenger_Black_F",[["rhs_60Rnd_545X39_AK_Green",5,60]]],"H_PASGT_basic_black_F","G_Balaclava_TI_blk_F",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch",""]];
 player allowDamage true;
 
 cutText ["", "BLACK IN", 1];
@@ -59,7 +59,7 @@ playMusic "Lets_Go_Shopping";
 		Fact 4:<br/>
 		1939 baute der Armenier George Luther Simjian den ersten funktionierenden Geldautomaten. Die City Bank of New York (Citibank) nahm ihn probeweise in Betrieb. Er wurde nur von wenigen Kunden genutzt und nach einem halben Jahr Probebetrieb wieder abgebaut. Simjian stellte nach dem Probebetrieb fest: „Es sieht so aus, dass ein paar Prostituierte und Glücksspieler, die nicht von Angesicht zu Angesicht mit Kassierern zu tun haben wollten, die einzigen Benutzer des Gerätes waren.“<br/><br/>
 		Fact 5:<br/>
-		100% aller Geldreserven des Don wurden rechtens versteuert und rund 99%, kommen wohltätigen Zwecken zugute :)<br/><br/>
+		100% aller Geldreserven des Don wurden rechtens versteuert und rund 99% kommen wohltätigen Zwecken zugute :)<br/><br/>
 		Fact 6:<br/>
 		Der Euro ist die am zweithäufigsten verwendete Währung der Welt, nach dem US-Dollar.<br/><br/>
 		Fact 7:<br/>
