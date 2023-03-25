@@ -1,5 +1,5 @@
 // the best possible time per player
-#define BEST_TIME 32
+#define BEST_TIME 57
 
 if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; };
 
@@ -12,7 +12,7 @@ diag_log "setting up positions...";
 // private _allPositions = [GRAD_grandPrix_OSW_position_1, GRAD_grandPrix_OSW_position_2, GRAD_grandPrix_OSW_position_3, GRAD_grandPrix_OSW_position_4, GRAD_grandPrix_OSW_position_5, GRAD_grandPrix_OSW_position_6, GRAD_grandPrix_OSW_position_7, GRAD_grandPrix_OSW_position_8, GRAD_grandPrix_OSW_position_9, GRAD_grandPrix_OSW_position_10, GRAD_grandPrix_OSW_position_11, GRAD_grandPrix_OSW_position_12, GRAD_grandPrix_OSW_position_13, GRAD_grandPrix_OSW_position_14, GRAD_grandPrix_OSW_position_15];
 private _allPositions = [];
 private _first = 1;
-private _last = 18;
+private _last = 25;
 for "_i" from _first to _last do
 {  
 	_allPositions pushBack (call(compile format ["GRAD_grandPrix_OSW_position_%1",_i]));
