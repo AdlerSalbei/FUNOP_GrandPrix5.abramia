@@ -13,11 +13,10 @@ if (_startTime isEqualTo -1) exitWith {};
 private _disconTime = missionNamespace getVariable ["Grad_grandprix_dd_disconnectTimer", 0];
 private _totalTime = ((diag_tickTime - _startTime) - (_disconTime max 0));  
 
-_driver setVariable ["GRAD_grandPrix_DD_totalTime", _totalTime, true]; 
-
 [format ["Ihr hab %1s Zeit benötigt für euren Teil!", [_totalTime, "MM:SS"] call BIS_fnc_secondsToString]] remoteExec ["hint", _crew, false];
 {
 	_x setVariable ["GRAD_grandPrix_DD_complete", true, true];
+	_x setVariable ["GRAD_grandPrix_DD_totalTime", _totalTime, true]; 
 }forEach _crew;
 
 missionNamespace setVariable ["GRAD_grandPrix_DD_startTime", -1];

@@ -33,7 +33,7 @@ player setVariable ["GRAD_grandPrix_rlgl_timeStart", time, true];
 								1,
 								1,
 								0,
-								(vehicleVarName _x)
+								name _x
 							];
 						} else {
 							_finishedUnits = _finishedUnits +1;
