@@ -19,7 +19,7 @@ private _action1 = [
     "Einleitung",   
     "",   
     {   
-  		[_target, _player] call grad_grandPrix_fnc_ZiG_introCam;
+  		[_target, _player] call grad_grandPrix_fnc_OSW_introCam;
  	},   
     {
 		!(_target getVariable ["stationIsRunning", false]) &&

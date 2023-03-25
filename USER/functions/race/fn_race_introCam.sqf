@@ -1,6 +1,6 @@
 diwako_dui_main_toggled_off = true;
 cutText ["", "BLACK", 1];
-5 fadeSound 0.5;
+// 5 fadeSound 0.5;
 sleep 3;
 
 // Play the track introduction

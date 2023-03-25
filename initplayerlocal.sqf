@@ -49,6 +49,8 @@ if ((side player) isEqualTo resistance) then {
 	[_chair, player] call ace_sitting_fnc_sit;
 };
 
+[] call grad_grandPrix_fnc_common_setRadioFrequencies;
+
 // waiting until player properly initialised
 // ripped this from the bi-forum
 waitUntil { getClientStateNumber >= 10 && count (missionnamespace getvariable ["BIS_fnc_startLoadingScreen_ids",[]]) == 0 };
@@ -185,5 +187,3 @@ switch (_savedStage) do {
 };
 
 missionNamespace setVariable [_varString, [], true];
-
-[] call grad_grandPrix_fnc_common_setRadioFrequencies;

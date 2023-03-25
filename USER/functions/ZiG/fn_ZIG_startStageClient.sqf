@@ -15,7 +15,7 @@ player setPos _pos;
 player setDir 315;
 
 missionNamespace setVariable ["GRAD_grandPrix_ZiG_savedLoadout_" + getPlayerUID player, getUnitLoadout player, true];
-player setUnitLoadout [["rhs_weap_ak74m_fullplum_npz","","","FHQ_optic_AC11704",["rhs_60Rnd_545X39_AK_Green",60],[],""],[],[],["rhs_uniform_g3_blk",[["ACE_packingBandage",21],["ACE_tourniquet",4],["ACE_salineIV_500",3]]],["V_PlateCarrier1_blk",[["SmokeShell",4,1],["rhs_60Rnd_545X39_AK_Green",5,60],["MiniGrenade",4,1]]],["B_Messenger_Black_F",[["rhs_60Rnd_545X39_AK_Green",5,60]]],"H_PASGT_basic_black_F","G_Balaclava_TI_blk_F",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch",""]];
+player setUnitLoadout [["rhs_weap_ak74m_fullplum_npz","","","FHQ_optic_AC11704",["rhs_60Rnd_545X39_AK_Green",60],[],""],[],[],["rhs_uniform_g3_blk",[["ACE_packingBandage",21],["ACE_tourniquet",4],["ACE_salineIV_500",2],["ACE_morphine",5]]],["V_PlateCarrier1_blk",[["SmokeShell",4,1],["rhs_60Rnd_545X39_AK_Green",5,60],["MiniGrenade",4,1]]],["B_Messenger_Black_F",[["rhs_60Rnd_545X39_AK_Green",5,60]]],"H_PASGT_basic_black_F","G_Balaclava_TI_blk_F",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","TFAR_anprc152_3","ItemCompass","ItemWatch",""]];
 player allowDamage true;
 
 cutText ["", "BLACK IN", 1];
@@ -35,7 +35,13 @@ cutText ["", "BLACK IN", 1];
 
 [] call grad_grandPrix_fnc_ZiG_unconsciousHandlerLocal;
 
-[] call grad_grandPrix_fnc_common_setRadioFrequencies;
+[
+	{
+		[] call grad_grandPrix_fnc_common_setRadioFrequencies;
+	},
+	[],
+	5
+] call CBA_fnc_waitAndExecute;
 
 // drop money
 [] spawn grad_grandPrix_fnc_ZiG_handleLocalMoneyParticles;
