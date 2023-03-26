@@ -23,14 +23,8 @@ private _action1 = [
  	},   
     {
 		!(_target getVariable ["stationIsRunning", false]) &&
-		{
-			private _return = true;
-			{
-				_return  = _x getVariable ["GRAD_grandPrix_PUPS_introDone", false];
-			} forEach units group _player;
-
-			!_return
-		}
+        !(_target getVariable ["GRAD_grandPrix_PUPS_introDone", false]) &&
+        !(_target getVariable ["GRAD_grandPrix_PUPS_introPlaying", false])
 	}
 ] call ace_interact_menu_fnc_createAction;   
 

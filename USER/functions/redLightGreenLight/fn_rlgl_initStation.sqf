@@ -23,14 +23,8 @@ private _action1 = [
  	},   
     {
 		!(_target getVariable ["stationIsRunning", false]) &&
-		{
-			private _return = true;
-			{
-				_return  = _x getVariable ["GRAD_grandPrix_rlgl_introDone", false];
-			} forEach units group _player;
-
-			!_return
-		}
+        !(_target getVariable ["GRAD_grandPrix_rlgl_introDone", false]) &&
+        !(_target getVariable ["GRAD_grandPrix_rlgl_introPlaying", false])
 	}
 ] call ace_interact_menu_fnc_createAction;   
 
@@ -44,14 +38,10 @@ private _action2 = [
     {[_target, (group _player)] spawn GRAD_grandPrix_fnc_rlgl_handleStage;},
     {
 		!(_target getVariable ["stationIsRunning", false]) &&
-		{
-			private _return = true;
-			{
-				_return  = _x getVariable ["GRAD_grandPrix_rlgl_introDone", false];
-			} forEach units group _player;
-
-			_return
-		}
+    {
+        (!(_target getVariable ["stationIsRunning", false])) &&
+		(_target getVariable ["GRAD_grandPrix_rlgl_introDone", false])
+    }
 	}
 ] call ace_interact_menu_fnc_createAction;
 

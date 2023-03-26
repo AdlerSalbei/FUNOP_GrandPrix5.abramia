@@ -94,8 +94,9 @@ private _points = [_group, _timeTaken, 500, 1000, "Red Light - Green Light"] cal
 // delete door and corresponding handlers
 ["GRAD_rlgl_endDoor", [], (units _group) + [_nearestInstructor]] call CBA_fnc_targetEvent;
 
-private _playerTimes = [];
+sleep 2;
 
+private _playerTimes = [];
 {
 	// Handle time
 	private _playerTime = _x getVariable ["GRAD_grandPrix_rlgl_timeTaken", 0];
@@ -122,5 +123,6 @@ _msg = _msg + "<br /> <br /><t align='left'>Spieler Zeit:</t>";
 
 _group setVariable ["GRAD_GrandPrix_currentStage", "", true];
 _station setVariable ["stationIsRunning", false, true];
+_station setVariable ["GRAD_grandPrix_rlgl_introDone", false, true];
 
 [] remoteExec ["grad_grandPrix_fnc_common_setRadioFrequencies", _group];

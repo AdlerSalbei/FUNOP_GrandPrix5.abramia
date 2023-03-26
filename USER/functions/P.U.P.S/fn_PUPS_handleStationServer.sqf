@@ -54,6 +54,7 @@ private _playerTimes = [];
 	[{ removeAllWeapons player; }] remoteExec ["call", _x];
 	_x removeItem "ACE_RangeCard";
 	removeVest _x;
+	[_x, "Binocular"] remoteExec ["addWeapon", _x];
 } forEach (units _group);
 
 private _averageTimeTaken = _totalTimeTaken / (count (units _group));
@@ -70,6 +71,7 @@ _msg = _msg + "<br /> <br /><t align='left'>Spieler:</t><t align='right'>Zeit:</
 
 [parseText _msg] remoteExec ["hint", (units _group) + [_nearestInstructor]];
 
+_station setVariable ["GRAD_grandPrix_PUPS_introDone", false, true];
 _group setVariable ["GRAD_GrandPrix_currentStage", "", true];
 _station setVariable ["stationIsRunning", false, true];
 missionNamespace setVariable ["GRAD_grandPrix_PUPS_currentGroup", grpNull, true];
