@@ -18,7 +18,6 @@ private _playlist = missionNamespace getVariable [_playlistVarName, []];
 			{
 				params ["_spawnHandle"];
 				
-				systemChat "terminating playlist";
 				playMusic "";
 				terminate _spawnHandle;
 				0 fadeMusic 1;
@@ -38,7 +37,6 @@ private _playlist = missionNamespace getVariable [_playlistVarName, []];
 	playMusic "";
 	sleep FADE_DELAY + 1;
 
-	systemChat format["Now playing: '%1'", _song];
 	playMusic [_song, _start];
 
 	FADE_DELAY fadeMusic 1;

@@ -13,7 +13,6 @@ private _openID =
 [
     "GRAD_rlgl_openDoor",
     {
-		// systemChat "opening door...";
         private _door = player getVariable ["GRAD_grandPrix_rlgl_door", objNull];
 
 		private _initialDoorPos = player getVariable ["GRAD_grandPrix_rlgl_doorPos", getPosWorld _door];
@@ -37,7 +36,6 @@ private _closeID =
 [
     "GRAD_rlgl_closeDoor",
     {
-        // systemChat "closing door...";
 		private _door = player getVariable ["GRAD_grandPrix_rlgl_door", objNull];
 
 		private _initialDoorPos = player getVariable ["GRAD_grandPrix_rlgl_doorPos", getPosWorld _door];

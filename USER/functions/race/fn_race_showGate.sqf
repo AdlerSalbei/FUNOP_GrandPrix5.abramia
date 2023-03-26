@@ -9,7 +9,7 @@ if (_index > _countGates) exitWith {};
 private _gate = _allGates select _index;
 player setVariable [_string, _gate];
 
-if !(isNull _gate) exitWith {};
+if (isNull _gate) exitWith {};
 
 if (_overwirte) then {
 	player setVariable ["GRAD_grandPrix_race_currentPlaneTarget", _index ];

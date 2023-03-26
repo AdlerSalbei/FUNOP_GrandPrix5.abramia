@@ -1,9 +1,7 @@
 if (!isServer) exitWith {_this remoteExec [_fnc_scriptName, 2];};
 
 params ["_unit"];
-
-systemChat "_unit";
-
+s
 private _allGroups = missionNamespace getVariable ["GRAD_GrandPrix_allContestantGroups", []];
 private _group = group _unit;
 

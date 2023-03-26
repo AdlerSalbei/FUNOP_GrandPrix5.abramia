@@ -26,7 +26,6 @@ private _handler =
 					_pos set [2, (_pos # 2) + 30];
 					_aa lookAt _pos;
 
-					systemChat "done";
 				},
 				[_aa],
 				1

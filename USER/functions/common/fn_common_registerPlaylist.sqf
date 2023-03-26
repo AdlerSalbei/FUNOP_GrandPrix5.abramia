@@ -18,11 +18,11 @@ missionNamespace setVariable ["Race_Car_playlist", [
 
 missionNamespace setVariable ["Race_Plane_playlist", [
 	["Angry_Birds", 69, 0],
-	["Flappy_Birds", 38, 0],
 	["Duck_Tales", 57, 0],
 	["Power_Puff_Girls", 30, 0],
 	["Sapce_Invaders", 71, 0],
 	["Tetris", 84, 0],
+	["Flappy_Birds", 38, 0],
 	["Kim_possible", 56, 0]
 ], false ];
 

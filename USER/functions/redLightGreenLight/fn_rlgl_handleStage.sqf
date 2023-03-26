@@ -81,8 +81,7 @@ while { (count _activePlayers) > 0 } do {
 
 	// close Door
 	["GRAD_rlgl_closeDoor", [], (units _group) + [_nearestInstructor]] call CBA_fnc_targetEvent;
-
-	// systemChat "iteration completed; Starting again in 5 seconds";
+	
 	sleep 3;
 };
 
