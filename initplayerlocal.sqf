@@ -49,7 +49,9 @@ if ((side player) isEqualTo resistance) then {
 	[_chair, player] call ace_sitting_fnc_sit;
 };
 
-[] call grad_grandPrix_fnc_common_setRadioFrequencies;
+[{
+    [] call grad_grandPrix_fnc_common_setRadioFrequencies;
+}, [], 5] call CBA_fnc_waitAndExecute;
 
 // waiting until player properly initialised
 // ripped this from the bi-forum
