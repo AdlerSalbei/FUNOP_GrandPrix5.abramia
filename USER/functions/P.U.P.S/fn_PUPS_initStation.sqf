@@ -37,14 +37,7 @@ private _action2 = [
     {[_target, (group _player)] spawn GRAD_grandPrix_fnc_PUPS_handleStationServer;},
     {
         !(_target getVariable ["stationIsRunning", false]) &&
-        {
-            private _return = true;
-			{
-				_return  = _x getVariable ["GRAD_grandPrix_PUPS_introDone", false];
-			} forEach units group _player;
-
-			_return
-        }
+        (_target getVariable ["GRAD_grandPrix_PUPS_introDone", false])
     }
 ] call ace_interact_menu_fnc_createAction;
 
