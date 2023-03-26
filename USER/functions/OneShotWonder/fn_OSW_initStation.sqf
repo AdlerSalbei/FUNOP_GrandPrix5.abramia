@@ -58,7 +58,7 @@ private _action2 = [
 
 private _action3 = [   
     "osw_ask_questions",   
-    "Frage die IDAP!",   
+    "Frage die IDAP?",   
     "",   
     {   
   		[_player, "OneShotWonder"] call grad_grandprix_fnc_common_askZeus;

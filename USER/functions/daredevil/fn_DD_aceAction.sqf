@@ -39,20 +39,8 @@ private _action1 = [
 [_station, 0, ["DD_main _action"], _action1] call ace_interact_menu_fnc_addActionToObject;
 
 private _action2 = [   
-    "dd_ask_questions",   
-    "Frage die IDAP!",   
-    "",   
-    {   
-  		[_player, "Daredevil"] call grad_grandprix_fnc_common_askZeus;
- 	},   
-    {true}
-] call ace_interact_menu_fnc_createAction;   
-   
-[_station, 0, ["DD_main _action"], _action2] call ace_interact_menu_fnc_addActionToObject;
-
-private _action3 = [   
     "teleport_daredevil",   
-    "Daredevil Stage starten",   
+    "Start!",   
     "",   
     {   
   		[_player, _target] remoteExecCall ["grad_grandprix_fnc_DD_startStage", 2, false];   
@@ -70,4 +58,16 @@ private _action3 = [
 	}
 ] call ace_interact_menu_fnc_createAction;   
 
+[_station, 0, ["DD_main _action"], _action2] call ace_interact_menu_fnc_addActionToObject;
+
+private _action3 = [   
+    "dd_ask_questions",   
+    "Frage die IDAP?",   
+    "",   
+    {   
+  		[_player, "Daredevil"] call grad_grandprix_fnc_common_askZeus;
+ 	},   
+    {true}
+] call ace_interact_menu_fnc_createAction;   
+   
 [_station, 0, ["DD_main _action"], _action3] call ace_interact_menu_fnc_addActionToObject;

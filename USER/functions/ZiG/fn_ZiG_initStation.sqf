@@ -46,7 +46,7 @@ private _action2 = [
 
 private _action3 = [   
     "zig_ask_questions",   
-    "Frage die IDAP!",   
+    "Frage die IDAP?",   
     "",   
     {   
   		[_player, "Zeit ist Geld"] call grad_grandprix_fnc_common_askZeus;

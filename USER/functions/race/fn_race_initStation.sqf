@@ -58,7 +58,7 @@ private _action2 = [
 
 private _action3 = [   
     "race_ask_questions",   
-    "Frage die IDAP!",   
+    "Frage die IDAP?",   
     "",   
     {   
   		[_player, "Race"] call grad_grandprix_fnc_common_askZeus;

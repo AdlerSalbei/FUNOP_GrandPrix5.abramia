@@ -18,8 +18,15 @@ _group setVariable ["GRAD_GrandPrix_currentStage", "DD", true];
 	};
 	
 	[_index] remoteExecCall ["grad_grandPrix_fnc_DD_teleport", _x, false];
-}forEach _units;
 
+	[{
+		params ["_unit", "_index"];
+
+		private _vehicleName = missionnamespace getvariable [ format ["%1", "dd_tank_0" + str _index], objNull];
+		
+		_unit moveInAny _vehicleName;
+	}, [_x, _index], 0.1 + (_forEachIndex /10 )] call CBA_fnc_waitAndExecute;
+}forEach _units;
 
 [{
 	params ["_station", "_group"];

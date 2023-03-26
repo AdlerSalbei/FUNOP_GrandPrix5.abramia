@@ -5,11 +5,11 @@ private _plane = player getVariable "GRAD_grandPrix_race_plane";
 private _allGates = missionNamespace getVariable "GRAD_grandPrix_race_allGates";
 private _countGates = count _allGates;
 
-if (_index > _countGates) exitWith {};
+if (_index > (_countGates -1)) exitWith {};
 private _gate = _allGates select _index;
 player setVariable [_string, _gate];
 
-if (isNull _gate) exitWith {};
+if (isNil "_gate" || isNull _gate) exitWith {};
 
 if (_overwirte) then {
 	player setVariable ["GRAD_grandPrix_race_currentPlaneTarget", _index ];
