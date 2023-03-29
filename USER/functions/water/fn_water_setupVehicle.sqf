@@ -26,7 +26,7 @@ _vehicle addEventHandler ["GetIn", {
 	] call CBA_fnc_waitAndExecute;	
 }];
 
-[_vehicle, _group] remoteExecCall ["GRAD_grandPrix_fnc_water_addAceAction", -2, true];
+[_vehicle, _group] remoteExecCall ["GRAD_grandPrix_fnc_water_addAceAction", [0, -2] select isMultiplayer, true];
 
 // handle water loss
 [_vehicle] call GRAD_grandPrix_fnc_water_addCollisionHandler;
@@ -46,9 +46,13 @@ diag_log "starting leakage handler";
 [_vehicle] remoteExec ["grad_grandPrix_fnc_water_leakageHandler", (units _group) + _allInstructors, _group];
 
 
+// Handle finish
 [
 	{
-		missionNamespace getVariable ["GRAD_grandPrix_complete", false]
+		params ["_vehicle", "_group"];
+
+		(missionNamespace getVariable ["GRAD_grandPrix_complete", false]) ||
+		_vehicle inArea GRAD_grandPrix_water_finish
 	},
 	{
 		params ["_vehicle", "_group"];

@@ -22,7 +22,11 @@ _streamBack attachTo [_tankBack, [1.2,0,-0.56]];
 		private _leakageParams = _vehicle getVariable ["GRAD_grandPrix_water_leakageParams", [1, [0.05,0.2], 0.1]];
 		_leakageParams params ["_moveVelocityFactor", "_size", "_dropInterval"];
 		
-		if (_waterLevel <= 0) exitWith {
+		if (
+			_waterLevel <= 0 ||
+			(missionNamespace getVariable ["GRAD_grandPrix_complete", false]) ||
+			_vehicle inArea GRAD_grandPrix_water_finish
+		) exitWith {
 			deleteVehicle _streamFront;
 			deleteVehicle _streamBack;
 			[_handle] call CBA_fnc_removePerFrameHandler;
