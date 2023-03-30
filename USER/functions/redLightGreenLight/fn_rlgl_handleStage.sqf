@@ -23,7 +23,7 @@ private _nearestInstructor = [_station] call grad_grandprix_fnc_common_getNeares
 	// disable player damage, just to be safe
 	[_x, false] remoteExec ["allowDamage", _x];
 } forEach (units _group);
-[] remoteExec ["GRAD_grandPrix_fnc_rlgl_handlePIP", _nearestInstructor];
+// [] remoteExec ["GRAD_grandPrix_fnc_rlgl_handlePIP", _nearestInstructor];
 
 // countdown
 ["grad_grandPrix_race_triggerCountdown", [], units _group] call CBA_fnc_targetEvent;

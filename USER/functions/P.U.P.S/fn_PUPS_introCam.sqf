@@ -9,4 +9,4 @@ playSound3D ["x\grad_grandprix5\addons\sounds\data\PUPS_Description.ogg", _targe
 	params ["_target"];
 	_target setVariable ["GRAD_grandPrix_PUPS_introDone", true, true];
 	_target setVariable ["GRAD_grandPrix_PUPS_introPlaying", false, true];
-}, [_target], 121]call CBA_fnc_waitAndExecute;
+}, [_target], 123]call CBA_fnc_waitAndExecute;

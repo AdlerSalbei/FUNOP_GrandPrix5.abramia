@@ -68,4 +68,6 @@ player setVariable ["GRAD_grandPrix_PUPS_stationFinished", true, true];
 ace_viewdistance_viewDistanceOnFoot = _previousViewDistance;
 [false] call ace_viewdistance_fnc_adaptViewDistance;
 
+sleep 2;
+
 [] call grad_grandPrix_fnc_common_setRadioFrequencies;
