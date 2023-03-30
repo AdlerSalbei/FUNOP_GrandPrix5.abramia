@@ -1,4 +1,4 @@
-params ["_index", "_overwirte", "_string"];
+params ["_index", "_overwrite", "_string"];
 
 //Select next gate
 private _plane = player getVariable "GRAD_grandPrix_race_plane";
@@ -11,7 +11,7 @@ player setVariable [_string, _gate];
 
 if (isNil "_gate" || isNull _gate) exitWith {};
 
-if (_overwirte) then {
+if (_overwrite) then {
 	player setVariable ["GRAD_grandPrix_race_currentPlaneTarget", _index ];
 };
 

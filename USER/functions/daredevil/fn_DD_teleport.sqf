@@ -1,7 +1,7 @@
 if !(hasInterface) exitWith {};
 
 params ["_index"];
-private _vehicleName = missionnamespace getvariable [ format ["%1", "dd_tank_0" + str _index], objNull];
+
 		
 		
 cutText ["", "BLACK", 0.1];
@@ -10,7 +10,6 @@ cutText ["", "BLACK", 0.1];
 	params ["_unit", "_vehicleName"];
 
 	playSound "jumpTPSound";
-	_unit moveInAny _vehicleName;
 
 	[{
 		if !(driver vehicle player isEqualTo player) then {
