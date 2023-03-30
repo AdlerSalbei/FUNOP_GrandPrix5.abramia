@@ -68,16 +68,16 @@ if !(hasInterface) exitWith {};
 
 		_camera camSetPos (getPos _camPos);
 		_camera camSetTarget _camTarget;
-		_camera camCommit 2;
+		_camera camCommit 1.5;
 
-		sleep 1.95;
+		sleep 1.45;
 	};
 	_camera camSetTarget dd_camPos_01;
 	_camera camCommit 1;
 	_camera camSetPos (getPos dd_camPos_36);
-	_camera camCommit 3;
+	_camera camCommit 2;
 
-	sleep 4;
+	sleep 3;
 
 	cutText ["", "BLACK OUT", 1];
 
@@ -88,20 +88,14 @@ if !(hasInterface) exitWith {};
 	_camera cameraEffect ["terminate", "back"];
 	camDestroy _camera;
 
+	player setVariable ["GRAD_grandPrix_DD_introFin", true, true];
 	sleep 1;
 
 	cutText ["", "BLACK IN", 2];
 
 	sleep 1;
 
-	5 fadeMusic 0;
 	STHud_UIMode = 1;
 	diwako_dui_main_toggled_off = false;
-
-	sleep 5;
-
-	playMusic "";
-	0 fadeMusic 1;
-
-	player setVariable ["GRAD_grandPrix_DD_introFin", true, true];
+	
 };
