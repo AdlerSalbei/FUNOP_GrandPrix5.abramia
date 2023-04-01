@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=3507;
+		nextID=3645;
 	};
 	class Camera
 	{
-		pos[]={3127.0176,51.688877,3385.1526};
-		dir[]={-0.68137842,-0.36625499,-0.63381743};
-		up[]={-0.26817504,0.93052006,-0.24945642};
-		aside[]={-0.68113798,2.1711458e-007,0.73225373};
+		pos[]={3151.022,63.892296,3406.7739};
+		dir[]={-0.63845593,-0.44142532,-0.63049626};
+		up[]={-0.31408736,0.89729923,-0.31017172};
+		aside[]={-0.7026614,1.3946556e-007,0.71153212};
 	};
 };
 binarizationWanted=0;
@@ -7028,7 +7028,7 @@ class Mission
 			};
 			id=1545;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=6.2985668;
+			atlOffset=2.4725018;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7064,7 +7064,7 @@ class Mission
 			};
 			id=1546;
 			type="Land_Shoot_House_Tunnel_Prone_F";
-			atlOffset=6.2970009;
+			atlOffset=2.5160465;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7098,7 +7098,7 @@ class Mission
 			};
 			id=1547;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=6.2970791;
+			atlOffset=2.5885811;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7126,13 +7126,14 @@ class Mission
 				angles[]={0,1.2047501,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				dynamicSimulation=1;
 			};
 			id=1548;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=6.9771099;
+			atlOffset=0.10949135;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7166,7 +7167,7 @@ class Mission
 			};
 			id=1549;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=7.2460117;
+			atlOffset=0.37783623;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7200,7 +7201,7 @@ class Mission
 			};
 			id=1550;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=6.0405674;
+			atlOffset=2.2600689;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7234,7 +7235,7 @@ class Mission
 			};
 			id=1551;
 			type="Land_Shoot_House_Wall_Crouch_F";
-			atlOffset=6.0229988;
+			atlOffset=2.2425003;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7268,7 +7269,7 @@ class Mission
 			};
 			id=1552;
 			type="EmptyDetectorArea10x10";
-			atlOffset=8.162838;
+			atlOffset=1.2948265;
 		};
 		class Item48
 		{
@@ -186364,7 +186365,7 @@ class Mission
 			};
 			id=6751;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=3.3393097;
+			atlOffset=2.7890434;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -186400,7 +186401,7 @@ class Mission
 			};
 			id=6752;
 			type="Land_Shoot_House_Tunnel_Prone_F";
-			atlOffset=3.3379993;
+			atlOffset=2.7872181;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -186434,7 +186435,7 @@ class Mission
 			};
 			id=6753;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=3.3378143;
+			atlOffset=2.7865334;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -186462,13 +186463,14 @@ class Mission
 				angles[]={6.83103e-009,1.5442189,1.7486562e-007};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				dynamicSimulation=1;
 			};
 			id=6754;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=4.0178528;
+			atlOffset=0.11982155;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -186502,7 +186504,7 @@ class Mission
 			};
 			id=6755;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=4.2867584;
+			atlOffset=0.38982773;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -186536,7 +186538,7 @@ class Mission
 			};
 			id=6756;
 			type="Land_Shoot_House_Wall_Stand_F";
-			atlOffset=3.0816803;
+			atlOffset=2.5315895;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -186570,7 +186572,7 @@ class Mission
 			};
 			id=6757;
 			type="Land_Shoot_House_Wall_Crouch_F";
-			atlOffset=3.0629997;
+			atlOffset=2.5129089;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -186604,7 +186606,7 @@ class Mission
 			};
 			id=6758;
 			type="EmptyDetectorArea10x10";
-			atlOffset=3.3409996;
+			atlOffset=2.7902184;
 		};
 		class Item2167
 		{
@@ -192913,7 +192915,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3937.2275,168.22977,4891.8008};
-				angles[]={0,5.7717342,-0};
+				angles[]={0,5.7717342,0};
 			};
 			side="Empty";
 			flags=4;
@@ -193055,7 +193057,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6243.2373,2.0559845,3511.7988};
-				angles[]={0,3.8770566,-0};
+				angles[]={0,3.8770566,0};
 			};
 			side="Empty";
 			flags=4;
@@ -193090,7 +193092,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6214.5454,2.6754854,3540.7866};
-				angles[]={0,3.6259394,-0};
+				angles[]={0,3.6259394,0};
 			};
 			side="Empty";
 			flags=4;
