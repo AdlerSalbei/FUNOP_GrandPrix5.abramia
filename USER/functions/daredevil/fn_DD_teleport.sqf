@@ -9,24 +9,19 @@ cutText ["", "BLACK", 0.1];
 	playSound "jumpTPSound";
 
 	_index params ["_vehicleName", "_type"];
-	diag_log format ["%1", _index];
-
-	systemChat "Starting TP";
+	private _veh = missionnamespace getvariable [_vehicleName, objNull];
 
 	if (_type isEqualType true) then {
-		systemChat "Equal Type check";
 		if (_type) then {
-			systemChat "Driver";
-			//player assignAsDriver _vehicleName; 
-			//player moveInDriver _vehicleName;
+			player assignAsDriver _veh; 
+			player moveInDriver _veh;
 		} else {
-			systemChat "Gunner";
-			//player assignAsGunner _vehicleName; 
-			//player moveInGunner _vehicleName;
+			player assignAsGunner _veh; 
+			player moveInGunner _veh;
 		};
 	} else {
-		//player assignAsCommander _vehicleName; 
-		//player moveInCommander _vehicleName;
+		player assignAsCommander _veh; 
+		player moveInCommander _veh;
 	};
 
 	[{
