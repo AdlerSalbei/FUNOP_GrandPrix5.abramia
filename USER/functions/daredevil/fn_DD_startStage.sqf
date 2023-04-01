@@ -20,19 +20,6 @@ _group setVariable ["GRAD_GrandPrix_currentStage", "DD", true];
 	};
 	
 	[_index] remoteExecCall ["grad_grandPrix_fnc_DD_teleport", _x, false];
-
-	_index params ["_num", "_type"];
-	private _vehicleName = missionnamespace getvariable [ format ["%1", "dd_tank_0" + str _num], objNull];
-
-	if (_type isEqualType true) then {
-		if (_type) then {
-			_x moveInDriver _vehicleName;
-		} else {
-			_x moveInGunner _vehicleName;
-		};
-	} else {
-		_x moveInCommander _vehicleName;
-	};
 }forEach _units;
 
 [{

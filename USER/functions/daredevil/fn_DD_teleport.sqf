@@ -11,8 +11,21 @@ cutText ["", "BLACK", 0.1];
 
 	playSound "jumpTPSound";
 
+	_index params ["_num", "_type"];
+	private _vehicleName = missionnamespace getvariable [ format ["%1", "dd_tank_0" + str _num], objNull];
+
+	if (_type isEqualType true) then {
+		if (_type) then {
+			_x moveInDriver _vehicleName;
+		} else {
+			_x moveInGunner _vehicleName;
+		};
+	} else {
+		_x moveInCommander _vehicleName;
+	};
+
 	[{
-		if !(driver vehicle player isEqualTo player) then {
+		if (vehicle player isEqualTo player || !(driver vehicle player isEqualTo player)) then {
 			cutText ["", "BLACK IN", 0.1];
 		};
 	}, [], 1.5] call CBA_fnc_waitAndExecute;
