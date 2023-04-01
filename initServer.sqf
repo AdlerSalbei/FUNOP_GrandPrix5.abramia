@@ -67,3 +67,6 @@ addMissionEventHandler ["HandleDisconnect", {
 }];
 
 missionNamespace setVariable ["GRAD_GrandPrix_disconnectHandler", _disconnectHandler, true];
+
+
+setTimeMultiplier 0;

@@ -12,9 +12,9 @@ for "_i" from _spawnMarkerStart to _spawnMarkerEnd do
 };
 
 private _aiSpawned = [];
-private _aiGoal = (count (units _group)) * 3;
+private _aiGoal = (count (units _group)) * 2;
 private _skill = 0.1;
-private _sleep = 150;
+private _sleep = 250;
 
 [
 	{

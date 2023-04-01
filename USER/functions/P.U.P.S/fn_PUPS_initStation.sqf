@@ -19,7 +19,8 @@ private _action1 = [
     "Einleitung",   
     "",   
     {   
-        [_target, _player] call grad_grandPrix_fnc_PUPS_introCam;
+        // [_target, _player] call grad_grandPrix_fnc_PUPS_introCam;
+        [_target, _player] remoteExecCall ["grad_grandPrix_fnc_PUPS_introCam", 2];
  	},   
     {
 		!(_target getVariable ["stationIsRunning", false]) &&

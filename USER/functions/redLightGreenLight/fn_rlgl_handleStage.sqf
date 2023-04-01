@@ -121,6 +121,8 @@ _msg = _msg + "<br /> <br /><t align='left'>Spieler Zeit:</t>";
 
 [parseText _msg] remoteExec ["hint", (units _group) + [_nearestInstructor]];
 
+[{player setVariable ["GRAD_grandPrix_rlgl_reachedFinish", false, true]}] remoteExec ["call", units _group];
+
 _group setVariable ["GRAD_GrandPrix_currentStage", "", true];
 _station setVariable ["stationIsRunning", false, true];
 _station setVariable ["GRAD_grandPrix_rlgl_introDone", false, true];

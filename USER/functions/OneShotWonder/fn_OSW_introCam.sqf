@@ -1,7 +1,8 @@
 params ["_target", "_player"];
 
 // Play the track introduction
-playSound3D ["x\grad_grandprix5\addons\sounds\data\OSW_Description.ogg", _target, true, (getPosASL _target vectorAdd [0,0,1.6]), 100, 1, 75];
+playSound3D ["x\grad_grandprix5\addons\sounds\data\OSW_Description.ogg", _target, true, (getPosASL _target vectorAdd [0,0,1.6]), 100, 1, 60];
+// ["x\grad_grandprix5\addons\sounds\data\OSW_Description.ogg", _target, true, (getPosASL _target vectorAdd [0,0,1.6]), 100, 1, 60] remoteExec ["playSound3D", 2, false];
 
 [{
 	{
