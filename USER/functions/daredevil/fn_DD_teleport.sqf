@@ -16,11 +16,14 @@ cutText ["", "BLACK", 0.1];
 
 	if (_type isEqualType true) then {
 		if (_type) then {
+			_x assignAsDriver _vehicleName; 
 			_x moveInDriver _vehicleName;
 		} else {
+			_x assignAsGunner _vehicleName; 
 			_x moveInGunner _vehicleName;
 		};
 	} else {
+		_x assignAsCommander _vehicleName; 
 		_x moveInCommander _vehicleName;
 	};
 
