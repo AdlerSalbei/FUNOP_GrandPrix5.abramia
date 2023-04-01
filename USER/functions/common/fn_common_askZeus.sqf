@@ -7,7 +7,7 @@ if (getAssignedCuratorLogic (call CBA_fnc_currentUnit) isEqualTo objNull) exitWi
 
 params ["_unit", "_stage"];
 
-private _text = format ["%1 braucht hilfe bei der Stage: %2", _unit, _stage];
+private _text = format ["%1 braucht hilfe bei der Stage: %2", name _unit, _stage];
 
 hint _text;
 systemChat _text;
