@@ -1,30 +1,25 @@
 if !(hasInterface) exitWith {};
 
 params ["_index"];
-
-		
 		
 cutText ["", "BLACK", 0.1];
 
 [{
-	params ["_unit", "_vehicleName"];
-
 	playSound "jumpTPSound";
 
-	_index params ["_num", "_type"];
-	private _vehicleName = missionnamespace getvariable [ format ["%1", "dd_tank_0" + str _num], objNull];
+	_index params ["_vehicleName", "_type"];
 
 	if (_type isEqualType true) then {
 		if (_type) then {
-			_x assignAsDriver _vehicleName; 
-			_x moveInDriver _vehicleName;
+			player assignAsDriver _vehicleName; 
+			player moveInDriver _vehicleName;
 		} else {
-			_x assignAsGunner _vehicleName; 
-			_x moveInGunner _vehicleName;
+			player assignAsGunner _vehicleName; 
+			player moveInGunner _vehicleName;
 		};
 	} else {
-		_x assignAsCommander _vehicleName; 
-		_x moveInCommander _vehicleName;
+		player assignAsCommander _vehicleName; 
+		player moveInCommander _vehicleName;
 	};
 
 	[{
@@ -32,4 +27,4 @@ cutText ["", "BLACK", 0.1];
 			cutText ["", "BLACK IN", 0.1];
 		};
 	}, [], 1.5] call CBA_fnc_waitAndExecute;
-}, [player, _vehicleName], 0.3 + random 1] call CBA_fnc_waitAndExecute;
+}, [_vehicleName], 0.3 + random 1] call CBA_fnc_waitAndExecute;
